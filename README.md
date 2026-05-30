@@ -28,8 +28,8 @@ investment-dashboard/
 (02:00 UTC Saturday = **09:00 Asia/Bangkok**). Each run:
 
 1. **Fetches live prices** — US & Thai equities and FX from Yahoo Finance, crypto
-   from CoinGecko. Thai mutual-fund NAVs are carried forward and flagged for
-   manual entry (no free live feed); update those in the `Prices` sheet when needed.
+   from CoinGecko, and **Thai mutual-fund NAVs from the SEC Thailand Open API**
+   (see below). Any fund the SEC can't match is carried forward and flagged.
 2. **Logs a weekly snapshot** into the workbook's `Weekly Snapshot` sheet (history).
 3. **Rebuilds** `docs/` (the dashboard + JSON data + trend history).
 4. **Commits & pushes** — GitHub Pages redeploys automatically.
@@ -48,6 +48,43 @@ Because it runs in the cloud, the dashboard updates **whether or not your Mac is
 
 Trigger an update any time from the repo's **Actions** tab → *Weekly Dashboard
 Update* → *Run workflow*.
+
+## Thai mutual-fund NAVs (SEC Open API)
+
+`pipeline/fetch_thai_nav.py` prices the Thai funds from the SEC Thailand
+developer portal — https://api-portal.sec.or.th/. Two products are used:
+
+| Product | Endpoint | Gives |
+|---|---|---|
+| **Fund Factsheet** | `GET /FundFactsheet/fund/amc`, `…/amc/{unique_id}` | maps a fund abbreviation → `proj_id` |
+| **Fund Daily Info** | `GET /FundDailyInfo/{proj_id}/dailynav/{yyyy-mm-dd}` | the daily NAV (`last_val`) |
+
+Each product issues its own subscription key (header
+`Ocp-Apim-Subscription-Key`). To enable:
+
+1. Sign in at https://api-portal.sec.or.th/, **subscribe** to *Fund Factsheet*
+   and *Fund Daily Info*, and copy the two keys.
+2. Provide them as environment variables (local) **or** GitHub Actions secrets
+   (`Settings → Secrets and variables → Actions`):
+   ```bash
+   export SEC_FUND_FACTSHEET_KEY="xxxxxxxx"      # comma-separate several keys to spread the rate limit
+   export SEC_FUND_DAILY_INFO_KEY="yyyyyyyy"
+   ```
+3. Check it:
+   ```bash
+   python pipeline/fetch_thai_nav.py --selftest          # confirms keys + connectivity
+   python pipeline/fetch_thai_nav.py --refresh-map       # build the abbr→proj_id cache
+   python pipeline/fetch_thai_nav.py --nav K-VIETNAMRMF  # latest NAV for one fund
+   ```
+
+How it behaves:
+
+- Fund abbreviations are matched to `proj_abbr_name` (exact, then punctuation-insensitive).
+  Funds that don't match are **carried forward** and listed on the dashboard — no wrong NAVs.
+- The abbreviation→`proj_id` map is cached in `pipeline/sec_fund_map.json` (14-day TTL)
+  to stay well under the SEC limit of 3,000 calls / 300 s.
+- The NAV lookup walks back up to 8 days, so weekend/holiday runs still find the last NAV.
+- **No keys set → the system still works**, exactly as before: Thai MFs carry forward.
 
 ## Run it locally
 

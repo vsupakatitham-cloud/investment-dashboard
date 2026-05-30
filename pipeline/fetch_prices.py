@@ -28,6 +28,8 @@ from pathlib import Path
 
 import openpyxl
 
+import fetch_thai_nav
+
 WORKBOOK_DEFAULT = Path(__file__).resolve().parent.parent / "TH Investment - Private Banking Summary.xlsx"
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15) AppleWebKit/537.36"}
 
@@ -82,7 +84,7 @@ def fetch_all(workbook=WORKBOOK_DEFAULT, asof=None, offline=False):
     wb = openpyxl.load_workbook(workbook, data_only=False)
     asof_date = _dt.date.fromisoformat(asof) if asof else None
 
-    report = {"fx": None, "updated": [], "carried": [], "failed": []}
+    report = {"fx": None, "updated": [], "carried": [], "failed": [], "sec": ""}
 
     # ---- FX --------------------------------------------------------------
     fx_ws = wb["FX & Assumptions"]
@@ -110,6 +112,15 @@ def fetch_all(workbook=WORKBOOK_DEFAULT, asof=None, offline=False):
                 crypto_ids.append(COINGECKO_IDS[sym])
     cg = {} if offline else coingecko_prices(crypto_ids)
 
+    # ---- Thai mutual-fund NAVs via SEC Open API -------------------------
+    mf_abbrs = [pws.cell(r, 3).value for r in range(5, pws.max_row + 1)
+                if pws.cell(r, 2).value == "Mutual Fund" and pws.cell(r, 3).value]
+    sec_navs = {}
+    if not offline and mf_abbrs:
+        sec_navs, report["sec"] = fetch_thai_nav.resolve_navs(mf_abbrs, asof_date)
+    elif offline:
+        report["sec"] = "offline"
+
     today_dt = _dt.datetime(asof_date.year, asof_date.month, asof_date.day) if asof_date else None
 
     # ---- walk the Prices sheet ------------------------------------------
@@ -122,6 +133,7 @@ def fetch_all(workbook=WORKBOOK_DEFAULT, asof=None, offline=False):
             continue
         key = f"{typ}|{name}|{cust}"
         new_price = None
+        price_dt = today_dt   # date to stamp in the "Last Update" column
 
         if offline:
             new_price = None
@@ -137,12 +149,21 @@ def fetch_all(workbook=WORKBOOK_DEFAULT, asof=None, offline=False):
             if usd is not None:
                 new_price = usd if ccy == "USD" else usd * fx_rate
         elif typ == "Mutual Fund":
-            new_price = None  # Thai NAVs handled manually / by separate feed
+            hit = sec_navs.get(name)            # NAV from SEC Open API (THB)
+            if hit:
+                new_price = hit["nav"]
+                d = hit.get("date")
+                if d:
+                    try:
+                        dd = _dt.date.fromisoformat(d)
+                        price_dt = _dt.datetime(dd.year, dd.month, dd.day)
+                    except ValueError:
+                        pass
 
         if new_price and new_price > 0:
             pws.cell(r, 5).value = round(new_price, 6)
-            if today_dt:
-                pws.cell(r, 7).value = today_dt
+            if price_dt:
+                pws.cell(r, 7).value = price_dt
             pws.cell(r, 8).value = "OK"
             report["updated"].append(key)
         else:
@@ -169,6 +190,7 @@ def main():
     print(f"Prices updated     : {len(rep['updated'])}")
     print(f"Carried (Thai MF)  : {len(rep['carried'])}")
     print(f"Failed -> MANUAL   : {len(rep['failed'])}")
+    print(f"SEC NAV lookup     : {rep['sec']}")
     if rep["failed"]:
         print("   " + ", ".join(rep["failed"]))
 

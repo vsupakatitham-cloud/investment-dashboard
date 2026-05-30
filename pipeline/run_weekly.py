@@ -98,6 +98,7 @@ def main():
     rep = fetch_all(workbook, asof, offline=args.offline)
     print(f"      FX {rep['fx']} · {len(rep['updated'])} updated · "
           f"{len(rep['carried'])} MF carried · {len(rep['failed'])} manual")
+    print(f"      SEC NAV: {rep.get('sec','')}")
 
     print("[2/4] Logging weekly snapshot ...")
     p = load_portfolio(workbook)

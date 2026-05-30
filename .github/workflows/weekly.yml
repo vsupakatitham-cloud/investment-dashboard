@@ -30,13 +30,20 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Fetch prices, log snapshot, rebuild dashboard
+        env:
+          # Add these in the repo: Settings -> Secrets and variables -> Actions.
+          # Subscribe to "Fund Factsheet" and "Fund Daily Info" at
+          # https://api-portal.sec.or.th/ to obtain the keys. If unset, Thai MF
+          # NAVs simply carry forward (everything else still updates).
+          SEC_FUND_FACTSHEET_KEY: ${{ secrets.SEC_FUND_FACTSHEET_KEY }}
+          SEC_FUND_DAILY_INFO_KEY: ${{ secrets.SEC_FUND_DAILY_INFO_KEY }}
         run: python pipeline/run_weekly.py --no-publish
 
       - name: Commit & push refreshed dashboard
         run: |
           git config user.name  "dashboard-bot"
           git config user.email "actions@github.com"
-          git add docs "TH Investment - Private Banking Summary.xlsx"
+          git add docs "TH Investment - Private Banking Summary.xlsx" pipeline/sec_fund_map.json
           if git diff --cached --quiet; then
             echo "No changes to publish."
           else
