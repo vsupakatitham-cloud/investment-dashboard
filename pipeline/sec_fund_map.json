@@ -1,0 +1,135 @@
+{
+ "built": "2026-05-30",
+ "source": "SEC Open Data /v2/fund (https://secopendata.sec.or.th)",
+ "note": "abbr -> proj_id + fund_class_name, NAV-verified vs workbook",
+ "funds": {
+  "ASP-AIEQ": {
+   "proj_id": "M0417_2560",
+   "fund_class_name": "main"
+  },
+  "ASP-DGOV-R": {
+   "proj_id": "M0065_2562",
+   "fund_class_name": "ASP-DGOV-R"
+  },
+  "ASP-EUG": {
+   "proj_id": "M0578_2563",
+   "fund_class_name": "main"
+  },
+  "ASP-EVOCHINA": {
+   "proj_id": "M0364_2561",
+   "fund_class_name": "main"
+  },
+  "ASP-FLEXPLUS": {
+   "proj_id": "M0347_2560",
+   "fund_class_name": "main"
+  },
+  "ASP-JHC": {
+   "proj_id": "M0603_2563",
+   "fund_class_name": "ASP-JHC-A"
+  },
+  "ASP-SME-A": {
+   "proj_id": "M0333_2560",
+   "fund_class_name": "ASP-SME-A"
+  },
+  "ASP-THGEQ-T": {
+   "proj_id": "M0400_2549",
+   "fund_class_name": "ASP-THGEQ-T"
+  },
+  "B-EQUITY": {
+   "proj_id": "M0570_2547",
+   "fund_class_name": "main"
+  },
+  "B-MIXED75": {
+   "proj_id": "M0170_2550",
+   "fund_class_name": "main"
+  },
+  "BCARERMF": {
+   "proj_id": "M0083_2558",
+   "fund_class_name": "main"
+  },
+  "BERMF": {
+   "proj_id": "M0067_2545",
+   "fund_class_name": "main"
+  },
+  "BFLRMF": {
+   "proj_id": "M0059_2545",
+   "fund_class_name": "main"
+  },
+  "BFRMF": {
+   "proj_id": "M0062_2545",
+   "fund_class_name": "main"
+  },
+  "ES-MF": {
+   "proj_id": "M0009_2540",
+   "fund_class_name": "main"
+  },
+  "ES-US500RMF": {
+   "proj_id": "M0989_2555",
+   "fund_class_name": "main"
+  },
+  "K-CHX": {
+   "proj_id": "M1261_2557",
+   "fund_class_name": "main"
+  },
+  "K-GHRMF": {
+   "proj_id": "M0410_2558",
+   "fund_class_name": "main"
+  },
+  "K-TNZ-ThaiESG": {
+   "proj_id": "M0799_2566",
+   "fund_class_name": "K-TNZ-ThaiESG"
+  },
+  "K-USA-A(D)": {
+   "proj_id": "M0159_2555",
+   "fund_class_name": "K-USA-SSF"
+  },
+  "K-VIETNAMRMF": {
+   "proj_id": "M0045_2565",
+   "fund_class_name": "main"
+  },
+  "K-Vietnam": {
+   "proj_id": "M0118_2561",
+   "fund_class_name": "main"
+  },
+  "KF-ASET50-L": {
+   "proj_id": "M0611_2547",
+   "fund_class_name": "KF-ASET50-L"
+  },
+  "SCBGOLDH": {
+   "proj_id": "M0856_2553",
+   "fund_class_name": "SCBGOLDH"
+  },
+  "SCBKEQTG": {
+   "proj_id": "M0559_2557",
+   "fund_class_name": "SCBKEQTGE"
+  },
+  "SCBSEMI(A)": {
+   "proj_id": "M0232_2564",
+   "fund_class_name": "SCBSEMI(SSF)"
+  },
+  "SCBSET-SSFX": {
+   "proj_id": "M0144_2563",
+   "fund_class_name": "SCBSET-SSFX"
+  },
+  "SCBSFF": {
+   "proj_id": "M0003_2539",
+   "fund_class_name": "main"
+  },
+  "SCBTAPX(25D)": {
+   "proj_id": "M0445_2568",
+   "fund_class_name": "SCBTAPX(LTFA)"
+  },
+  "UOBSG-N": {
+   "proj_id": "M0232_2553",
+   "fund_class_name": "UOBSG-D"
+  },
+  "UTSB-THAIESG": {
+   "proj_id": "M0779_2567",
+   "fund_class_name": "UTSB-THAIESG"
+  },
+  "UVALUE-DIV-LD": {
+   "proj_id": "M0245_2550",
+   "fund_class_name": "UVALUE-DIV-LD"
+  }
+ }
+}

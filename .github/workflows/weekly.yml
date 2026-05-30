@@ -31,12 +31,11 @@ jobs:
 
       - name: Fetch prices, log snapshot, rebuild dashboard
         env:
-          # Add these in the repo: Settings -> Secrets and variables -> Actions.
-          # Subscribe to "Fund Factsheet" and "Fund Daily Info" at
-          # https://api-portal.sec.or.th/ to obtain the keys. If unset, Thai MF
-          # NAVs simply carry forward (everything else still updates).
-          SEC_FUND_FACTSHEET_KEY: ${{ secrets.SEC_FUND_FACTSHEET_KEY }}
-          SEC_FUND_DAILY_INFO_KEY: ${{ secrets.SEC_FUND_DAILY_INFO_KEY }}
+          # Repo -> Settings -> Secrets and variables -> Actions -> New secret.
+          # Use the "fund_api" subscription key (Product: sec-openapi-normal) from
+          # https://secopendata.sec.or.th/. If unset, Thai MF NAVs carry forward
+          # and everything else (equities, crypto, FX) still updates.
+          SEC_OPENAPI_KEY: ${{ secrets.SEC_OPENAPI_KEY }}
         run: python pipeline/run_weekly.py --no-publish
 
       - name: Commit & push refreshed dashboard

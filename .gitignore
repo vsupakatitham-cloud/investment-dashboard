@@ -4,3 +4,9 @@ __pycache__/
 *.BACKUP.xlsx
 ~$*.xlsx
 .claude/launch.json
+
+# Never commit secrets / screenshots containing keys
+*.png
+*.jpg
+*.jpeg
+Screenshot*

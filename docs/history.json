@@ -1,13 +1,13 @@
 [
   {
     "date": "2026-05-30",
-    "total_value": 23445398,
+    "total_value": 23457666,
     "total_invested": 19595542,
-    "total_pnl": 3849855,
-    "pnl_pct": 0.1965,
-    "mf_value": 19269405,
+    "total_pnl": 3862124,
+    "pnl_pct": 0.1971,
+    "mf_value": 19269313,
     "eq_value": 2859438,
-    "crypto_value": 1316555,
+    "crypto_value": 1328915,
     "fx_rate": 32.43
   }
 ]

@@ -49,42 +49,49 @@ Because it runs in the cloud, the dashboard updates **whether or not your Mac is
 Trigger an update any time from the repo's **Actions** tab → *Weekly Dashboard
 Update* → *Run workflow*.
 
-## Thai mutual-fund NAVs (SEC Open API)
+## Thai mutual-fund NAVs (SEC Open Data — Fund API v2)
 
 `pipeline/fetch_thai_nav.py` prices the Thai funds from the SEC Thailand
-developer portal — https://api-portal.sec.or.th/. Two products are used:
+**Open Data** portal — https://secopendata.sec.or.th/ (gateway `https://api.sec.or.th`).
+It uses the new consolidated **Fund API** (product **`sec-openapi-normal`**), so a
+**single key** drives everything:
 
-| Product | Endpoint | Gives |
-|---|---|---|
-| **Fund Factsheet** | `GET /FundFactsheet/fund/amc`, `…/amc/{unique_id}` | maps a fund abbreviation → `proj_id` |
-| **Fund Daily Info** | `GET /FundDailyInfo/{proj_id}/dailynav/{yyyy-mm-dd}` | the daily NAV (`last_val`) |
+| Endpoint | Gives |
+|---|---|
+| `GET /v2/fund/general-info/profiles` | `proj_id`, `proj_abbr_name`, `fund_class_name` (cursor-paged) |
+| `GET /v2/fund/daily-info/nav?proj_id=…&start_nav_date=…&end_nav_date=…` | daily NAV `last_val` (THB/unit), `nav_date` |
 
-Each product issues its own subscription key (header
-`Ocp-Apim-Subscription-Key`). To enable:
+Header on every call: `Ocp-Apim-Subscription-Key`.
 
-1. Sign in at https://api-portal.sec.or.th/, **subscribe** to *Fund Factsheet*
-   and *Fund Daily Info*, and copy the two keys.
-2. Provide them as environment variables (local) **or** GitHub Actions secrets
+To enable:
+
+1. Sign in at https://secopendata.sec.or.th/, subscribe to the **Fund API**, and
+   copy the key from your **`fund_api` (Product: sec-openapi-normal)** subscription.
+   *(The separate legacy "Fund Daily Info" subscription is the old `/FundDailyInfo`
+   API and is not needed.)*
+2. Provide it as an env var (local) **or** a GitHub Actions secret
    (`Settings → Secrets and variables → Actions`):
    ```bash
-   export SEC_FUND_FACTSHEET_KEY="xxxxxxxx"      # comma-separate several keys to spread the rate limit
-   export SEC_FUND_DAILY_INFO_KEY="yyyyyyyy"
+   export SEC_OPENAPI_KEY="your-fund_api-key"
    ```
 3. Check it:
    ```bash
-   python pipeline/fetch_thai_nav.py --selftest          # confirms keys + connectivity
-   python pipeline/fetch_thai_nav.py --refresh-map       # build the abbr→proj_id cache
+   python pipeline/fetch_thai_nav.py --selftest          # key + connectivity + pin count
    python pipeline/fetch_thai_nav.py --nav K-VIETNAMRMF  # latest NAV for one fund
    ```
 
 How it behaves:
 
-- Fund abbreviations are matched to `proj_abbr_name` (exact, then punctuation-insensitive).
-  Funds that don't match are **carried forward** and listed on the dashboard — no wrong NAVs.
-- The abbreviation→`proj_id` map is cached in `pipeline/sec_fund_map.json` (14-day TTL)
-  to stay well under the SEC limit of 3,000 calls / 300 s.
-- The NAV lookup walks back up to 8 days, so weekend/holiday runs still find the last NAV.
-- **No keys set → the system still works**, exactly as before: Thai MFs carry forward.
+- A fund's abbreviation can have several share classes, each with its own NAV. A
+  **verified** abbreviation → (`proj_id`, `fund_class_name`) map is shipped in
+  `pipeline/sec_fund_map.json` — every one of this client's 32 funds was pinned and
+  NAV-checked against the workbook (exact match). Runtime makes just one NAV call
+  per held fund.
+- The NAV lookup walks back ~12 days, so weekend/holiday runs still find the last NAV.
+- Adding new funds: `python pipeline/fetch_thai_nav.py --refresh-map ABBR1 ABBR2`
+  adds clean matches; ambiguous share classes are listed to pin by hand.
+- **No key set → the system still works**: Thai MFs carry forward and are flagged
+  on the dashboard. Well under the SEC limit of 3,000 calls / 300 s.
 
 ## Run it locally
 

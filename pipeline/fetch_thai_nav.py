@@ -1,63 +1,72 @@
 """
-fetch_thai_nav.py — Thai mutual-fund NAVs from the SEC Thailand Open API.
+fetch_thai_nav.py — Thai mutual-fund NAVs from the SEC "Open Data" Fund API (v2).
 
-Portal:  https://api-portal.sec.or.th/   (subscribe to the two products below)
+Portal:  https://secopendata.sec.or.th/   (the successor to api-portal.sec.or.th)
+Gateway: https://api.sec.or.th
 
-Two products / two subscription keys are required:
-  * Fund Factsheet   -> maps a fund abbreviation to its proj_id
-        GET https://api.sec.or.th/FundFactsheet/fund/amc
-        GET https://api.sec.or.th/FundFactsheet/fund/amc/{unique_id}
-  * Fund Daily Info  -> the daily NAV for a proj_id
-        GET https://api.sec.or.th/FundDailyInfo/{proj_id}/dailynav/{yyyy-mm-dd}
-            -> JSON, NAV in field `last_val`
+This uses the NEW consolidated **Fund API** (product name "sec-openapi-normal").
+ONE subscription key drives the whole flow:
+
+  * Fund profiles  GET /v2/fund/general-info/profiles?page_size=100[&next_cursor=]
+        -> proj_id, proj_abbr_name, fund_class_name, fund_status  (cursor-paged)
+  * Daily NAV      GET /v2/fund/daily-info/nav?proj_id=..&start_nav_date=..&end_nav_date=..
+        -> items[].last_val  (NAV/unit, THB),  items[].nav_date,  items[].fund_class_name
 
 Auth header on every call:  Ocp-Apim-Subscription-Key: <key>
 
-Keys are read from the environment (never hard-coded / committed):
-    SEC_FUND_FACTSHEET_KEY   (one key, or several comma-separated to spread load)
-    SEC_FUND_DAILY_INFO_KEY
+Key (read from the environment, never committed):
+    SEC_OPENAPI_KEY            # the "fund_api" / sec-openapi-normal subscription key
+                               # (legacy SEC_FUND_DAILY_INFO_KEY is accepted as a fallback)
 
-Everything degrades gracefully: if a key is missing, the host is down, or a fund
-can't be matched, the caller simply carries the previous NAV forward and flags it.
+A fund abbreviation can have several share classes, each with its own NAV, so a
+verified abbreviation -> (proj_id, fund_class_name) map is shipped in
+`pipeline/sec_fund_map.json` (every entry NAV-checked against the workbook).
+Runtime therefore only makes one NAV call per held fund — no page-walking.
+
+Everything degrades gracefully: missing key, host down, or an unmapped fund all
+fall back to carrying the previous NAV forward and flagging it.
 
 CLI:
-    python3 pipeline/fetch_thai_nav.py --selftest          # check connectivity/keys
-    python3 pipeline/fetch_thai_nav.py --refresh-map       # rebuild proj_id cache
-    python3 pipeline/fetch_thai_nav.py --nav ASP-AIEQ      # one fund, latest NAV
+    python3 pipeline/fetch_thai_nav.py --selftest          # key + connectivity
+    python3 pipeline/fetch_thai_nav.py --nav K-VIETNAMRMF  # latest NAV for one fund
+    python3 pipeline/fetch_thai_nav.py --refresh-map       # add NEW funds to the pin map
 """
 from __future__ import annotations
 
 import argparse
 import datetime as _dt
-import itertools
 import json
 import os
 import re
 import time
+import urllib.parse
 import urllib.request
 import urllib.error
 from pathlib import Path
 
 SEC_HOST = "https://api.sec.or.th"
-MAP_CACHE = Path(__file__).resolve().parent / "sec_fund_map.json"
-MAP_TTL_DAYS = 14
-UA = "Mozilla/5.0 (private-banking-dashboard)"
+MAP_FILE = Path(__file__).resolve().parent / "sec_fund_map.json"
+UA = "private-banking-dashboard"
 
 
 # --------------------------------------------------------------------------- #
-# low-level request helpers
+# auth / request helpers
 # --------------------------------------------------------------------------- #
-def _keys(env_name: str) -> list[str]:
-    raw = os.environ.get(env_name, "").strip()
-    return [k.strip() for k in raw.split(",") if k.strip()]
+def _key() -> str | None:
+    for name in ("SEC_OPENAPI_KEY", "SEC_FUND_DAILY_INFO_KEY", "SEC_FUND_FACTSHEET_KEY"):
+        v = os.environ.get(name, "").strip()
+        if v:
+            return v.split(",")[0].strip()   # first key if several are given
+    return None
 
 
-def _sec_get(path: str, key: str, timeout: int = 20):
-    """GET a SEC endpoint. Returns (status_code, parsed_json_or_None)."""
+def _get(path: str, key: str, timeout: int = 30):
+    """GET a SEC v2 endpoint. Returns (status_code, parsed_json_or_None)."""
     url = path if path.startswith("http") else f"{SEC_HOST}{path}"
     req = urllib.request.Request(url, headers={
         "Ocp-Apim-Subscription-Key": key,
         "Accept": "application/json",
+        "Content-Type": "application/json",
         "User-Agent": UA,
     })
     try:
@@ -75,138 +84,136 @@ def _sec_get(path: str, key: str, timeout: int = 20):
         return None, None
 
 
-# --------------------------------------------------------------------------- #
-# name normalisation / matching
-# --------------------------------------------------------------------------- #
 def _norm(name: str) -> str:
     return re.sub(r"\s+", "", (name or "")).upper()
 
 
-def _loose(name: str) -> str:
-    return re.sub(r"[^A-Z0-9]", "", _norm(name))
-
-
 # --------------------------------------------------------------------------- #
-# fund map (abbreviation -> proj_id), cached to disk
+# pin map (abbreviation -> proj_id + fund_class_name)
 # --------------------------------------------------------------------------- #
-def build_fund_map(refresh: bool = False) -> dict:
-    """Return {'built': iso, 'exact': {NORM: proj_id}, 'loose': {LOOSE: proj_id}}.
-
-    Loads from cache if fresh; otherwise walks every AMC's fund list. Requires
-    SEC_FUND_FACTSHEET_KEY. On failure returns whatever cache exists (or empty).
-    """
-    if not refresh and MAP_CACHE.exists():
+def load_pin_map() -> dict:
+    if MAP_FILE.exists():
         try:
-            cached = json.loads(MAP_CACHE.read_text())
-            built = _dt.date.fromisoformat(cached.get("built", "1900-01-01"))
-            if (_dt.date.today() - built).days <= MAP_TTL_DAYS:
-                return cached
+            return json.loads(MAP_FILE.read_text()).get("funds", {})
         except Exception:
-            pass
-
-    keys = _keys("SEC_FUND_FACTSHEET_KEY")
-    if not keys:
-        if MAP_CACHE.exists():
-            return json.loads(MAP_CACHE.read_text())
-        return {"built": "", "exact": {}, "loose": {}}
-
-    key_cycle = itertools.cycle(keys)
-    status, amcs = _sec_get("/FundFactsheet/fund/amc", next(key_cycle))
-    if status != 200 or not isinstance(amcs, list):
-        if MAP_CACHE.exists():
-            return json.loads(MAP_CACHE.read_text())
-        return {"built": "", "exact": {}, "loose": {}}
-
-    exact, loose, ambiguous = {}, {}, set()
-    for amc in amcs:
-        uid = amc.get("unique_id") or amc.get("uniqueId")
-        if not uid:
-            continue
-        st, funds = _sec_get(f"/FundFactsheet/fund/amc/{uid}", next(key_cycle))
-        if st != 200 or not isinstance(funds, list):
-            continue
-        for f in funds:
-            proj_id = f.get("proj_id")
-            abbr = f.get("proj_abbr_name")
-            status_rg = (f.get("fund_status") or "").upper()
-            if not proj_id or not abbr:
-                continue
-            if status_rg and status_rg != "RG":   # keep registered funds only
-                continue
-            exact[_norm(abbr)] = proj_id
-            lk = _loose(abbr)
-            if lk in loose and loose[lk] != proj_id:
-                ambiguous.add(lk)
-            else:
-                loose[lk] = proj_id
-        time.sleep(0.05)
-    for lk in ambiguous:                          # drop ambiguous loose keys
-        loose.pop(lk, None)
-
-    result = {"built": _dt.date.today().isoformat(), "exact": exact, "loose": loose}
-    if exact:
-        MAP_CACHE.write_text(json.dumps(result, indent=0))
-    return result
-
-
-def resolve_proj_id(abbr: str, fund_map: dict) -> str | None:
-    n = _norm(abbr)
-    if n in fund_map.get("exact", {}):
-        return fund_map["exact"][n]
-    return fund_map.get("loose", {}).get(_loose(abbr))
+            return {}
+    return {}
 
 
 # --------------------------------------------------------------------------- #
 # NAV lookup
 # --------------------------------------------------------------------------- #
-def latest_nav(proj_id: str, asof: _dt.date | None = None, lookback: int = 8):
-    """Most recent NAV at/just before `asof`. Returns (nav: float, date: iso) or None."""
-    keys = _keys("SEC_FUND_DAILY_INFO_KEY")
-    if not keys:
-        return None
-    key_cycle = itertools.cycle(keys)
-    asof = asof or _dt.date.today()
-    for back in range(lookback):
-        d = asof - _dt.timedelta(days=back)
-        status, data = _sec_get(f"/FundDailyInfo/{proj_id}/dailynav/{d.isoformat()}", next(key_cycle))
-        if status == 200 and isinstance(data, dict):
-            val = data.get("last_val", data.get("net_asset"))
-            try:
-                if val is not None and float(val) > 0:
-                    return float(val), d.isoformat()
-            except (TypeError, ValueError):
-                pass
-        time.sleep(0.05)
-    return None
+def latest_nav(proj_id: str, fund_class_name: str | None, key: str,
+               asof: _dt.date | None = None, lookback: int = 12):
+    """Most recent NAV at/just before `asof` for a fund (and share class).
 
-
-def resolve_navs(abbrs, asof: _dt.date | None = None, refresh_map: bool = False):
-    """Batch: {abbr: {'nav': float, 'date': iso}} for funds we could price.
-
-    Returns ({}, reason) when SEC keys are not configured so the caller can fall
-    back to carry-forward without treating it as an error.
+    Returns (nav: float, date: iso) or None.
     """
-    if not _keys("SEC_FUND_DAILY_INFO_KEY") or not (_keys("SEC_FUND_FACTSHEET_KEY") or MAP_CACHE.exists()):
-        return {}, "SEC keys not configured"
+    asof = asof or _dt.date.today()
+    start = (asof - _dt.timedelta(days=lookback)).isoformat()
+    q = urllib.parse.urlencode({
+        "proj_id": proj_id,
+        "start_nav_date": start,
+        "end_nav_date": asof.isoformat(),
+        "page_size": 100,
+    })
+    status, data = _get(f"/v2/fund/daily-info/nav?{q}", key)
+    if status != 200 or not isinstance(data, dict):
+        return None
+    items = data.get("items", []) or []
+    if fund_class_name:
+        cls = [it for it in items if it.get("fund_class_name") == fund_class_name]
+        items = cls or items
+    items = [it for it in items if it.get("last_val") not in (None, "", 0)]
+    if not items:
+        return None
+    items.sort(key=lambda it: it.get("nav_date", ""))
+    last = items[-1]
+    try:
+        return float(last["last_val"]), last.get("nav_date", "")
+    except (TypeError, ValueError, KeyError):
+        return None
 
-    fund_map = build_fund_map(refresh=refresh_map)
-    out, unmatched, nodata = {}, [], []
+
+def resolve_navs(abbrs, asof: _dt.date | None = None, **_):
+    """Batch NAV lookup. Returns ({abbr: {'nav': float, 'date': iso}}, reason).
+
+    Returns ({}, reason) when the key isn't configured so the caller falls back
+    to carry-forward without treating it as an error.
+    """
+    key = _key()
+    if not key:
+        return {}, "SEC key not configured (set SEC_OPENAPI_KEY)"
+
+    pins = load_pin_map()
+    out, unmapped, nodata = {}, [], []
     for abbr in abbrs:
-        pid = resolve_proj_id(abbr, fund_map)
-        if not pid:
-            unmatched.append(abbr)
+        pin = pins.get(abbr) or pins.get(_norm(abbr))
+        if not pin:
+            unmapped.append(abbr)
             continue
-        res = latest_nav(pid, asof)
+        res = latest_nav(pin["proj_id"], pin.get("fund_class_name"), key, asof)
         if res:
             out[abbr] = {"nav": res[0], "date": res[1]}
         else:
             nodata.append(abbr)
-    reason = f"matched {len(out)}/{len(list(abbrs))}"
-    if unmatched:
-        reason += f"; unmatched: {', '.join(unmatched)}"
+        time.sleep(0.05)
+    reason = f"matched {len(out)}/{len(list(abbrs))} via SEC /v2/fund"
+    if unmapped:
+        reason += f"; unmapped: {', '.join(unmapped)}"
     if nodata:
         reason += f"; no NAV: {', '.join(nodata)}"
     return out, reason
+
+
+# --------------------------------------------------------------------------- #
+# maintenance: extend the pin map with NEW abbreviations (does not clobber)
+# --------------------------------------------------------------------------- #
+def _all_profiles(key, max_pages=200):
+    rows, cursor, pages = [], None, 0
+    while pages < max_pages:
+        q = "page_size=100" + (f"&next_cursor={urllib.parse.quote(cursor)}" if cursor else "")
+        st, d = _get(f"/v2/fund/general-info/profiles?{q}", key)
+        if st != 200 or not isinstance(d, dict):
+            break
+        rows.extend(d.get("items", []) or [])
+        cursor = d.get("next_cursor")
+        pages += 1
+        if not cursor:
+            break
+    return rows
+
+
+def refresh_map(new_abbrs):
+    """Add pins for abbreviations not already in the map (exact abbr/class match).
+
+    Ambiguous share classes should be verified and pinned by hand in
+    sec_fund_map.json — this only fills clean, unambiguous matches.
+    """
+    key = _key()
+    if not key:
+        print("No SEC key set."); return
+    existing = json.loads(MAP_FILE.read_text()) if MAP_FILE.exists() else {"funds": {}}
+    funds = existing.get("funds", {})
+    todo = [a for a in new_abbrs if a not in funds]
+    if not todo:
+        print("Map already covers all requested funds."); return
+    rows = _all_profiles(key)
+    by_class, by_abbr = {}, {}
+    for it in rows:
+        by_class.setdefault(_norm(it.get("fund_class_name")), (it.get("proj_id"), it.get("fund_class_name")))
+        by_abbr.setdefault(_norm(it.get("proj_abbr_name")), (it.get("proj_id"), it.get("fund_class_name")))
+    added = 0
+    for a in todo:
+        hit = by_class.get(_norm(a)) or by_abbr.get(_norm(a))
+        if hit:
+            funds[a] = {"proj_id": hit[0], "fund_class_name": hit[1]}
+            added += 1
+        else:
+            print(f"  unmatched (pin by hand): {a}")
+    existing["funds"] = funds
+    MAP_FILE.write_text(json.dumps(existing, indent=1, ensure_ascii=False))
+    print(f"Added {added} pin(s); map now covers {len(funds)} funds.")
 
 
 # --------------------------------------------------------------------------- #
@@ -215,32 +222,30 @@ def resolve_navs(abbrs, asof: _dt.date | None = None, refresh_map: bool = False)
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--selftest", action="store_true")
-    ap.add_argument("--refresh-map", action="store_true")
     ap.add_argument("--nav", metavar="ABBR")
+    ap.add_argument("--refresh-map", nargs="*", metavar="ABBR")
     ap.add_argument("--asof", default=_dt.date.today().isoformat())
     args = ap.parse_args()
+    key = _key()
 
     if args.selftest:
-        ff = _keys("SEC_FUND_FACTSHEET_KEY")
-        fd = _keys("SEC_FUND_DAILY_INFO_KEY")
-        print(f"SEC_FUND_FACTSHEET_KEY : {'set ('+str(len(ff))+')' if ff else 'NOT SET'}")
-        print(f"SEC_FUND_DAILY_INFO_KEY: {'set ('+str(len(fd))+')' if fd else 'NOT SET'}")
-        st, _ = _sec_get("/FundFactsheet/fund/amc", ff[0] if ff else "none")
-        print(f"Factsheet /amc status  : {st}  ({'OK' if st==200 else 'auth/again' if st==401 else st})")
+        print(f"SEC key            : {'set' if key else 'NOT SET (export SEC_OPENAPI_KEY=...)'}")
+        if key:
+            st, d = _get("/v2/fund/daily-info/nav?page_size=1", key)
+            print(f"/v2/fund NAV probe : {st}  ({'OK' if st == 200 else 'check subscription'})")
+        print(f"Pin map            : {len(load_pin_map())} funds in {MAP_FILE.name}")
         return
 
-    if args.refresh_map:
-        m = build_fund_map(refresh=True)
-        print(f"Fund map built {m.get('built')}: {len(m.get('exact',{}))} funds.")
+    if args.refresh_map is not None:
+        refresh_map(args.refresh_map)
         return
 
     if args.nav:
-        m = build_fund_map()
-        pid = resolve_proj_id(args.nav, m)
-        print(f"{args.nav} -> proj_id {pid}")
-        if pid:
-            res = latest_nav(pid, _dt.date.fromisoformat(args.asof))
-            print(f"   NAV: {res}")
+        pin = load_pin_map().get(args.nav)
+        print(f"{args.nav} -> {pin}")
+        if pin and key:
+            print("   NAV:", latest_nav(pin["proj_id"], pin.get("fund_class_name"), key,
+                                        _dt.date.fromisoformat(args.asof)))
         return
 
     ap.print_help()
