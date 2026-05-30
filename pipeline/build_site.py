@@ -79,8 +79,9 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   }
   *{box-sizing:border-box}
   body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-       background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
+       background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
   .wrap{max-width:1180px;margin:0 auto;padding:0 20px 64px}
+  .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
   header.top{background:linear-gradient(135deg,var(--accent),var(--accent-soft));color:#fff;
        padding:30px 0 26px;border-bottom:3px solid var(--gold)}
   .head-inner{max-width:1180px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;
@@ -124,6 +125,22 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .controls button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
   footer{margin-top:28px;font-size:11px;color:var(--muted);line-height:1.6;border-top:1px solid var(--line);padding-top:16px}
   @media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}.grid2,.grid3{grid-template-columns:1fr}}
+  @media(max-width:620px){
+    .wrap{padding:0 12px 48px}
+    .head-inner{padding:0 14px;gap:10px}
+    header.top{padding:20px 0 18px}
+    .brand{font-size:11px;letter-spacing:.16em}
+    h1{font-size:20px}
+    .asof{text-align:left;font-size:12px}
+    .pill{font-size:10px}
+    .kpis{grid-template-columns:1fr;gap:12px;margin:16px 0}
+    .kpi{padding:14px 15px}
+    .kpi .value{font-size:22px}
+    .card{padding:14px;margin-top:12px}
+    .card h2{font-size:13px}
+    .chartbox{height:210px}
+    th,td{padding:7px 6px}
+  }
 </style>
 </head>
 <body>
@@ -170,21 +187,21 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   <div class="grid2">
     <div class="card">
       <h2>Top 10 Holdings</h2>
-      <table id="topTable"><thead><tr><th>Holding</th><th>Custodian</th><th>Value</th><th>%</th><th>P&amp;L</th></tr></thead><tbody></tbody></table>
+      <div class="scroll"><table id="topTable"><thead><tr><th>Holding</th><th>Custodian</th><th>Value</th><th>%</th><th>P&amp;L</th></tr></thead><tbody></tbody></table></div>
     </div>
     <div class="card">
       <h2>Theme / Sector Exposure</h2>
-      <table id="themeTable"><thead><tr><th>Theme</th><th>Value</th><th>%</th><th></th></tr></thead><tbody></tbody></table>
+      <div class="scroll"><table id="themeTable"><thead><tr><th>Theme</th><th>Value</th><th>%</th><th></th></tr></thead><tbody></tbody></table></div>
     </div>
   </div>
 
   <div class="card">
     <h2>Holdings Detail</h2>
     <div class="controls" id="filters"></div>
-    <table id="holdTable">
+    <div class="scroll"><table id="holdTable">
       <thead><tr><th>Name</th><th>Type</th><th>Class</th><th>Geo</th><th>Qty</th><th>Price</th><th>Invested</th><th>Value</th><th>P&amp;L</th><th>P&amp;L %</th></tr></thead>
       <tbody></tbody>
-    </table>
+    </table></div>
   </div>
 
   <div class="note" id="staleNote" style="display:none"></div>
