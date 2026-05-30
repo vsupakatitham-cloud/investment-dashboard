@@ -10,3 +10,6 @@ __pycache__/
 *.jpg
 *.jpeg
 Screenshot*
+
+# stray nested clone guard
+investment-dashboard/
