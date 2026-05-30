@@ -1,0 +1,45 @@
+name: Weekly Dashboard Update
+
+# Runs every Saturday 09:00 Asia/Bangkok (= 02:00 UTC).
+# Also runnable on demand from the Actions tab.
+on:
+  schedule:
+    - cron: "0 2 * * 6"
+  workflow_dispatch:
+
+permissions:
+  contents: write   # allow committing the refreshed docs/ + workbook back
+
+concurrency:
+  group: weekly-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch prices, log snapshot, rebuild dashboard
+        run: python pipeline/run_weekly.py --no-publish
+
+      - name: Commit & push refreshed dashboard
+        run: |
+          git config user.name  "dashboard-bot"
+          git config user.email "actions@github.com"
+          git add docs "TH Investment - Private Banking Summary.xlsx"
+          if git diff --cached --quiet; then
+            echo "No changes to publish."
+          else
+            git commit -m "Weekly dashboard update — $(date -u +%Y-%m-%d)"
+            git push
+          fi

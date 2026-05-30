@@ -1,0 +1,14 @@
+{
+  "firm_name": "TH Investment",
+  "report_title": "Private Banking Summary",
+  "client_name": "Private Client Portfolio",
+  "client_ref": "PC-0001",
+  "advisor": "",
+  "currency_symbol": "฿",
+  "timezone": "Asia/Bangkok",
+  "schedule_text": "Updated automatically every Saturday 09:00 (Bangkok time)",
+  "accent": "#0b3d2e",
+  "accent_soft": "#15634a",
+  "gold": "#b9975b",
+  "disclaimer": "This document is prepared for the named private client only and is strictly confidential. Valuations are indicative, based on the latest available prices and the stated USD/THB rate, and do not constitute investment advice or an offer. Past performance is not indicative of future results."
+}
