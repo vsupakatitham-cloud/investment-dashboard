@@ -4,6 +4,15 @@ Converts the lot-level **Private Banking Summary** workbook into a branded,
 **self-updating online dashboard** that refreshes **every Saturday at 09:00
 Bangkok time**, plus a **blank onboarding template** for new private clients.
 
+The dashboard (v2) is a clean, institutional, tabbed web app:
+**Overview** (KPIs with week-over-week deltas + sparklines, allocation, top movers,
+performance) · **Allocation** (asset class / geography / tax wrapper / theme) ·
+**Holdings** (searchable, sortable, filterable) · **Performance** (value-vs-cost
+trend, weekly P&L, cumulative return) · **Risk** (single-name concentration,
+top-5/10 weight, effective holdings, currency exposure, risk-posture band).
+Performance and WoW visuals use the real accumulating Weekly Snapshot history and
+show a "history is building" state until a second weekly point exists.
+
 ```
 investment-dashboard/
 ├─ TH Investment - Private Banking Summary.xlsx   ← working copy (this client)
