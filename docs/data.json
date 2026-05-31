@@ -19,9 +19,9 @@
     "fx_rate": 32.43,
     "reporting_ccy": "THB",
     "total_value": 25520510.67932949,
-    "total_invested": 19969612.46619892,
-    "total_pnl": 5550898.213130567,
-    "total_pnl_pct": 0.2779672476131502,
+    "total_invested": 21696895.623758923,
+    "total_pnl": 3823615.055570565,
+    "total_pnl_pct": 0.17622866984637017,
     "mf_value": 19021215.728761856,
     "eq_value": 5159937.255234187,
     "crypto_value": 1339357.6953334464,
@@ -4486,13 +4486,13 @@
         "tax_status": "Taxable",
         "currency": "USD",
         "quantity": 100.0,
-        "avg_cost": 1.0,
+        "avg_cost": 85.4458,
         "price": 99.63,
         "fx": 32.43,
-        "invested_thb": 3243.0,
+        "invested_thb": 277100.7294,
         "value_thb": 323100.09,
-        "pnl_thb": 319857.09,
-        "pnl_pct": 98.63000000000001,
+        "pnl_thb": 45999.360600000015,
+        "pnl_pct": 0.16600230789576556,
         "lots": 1,
         "price_asof": "2026-05-31",
         "price_stale": false
@@ -4508,13 +4508,13 @@
         "tax_status": "Taxable",
         "currency": "USD",
         "quantity": 80.0,
-        "avg_cost": 1.0,
+        "avg_cost": 167.3194,
         "price": 312.06,
         "fx": 32.43,
-        "invested_thb": 2594.4,
+        "invested_thb": 434093.45136,
         "value_thb": 809608.4639999999,
-        "pnl_thb": 807014.0639999999,
-        "pnl_pct": 311.05999999999995,
+        "pnl_thb": 375515.0126399999,
+        "pnl_pct": 0.865055695872684,
         "lots": 1,
         "price_asof": "2026-05-31",
         "price_stale": false
@@ -4530,13 +4530,13 @@
         "tax_status": "Taxable",
         "currency": "USD",
         "quantity": 25.0,
-        "avg_cost": 1.0,
+        "avg_cost": 371.97,
         "price": 189.03,
         "fx": 32.43,
-        "invested_thb": 810.75,
+        "invested_thb": 301574.6775,
         "value_thb": 153256.0725,
-        "pnl_thb": 152445.3225,
-        "pnl_pct": 188.03,
+        "pnl_thb": -148318.60499999998,
+        "pnl_pct": -0.4918138559561254,
         "lots": 1,
         "price_asof": "2026-05-31",
         "price_stale": false
@@ -4552,13 +4552,13 @@
         "tax_status": "Taxable",
         "currency": "USD",
         "quantity": 15.0,
-        "avg_cost": 1.0,
+        "avg_cost": 184.0,
         "price": 632.51,
         "fx": 32.43,
-        "invested_thb": 486.45,
+        "invested_thb": 89506.8,
         "value_thb": 307684.48949999997,
-        "pnl_thb": 307198.03949999996,
-        "pnl_pct": 631.5099999999999,
+        "pnl_thb": 218177.68949999998,
+        "pnl_pct": 2.4375543478260866,
         "lots": 1,
         "price_asof": "2026-05-31",
         "price_stale": false
@@ -4574,13 +4574,13 @@
         "tax_status": "Taxable",
         "currency": "USD",
         "quantity": 50.0,
-        "avg_cost": 1.0,
+        "avg_cost": 390.8502,
         "price": 211.0,
         "fx": 32.43,
-        "invested_thb": 1621.5,
+        "invested_thb": 633763.5992999999,
         "value_thb": 342136.5,
-        "pnl_thb": 340515.0,
-        "pnl_pct": 210.0,
+        "pnl_thb": -291627.0992999999,
+        "pnl_pct": -0.46015122929449687,
         "lots": 1,
         "price_asof": "2026-05-31",
         "price_stale": false
@@ -5183,11 +5183,11 @@
     "by_asset_class": [
       {
         "name": "Equity",
-        "invested": 15301335.630835302,
+        "invested": 17028618.788395304,
         "value": 21255050.27824581,
-        "pnl": 5953714.647410518,
+        "pnl": 4226431.489850518,
         "pct": 0.8328614793536041,
-        "pnl_pct": 0.38909770957592565
+        "pnl_pct": 0.24819578982710888
       },
       {
         "name": "Digital Assets",
@@ -5233,11 +5233,11 @@
     "by_geography": [
       {
         "name": "United States",
-        "invested": 3431951.6961220657,
+        "invested": 5159234.853682065,
         "value": 7134320.214820408,
-        "pnl": 3702368.518698341,
+        "pnl": 1975085.3611383415,
         "pct": 0.2795524080401298,
-        "pnl_pct": 1.0787938894599924
+        "pnl_pct": 0.3828252477649382
       },
       {
         "name": "Thailand",
@@ -5315,11 +5315,11 @@
       },
       {
         "name": "Taxable",
-        "invested": 4874034.586198937,
+        "invested": 6601317.743758938,
         "value": 6499294.950567632,
-        "pnl": 1625260.3643686962,
+        "pnl": -102022.79319130357,
         "pct": 0.25466947085160724,
-        "pnl_pct": 0.33345277626274933
+        "pnl_pct": -0.015454913269060355
       },
       {
         "name": "Thai ESG",
@@ -5365,11 +5365,11 @@
       },
       {
         "name": "US Single Stock",
-        "invested": 670816.7421220649,
+        "invested": 2124242.170282065,
         "value": 2482570.5011749268,
-        "pnl": 1811753.759052862,
+        "pnl": 358328.33089286205,
         "pct": 0.09727746173926298,
-        "pnl_pct": 2.700817742445651
+        "pnl_pct": 0.16868525439605686
       },
       {
         "name": "Thai Equity",
@@ -5453,11 +5453,11 @@
       },
       {
         "name": "Rare Earth",
-        "invested": 3243.0,
+        "invested": 277100.7294,
         "value": 323100.09,
-        "pnl": 319857.09,
+        "pnl": 45999.360600000015,
         "pct": 0.012660408487111394,
-        "pnl_pct": 98.63000000000001
+        "pnl_pct": 0.16600230789576556
       },
       {
         "name": "AI / Innovation",
@@ -5610,12 +5610,12 @@
         "asset_class": "Equity",
         "geography": "United States",
         "theme": "US Single Stock",
-        "invested": 2594.4,
+        "invested": 434093.45136,
         "value": 809608.4639999999,
-        "pnl": 807014.0639999999,
+        "pnl": 375515.0126399999,
         "lots": 1,
         "pct": 0.031723834768547475,
-        "pnl_pct": 311.05999999999995
+        "pnl_pct": 0.865055695872684
       },
       {
         "asset_type": "MF",
@@ -5680,14 +5680,14 @@
     {
       "date": "2026-05-31",
       "total_value": 25520511,
-      "total_invested": 19969612,
-      "total_pnl": 5550898,
-      "pnl_pct": 0.278,
+      "total_invested": 21696896,
+      "total_pnl": 3823615,
+      "pnl_pct": 0.1762,
       "mf_value": 19021216,
       "eq_value": 5159937,
       "crypto_value": 1339358,
       "fx_rate": 32.43
     }
   ],
-  "generated_at": "2026-05-31 19:21"
+  "generated_at": "2026-05-31 19:28"
 }
