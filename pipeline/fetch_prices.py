@@ -20,6 +20,7 @@ from __future__ import annotations
 import argparse
 import datetime as _dt
 import json
+import re
 import sys
 import time
 import urllib.request
@@ -66,6 +67,19 @@ def yahoo_price(symbol, timeout=15):
         return float(meta.get("regularMarketPrice") or meta.get("previousClose"))
     except Exception:
         return None
+
+
+def yahoo_symbol_for_isin(isin, timeout=15):
+    """Resolve a 12-char ISIN to a Yahoo quote symbol via the search API."""
+    url = f"https://query2.finance.yahoo.com/v1/finance/search?q={isin}&quotesCount=4&newsCount=0"
+    try:
+        data = _get_json(url, timeout)
+        for q in data.get("quotes", []):
+            if q.get("symbol"):
+                return q["symbol"]
+    except Exception:
+        pass
+    return None
 
 
 def coingecko_prices(ids, timeout=20):
@@ -201,10 +215,18 @@ def fetch_all(workbook=WORKBOOK_DEFAULT, asof=None, offline=False):
             fund = uws.cell(r, 3).value
             symbol = uws.cell(r, 16).value          # P: Yahoo Symbol / ISIN
             if fund and symbol:
-                px = yahoo_price(str(symbol).strip())
+                sym = str(symbol).strip()
+                px = yahoo_price(sym)
+                # ISIN (2 letters + 10 alphanumerics) won't price directly — resolve it
+                if (not px) and re.fullmatch(r"[A-Za-z]{2}[A-Za-z0-9]{10}", sym):
+                    resolved = yahoo_symbol_for_isin(sym)
+                    if resolved:
+                        px = yahoo_price(resolved)
+                        if px and px > 0:
+                            uws.cell(r, 16).value = resolved   # cache the Yahoo symbol
                 time.sleep(0.15)
                 if px and px > 0:
-                    uws.cell(r, 10).value = round(px, 6)   # J: Current NAV (SGD)
+                    uws.cell(r, 10).value = round(px, 6)       # J: Current NAV (SGD)
                     report["updated"].append(f"Unit Trust|{fund}")
                 else:
                     report["failed"].append(f"Unit Trust|{fund}")
