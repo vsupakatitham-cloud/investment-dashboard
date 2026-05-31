@@ -17,6 +17,7 @@ single FX rate cell — exactly as the workbook does.
 from __future__ import annotations
 
 import datetime as _dt
+import re
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
 
@@ -50,12 +51,28 @@ def _data_rows(ws, name_col=3, first=LOT_FIRST):
     return rows
 
 
+_ARITH_RE = re.compile(r"^[0-9.+\-*/() ]+$")
+
+
 def _num(v, default=0.0):
-    try:
-        if v is None or v == "":
-            return default
+    """Coerce a cell to a number. Handles plain numbers and simple arithmetic
+    typed as a formula in an input cell (e.g. "=254.87+2584.77"), which openpyxl
+    returns as a raw string when reading formulas."""
+    if v is None or v == "":
+        return default
+    if isinstance(v, (int, float)):
         return float(v)
-    except (TypeError, ValueError):
+    s = str(v).strip()
+    if s.startswith("="):
+        s = s[1:].strip()
+    try:
+        return float(s)
+    except ValueError:
+        if _ARITH_RE.match(s):                       # safe: digits/operators only
+            try:
+                return float(eval(s, {"__builtins__": {}}, {}))
+            except Exception:
+                return default
         return default
 
 
