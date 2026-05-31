@@ -324,7 +324,7 @@ function boot(PAYLOAD){
   document.getElementById("foot").innerHTML=
     `<div>${CFG.disclaimer||""}</div>
      <div style="margin-top:8px">${CFG.schedule_text||""} · Generated ${PAYLOAD.generated_at||""} ·
-       ${P.lot_counts.MF} funds · ${P.lot_counts.Equity} equity · ${P.lot_counts.Crypto} crypto lots</div>`;
+       ${P.lot_counts.MF} funds · ${P.lot_counts.Equity} equity · ${P.lot_counts.Crypto} crypto${P.lot_counts.UnitTrust?` · ${P.lot_counts.UnitTrust} unit trust`:''} lots</div>`;
 
   // pooled holdings
   const pool={};
@@ -414,7 +414,7 @@ function boot(PAYLOAD){
   // holdings table
   let hsort={k:"val",dir:-1},hfilter="All",hq="";
   const seg=document.getElementById("typeSeg");seg.innerHTML="";
-  ["All","MF","Equity","Crypto"].forEach((t,i)=>{const b=document.createElement("button");
+  ["All","MF","Equity","Crypto","Unit Trust"].forEach((t,i)=>{const b=document.createElement("button");
     b.className=i?"":"active";b.textContent=t==="MF"?"Funds":t;b.onclick=()=>{hfilter=t;
      [...seg.children].forEach(x=>x.classList.remove("active"));b.classList.add("active");renderHold();};seg.appendChild(b);});
   document.getElementById("search").addEventListener("input",e=>{hq=e.target.value.toLowerCase();renderHold();});
@@ -500,9 +500,9 @@ function boot(PAYLOAD){
       <span class="nm">${h.name}</span>
       <span class="wbar"><i style="width:${POOL[0].wt?(h.wt/POOL[0].wt*100).toFixed(0):0}%;background:${PAL[i%PAL.length]}"></i></span>
       <span class="num" style="text-align:right">${pc(h.wt)}</span></li>`).join("")+`</ul>`;
-    const fx={};POOL.forEach(h=>{const c=(h.cur==="THB")?"THB":"USD / USDT";fx[c]=(fx[c]||0)+h.val;});
+    const fx={};POOL.forEach(h=>{const c=h.cur==="THB"?"THB":h.cur==="SGD"?"SGD":"USD / USDT";fx[c]=(fx[c]||0)+h.val;});
     const fxRows=Object.entries(fx).sort((a,b)=>b[1]-a[1]);
-    const fxcol={"THB":"#0b3d2e","USD / USDT":"#b9975b"};
+    const fxcol={"THB":"#0b3d2e","USD / USDT":"#b9975b","SGD":"#3f7d6a"};
     document.getElementById("fxBar").innerHTML=fxRows.map(([k,v])=>`<i style="width:${P.total_value?v/P.total_value*100:0}%;background:${fxcol[k]||'#6f9a89'}"></i>`).join("");
     document.getElementById("fxLegend").innerHTML=fxRows.map(([k,v])=>`<div><span class="dot" style="background:${fxcol[k]||'#6f9a89'}"></span>${k} · <span class="num">${pc(P.total_value?v/P.total_value:0)}</span> · ${f0(v)}</div>`).join("");
     const band={"Equity":"Growth","Digital Assets":"Growth","Multi-Asset":"Balanced","Alternatives":"Balanced","Fixed Income":"Defensive","Cash & Equivalents":"Cash"};

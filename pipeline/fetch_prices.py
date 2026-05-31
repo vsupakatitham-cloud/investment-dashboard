@@ -109,6 +109,15 @@ def fetch_all(workbook=WORKBOOK_DEFAULT, asof=None, offline=False):
         fx_ws["C5"] = _dt.datetime(asof_date.year, asof_date.month, asof_date.day)
         fx_ws["D6"] = f"Auto-fetched via Yahoo Finance on {asof_date.isoformat()}"
 
+    # ---- SGD/THB (for unit trusts) --------------------------------------
+    if fx_ws["C9"].value is not None:                 # only if the SGD row exists
+        sgd = None if offline else yahoo_price("SGDTHB=X")
+        if sgd:
+            fx_ws["C9"] = round(sgd, 4)
+            report["sgd"] = round(sgd, 4)
+            if asof_date:
+                fx_ws["D9"] = f"Auto-fetched via Yahoo Finance on {asof_date.isoformat()}"
+
     # ---- collect crypto ids to batch ------------------------------------
     pws = wb["Prices"]
     crypto_ids = []
@@ -183,6 +192,23 @@ def fetch_all(workbook=WORKBOOK_DEFAULT, asof=None, offline=False):
             elif not offline:
                 report["failed"].append(key)
                 pws.cell(r, 8).value = "MANUAL"
+
+    # ---- SGD unit trusts: auto-fetch NAV when a Yahoo symbol is given ----
+    if "Unit Trust (SGD)" in wb.sheetnames and not offline:
+        uws = wb["Unit Trust (SGD)"]
+        r = 5
+        while uws.cell(r, 1).value != "TOTAL" and r <= uws.max_row:
+            fund = uws.cell(r, 3).value
+            symbol = uws.cell(r, 16).value          # P: Yahoo Symbol / ISIN
+            if fund and symbol:
+                px = yahoo_price(str(symbol).strip())
+                time.sleep(0.15)
+                if px and px > 0:
+                    uws.cell(r, 10).value = round(px, 6)   # J: Current NAV (SGD)
+                    report["updated"].append(f"Unit Trust|{fund}")
+                else:
+                    report["failed"].append(f"Unit Trust|{fund}")
+            r += 1
 
     wb.save(workbook)
     return report

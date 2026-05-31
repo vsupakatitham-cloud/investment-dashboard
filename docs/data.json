@@ -28,7 +28,8 @@
     "lot_counts": {
       "MF": 161,
       "Equity": 47,
-      "Crypto": 26
+      "Crypto": 26,
+      "UnitTrust": 0
     },
     "holdings": [
       {
@@ -5689,5 +5690,5 @@
       "fx_rate": 32.43
     }
   ],
-  "generated_at": "2026-05-31 22:02"
+  "generated_at": "2026-05-31 22:30"
 }

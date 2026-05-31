@@ -142,10 +142,16 @@ def load_portfolio(path: Path | str = WORKBOOK_DEFAULT) -> Portfolio:
     else:
         as_of = str(as_of_raw)
     fx_rate = _num(fx_ws["C6"].value, 0.0)
+    sgd_rate = _num(fx_ws["C9"].value, 0.0)        # SGD/THB (added for unit trusts)
     reporting_ccy = fx_ws["C7"].value or "THB"
 
     def fxmult(ccy):
-        return 1.0 if (ccy or "THB").upper() == "THB" else fx_rate
+        c = (ccy or "THB").upper()
+        if c == "THB":
+            return 1.0
+        if c == "SGD":
+            return sgd_rate
+        return fx_rate                              # USD / USDT
 
     # --- Reference map ----------------------------------------------------
     ref = {}
@@ -281,6 +287,31 @@ def load_portfolio(path: Path | str = WORKBOOK_DEFAULT) -> Portfolio:
             price_asof=asof, price_stale=stale,
         ))
 
+    # --- SGD Unit Trusts (self-contained input sheet) ---------------------
+    if "Unit Trust (SGD)" in wb.sheetnames:
+        uws = wb["Unit Trust (SGD)"]
+        for r in _data_rows(uws, name_col=3):       # Fund Name in column C
+            platform = uws.cell(r, 2).value
+            fund = uws.cell(r, 3).value
+            if not fund:
+                continue
+            units = _num(uws.cell(r, 8).value)      # H
+            avg_cost = _num(uws.cell(r, 9).value)   # I (SGD)
+            nav = _num(uws.cell(r, 10).value)       # J (SGD)
+            fxm = sgd_rate
+            invested = units * avg_cost * fxm
+            value = units * nav * fxm
+            holdings.append(Holding(
+                asset_type="Unit Trust", name=fund, custodian=platform or "",
+                asset_class=uws.cell(r, 4).value or "", sub_class="",
+                geography=uws.cell(r, 6).value or "", theme=uws.cell(r, 5).value or "",
+                tax_status=uws.cell(r, 7).value or "Taxable", currency="SGD",
+                quantity=units, avg_cost=avg_cost, price=nav, fx=fxm,
+                invested_thb=invested, value_thb=value, pnl_thb=value - invested,
+                pnl_pct=((value - invested) / invested) if invested else 0.0,
+                price_asof=as_of, price_stale=(nav == 0 and units > 0),
+            ))
+
     return _aggregate(holdings, as_of, fx_rate, reporting_ccy)
 
 
@@ -351,6 +382,7 @@ def _aggregate(holdings, as_of, fx_rate, reporting_ccy) -> Portfolio:
             MF=sum(1 for h in holdings if h.asset_type == "MF"),
             Equity=sum(1 for h in holdings if h.asset_type == "Equity"),
             Crypto=sum(1 for h in holdings if h.asset_type == "Crypto"),
+            UnitTrust=sum(1 for h in holdings if h.asset_type == "Unit Trust"),
         ),
         holdings=[asdict(h) for h in holdings],
         by_asset_class=by_ac, by_geography=by_geo, by_tax_status=by_tax,
