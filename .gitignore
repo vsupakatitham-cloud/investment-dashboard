@@ -13,3 +13,8 @@ Screenshot*
 
 # stray nested clone guard
 investment-dashboard/
+
+# credential files (never commit)
+*.rtf
+*token*
+*secret*

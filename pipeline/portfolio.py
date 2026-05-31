@@ -24,10 +24,30 @@ import openpyxl
 
 WORKBOOK_DEFAULT = Path(__file__).resolve().parent.parent / "TH Investment - Private Banking Summary.xlsx"
 
-# Row ranges of the lot tables (data starts at row 5 in every Lots sheet).
-MF_FIRST, MF_LAST = 5, 164
-EQ_FIRST, EQ_LAST = 5, 45
-CR_FIRST, CR_LAST = 5, 30
+# Data starts at row 5 in every Lots sheet; the table ends at a "TOTAL" row.
+LOT_FIRST = 5
+
+
+def _data_rows(ws, name_col=3, first=LOT_FIRST):
+    """Row indices holding real lots — scans from `first` to the TOTAL row.
+
+    Stops at the row whose column A is "TOTAL" (or after a run of blank names),
+    so lots can be added freely above the TOTAL row without touching any range.
+    """
+    rows, blanks, r = [], 0, first
+    while r <= ws.max_row:
+        a = ws.cell(r, 1).value
+        if isinstance(a, str) and a.strip().upper() == "TOTAL":
+            break
+        if ws.cell(r, name_col).value in (None, ""):
+            blanks += 1
+            if blanks >= 3:
+                break
+        else:
+            blanks = 0
+            rows.append(r)
+        r += 1
+    return rows
 
 
 def _num(v, default=0.0):
@@ -166,7 +186,7 @@ def load_portfolio(path: Path | str = WORKBOOK_DEFAULT) -> Portfolio:
 
     # --- Mutual Fund lots -------------------------------------------------
     mws = wb["MF - Lots"]
-    for r in range(MF_FIRST, MF_LAST + 1):
+    for r in _data_rows(mws, name_col=3):
         amc = mws.cell(r, 2).value
         fund = mws.cell(r, 3).value
         if not fund:
@@ -190,7 +210,7 @@ def load_portfolio(path: Path | str = WORKBOOK_DEFAULT) -> Portfolio:
 
     # --- Equity lots ------------------------------------------------------
     ews = wb["Equities - Lots"]
-    for r in range(EQ_FIRST, EQ_LAST + 1):
+    for r in _data_rows(ews, name_col=3):
         broker = ews.cell(r, 2).value
         ticker = ews.cell(r, 3).value
         if not ticker:
@@ -216,7 +236,7 @@ def load_portfolio(path: Path | str = WORKBOOK_DEFAULT) -> Portfolio:
 
     # --- Crypto lots ------------------------------------------------------
     cws = wb["Crypto - Lots"]
-    for r in range(CR_FIRST, CR_LAST + 1):
+    for r in _data_rows(cws, name_col=3):
         exch = cws.cell(r, 2).value
         coin = cws.cell(r, 3).value
         if not coin:

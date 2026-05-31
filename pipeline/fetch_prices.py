@@ -41,6 +41,13 @@ COINGECKO_IDS = {
     "PENGU": "pudgy-penguins", "PLUME": "plume", "TRUMP": "official-trump",
     "VELO": "velo", "VELODROME": "velodrome-finance", "KUB": "bitkub-coin",
 }
+# Optional user overrides/additions (written by add_holding.py): {SYMBOL: coingecko_id}
+_OVERRIDE = Path(__file__).resolve().parent / "coingecko_ids.json"
+if _OVERRIDE.exists():
+    try:
+        COINGECKO_IDS.update({k.upper(): v for k, v in json.loads(_OVERRIDE.read_text()).items()})
+    except Exception:
+        pass
 STABLECOINS = {"USDT": 1.0}
 
 
