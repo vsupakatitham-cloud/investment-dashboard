@@ -219,6 +219,10 @@ def load_portfolio(path: Path | str = WORKBOOK_DEFAULT) -> Portfolio:
         shares = _num(ews.cell(r, 8).value)        # H
         avg_cost = _num(ews.cell(r, 9).value)      # I (native)
         price, asof, stale = lookup_price("Equity", ticker, broker)
+        # Cash is held as Shares=balance, AvgCost=1 (no market price) — value it
+        # at its balance so it isn't dropped to zero or flagged stale.
+        if str(ticker).strip().lower() == "cash":
+            price, stale, asof = (avg_cost or 1.0), False, as_of
         meta = lookup_ref("Equity", ticker, broker)
         fx = fxmult(ccy)
         invested = shares * avg_cost * fx

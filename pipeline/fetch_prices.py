@@ -142,6 +142,9 @@ def fetch_all(workbook=WORKBOOK_DEFAULT, asof=None, offline=False):
         new_price = None
         price_dt = today_dt   # date to stamp in the "Last Update" column
 
+        if str(name).strip().lower() == "cash":
+            pws.cell(r, 8).value = "OK"   # cash carries its balance; no market price
+            continue
         if offline:
             new_price = None
         elif typ == "Equity":

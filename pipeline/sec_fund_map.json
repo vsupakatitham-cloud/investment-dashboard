@@ -130,6 +130,10 @@
   "UVALUE-DIV-LD": {
    "proj_id": "M0245_2550",
    "fund_class_name": "UVALUE-DIV-LD"
+  },
+  "TCMF": {
+   "proj_id": "M0035_2543",
+   "fund_class_name": "TCMF"
   }
  }
 }
