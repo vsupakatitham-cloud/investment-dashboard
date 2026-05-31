@@ -1,7 +1,7 @@
 {
  "built": "2026-05-30",
  "source": "SEC Open Data /v2/fund (https://secopendata.sec.or.th)",
- "note": "abbr -> proj_id + fund_class_name, NAV-verified vs workbook",
+ "note": "abbr -> proj_id + fund_class_name, NAV-verified vs workbook | classes corrected to exact label match 2026-05-31",
  "funds": {
   "ASP-AIEQ": {
    "proj_id": "M0417_2560",
@@ -81,7 +81,7 @@
   },
   "K-USA-A(D)": {
    "proj_id": "M0159_2555",
-   "fund_class_name": "K-USA-SSF"
+   "fund_class_name": "K-USA-A(D)"
   },
   "K-VIETNAMRMF": {
    "proj_id": "M0045_2565",
@@ -101,11 +101,11 @@
   },
   "SCBKEQTG": {
    "proj_id": "M0559_2557",
-   "fund_class_name": "SCBKEQTGE"
+   "fund_class_name": "SCBKEQTG"
   },
   "SCBSEMI(A)": {
    "proj_id": "M0232_2564",
-   "fund_class_name": "SCBSEMI(SSF)"
+   "fund_class_name": "SCBSEMI(A)"
   },
   "SCBSET-SSFX": {
    "proj_id": "M0144_2563",
@@ -117,11 +117,11 @@
   },
   "SCBTAPX(25D)": {
    "proj_id": "M0445_2568",
-   "fund_class_name": "SCBTAPX(LTFA)"
+   "fund_class_name": "SCBTAPX(25D)"
   },
   "UOBSG-N": {
    "proj_id": "M0232_2553",
-   "fund_class_name": "UOBSG-D"
+   "fund_class_name": "UOBSG-N"
   },
   "UTSB-THAIESG": {
    "proj_id": "M0779_2567",
