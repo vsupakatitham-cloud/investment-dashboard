@@ -297,7 +297,9 @@ def load_portfolio(path: Path | str = WORKBOOK_DEFAULT) -> Portfolio:
                 continue
             units = _num(uws.cell(r, 8).value)      # H
             avg_cost = _num(uws.cell(r, 9).value)   # I (SGD)
-            nav = _num(uws.cell(r, 10).value)       # J (SGD)
+            # NAV (SGD) comes from the Prices sheet (the J column is an INDEX/MATCH
+            # formula pulling the same value), keyed Unit Trust|fund|platform.
+            nav, nav_asof, nav_stale = lookup_price("Unit Trust", fund, platform)
             fxm = sgd_rate
             invested = units * avg_cost * fxm
             value = units * nav * fxm
@@ -309,7 +311,7 @@ def load_portfolio(path: Path | str = WORKBOOK_DEFAULT) -> Portfolio:
                 quantity=units, avg_cost=avg_cost, price=nav, fx=fxm,
                 invested_thb=invested, value_thb=value, pnl_thb=value - invested,
                 pnl_pct=((value - invested) / invested) if invested else 0.0,
-                price_asof=as_of, price_stale=(nav == 0 and units > 0),
+                price_asof=nav_asof or as_of, price_stale=(nav_stale and units > 0),
             ))
 
     return _aggregate(holdings, as_of, fx_rate, reporting_ccy)

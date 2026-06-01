@@ -168,6 +168,8 @@ def fetch_all(workbook=WORKBOOK_DEFAULT, asof=None, offline=False):
         if str(name).strip().lower() == "cash":
             pws.cell(r, 8).value = "OK"   # cash carries its balance; no market price
             continue
+        if typ == "Unit Trust":
+            continue                       # handled by the dedicated block below (symbol is in the Lots sheet)
         if offline:
             new_price = None
         elif typ == "Equity":
@@ -207,28 +209,38 @@ def fetch_all(workbook=WORKBOOK_DEFAULT, asof=None, offline=False):
                 report["failed"].append(key)
                 pws.cell(r, 8).value = "MANUAL"
 
-    # ---- SGD unit trusts: auto-fetch NAV when a Yahoo symbol is given ----
+    # ---- SGD unit trusts: auto-fetch NAV into the Prices sheet -----------
+    # Symbols live in the Lots sheet (col P); NAVs are written to the matching
+    # "Unit Trust" rows in the Prices sheet (the Lots J column pulls from there).
     if "Unit Trust (SGD)" in wb.sheetnames and not offline:
         uws = wb["Unit Trust (SGD)"]
+        price_row = {(pws.cell(r, 3).value, pws.cell(r, 4).value): r
+                     for r in range(5, pws.max_row + 1) if pws.cell(r, 2).value == "Unit Trust"}
         r = 5
         while uws.cell(r, 1).value != "TOTAL" and r <= uws.max_row:
             fund = uws.cell(r, 3).value
+            platform = uws.cell(r, 2).value
             symbol = uws.cell(r, 16).value          # P: Yahoo Symbol / ISIN
             if fund and symbol:
                 sym = str(symbol).strip()
                 px = yahoo_price(sym)
-                # ISIN (2 letters + 10 alphanumerics) won't price directly — resolve it
-                if (not px) and re.fullmatch(r"[A-Za-z]{2}[A-Za-z0-9]{10}", sym):
+                if (not px) and re.fullmatch(r"[A-Za-z]{2}[A-Za-z0-9]{10}", sym):  # ISIN
                     resolved = yahoo_symbol_for_isin(sym)
                     if resolved:
                         px = yahoo_price(resolved)
                         if px and px > 0:
                             uws.cell(r, 16).value = resolved   # cache the Yahoo symbol
                 time.sleep(0.15)
-                if px and px > 0:
-                    uws.cell(r, 10).value = round(px, 6)       # J: Current NAV (SGD)
+                prow = price_row.get((fund, platform))
+                if px and px > 0 and prow:
+                    pws.cell(prow, 5).value = round(px, 6)     # Prices NAV (SGD)
+                    if today_dt:
+                        pws.cell(prow, 7).value = today_dt
+                    pws.cell(prow, 8).value = "OK"
                     report["updated"].append(f"Unit Trust|{fund}")
                 else:
+                    if prow:
+                        pws.cell(prow, 8).value = "MANUAL"
                     report["failed"].append(f"Unit Trust|{fund}")
             r += 1
 
