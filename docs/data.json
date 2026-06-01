@@ -5184,11 +5184,11 @@
         "asset_type": "Unit Trust",
         "name": "Janus Henderson Horizon Global Property Equities Fund A3q (SGD)",
         "custodian": "SCB SG",
-        "asset_class": "=IFERROR(INDEX(Reference!$E:$E,MATCH(\"Unit Trust|\"&C5&\"|\"&B5,Reference!$A:$A,0)),\"\")",
-        "sub_class": "",
-        "geography": "=IFERROR(INDEX(Reference!$G:$G,MATCH(\"Unit Trust|\"&C5&\"|\"&B5,Reference!$A:$A,0)),\"\")",
-        "theme": "=IFERROR(INDEX(Reference!$H:$H,MATCH(\"Unit Trust|\"&C5&\"|\"&B5,Reference!$A:$A,0)),\"\")",
-        "tax_status": "=IFERROR(INDEX(Reference!$I:$I,MATCH(\"Unit Trust|\"&C5&\"|\"&B5,Reference!$A:$A,0)),\"\")",
+        "asset_class": "Equity",
+        "sub_class": "Global Property",
+        "geography": "Global",
+        "theme": "Global Property",
+        "tax_status": "Taxable",
         "currency": "SGD",
         "quantity": 477.101,
         "avg_cost": 27.48,
@@ -5206,11 +5206,11 @@
         "asset_type": "Unit Trust",
         "name": "LionGlobal Vietnam Fund Class A (SGD)",
         "custodian": "SCB SG",
-        "asset_class": "=IFERROR(INDEX(Reference!$E:$E,MATCH(\"Unit Trust|\"&C6&\"|\"&B6,Reference!$A:$A,0)),\"\")",
-        "sub_class": "",
-        "geography": "=IFERROR(INDEX(Reference!$G:$G,MATCH(\"Unit Trust|\"&C6&\"|\"&B6,Reference!$A:$A,0)),\"\")",
-        "theme": "=IFERROR(INDEX(Reference!$H:$H,MATCH(\"Unit Trust|\"&C6&\"|\"&B6,Reference!$A:$A,0)),\"\")",
-        "tax_status": "=IFERROR(INDEX(Reference!$I:$I,MATCH(\"Unit Trust|\"&C6&\"|\"&B6,Reference!$A:$A,0)),\"\")",
+        "asset_class": "Equity",
+        "sub_class": "Frontier Mkt Equity",
+        "geography": "Vietnam",
+        "theme": "Vietnam Equity",
+        "tax_status": "Taxable",
         "currency": "SGD",
         "quantity": 9678.99,
         "avg_cost": 0.5166,
@@ -5228,11 +5228,11 @@
         "asset_type": "Unit Trust",
         "name": "Janus Henderson Horizon Global Technology Leaders Fund A2 (SGD-H)",
         "custodian": "SCB SG",
-        "asset_class": "=IFERROR(INDEX(Reference!$E:$E,MATCH(\"Unit Trust|\"&C7&\"|\"&B7,Reference!$A:$A,0)),\"\")",
-        "sub_class": "",
-        "geography": "=IFERROR(INDEX(Reference!$G:$G,MATCH(\"Unit Trust|\"&C7&\"|\"&B7,Reference!$A:$A,0)),\"\")",
-        "theme": "=IFERROR(INDEX(Reference!$H:$H,MATCH(\"Unit Trust|\"&C7&\"|\"&B7,Reference!$A:$A,0)),\"\")",
-        "tax_status": "=IFERROR(INDEX(Reference!$I:$I,MATCH(\"Unit Trust|\"&C7&\"|\"&B7,Reference!$A:$A,0)),\"\")",
+        "asset_class": "Equity",
+        "sub_class": "Thematic",
+        "geography": "Global",
+        "theme": "Global Technology",
+        "tax_status": "Taxable",
         "currency": "SGD",
         "quantity": 27.562,
         "avg_cost": 181.4092,
@@ -5250,11 +5250,11 @@
         "asset_type": "Unit Trust",
         "name": "BlackRock Asian Growth Leaders Fund A2 (SGD-H) Acc",
         "custodian": "SCB SG",
-        "asset_class": "=IFERROR(INDEX(Reference!$E:$E,MATCH(\"Unit Trust|\"&C8&\"|\"&B8,Reference!$A:$A,0)),\"\")",
-        "sub_class": "",
-        "geography": "=IFERROR(INDEX(Reference!$G:$G,MATCH(\"Unit Trust|\"&C8&\"|\"&B8,Reference!$A:$A,0)),\"\")",
-        "theme": "=IFERROR(INDEX(Reference!$H:$H,MATCH(\"Unit Trust|\"&C8&\"|\"&B8,Reference!$A:$A,0)),\"\")",
-        "tax_status": "=IFERROR(INDEX(Reference!$I:$I,MATCH(\"Unit Trust|\"&C8&\"|\"&B8,Reference!$A:$A,0)),\"\")",
+        "asset_class": "Equity",
+        "sub_class": "Emerging Mkt Equity",
+        "geography": "Asian",
+        "theme": "Asian Equity",
+        "tax_status": "Taxable",
         "currency": "SGD",
         "quantity": 340.12,
         "avg_cost": 14.7007,
@@ -5272,11 +5272,11 @@
         "asset_type": "Unit Trust",
         "name": "UBS China Opportunity Equity Fund P Acc (SGD)",
         "custodian": "SCB SG",
-        "asset_class": "=IFERROR(INDEX(Reference!$E:$E,MATCH(\"Unit Trust|\"&C9&\"|\"&B9,Reference!$A:$A,0)),\"\")",
-        "sub_class": "",
-        "geography": "=IFERROR(INDEX(Reference!$G:$G,MATCH(\"Unit Trust|\"&C9&\"|\"&B9,Reference!$A:$A,0)),\"\")",
-        "theme": "=IFERROR(INDEX(Reference!$H:$H,MATCH(\"Unit Trust|\"&C9&\"|\"&B9,Reference!$A:$A,0)),\"\")",
-        "tax_status": "=IFERROR(INDEX(Reference!$I:$I,MATCH(\"Unit Trust|\"&C9&\"|\"&B9,Reference!$A:$A,0)),\"\")",
+        "asset_class": "Equity",
+        "sub_class": "Emerging Mkt Equity",
+        "geography": "China",
+        "theme": "China Equity",
+        "tax_status": "Taxable",
         "currency": "SGD",
         "quantity": 20.014,
         "avg_cost": 249.8251,
@@ -5294,11 +5294,11 @@
     "by_asset_class": [
       {
         "name": "Equity",
-        "invested": 17037864.008963402,
-        "value": 21266902.366640378,
-        "pnl": 4229038.357676981,
-        "pct": 0.786691886079226,
-        "pnl_pct": 0.2482141162443918
+        "invested": 17881298.05941787,
+        "value": 22678578.942537513,
+        "pnl": 4797280.883119656,
+        "pct": 0.8389117387347973,
+        "pnl_pct": 0.26828482290148864
       },
       {
         "name": "Digital Assets",
@@ -5325,14 +5325,6 @@
         "pnl_pct": 0.01045774872365588
       },
       {
-        "name": "=IFERROR(INDEX(Reference!$E:$E,MATCH(\"Unit Trust|\"&C7&\"|\"&B7,Reference!$A:$A,0)),\"\")",
-        "invested": 127365.0094351992,
-        "value": 557786.92065222,
-        "pnl": 430421.9112170208,
-        "pct": 0.02063330319917854,
-        "pnl_pct": 3.379436103571374
-      },
-      {
         "name": "Alternatives",
         "invested": 500400.0,
         "value": 522024.4480270799,
@@ -5347,38 +5339,6 @@
         "pnl": 173.19051721999975,
         "pct": 0.01731795032505851,
         "pnl_pct": 0.0003700741451837998
-      },
-      {
-        "name": "=IFERROR(INDEX(Reference!$E:$E,MATCH(\"Unit Trust|\"&C5&\"|\"&B5,Reference!$A:$A,0)),\"\")",
-        "invested": 333969.76488204,
-        "value": 277578.94577532,
-        "pnl": -56390.81910671998,
-        "pct": 0.01026802590350004,
-        "pnl_pct": -0.16885007278020372
-      },
-      {
-        "name": "=IFERROR(INDEX(Reference!$E:$E,MATCH(\"Unit Trust|\"&C6&\"|\"&B6,Reference!$A:$A,0)),\"\")",
-        "invested": 127369.23447868197,
-        "value": 274166.83844424004,
-        "pnl": 146797.60396555805,
-        "pct": 0.0101418073736213,
-        "pnl_pct": 1.152535811072397
-      },
-      {
-        "name": "=IFERROR(INDEX(Reference!$E:$E,MATCH(\"Unit Trust|\"&C8&\"|\"&B8,Reference!$A:$A,0)),\"\")",
-        "invested": 127365.05308573198,
-        "value": 188006.125692,
-        "pnl": 60641.07260626802,
-        "pct": 0.006954604439576987,
-        "pnl_pct": 0.4761201847531072
-      },
-      {
-        "name": "=IFERROR(INDEX(Reference!$E:$E,MATCH(\"Unit Trust|\"&C9&\"|\"&B9,Reference!$A:$A,0)),\"\")",
-        "invested": 127364.98857281217,
-        "value": 114137.74533335998,
-        "pnl": -13227.24323945219,
-        "pct": 0.0042221117396946065,
-        "pnl_pct": -0.10385305559769609
       }
     ],
     "by_geography": [
@@ -5408,54 +5368,30 @@
       },
       {
         "name": "Global",
-        "invested": 3959006.1847676225,
-        "value": 4014708.011208712,
-        "pnl": 55701.82644108901,
-        "pct": 0.14850955550298586,
-        "pnl_pct": 0.014069648755640547
+        "invested": 4420340.959084862,
+        "value": 4850073.877636252,
+        "pnl": 429732.9185513898,
+        "pct": 0.17941088460566443,
+        "pnl_pct": 0.09721714286953034
       },
       {
         "name": "Vietnam",
-        "invested": 1215500.0,
-        "value": 1306914.7381851997,
-        "pnl": 91414.73818520001,
-        "pct": 0.04834456859784193,
-        "pnl_pct": 0.07520751804623613
+        "invested": 1342869.234478682,
+        "value": 1581081.5766294398,
+        "pnl": 238212.34215075808,
+        "pct": 0.058486375971463236,
+        "pnl_pct": 0.1773905723912388
       },
       {
         "name": "China",
-        "invested": 1320000.0,
-        "value": 923367.5510612,
-        "pnl": -396632.4489388,
-        "pct": 0.03415663211150787,
-        "pnl_pct": -0.3004791279839394
+        "invested": 1447364.9885728122,
+        "value": 1037505.29639456,
+        "pnl": -409859.6921782522,
+        "pct": 0.038378743851202476,
+        "pnl_pct": -0.28317645888505166
       },
       {
-        "name": "=IFERROR(INDEX(Reference!$G:$G,MATCH(\"Unit Trust|\"&C7&\"|\"&B7,Reference!$A:$A,0)),\"\")",
-        "invested": 127365.0094351992,
-        "value": 557786.92065222,
-        "pnl": 430421.9112170208,
-        "pct": 0.02063330319917854,
-        "pnl_pct": 3.379436103571374
-      },
-      {
-        "name": "=IFERROR(INDEX(Reference!$G:$G,MATCH(\"Unit Trust|\"&C5&\"|\"&B5,Reference!$A:$A,0)),\"\")",
-        "invested": 333969.76488204,
-        "value": 277578.94577532,
-        "pnl": -56390.81910671998,
-        "pct": 0.01026802590350004,
-        "pnl_pct": -0.16885007278020372
-      },
-      {
-        "name": "=IFERROR(INDEX(Reference!$G:$G,MATCH(\"Unit Trust|\"&C6&\"|\"&B6,Reference!$A:$A,0)),\"\")",
-        "invested": 127369.23447868197,
-        "value": 274166.83844424004,
-        "pnl": 146797.60396555805,
-        "pct": 0.0101418073736213,
-        "pnl_pct": 1.152535811072397
-      },
-      {
-        "name": "=IFERROR(INDEX(Reference!$G:$G,MATCH(\"Unit Trust|\"&C8&\"|\"&B8,Reference!$A:$A,0)),\"\")",
+        "name": "Asian",
         "invested": 127365.05308573198,
         "value": 188006.125692,
         "pnl": 60641.07260626802,
@@ -5471,14 +5407,6 @@
         "pnl_pct": 0.30615308511359995
       },
       {
-        "name": "=IFERROR(INDEX(Reference!$G:$G,MATCH(\"Unit Trust|\"&C9&\"|\"&B9,Reference!$A:$A,0)),\"\")",
-        "invested": 127364.98857281217,
-        "value": 114137.74533335998,
-        "pnl": -13227.24323945219,
-        "pct": 0.0042221117396946065,
-        "pnl_pct": -0.10385305559769609
-      },
-      {
         "name": "Europe",
         "invested": 100000.0,
         "value": 70803.95054648,
@@ -5490,11 +5418,11 @@
     "by_tax_status": [
       {
         "name": "Taxable",
-        "invested": 13339859.681331025,
-        "value": 15125621.562210722,
-        "pnl": 1785761.8808797006,
-        "pct": 0.5595174863623512,
-        "pnl_pct": 0.1338666165566084
+        "invested": 14183293.73178549,
+        "value": 16537298.138107864,
+        "pnl": 2354004.4063223754,
+        "pct": 0.6117373390179228,
+        "pnl_pct": 0.16597022178613777
       },
       {
         "name": "RMF",
@@ -5527,46 +5455,6 @@
         "pnl": 138386.73908923002,
         "pct": 0.023614801025741015,
         "pnl_pct": 0.27677347817846004
-      },
-      {
-        "name": "=IFERROR(INDEX(Reference!$I:$I,MATCH(\"Unit Trust|\"&C7&\"|\"&B7,Reference!$A:$A,0)),\"\")",
-        "invested": 127365.0094351992,
-        "value": 557786.92065222,
-        "pnl": 430421.9112170208,
-        "pct": 0.02063330319917854,
-        "pnl_pct": 3.379436103571374
-      },
-      {
-        "name": "=IFERROR(INDEX(Reference!$I:$I,MATCH(\"Unit Trust|\"&C5&\"|\"&B5,Reference!$A:$A,0)),\"\")",
-        "invested": 333969.76488204,
-        "value": 277578.94577532,
-        "pnl": -56390.81910671998,
-        "pct": 0.01026802590350004,
-        "pnl_pct": -0.16885007278020372
-      },
-      {
-        "name": "=IFERROR(INDEX(Reference!$I:$I,MATCH(\"Unit Trust|\"&C6&\"|\"&B6,Reference!$A:$A,0)),\"\")",
-        "invested": 127369.23447868197,
-        "value": 274166.83844424004,
-        "pnl": 146797.60396555805,
-        "pct": 0.0101418073736213,
-        "pnl_pct": 1.152535811072397
-      },
-      {
-        "name": "=IFERROR(INDEX(Reference!$I:$I,MATCH(\"Unit Trust|\"&C8&\"|\"&B8,Reference!$A:$A,0)),\"\")",
-        "invested": 127365.05308573198,
-        "value": 188006.125692,
-        "pnl": 60641.07260626802,
-        "pct": 0.006954604439576987,
-        "pnl_pct": 0.4761201847531072
-      },
-      {
-        "name": "=IFERROR(INDEX(Reference!$I:$I,MATCH(\"Unit Trust|\"&C9&\"|\"&B9,Reference!$A:$A,0)),\"\")",
-        "invested": 127364.98857281217,
-        "value": 114137.74533335998,
-        "pnl": -13227.24323945219,
-        "pct": 0.0042221117396946065,
-        "pnl_pct": -0.10385305559769609
       }
     ],
     "by_theme": [
@@ -5612,11 +5500,11 @@
       },
       {
         "name": "Vietnam Equity",
-        "invested": 1215500.0,
-        "value": 1306914.7381851997,
-        "pnl": 91414.73818520001,
-        "pct": 0.04834456859784193,
-        "pnl_pct": 0.07520751804623613
+        "invested": 1342869.234478682,
+        "value": 1581081.5766294398,
+        "pnl": 238212.34215075808,
+        "pct": 0.058486375971463236,
+        "pnl_pct": 0.1773905723912388
       },
       {
         "name": "Thai Single Stock",
@@ -5643,6 +5531,14 @@
         "pnl_pct": -0.06941300265561544
       },
       {
+        "name": "China Equity",
+        "invested": 1447364.9885728122,
+        "value": 1037505.29639456,
+        "pnl": -409859.6921782522,
+        "pct": 0.038378743851202476,
+        "pnl_pct": -0.28317645888505166
+      },
+      {
         "name": "TH Gov Bond",
         "invested": 930000.0,
         "value": 939725.706313,
@@ -5651,15 +5547,7 @@
         "pnl_pct": 0.01045774872365588
       },
       {
-        "name": "China Equity",
-        "invested": 1320000.0,
-        "value": 923367.5510612,
-        "pnl": -396632.4489388,
-        "pct": 0.03415663211150787,
-        "pnl_pct": -0.3004791279839394
-      },
-      {
-        "name": "=IFERROR(INDEX(Reference!$H:$H,MATCH(\"Unit Trust|\"&C7&\"|\"&B7,Reference!$A:$A,0)),\"\")",
+        "name": "Global Technology",
         "invested": 127365.0094351992,
         "value": 557786.92065222,
         "pnl": 430421.9112170208,
@@ -5691,20 +5579,12 @@
         "pnl_pct": 0.16600230789576564
       },
       {
-        "name": "=IFERROR(INDEX(Reference!$H:$H,MATCH(\"Unit Trust|\"&C5&\"|\"&B5,Reference!$A:$A,0)),\"\")",
+        "name": "Global Property",
         "invested": 333969.76488204,
         "value": 277578.94577532,
         "pnl": -56390.81910671998,
         "pct": 0.01026802590350004,
         "pnl_pct": -0.16885007278020372
-      },
-      {
-        "name": "=IFERROR(INDEX(Reference!$H:$H,MATCH(\"Unit Trust|\"&C6&\"|\"&B6,Reference!$A:$A,0)),\"\")",
-        "invested": 127369.23447868197,
-        "value": 274166.83844424004,
-        "pnl": 146797.60396555805,
-        "pct": 0.0101418073736213,
-        "pnl_pct": 1.152535811072397
       },
       {
         "name": "AI / Innovation",
@@ -5723,7 +5603,7 @@
         "pnl_pct": -0.3495518522845198
       },
       {
-        "name": "=IFERROR(INDEX(Reference!$H:$H,MATCH(\"Unit Trust|\"&C8&\"|\"&B8,Reference!$A:$A,0)),\"\")",
+        "name": "Asian Equity",
         "invested": 127365.05308573198,
         "value": 188006.125692,
         "pnl": 60641.07260626802,
@@ -5753,14 +5633,6 @@
         "pnl": -543129.0469498942,
         "pct": 0.004423079328773726,
         "pnl_pct": -0.8195704872727888
-      },
-      {
-        "name": "=IFERROR(INDEX(Reference!$H:$H,MATCH(\"Unit Trust|\"&C9&\"|\"&B9,Reference!$A:$A,0)),\"\")",
-        "invested": 127364.98857281217,
-        "value": 114137.74533335998,
-        "pnl": -13227.24323945219,
-        "pct": 0.0042221117396946065,
-        "pnl_pct": -0.10385305559769609
       },
       {
         "name": "Europe Equity",
@@ -5952,5 +5824,5 @@
       "fx_rate": 32.54
     }
   ],
-  "generated_at": "2026-06-01 10:23"
+  "generated_at": "2026-06-01 11:01"
 }

@@ -297,17 +297,19 @@ def load_portfolio(path: Path | str = WORKBOOK_DEFAULT) -> Portfolio:
                 continue
             units = _num(uws.cell(r, 8).value)      # H
             avg_cost = _num(uws.cell(r, 9).value)   # I (SGD)
-            # NAV (SGD) comes from the Prices sheet (the J column is an INDEX/MATCH
-            # formula pulling the same value), keyed Unit Trust|fund|platform.
+            # NAV (SGD) from the Prices sheet and classification from the Reference
+            # sheet — the D/E/F/G and J columns are INDEX/MATCH formulas pulling
+            # these same values, keyed Unit Trust|fund|platform.
             nav, nav_asof, nav_stale = lookup_price("Unit Trust", fund, platform)
+            meta = lookup_ref("Unit Trust", fund, platform)
             fxm = sgd_rate
             invested = units * avg_cost * fxm
             value = units * nav * fxm
             holdings.append(Holding(
                 asset_type="Unit Trust", name=fund, custodian=platform or "",
-                asset_class=uws.cell(r, 4).value or "", sub_class="",
-                geography=uws.cell(r, 6).value or "", theme=uws.cell(r, 5).value or "",
-                tax_status=uws.cell(r, 7).value or "Taxable", currency="SGD",
+                asset_class=meta.get("asset_class", ""), sub_class=meta.get("sub_class", ""),
+                geography=meta.get("geography", ""), theme=meta.get("theme", ""),
+                tax_status=meta.get("tax_status", "Taxable"), currency="SGD",
                 quantity=units, avg_cost=avg_cost, price=nav, fx=fxm,
                 invested_thb=invested, value_thb=value, pnl_thb=value - invested,
                 pnl_pct=((value - invested) / invested) if invested else 0.0,
