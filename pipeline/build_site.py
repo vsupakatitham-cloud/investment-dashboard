@@ -161,6 +161,9 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   table{width:100%;border-collapse:collapse}
   th,td{text-align:right;padding:9px 10px;font-size:12.5px;white-space:nowrap}
   th:first-child,td:first-child{text-align:left}
+  /* Holding/lot name: fixed ~34ch column so names wrap to a 2nd line only past
+     ~34 chars (~95% stay 1-line) and don't get squeezed narrower on mobile */
+  #holdTable td:first-child,#taxLots td:first-child{white-space:normal;min-width:34ch;max-width:34ch;line-height:1.32}
   thead th{font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600;
     border-bottom:1px solid var(--border-2);cursor:pointer;user-select:none}
   tbody td{border-bottom:1px solid var(--border)}
