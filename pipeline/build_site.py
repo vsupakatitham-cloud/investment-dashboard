@@ -164,6 +164,9 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   /* Holding/lot name: fixed ~34ch column so names wrap to a 2nd line only past
      ~34 chars (~95% stay 1-line) and don't get squeezed narrower on mobile */
   #holdTable td:first-child,#taxLots td:first-child{white-space:normal;min-width:34ch;max-width:34ch;line-height:1.32}
+  /* Long names elsewhere wrap instead of overflowing (top movers / largest / concentration) */
+  #ovHold td:first-child{white-space:normal;overflow-wrap:anywhere;line-height:1.3;max-width:26ch}
+  .conc .nm{overflow-wrap:anywhere;line-height:1.25}
   thead th{font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600;
     border-bottom:1px solid var(--border-2);cursor:pointer;user-select:none}
   tbody td{border-bottom:1px solid var(--border)}
@@ -449,9 +452,9 @@ function boot(PAYLOAD){
   const mv=POOL.filter(h=>h.val>50000);
   const up3=[...mv].sort((a,b)=>b.pnlpct-a.pnlpct).slice(0,3);
   const dn3=[...mv].sort((a,b)=>a.pnlpct-b.pnlpct).slice(0,3);
-  const mrow=h=>`<div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border)">
-    <div><span class="name">${h.name}</span> <span class="sub">${h.type}</span></div>
-    <div class="num ${h.pnl>=0?'pos':'neg'}">${sg(h.pnlpct)}${pc(h.pnlpct)}</div></div>`;
+  const mrow=h=>`<div style="display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid var(--border)">
+    <div style="min-width:0"><span class="name" style="white-space:normal;overflow-wrap:anywhere">${h.name}</span> <span class="sub">${h.type}</span></div>
+    <div class="num ${h.pnl>=0?'pos':'neg'}" style="white-space:nowrap;flex-shrink:0">${sg(h.pnlpct)}${pc(h.pnlpct)}</div></div>`;
   document.getElementById("movers").innerHTML=
     `<div class="mini" style="margin:2px 0 4px">Gainers</div>${up3.map(mrow).join("")}
      <div class="mini" style="margin:12px 0 4px">Laggards</div>${dn3.map(mrow).join("")}`;
