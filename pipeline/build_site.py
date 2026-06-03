@@ -427,7 +427,10 @@ function boot(PAYLOAD){
   document.getElementById("logo").textContent=(CFG.logo_text||firm.split(/\s+/).map(w=>w[0]).join("")).slice(0,2).toUpperCase();
   document.getElementById("client").textContent=CFG.client_name||"Private Client Portfolio";
   document.getElementById("ref").textContent=CFG.client_ref||"";
-  document.getElementById("asof").textContent=P.as_of;
+  // as-of date + the time the data was last refreshed (from generated_at)
+  const _gen=(PAYLOAD.generated_at||"").trim().split(/\s+/);
+  const _genTime=_gen.length>=2?_gen.slice(1).join(" "):"";
+  document.getElementById("asof").innerHTML=P.as_of+(_genTime?` <span style="color:var(--muted);font-weight:500">${_genTime}</span>`:"");
   document.getElementById("fx").textContent=P.fx_rate;
   document.title=(CFG.report_title||"Private Banking Summary");
   document.getElementById("foot").innerHTML=
