@@ -86,7 +86,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     --r:10px; --shadow:0 1px 2px rgba(16,24,32,.04),0 1px 1px rgba(16,24,32,.03);
   }
   *{box-sizing:border-box}
-  html,body{margin:0}
+  html,body{margin:0;-webkit-text-size-adjust:100%;text-size-adjust:100%}
   body{font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
        background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;font-size:14px;line-height:1.45;overflow-x:hidden}
   .num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
