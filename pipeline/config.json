@@ -10,6 +10,8 @@
   "benchmark": {"name": "MSCI ACWI (THB)", "symbol": "ACWI", "fx_symbol": "THB=X"},
   "annual_fee_pct": 0.0,
   "risk_free_pct": 2.0,
+  "tax_inception_date": "2026-05-01",
+  "tax_advantaged_wrappers": ["RMF", "SSF", "Thai ESG", "LTF"],
   "schedule_text": "Updated automatically every Saturday 09:00 (Bangkok time)",
   "accent": "#0b3d2e",
   "accent_soft": "#15634a",

@@ -98,6 +98,8 @@ class Holding:
     lots: int = 1
     price_asof: str = ""
     price_stale: bool = False
+    sellable_year: str = ""        # Thai wrapper maturity (MF lots); "" / "N/A" = none
+    purchase_date: str = ""        # real purchase date where the workbook has one
 
 
 @dataclass
@@ -220,6 +222,9 @@ def load_portfolio(path: Path | str = WORKBOOK_DEFAULT) -> Portfolio:
         nav, asof, stale = lookup_price("Mutual Fund", fund, amc)
         meta = lookup_ref("Mutual Fund", fund, amc)
         value = units * nav
+        pdate = mws.cell(r, 8).value                # H Purchase Date
+        if isinstance(pdate, _dt.datetime):
+            pdate = pdate.date().isoformat()
         holdings.append(Holding(
             asset_type="MF", name=fund, custodian=amc or "",
             asset_class=meta.get("asset_class", ""), sub_class=meta.get("sub_class", ""),
@@ -229,6 +234,8 @@ def load_portfolio(path: Path | str = WORKBOOK_DEFAULT) -> Portfolio:
             invested_thb=invested, value_thb=value, pnl_thb=value - invested,
             pnl_pct=((value - invested) / invested) if invested else 0.0,
             price_asof=asof, price_stale=stale,
+            sellable_year=str(mws.cell(r, 10).value or ""),   # J Sellable Year
+            purchase_date=str(pdate or ""),
         ))
 
     # --- Equity lots ------------------------------------------------------

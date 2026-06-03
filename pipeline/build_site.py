@@ -70,8 +70,14 @@ def build(workbook=WORKBOOK_DEFAULT, generated_at=None):
     except Exception as e:  # never let perf break the core dashboard
         perf = {"error": str(e), "history_points": len(history)}
 
+    try:
+        import tax as _tax
+        taxobj = _tax.compute(p, wb)
+    except Exception as e:
+        taxobj = {"error": str(e)}
+
     payload = {"config": cfg, "portfolio": p, "history": history,
-               "performance": perf, "generated_at": generated_at}
+               "performance": perf, "tax": taxobj, "generated_at": generated_at}
     (DOCS / "data.json").write_text(json.dumps(payload, indent=2, default=str))
 
     html = HTML_TEMPLATE.replace("/*__DATA__*/null", json.dumps(payload, default=str))
@@ -315,6 +321,32 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       <div class="legend" id="riskLegend"></div>
     </div>
   </section>
+
+  <section data-tab="Tax &amp; Lots" hidden>
+    <div class="row g6" style="margin-bottom:16px" id="taxStats"></div>
+    <div class="row g155" style="margin-bottom:16px">
+      <div class="card pad">
+        <div class="head"><h3>Lock-up &amp; Maturity Schedule</h3><span class="mini">฿ unlocking by year (RMF / SSF / Thai ESG / LTF)</span></div>
+        <div class="chartbox" style="height:240px"><canvas id="taxMaturity"></canvas></div>
+        <div class="note" id="taxAvailNote"></div>
+      </div>
+      <div class="card pad">
+        <div class="head"><h3>By Tax Wrapper</h3></div>
+        <div class="scroll"><table id="taxWrapper"></table></div>
+      </div>
+    </div>
+    <div class="card pad">
+      <div class="head"><h3>Lots</h3>
+        <div class="toolbar" style="margin:0">
+          <input class="search" id="taxSearch" placeholder="Search lots…" style="min-width:150px"/>
+          <div class="seg" id="taxSeg"></div>
+          <span class="mini" id="taxCount"></span>
+        </div>
+      </div>
+      <div class="scroll"><table id="taxLots"></table></div>
+    </div>
+    <div class="note" id="taxNote"></div>
+  </section>
 </div>
 
 <footer id="foot"></footer>
@@ -335,7 +367,7 @@ function boot(PAYLOAD){
   const HIST=(PAYLOAD.history||[]).slice().sort((a,b)=>a.date<b.date?-1:1);
   const hasHist=HIST.length>=2;
   const H={labels:HIST.map(h=>md(h.date)),value:HIST.map(h=>h.total_value),invested:HIST.map(h=>h.total_invested)};
-  const TABS=["Overview","Allocation","Holdings","Performance","Risk"];
+  const TABS=["Overview","Allocation","Holdings","Performance","Risk","Tax & Lots"];
 
   if(CFG.accent)document.documentElement.style.setProperty("--accent",CFG.accent);
   if(CFG.accent_soft)document.documentElement.style.setProperty("--accent-2",CFG.accent_soft);
@@ -600,6 +632,61 @@ function boot(PAYLOAD){
     if(tab==="Holdings"&&!drawn.ho){renderHold();drawn.ho=1;}
     if(tab==="Performance"&&!drawn.pe){perfCharts();drawn.pe=1;}
     if(tab==="Risk"&&!drawn.ri){riskViews();drawn.ri=1;}
+    if(tab==="Tax & Lots"&&!drawn.tx){renderTax();drawn.tx=1;}
+  }
+
+  function renderTax(){
+    const T=PAYLOAD.tax||{}; if(T.error||!T.totals){document.getElementById('taxNote').textContent='Tax view unavailable.';return;}
+    const tt=T.totals;
+    const tiles=[
+      ['Unrealized Gain/Loss',sg(tt.unrealized)+f0(tt.unrealized),sg(tt.unrealized_pct)+pc(tt.unrealized_pct)+' on cost',tt.unrealized>=0?'pos':'neg'],
+      ['Realized YTD',tt.realized_count?sg(tt.realized_ytd)+f0(tt.realized_ytd):'฿0',tt.realized_count?tt.realized_count+' disposal(s)':'no disposals logged',tt.realized_ytd>=0?'':'neg'],
+      ['Tax-Advantaged',f0(tt.tax_adv_value),pc(tt.tax_adv_pct)+' of portfolio',''],
+      ['Locked (in wrappers)',f0(tt.locked_value),'until maturity','neg'],
+      ['Available Now',f0(tt.available_value),'liquid / matured','pos'],
+      ['Cost Basis',f0(tt.cost),'total invested',''],
+    ];
+    document.getElementById('taxStats').innerHTML=tiles.map(t=>`<div class="card stat"><div class="k">${t[0]}</div><div class="v num ${t[3]}">${t[1]}</div><div class="d">${t[2]}</div></div>`).join('');
+
+    // maturity bar
+    const mat=T.maturity||[];
+    if(charts.taxMaturity)charts.taxMaturity.destroy();
+    if(mat.length){
+      charts.taxMaturity=new Chart(document.getElementById('taxMaturity'),{type:'bar',
+        data:{labels:mat.map(m=>m.year),datasets:[{data:mat.map(m=>m.value),backgroundColor:'#15634a'}]},
+        options:{plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' '+f0(c.parsed)}}},
+          scales:{y:{grid:{color:'#eef0f2'},ticks:{font:{size:11},color:'#69727b',callback:v=>'฿'+(v/1e6).toFixed(1)+'M'}},x:{grid:{display:false},ticks:{font:{size:11},color:'#69727b'}}}}});
+    } else { document.getElementById('taxMaturity').parentElement.innerHTML='<div style="text-align:center;color:var(--faint);font-size:12px;padding-top:60px">No locked wrapper holdings</div>'; }
+    document.getElementById('taxAvailNote').textContent='Available now in wrappers (matured, e.g. LTF): '+f0(tt.available_in_wrapper)+'.';
+
+    // by wrapper table
+    document.getElementById('taxWrapper').innerHTML='<thead><tr><th>Wrapper</th><th>Value</th><th>Wt</th><th>Unrealized</th><th>Locked</th><th>Next</th></tr></thead><tbody>'+
+      (T.by_wrapper||[]).map(w=>`<tr><td class="name">${w.wrapper}${w.advantaged?' <span class="chip">tax</span>':''}</td>
+        <td class="num">${f0(w.value)}</td><td class="num">${pc(w.pct)}</td>
+        <td class="num ${w.unrealized>=0?'pos':'neg'}">${sg(w.unrealized)}${f0(w.unrealized)}</td>
+        <td class="num">${w.locked?f0(w.locked):'—'}</td><td class="num">${w.next_unlock||'—'}</td></tr>`).join('')+'</tbody>';
+
+    // lots table
+    let tq='',tf='All';
+    const seg=document.getElementById('taxSeg');
+    const wrappers=['All',...[...new Set((T.lots||[]).map(l=>l.wrapper))]];
+    seg.innerHTML=wrappers.map((w,i)=>`<button class="${i?'':'active'}" data-w="${w}">${w}</button>`).join('');
+    function renderLots(){
+      let rows=(T.lots||[]).filter(l=>(tf==='All'||l.wrapper===tf)&&(!tq||(l.name+' '+l.wrapper+' '+l.type).toLowerCase().includes(tq)));
+      document.getElementById('taxCount').textContent=rows.length+' of '+(T.lots||[]).length+' lots';
+      document.getElementById('taxLots').innerHTML='<thead><tr><th>Holding</th><th>Wrapper</th><th>Acq.</th><th>Held</th><th>Cost</th><th>Value</th><th>Unrealized</th><th>%</th><th>Sellable</th><th>Status</th></tr></thead><tbody>'+
+        rows.map(l=>`<tr><td><span class="name">${l.name}</span> <span class="sub">${l.type}</span></td>
+          <td class="sub">${l.wrapper}</td><td class="sub">${l.acq_date}</td><td class="num sub">${(l.holding_days/30.44).toFixed(1)}mo</td>
+          <td class="num">${f0(l.cost)}</td><td class="num">${f0(l.value)}</td>
+          <td class="num ${l.unrealized>=0?'pos':'neg'}">${sg(l.unrealized)}${f0(l.unrealized)}</td>
+          <td class="num ${l.unrealized>=0?'pos':'neg'}">${sg(l.unrealized_pct)}${pc(l.unrealized_pct)}</td>
+          <td class="num sub">${l.sellable_year||'—'}</td>
+          <td><span class="chip" style="${l.status==='Locked'?'color:var(--neg);border-color:#f0cfcb;background:var(--neg-bg)':'color:var(--pos);border-color:#bfe0cd;background:var(--pos-bg)'}">${l.status}</span></td></tr>`).join('')+'</tbody>';
+    }
+    seg.onclick=e=>{if(e.target.tagName!=='BUTTON')return;[...seg.children].forEach(b=>b.classList.remove('active'));e.target.classList.add('active');tf=e.target.dataset.w;renderLots();};
+    document.getElementById('taxSearch').oninput=e=>{tq=e.target.value.toLowerCase();renderLots();};
+    renderLots();
+    document.getElementById('taxNote').innerHTML='Holding periods run from '+T.inception+' (assumed acquisition for all lots). Lock-up maturity uses each fund’s actual Sellable Year. Realized gains populate from the Realized sheet. Not tax advice.';
   }
   draw("Overview");
 }
