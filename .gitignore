@@ -18,3 +18,7 @@ investment-dashboard/
 *.rtf
 *token*
 *secret*
+
+# but DO track PWA app icons
+!docs/icon-*.png
+!docs/apple-touch-icon.png

@@ -89,8 +89,14 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <title>Private Banking Summary</title>
+<meta name="theme-color" content="#0b3d2e"/>
+<link rel="manifest" href="manifest.webmanifest"/>
+<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="TH Wealth"/>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
   :root{
@@ -130,6 +136,39 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     padding:13px 14px 11px;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;font-weight:550}
   .tab:hover{color:var(--ink)}
   .tab.active{color:var(--accent);border-bottom-color:var(--accent);font-weight:640}
+
+  /* mobile bottom navigation (thumb-reachable) */
+  .bottomnav{display:none}
+  .cardlist{display:none}
+  @media(max-width:640px){
+    .tabs{display:none}
+    .bottomnav{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;
+      background:rgba(255,255,255,.97);backdrop-filter:saturate(1.4) blur(12px);
+      border-top:1px solid var(--border);padding-bottom:env(safe-area-inset-bottom)}
+    .bottomnav button{flex:1;border:0;background:none;font:inherit;cursor:pointer;color:var(--muted);
+      display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 1px 7px;
+      font-size:9.5px;font-weight:600;letter-spacing:.01em;-webkit-tap-highlight-color:transparent}
+    .bottomnav button.active{color:var(--accent)}
+    .bottomnav svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .bottomnav button.active svg{stroke-width:2.2}
+    .wrap{padding-bottom:74px}
+    /* swap wide scroll-tables for tappable cards on Holdings & Tax */
+    .tablewrap{display:none}
+    .cardlist{display:block}
+  }
+  .lcard{padding:12px 2px;border-bottom:1px solid var(--border);cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .lcard-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+  .lcard-nm{font-weight:600;font-size:14px;min-width:0;overflow-wrap:anywhere;line-height:1.25}
+  .lcard-nm .sub{font-weight:400}
+  .lcard-rt{text-align:right;white-space:nowrap;flex-shrink:0}
+  .lcard-rt .v{font-size:13.5px;font-weight:600}
+  .lcard-rt .r{font-size:12px;font-weight:600;display:block;margin-top:1px}
+  .lcard-more{display:none;margin-top:10px;grid-template-columns:1fr 1fr;gap:6px 14px;font-size:11.5px;color:var(--muted)}
+  .lcard.open .lcard-more{display:grid}
+  .lcard-more div{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dotted var(--border);padding-bottom:3px}
+  .lcard-more b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+  .lcard .caret{color:var(--faint);font-size:10px;margin-left:6px;display:inline-block;transition:transform .15s}
+  .lcard.open .caret{transform:rotate(180deg)}
 
   .wrap{max-width:1240px;margin:0 auto;padding:22px}
   section[hidden]{display:none}
@@ -276,7 +315,8 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
         <div class="seg" id="typeSeg"></div>
         <span class="mini" id="holdCount"></span>
       </div>
-      <div class="scroll"><table id="holdTable"></table></div>
+      <div class="scroll tablewrap"><table id="holdTable"></table></div>
+      <div class="cardlist" id="holdCards"></div>
     </div>
   </section>
 
@@ -349,12 +389,14 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
           <span class="mini" id="taxCount"></span>
         </div>
       </div>
-      <div class="scroll"><table id="taxLots"></table></div>
+      <div class="scroll tablewrap"><table id="taxLots"></table></div>
+      <div class="cardlist" id="taxCards"></div>
     </div>
     <div class="note" id="taxNote"></div>
   </section>
 </div>
 
+<nav class="bottomnav" id="bottomnav"></nav>
 <footer id="foot"></footer>
 
 <script>
@@ -401,13 +443,33 @@ function boot(PAYLOAD){
   const POOL=Object.values(pool).map(h=>({...h,pnl:h.val-h.inv,pnlpct:h.inv?(h.val-h.inv)/h.inv:0,wt:P.total_value?h.val/P.total_value:0}))
     .sort((a,b)=>b.val-a.val);
 
-  // tabs
+  // tabs — top bar (desktop) + bottom nav (mobile), both drive selectTab()
   const nav=document.getElementById("tabnav");nav.innerHTML="";
+  const bnav=document.getElementById("bottomnav");bnav.innerHTML="";
   const drawn={};
-  TABS.forEach((t,i)=>{const b=document.createElement("button");b.className="tab"+(i?"":" active");b.textContent=t;
-    b.onclick=()=>{document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));b.classList.add("active");
-      document.querySelectorAll("section[data-tab]").forEach(s=>s.hidden=s.dataset.tab!==t);window.scrollTo(0,0);draw(t);};
-    nav.appendChild(b);});
+  const ICONS={
+    "Overview":'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>',
+    "Allocation":'<circle cx="12" cy="12" r="9"/><path d="M12 12V3"/><path d="M12 12l7.5 5"/>',
+    "Holdings":'<line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><circle cx="3.6" cy="6" r="1"/><circle cx="3.6" cy="12" r="1"/><circle cx="3.6" cy="18" r="1"/>',
+    "Performance":'<path d="M3 17l5-6 4 3 6-9"/><path d="M3 21h18"/>',
+    "Risk":'<path d="M12 3l8 3v6c0 5-3.6 8-8 9-4.4-1-8-4-8-9V6z"/>',
+    "Tax & Lots":'<path d="M6 3h9l4 4v14H6z"/><path d="M9 10h6M9 14h6M9 18h4"/>'
+  };
+  const BLABEL={"Overview":"Overview","Allocation":"Alloc.","Holdings":"Holdings","Performance":"Perf.","Risk":"Risk","Tax & Lots":"Tax"};
+  function selectTab(t){
+    document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("active",x.dataset.t===t));
+    document.querySelectorAll(".bottomnav button").forEach(x=>x.classList.toggle("active",x.dataset.t===t));
+    document.querySelectorAll("section[data-tab]").forEach(s=>s.hidden=s.dataset.tab!==t);
+    window.scrollTo(0,0);draw(t);
+  }
+  TABS.forEach((t,i)=>{
+    const b=document.createElement("button");b.className="tab"+(i?"":" active");b.textContent=t;b.dataset.t=t;b.onclick=()=>selectTab(t);nav.appendChild(b);
+    const bb=document.createElement("button");bb.className=i?"":"active";bb.dataset.t=t;
+    bb.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'+ICONS[t]+'</svg><span>'+BLABEL[t]+'</span>';
+    bb.onclick=()=>selectTab(t);bnav.appendChild(bb);
+  });
+  // tap a mobile holding/lot card to expand its detail
+  document.addEventListener("click",e=>{const c=e.target.closest(".lcard");if(c)c.classList.toggle("open");});
 
   // KPIs
   // true week-over-week: change vs the snapshot ~7 calendar days ago
@@ -512,6 +574,16 @@ function boot(PAYLOAD){
         <td class="num ${h.pnl>=0?'pos':'neg'}">${sg(h.pnlpct)}${pc(h.pnlpct)}</td></tr>`).join("")+`</tbody>`;
     document.querySelectorAll("#holdTable th").forEach(t=>t.onclick=()=>{const k=t.dataset.k;
       if(hsort.k===k)hsort.dir*=-1;else{hsort.k=k;hsort.dir=-1;}renderHold();});
+    // mobile cards
+    document.getElementById("holdCards").innerHTML=rows.map(h=>{const c=h.pnl>=0?'pos':'neg';return `<div class="lcard">
+      <div class="lcard-top"><div class="lcard-nm">${h.name} <span class="chip">${h.type}</span><span class="caret">▾</span></div>
+        <div class="lcard-rt"><span class="v num">${f0(h.val)}</span><span class="r ${c}">${sg(h.pnlpct)}${pc(h.pnlpct)}</span></div></div>
+      <div class="lcard-more">
+        <div><span>Class</span><b>${h.ac||'—'}</b></div><div><span>Geography</span><b>${h.geo||'—'}</b></div>
+        <div><span>Units</span><b>${h.qty.toLocaleString("en-US",{maximumFractionDigits:3})}</b></div>
+        <div><span>Price</span><b>${h.price.toLocaleString("en-US",{maximumFractionDigits:2})}</b></div>
+        <div><span>Invested</span><b>${f0(h.inv)}</b></div><div><span>Weight</span><b>${pc(h.wt)}</b></div>
+        <div><span>P&L</span><b class="${c}">${sg(h.pnl)}${f0(h.pnl)}</b></div></div></div>`;}).join("");
   }
 
   // performance
@@ -693,6 +765,17 @@ function boot(PAYLOAD){
           <td class="num ${l.unrealized>=0?'pos':'neg'}">${sg(l.unrealized_pct)}${pc(l.unrealized_pct)}</td>
           <td class="num sub">${l.sellable_year||'—'}</td>
           <td><span class="chip" style="${l.status==='Locked'?'color:var(--neg);border-color:#f0cfcb;background:var(--neg-bg)':'color:var(--pos);border-color:#bfe0cd;background:var(--pos-bg)'}">${l.status}</span></td></tr>`).join('')+'</tbody>';
+      // mobile cards
+      document.getElementById('taxCards').innerHTML=rows.map(l=>{const c=l.unrealized>=0?'pos':'neg';
+        const stc=l.status==='Locked'?'color:var(--neg);border-color:#f0cfcb;background:var(--neg-bg)':'color:var(--pos);border-color:#bfe0cd;background:var(--pos-bg)';
+        return `<div class="lcard"><div class="lcard-top">
+          <div class="lcard-nm">${l.name} <span class="chip" style="${stc}">${l.status}</span><span class="caret">▾</span></div>
+          <div class="lcard-rt"><span class="v num">${f0(l.value)}</span><span class="r ${c}">${sg(l.unrealized_pct)}${pc(l.unrealized_pct)}</span></div></div>
+        <div class="lcard-more">
+          <div><span>Wrapper</span><b>${l.wrapper}</b></div><div><span>Type</span><b>${l.type}</b></div>
+          <div><span>Acquired</span><b>${l.acq_date}</b></div><div><span>Held</span><b>${(l.holding_days/30.44).toFixed(1)}mo</b></div>
+          <div><span>Cost</span><b>${f0(l.cost)}</b></div><div><span>Unrealized</span><b class="${c}">${sg(l.unrealized)}${f0(l.unrealized)}</b></div>
+          <div><span>Sellable</span><b>${l.sellable_year||'—'}</b></div></div></div>`;}).join('');
     }
     seg.onclick=e=>{if(e.target.tagName!=='BUTTON')return;[...seg.children].forEach(b=>b.classList.remove('active'));e.target.classList.add('active');tf=e.target.dataset.w;renderLots();};
     document.getElementById('taxSearch').oninput=e=>{tq=e.target.value.toLowerCase();renderLots();};
@@ -703,6 +786,9 @@ function boot(PAYLOAD){
 }
 
 fetch('data.json',{cache:'no-store'}).then(r=>r.ok?r.json():Promise.reject()).then(boot).catch(()=>{ if(EMBEDDED) boot(EMBEDDED); });
+
+// PWA: register the offline service worker (https / localhost only)
+if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('sw.js').catch(()=>{});});}
 </script>
 </body>
 </html>
