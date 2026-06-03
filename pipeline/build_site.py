@@ -60,7 +60,18 @@ def build(workbook=WORKBOOK_DEFAULT, generated_at=None):
     history = update_history(p, p["as_of"])
 
     generated_at = generated_at or _dt.datetime.now().strftime("%Y-%m-%d %H:%M")
-    payload = {"config": cfg, "portfolio": p, "history": history, "generated_at": generated_at}
+
+    # institutional performance metrics (benchmark-relative, TWR/IRR, risk stats)
+    try:
+        import openpyxl
+        import performance
+        wb = openpyxl.load_workbook(workbook, data_only=False)
+        perf = performance.compute(p, wb, generated_at)
+    except Exception as e:  # never let perf break the core dashboard
+        perf = {"error": str(e), "history_points": len(history)}
+
+    payload = {"config": cfg, "portfolio": p, "history": history,
+               "performance": perf, "generated_at": generated_at}
     (DOCS / "data.json").write_text(json.dumps(payload, indent=2, default=str))
 
     html = HTML_TEMPLATE.replace("/*__DATA__*/null", json.dumps(payload, default=str))
@@ -119,6 +130,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .row{display:grid;gap:16px}
   .g4{grid-template-columns:repeat(4,1fr)} .g3{grid-template-columns:repeat(3,1fr)}
   .g2{grid-template-columns:repeat(2,1fr)} .g23{grid-template-columns:1.4fr 1fr}
+  .g6{grid-template-columns:repeat(6,1fr)} .g155{grid-template-columns:1.55fr 1fr}
   .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--shadow)}
   .card.pad{padding:18px}
   .card h3{margin:0 0 2px;font-size:13px;font-weight:640;letter-spacing:.01em}
@@ -179,7 +191,8 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     font-size:12px;border-radius:20px;padding:6px 14px;margin-top:8px}
   footer{max-width:1240px;margin:8px auto 40px;padding:0 22px;color:var(--faint);font-size:11px;line-height:1.6}
 
-  @media(max-width:980px){.g4{grid-template-columns:repeat(2,1fr)}.g3,.g2,.g23{grid-template-columns:1fr}}
+  @media(max-width:980px){.g4{grid-template-columns:repeat(2,1fr)}.g3,.g2,.g23,.g155{grid-template-columns:1fr}.g6{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:560px){.g6{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:560px){
     .topbar{position:static}
     .topbar .in{flex-wrap:wrap;gap:8px 14px;padding:10px 14px}
@@ -256,15 +269,30 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   </section>
 
   <section data-tab="Performance" hidden>
-    <div class="row g4" id="perfStats" style="margin-bottom:16px"></div>
+    <div class="row g6" style="margin-bottom:16px" id="perfStats"></div>
     <div class="card pad" style="margin-bottom:16px">
-      <div class="head"><h3>Portfolio Value</h3><span class="mini">value vs cost basis, weekly</span></div>
-      <div id="perfLineWrap" class="chartbox" style="height:300px"><canvas id="perfLine"></canvas></div>
+      <div class="head"><h3>Returns by Period</h3><span class="mini" id="perfBmkLbl"></span></div>
+      <div class="scroll"><table id="perfPeriod"></table></div>
     </div>
-    <div class="row g2">
-      <div class="card pad"><div class="head"><h3>Weekly P&amp;L Change</h3></div><div id="perfBarsWrap" class="chartbox"><canvas id="perfBars"></canvas></div></div>
-      <div class="card pad"><div class="head"><h3>Cumulative Return</h3></div><div id="perfCumWrap" class="chartbox"><canvas id="perfCum"></canvas></div></div>
+    <div class="row g155" style="margin-bottom:16px">
+      <div class="card pad">
+        <div class="head"><h3>Growth of ฿100 — Portfolio vs Benchmark</h3>
+          <div class="seg" id="perfRange"><button data-r="365">1Y</button><button data-r="1095">3Y</button><button class="active" data-r="1825">5Y</button><button data-r="99999">SI</button></div></div>
+        <div id="perfGrowthWrap" class="chartbox" style="height:280px"><canvas id="perfGrowth"></canvas></div>
+        <div class="legend"><div><span class="dot" style="background:var(--accent)"></span>Portfolio</div><div><span class="dot" style="background:var(--gold)"></span><span id="perfBmkName">Benchmark</span></div></div>
+      </div>
+      <div class="card pad">
+        <div class="head"><h3>Risk &amp; Return</h3><span class="mini">annualized</span></div>
+        <table id="perfRisk"></table>
+        <div class="head" style="margin-top:16px"><h3>Drawdown</h3><span class="mini">peak-to-trough</span></div>
+        <div id="perfDDWrap" class="chartbox" style="height:140px"><canvas id="perfDD"></canvas></div>
+      </div>
     </div>
+    <div class="card pad">
+      <div class="head"><h3>Calendar-Year Returns</h3><span class="mini">portfolio vs benchmark</span></div>
+      <div class="chartbox" style="height:240px"><canvas id="perfCal"></canvas></div>
+    </div>
+    <div class="note" id="perfNote"></div>
   </section>
 
   <section data-tab="Risk" hidden>
@@ -441,35 +469,71 @@ function boot(PAYLOAD){
   }
 
   // performance
+  let perfRange=1825;
+  function fpct(x,dec){dec=dec==null?1:dec;return x==null?'—':(x>=0?'+':'')+(x*100).toFixed(dec)+'%';}
+  function pcls(x){return x==null?'':x>=0?'pos':'neg';}
   function perfCharts(){
-    if(!hasHist){document.getElementById("perfLineWrap").innerHTML=buildingMsg;
-      document.getElementById("perfBarsWrap").innerHTML="";document.getElementById("perfCumWrap").innerHTML="";
-      document.getElementById("perfStats").innerHTML=
-        [["Weeks Tracked",HIST.length||1,"snapshot"],["Return Since Inception",sg(P.total_pnl_pct)+pc(P.total_pnl_pct),"cumulative"],
-         ["Total P&L",sg(P.total_pnl)+f0(P.total_pnl),"unrealized"],["Largest Holding",pc(POOL[0]?POOL[0].wt:0),POOL[0]?POOL[0].name:""]]
-        .map(s=>`<div class="card stat"><div class="k">${s[0]}</div><div class="v num">${s[1]}</div><div class="d">${s[2]}</div></div>`).join("");
-      return;}
-    const grid={color:"#eef0f2"},tick={font:{size:11},color:"#69727b"};
-    const mk=(id,cfg)=>{if(charts[id])charts[id].destroy();charts[id]=new Chart(document.getElementById(id),cfg);};
-    mk("perfLine",{type:"line",data:{labels:H.labels,datasets:[
-      {label:"Value",data:H.value,borderColor:"#0b3d2e",backgroundColor:"rgba(11,61,46,.07)",fill:true,tension:.3,pointRadius:2,borderWidth:2},
-      {label:"Invested",data:H.invested,borderColor:"#b9975b",borderDash:[5,4],fill:false,tension:.3,pointRadius:0,borderWidth:1.5}]},
-      options:{plugins:{legend:{position:"bottom",labels:{boxWidth:10,font:{size:11}}}},
-        scales:{y:{grid,ticks:{...tick,callback:v=>fM(v)}},x:{grid:{display:false},ticks:tick}}}});
-    const chg=H.value.map((v,i)=>i?v-H.value[i-1]:0);
-    mk("perfBars",{type:"bar",data:{labels:H.labels,datasets:[{data:chg,backgroundColor:chg.map(v=>v>=0?"#0f7a44":"#c0392b")}]},
-      options:{plugins:{legend:{display:false}},scales:{y:{grid,ticks:{...tick,callback:v=>(v/1e3).toFixed(0)+"k"}},x:{grid:{display:false},ticks:tick}}}});
-    const base=H.invested[0]||H.value[0]||1;
-    const cum=H.value.map(v=>(v-base)/base);
-    mk("perfCum",{type:"line",data:{labels:H.labels,datasets:[{data:cum,borderColor:"#15634a",backgroundColor:"rgba(21,99,74,.08)",fill:true,tension:.3,pointRadius:2,borderWidth:2}]},
-      options:{plugins:{legend:{display:false}},scales:{y:{grid,ticks:{...tick,callback:v=>pc(v)}},x:{grid:{display:false},ticks:tick}}}});
-    const chgArr=chg.slice(1);
-    document.getElementById("perfStats").innerHTML=[
-      ["Weeks Tracked",H.labels.length,"snapshots"],
-      ["Best Week",sg(Math.max(...chgArr))+f0(Math.max(...chgArr)),"value change"],
-      ["Worst Week",f0(Math.min(...chgArr)),"value change"],
-      ["Return Since Start",sg((P.total_value-H.value[0])/H.value[0])+pc((P.total_value-H.value[0])/H.value[0]),H.labels.length+" weeks"],
-    ].map(s=>`<div class="card stat"><div class="k">${s[0]}</div><div class="v num">${s[1]}</div><div class="d">${s[2]}</div></div>`).join("");
+    const PF=PAYLOAD.performance||{}; const pr=PF.period_returns||{}, st=PF.stats||{}, periods=PF.periods||[];
+    const pn=pr.portfolio_net||{}, bm=pr.benchmark||{};
+    const ytd=pn['YTD'], bytd=bm['YTD'], si=st.annualized_return, vol=st.volatility, sh=st.sharpe, dd=st.max_drawdown;
+    const tiles=[
+      ['TWR — YTD',fpct(ytd),(ytd!=null&&bytd!=null)?'vs bmk '+fpct(ytd-bytd):'time-weighted',pcls(ytd)],
+      ['Since Inception (p.a.)',fpct(si),((PF.history_days||0)/365.25).toFixed(1)+' yrs',pcls(si)],
+      ['Money-Weighted (IRR)',fpct(st.irr),st.irr!=null?'incl. cash flows':'needs cash-flow log',pcls(st.irr)],
+      ['Volatility',vol==null?'—':(vol*100).toFixed(1)+'%','annualized',''],
+      ['Sharpe',sh==null?'—':sh.toFixed(2),'rf '+(CFG.risk_free_pct!=null?CFG.risk_free_pct:2)+'%',''],
+      ['Max Drawdown',dd==null?'—':(dd*100).toFixed(1)+'%','since inception',dd==null?'':'neg'],
+    ];
+    document.getElementById('perfStats').innerHTML=tiles.map(t=>`<div class="card stat"><div class="k">${t[0]}</div><div class="v num ${t[3]}">${t[1]}</div><div class="d">${t[2]}</div></div>`).join('');
+    document.getElementById('perfBmkLbl').textContent='Time-weighted · net of fees · benchmark: '+(PF.benchmark_name||'—');
+    document.getElementById('perfBmkName').textContent=PF.benchmark_name||'Benchmark';
+
+    const head='<th>Return</th>'+periods.map(p=>`<th>${p}</th>`).join('');
+    const rowFor=(obj,lbl,colorRel)=>`<tr><td class="name">${lbl}</td>`+periods.map(p=>{const v=(obj||{})[p];return `<td class="num ${colorRel?pcls(v):''}">${fpct(v)}</td>`}).join('')+'</tr>';
+    document.getElementById('perfPeriod').innerHTML=`<thead><tr>${head}</tr></thead><tbody>`+
+      rowFor(pn,'Portfolio (net)',false)+rowFor(bm,PF.benchmark_name||'Benchmark',false)+rowFor(pr.relative,'Relative',true)+`</tbody>`;
+
+    const rr=[['Annualized return',fpct(si)],['Volatility',vol==null?'—':(vol*100).toFixed(1)+'%'],['Sharpe ratio',sh==null?'—':sh.toFixed(2)],['Sortino ratio',st.sortino==null?'—':st.sortino.toFixed(2)],['Max drawdown',dd==null?'—':(dd*100).toFixed(1)+'%'],['Best day',fpct(st.best_period)],['Worst day',fpct(st.worst_period)],['% positive days',st.pct_positive==null?'—':Math.round(st.pct_positive*100)+'%']];
+    document.getElementById('perfRisk').innerHTML='<tbody>'+rr.map(r=>`<tr><td style="color:var(--ink);font-size:12.5px">${r[0]}</td><td class="num">${r[1]}</td></tr>`).join('')+'</tbody>';
+
+    drawGrowth(); drawDD(); drawCal();
+    const sel=document.getElementById('perfRange');
+    if(sel&&!sel._wired){sel._wired=1;sel.addEventListener('click',e=>{if(e.target.tagName!=='BUTTON')return;[...sel.children].forEach(b=>b.classList.remove('active'));e.target.classList.add('active');perfRange=+e.target.dataset.r;drawGrowth();});}
+    const n=document.getElementById('perfNote');
+    if((PF.history_points||0)<25){n.style.display='block';n.innerHTML='Portfolio metrics accrue as daily snapshots build — currently <b>'+(PF.history_points||0)+'</b> day'+((PF.history_points||0)===1?'':'s')+' since inception '+(PF.inception||'')+'. The benchmark and full framework are shown now; the period table, growth line and risk stats fill in over the coming days.';}
+    else n.style.display='none';
+  }
+  function drawGrowth(){
+    const PF=PAYLOAD.performance||{}; const g=PF.growth||{portfolio:[],benchmark:[]};
+    const asof=new Date((PF.as_of||'')+'T00:00:00'); const cut=new Date(asof); cut.setDate(cut.getDate()-perfRange);
+    const inWin=s=>new Date(s.date+'T00:00:00')>=cut;
+    let b=(g.benchmark||[]).filter(inWin); if(!b.length)b=g.benchmark||[];
+    const bBase=b.length?b[0].level:100; const labels=b.map(s=>s.date);
+    const bData=b.map(s=>s.level/bBase*100);
+    let pf=(g.portfolio||[]).filter(inWin); const pBase=pf.length?pf[0].level:100;
+    const pMap={}; pf.forEach(s=>pMap[s.date]=s.level/pBase*100);
+    const pData=labels.map(d=>pMap[d]!=null?pMap[d]:null);
+    if(charts.perfGrowth)charts.perfGrowth.destroy();
+    charts.perfGrowth=new Chart(document.getElementById('perfGrowth'),{type:'line',data:{labels,datasets:[
+      {label:'Portfolio',data:pData,borderColor:'#0b3d2e',backgroundColor:'rgba(11,61,46,.06)',fill:true,borderWidth:2,pointRadius:0,spanGaps:true,tension:.15},
+      {label:'Benchmark',data:bData,borderColor:'#b9975b',borderDash:[5,4],fill:false,borderWidth:1.5,pointRadius:0,tension:.15}]},
+      options:{plugins:{legend:{display:false}},scales:{y:{grid:{color:'#eef0f2'},ticks:{font:{size:11},color:'#69727b'}},x:{grid:{display:false},ticks:{font:{size:11},color:'#69727b',maxTicksLimit:8,callback:(v,i)=>labels[i]?labels[i].slice(0,7):''}}}}});
+  }
+  function drawDD(){
+    const dd=(PAYLOAD.performance||{}).drawdown||[];
+    if(charts.perfDD)charts.perfDD.destroy();
+    const wrap=document.getElementById('perfDDWrap');
+    if(!dd.length){wrap.innerHTML='<div style="font-size:12px;color:var(--faint);text-align:center;padding-top:46px">builds with daily history</div>';return;}
+    if(!document.getElementById('perfDD')){wrap.innerHTML='<canvas id="perfDD"></canvas>';}
+    charts.perfDD=new Chart(document.getElementById('perfDD'),{type:'line',data:{labels:dd.map(x=>x.date),datasets:[{data:dd.map(x=>x.dd),borderColor:'#c0392b',backgroundColor:'rgba(192,57,43,.10)',fill:true,borderWidth:1.2,pointRadius:0,tension:.1}]},
+      options:{plugins:{legend:{display:false}},scales:{y:{grid:{color:'#eef0f2'},ticks:{font:{size:11},color:'#69727b',callback:v=>v.toFixed(0)+'%'}},x:{grid:{display:false},ticks:{font:{size:11},color:'#69727b',maxTicksLimit:5}}}}});
+  }
+  function drawCal(){
+    const c=(PAYLOAD.performance||{}).calendar||{years:[],portfolio:[],benchmark:[]};
+    if(charts.perfCal)charts.perfCal.destroy();
+    charts.perfCal=new Chart(document.getElementById('perfCal'),{type:'bar',data:{labels:c.years,datasets:[
+      {label:'Portfolio',data:c.portfolio,backgroundColor:'#0b3d2e'},{label:'Benchmark',data:c.benchmark,backgroundColor:'#cdb48a'}]},
+      options:{plugins:{legend:{position:'bottom',labels:{boxWidth:10,font:{size:11}}}},scales:{y:{grid:{color:'#eef0f2'},ticks:{font:{size:11},color:'#69727b',callback:v=>(v==null?'':v.toFixed(0)+'%')}},x:{grid:{display:false},ticks:{font:{size:11},color:'#69727b'}}}}});
   }
 
   // overview mini perf

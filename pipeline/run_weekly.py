@@ -105,10 +105,19 @@ def main():
     log_snapshot(workbook, p)
 
     print("[3/4] Building dashboard ...")
+    if not args.offline:
+        try:
+            import fetch_benchmark
+            b = fetch_benchmark.build(asof)
+            if b:
+                print(f"      benchmark {b['name']}: {len(b['series'])} pts")
+        except Exception as e:
+            print(f"      benchmark fetch skipped ({e})")
     out = build(workbook, generated_at=now.strftime("%Y-%m-%d %H:%M %Z"))
     pf = out["portfolio"]
+    perf = out.get("performance", {})
     print(f"      Total ฿{pf['total_value']:,.0f} · P&L {pf['total_pnl_pct']:+.2%} · "
-          f"{len(out['history'])} history point(s)")
+          f"{len(out['history'])} history point(s) · perf history {perf.get('history_points','?')}d")
 
     print("[4/4] Publishing ...")
     if args.no_publish:

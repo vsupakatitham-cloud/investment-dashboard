@@ -1,10 +1,10 @@
-name: Weekly Dashboard Update
+name: Daily Dashboard Update
 
-# Runs every Saturday 09:00 Asia/Bangkok (= 02:00 UTC).
-# Also runnable on demand from the Actions tab.
+# Runs every day 09:00 Asia/Bangkok (= 02:00 UTC) so performance history (TWR,
+# risk stats, benchmark-relative) builds quickly. Also runnable on demand.
 on:
   schedule:
-    - cron: "0 2 * * 6"
+    - cron: "0 2 * * *"
   workflow_dispatch:
 
 permissions:
