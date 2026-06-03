@@ -372,7 +372,15 @@ function boot(PAYLOAD){
     nav.appendChild(b);});
 
   // KPIs
-  const wow=hasHist?(P.total_value-HIST[HIST.length-2].total_value)/HIST[HIST.length-2].total_value:null;
+  // true week-over-week: change vs the snapshot ~7 calendar days ago
+  function changeOver(days){
+    if(HIST.length<2)return null;
+    const t=new Date(P.as_of+'T00:00:00'); t.setDate(t.getDate()-days);
+    let ref=null; HIST.forEach(h=>{if(new Date(h.date+'T00:00:00')<=t)ref=h;});
+    if(!ref)ref=HIST[0];
+    return ref.total_value?(P.total_value-ref.total_value)/ref.total_value:null;
+  }
+  const wow=changeOver(7);
   function spark(series){
     if(!series||series.length<2)return"";
     const w=74,h=30,mn=Math.min(...series),mx=Math.max(...series),r=mx-mn||1;
