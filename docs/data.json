@@ -5822,15 +5822,367 @@
   },
   "history": [
     {
+      "date": "2026-05-01",
+      "total_value": 25300373,
+      "total_invested": 22664170,
+      "total_pnl": 2636203,
+      "pnl_pct": 0.1163,
+      "mf_value": 17882763,
+      "eq_value": 4735576,
+      "crypto_value": 1357224,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-02",
+      "total_value": 25307758,
+      "total_invested": 22664170,
+      "total_pnl": 2643588,
+      "pnl_pct": 0.1166,
+      "mf_value": 17882763,
+      "eq_value": 4735576,
+      "crypto_value": 1364609,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-03",
+      "total_value": 25303828,
+      "total_invested": 22664170,
+      "total_pnl": 2639658,
+      "pnl_pct": 0.1165,
+      "mf_value": 17882763,
+      "eq_value": 4733724,
+      "crypto_value": 1362575,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-04",
+      "total_value": 25408530,
+      "total_invested": 22664170,
+      "total_pnl": 2744360,
+      "pnl_pct": 0.1211,
+      "mf_value": 17882763,
+      "eq_value": 4784679,
+      "crypto_value": 1390099,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-05",
+      "total_value": 25471565,
+      "total_invested": 22664170,
+      "total_pnl": 2807395,
+      "pnl_pct": 0.1239,
+      "mf_value": 17882763,
+      "eq_value": 4847814,
+      "crypto_value": 1394350,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-06",
+      "total_value": 25950849,
+      "total_invested": 22664170,
+      "total_pnl": 3286679,
+      "pnl_pct": 0.145,
+      "mf_value": 18202742,
+      "eq_value": 4983358,
+      "crypto_value": 1396274,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-07",
+      "total_value": 25739706,
+      "total_invested": 22664170,
+      "total_pnl": 3075536,
+      "pnl_pct": 0.1357,
+      "mf_value": 18042906,
+      "eq_value": 4939891,
+      "crypto_value": 1373428,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-08",
+      "total_value": 26254589,
+      "total_invested": 22664170,
+      "total_pnl": 3590419,
+      "pnl_pct": 0.1584,
+      "mf_value": 18402768,
+      "eq_value": 5080530,
+      "crypto_value": 1383720,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-09",
+      "total_value": 26263641,
+      "total_invested": 22664170,
+      "total_pnl": 3599471,
+      "pnl_pct": 0.1588,
+      "mf_value": 18402768,
+      "eq_value": 5080530,
+      "crypto_value": 1392772,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-10",
+      "total_value": 26294551,
+      "total_invested": 22664170,
+      "total_pnl": 3630381,
+      "pnl_pct": 0.1602,
+      "mf_value": 18402768,
+      "eq_value": 5082598,
+      "crypto_value": 1421710,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-11",
+      "total_value": 26561889,
+      "total_invested": 22664170,
+      "total_pnl": 3897719,
+      "pnl_pct": 0.172,
+      "mf_value": 18502926,
+      "eq_value": 5252626,
+      "crypto_value": 1416399,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-12",
+      "total_value": 26059371,
+      "total_invested": 22664170,
+      "total_pnl": 3395201,
+      "pnl_pct": 0.1498,
+      "mf_value": 18091411,
+      "eq_value": 5188095,
+      "crypto_value": 1398027,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-13",
+      "total_value": 26401116,
+      "total_invested": 22664170,
+      "total_pnl": 3736946,
+      "pnl_pct": 0.1649,
+      "mf_value": 18441488,
+      "eq_value": 5192124,
+      "crypto_value": 1384997,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-14",
+      "total_value": 26544006,
+      "total_invested": 22664170,
+      "total_pnl": 3879836,
+      "pnl_pct": 0.1712,
+      "mf_value": 18565643,
+      "eq_value": 5179176,
+      "crypto_value": 1412725,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-15",
+      "total_value": 25935717,
+      "total_invested": 22664170,
+      "total_pnl": 3271547,
+      "pnl_pct": 0.1443,
+      "mf_value": 18149481,
+      "eq_value": 5029100,
+      "crypto_value": 1384371,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-16",
+      "total_value": 25914323,
+      "total_invested": 22664170,
+      "total_pnl": 3250153,
+      "pnl_pct": 0.1434,
+      "mf_value": 18149481,
+      "eq_value": 5029100,
+      "crypto_value": 1362977,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-17",
+      "total_value": 25940379,
+      "total_invested": 22664170,
+      "total_pnl": 3276209,
+      "pnl_pct": 0.1446,
+      "mf_value": 18149481,
+      "eq_value": 5056933,
+      "crypto_value": 1359179,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-18",
+      "total_value": 25778088,
+      "total_invested": 22664170,
+      "total_pnl": 3113918,
+      "pnl_pct": 0.1374,
+      "mf_value": 18022775,
+      "eq_value": 5039481,
+      "crypto_value": 1344013,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-19",
+      "total_value": 25683191,
+      "total_invested": 22664170,
+      "total_pnl": 3019021,
+      "pnl_pct": 0.1332,
+      "mf_value": 17930380,
+      "eq_value": 5044653,
+      "crypto_value": 1345529,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-20",
+      "total_value": 26010800,
+      "total_invested": 22664170,
+      "total_pnl": 3346630,
+      "pnl_pct": 0.1477,
+      "mf_value": 18169852,
+      "eq_value": 5121908,
+      "crypto_value": 1353152,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-21",
+      "total_value": 26329518,
+      "total_invested": 22664170,
+      "total_pnl": 3665348,
+      "pnl_pct": 0.1617,
+      "mf_value": 18344848,
+      "eq_value": 5244562,
+      "crypto_value": 1362005,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-22",
+      "total_value": 26225025,
+      "total_invested": 22664170,
+      "total_pnl": 3560855,
+      "pnl_pct": 0.1571,
+      "mf_value": 18293636,
+      "eq_value": 5210900,
+      "crypto_value": 1333274,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-23",
+      "total_value": 26244644,
+      "total_invested": 22664170,
+      "total_pnl": 3580474,
+      "pnl_pct": 0.158,
+      "mf_value": 18293636,
+      "eq_value": 5210900,
+      "crypto_value": 1352893,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-24",
+      "total_value": 26243661,
+      "total_invested": 22664170,
+      "total_pnl": 3579491,
+      "pnl_pct": 0.1579,
+      "mf_value": 18293636,
+      "eq_value": 5206633,
+      "crypto_value": 1352113,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-25",
+      "total_value": 26277683,
+      "total_invested": 22664170,
+      "total_pnl": 3613513,
+      "pnl_pct": 0.1594,
+      "mf_value": 18308027,
+      "eq_value": 5226938,
+      "crypto_value": 1357778,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-26",
+      "total_value": 26908358,
+      "total_invested": 22664170,
+      "total_pnl": 4244188,
+      "pnl_pct": 0.1873,
+      "mf_value": 18858883,
+      "eq_value": 5303978,
+      "crypto_value": 1341962,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-27",
+      "total_value": 26811030,
+      "total_invested": 22664170,
+      "total_pnl": 4146860,
+      "pnl_pct": 0.183,
+      "mf_value": 18809755,
+      "eq_value": 5272179,
+      "crypto_value": 1320747,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-28",
+      "total_value": 27039039,
+      "total_invested": 22664170,
+      "total_pnl": 4374869,
+      "pnl_pct": 0.193,
+      "mf_value": 19045902,
+      "eq_value": 5292111,
+      "crypto_value": 1304487,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-29",
+      "total_value": 27017622,
+      "total_invested": 22664170,
+      "total_pnl": 4353452,
+      "pnl_pct": 0.1921,
+      "mf_value": 19030249,
+      "eq_value": 5267359,
+      "crypto_value": 1308284,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-05-30",
+      "total_value": 27052860,
+      "total_invested": 22664170,
+      "total_pnl": 4388690,
+      "pnl_pct": 0.1936,
+      "mf_value": 19030249,
+      "eq_value": 5267359,
+      "crypto_value": 1343522,
+      "fx_rate": 32.72
+    },
+    {
       "date": "2026-05-31",
-      "total_value": 27033331,
-      "total_invested": 22643485,
-      "total_pnl": 4389846,
-      "pnl_pct": 0.1939,
-      "mf_value": 19021216,
-      "eq_value": 5264385,
-      "crypto_value": 1336054,
-      "fx_rate": 32.54
+      "total_value": 27050847,
+      "total_invested": 22664170,
+      "total_pnl": 4386677,
+      "pnl_pct": 0.1936,
+      "mf_value": 19030249,
+      "eq_value": 5271671,
+      "crypto_value": 1336878,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-06-01",
+      "total_value": 27023467,
+      "total_invested": 22664170,
+      "total_pnl": 4359297,
+      "pnl_pct": 0.1923,
+      "mf_value": 19030249,
+      "eq_value": 5281268,
+      "crypto_value": 1306348,
+      "fx_rate": 32.72
+    },
+    {
+      "date": "2026-06-02",
+      "total_value": 27039791,
+      "total_invested": 22664170,
+      "total_pnl": 4375621,
+      "pnl_pct": 0.1931,
+      "mf_value": 19094011,
+      "eq_value": 5296250,
+      "crypto_value": 1230405,
+      "fx_rate": 32.72
     },
     {
       "date": "2026-06-03",
@@ -5846,9 +6198,9 @@
   ],
   "performance": {
     "as_of": "2026-06-03",
-    "inception": "2026-05-31",
-    "history_days": 3,
-    "history_points": 2,
+    "inception": "2026-05-01",
+    "history_days": 33,
+    "history_points": 34,
     "benchmark_name": "MSCI ACWI (THB)",
     "fee_pct": 0.0,
     "periods": [
@@ -5862,62 +6214,191 @@
     ],
     "period_returns": {
       "portfolio_net": {
-        "MTD": 0.001056325615219178,
-        "QTD": 0.001056325615219178,
-        "YTD": 0.001056325615219178,
-        "1Y": 0.001056325615219178,
-        "3Y p.a.": 0.001056325615219178,
-        "5Y p.a.": 0.001056325615219178,
-        "SI p.a.": 0.001056325615219178
+        "MTD": 0.00040812030765624563,
+        "QTD": 0.06962403281564344,
+        "YTD": 0.06962403281564344,
+        "1Y": null,
+        "3Y p.a.": null,
+        "5Y p.a.": null,
+        "SI p.a.": 0.06962403281564344
       },
       "portfolio_gross": {
-        "MTD": 0.001056325615219178,
-        "QTD": 0.001056325615219178,
-        "YTD": 0.001056325615219178,
-        "1Y": 0.001056325615219178,
-        "3Y p.a.": 0.001056325615219178,
-        "5Y p.a.": 0.001056325615219178,
-        "SI p.a.": 0.001056325615219178
+        "MTD": 0.00040812030765624563,
+        "QTD": 0.06962403281564344,
+        "YTD": 0.06962403281564344,
+        "1Y": null,
+        "3Y p.a.": null,
+        "5Y p.a.": null,
+        "SI p.a.": 0.06962403281564344
       },
       "benchmark": {
         "MTD": 0.005896801596553258,
-        "QTD": 0.15147824482317662,
-        "YTD": 0.1640406224050024,
-        "1Y": 0.2722581682460332,
-        "3Y p.a.": 0.17372269588508882,
-        "5Y p.a.": 0.1056575398672468,
-        "SI p.a.": 0.13914804678611503
+        "QTD": 0.051729277396618256,
+        "YTD": 0.051729277396618256,
+        "1Y": null,
+        "3Y p.a.": null,
+        "5Y p.a.": null,
+        "SI p.a.": 0.051729277396618256
       },
       "relative": {
-        "MTD": -0.00484047598133408,
-        "QTD": -0.15042191920795744,
-        "YTD": -0.1629842967897832,
-        "1Y": -0.27120184263081404,
-        "3Y p.a.": -0.17266637026986964,
-        "5Y p.a.": -0.10460121425202762,
-        "SI p.a.": -0.13809172117089585
+        "MTD": -0.005488681288897013,
+        "QTD": 0.017894755419025188,
+        "YTD": 0.017894755419025188,
+        "1Y": null,
+        "3Y p.a.": null,
+        "5Y p.a.": null,
+        "SI p.a.": 0.017894755419025188
       }
     },
     "stats": {
-      "annualized_return": 0.13716664059163675,
-      "volatility": null,
+      "annualized_return": null,
+      "since_inception_cum": 0.06962403281564344,
+      "volatility": 0.1521704476951839,
       "sharpe": null,
       "sortino": null,
-      "max_drawdown": 0.0,
-      "best_period": 0.001056325615219178,
-      "worst_period": 0.001056325615219178,
-      "pct_positive": 1.0,
+      "max_drawdown": -0.03308,
+      "best_period": 0.024000403688559713,
+      "worst_period": -0.022916247080414287,
+      "pct_positive": 0.6060606060606061,
       "irr": null
     },
     "growth": {
       "portfolio": [
         {
-          "date": "2026-05-31",
+          "date": "2026-05-01",
           "level": 100.0
         },
         {
+          "date": "2026-05-02",
+          "level": 100.029
+        },
+        {
+          "date": "2026-05-03",
+          "level": 100.014
+        },
+        {
+          "date": "2026-05-04",
+          "level": 100.427
+        },
+        {
+          "date": "2026-05-05",
+          "level": 100.677
+        },
+        {
+          "date": "2026-05-06",
+          "level": 102.571
+        },
+        {
+          "date": "2026-05-07",
+          "level": 101.736
+        },
+        {
+          "date": "2026-05-08",
+          "level": 103.772
+        },
+        {
+          "date": "2026-05-09",
+          "level": 103.807
+        },
+        {
+          "date": "2026-05-10",
+          "level": 103.929
+        },
+        {
+          "date": "2026-05-11",
+          "level": 104.986
+        },
+        {
+          "date": "2026-05-12",
+          "level": 103.0
+        },
+        {
+          "date": "2026-05-13",
+          "level": 104.351
+        },
+        {
+          "date": "2026-05-14",
+          "level": 104.915
+        },
+        {
+          "date": "2026-05-15",
+          "level": 102.511
+        },
+        {
+          "date": "2026-05-16",
+          "level": 102.427
+        },
+        {
+          "date": "2026-05-17",
+          "level": 102.53
+        },
+        {
+          "date": "2026-05-18",
+          "level": 101.888
+        },
+        {
+          "date": "2026-05-19",
+          "level": 101.513
+        },
+        {
+          "date": "2026-05-20",
+          "level": 102.808
+        },
+        {
+          "date": "2026-05-21",
+          "level": 104.068
+        },
+        {
+          "date": "2026-05-22",
+          "level": 103.655
+        },
+        {
+          "date": "2026-05-23",
+          "level": 103.732
+        },
+        {
+          "date": "2026-05-24",
+          "level": 103.728
+        },
+        {
+          "date": "2026-05-25",
+          "level": 103.863
+        },
+        {
+          "date": "2026-05-26",
+          "level": 106.356
+        },
+        {
+          "date": "2026-05-27",
+          "level": 105.971
+        },
+        {
+          "date": "2026-05-28",
+          "level": 106.872
+        },
+        {
+          "date": "2026-05-29",
+          "level": 106.787
+        },
+        {
+          "date": "2026-05-30",
+          "level": 106.927
+        },
+        {
+          "date": "2026-05-31",
+          "level": 106.919
+        },
+        {
+          "date": "2026-06-01",
+          "level": 106.811
+        },
+        {
+          "date": "2026-06-02",
+          "level": 106.875
+        },
+        {
           "date": "2026-06-03",
-          "level": 100.106
+          "level": 106.962
         }
       ],
       "benchmark": [
@@ -11241,6 +11722,134 @@
     },
     "drawdown": [
       {
+        "date": "2026-05-02",
+        "dd": 0.0
+      },
+      {
+        "date": "2026-05-03",
+        "dd": -0.016
+      },
+      {
+        "date": "2026-05-04",
+        "dd": 0.0
+      },
+      {
+        "date": "2026-05-05",
+        "dd": 0.0
+      },
+      {
+        "date": "2026-05-06",
+        "dd": 0.0
+      },
+      {
+        "date": "2026-05-07",
+        "dd": -0.814
+      },
+      {
+        "date": "2026-05-08",
+        "dd": 0.0
+      },
+      {
+        "date": "2026-05-09",
+        "dd": 0.0
+      },
+      {
+        "date": "2026-05-10",
+        "dd": 0.0
+      },
+      {
+        "date": "2026-05-11",
+        "dd": 0.0
+      },
+      {
+        "date": "2026-05-12",
+        "dd": -1.892
+      },
+      {
+        "date": "2026-05-13",
+        "dd": -0.605
+      },
+      {
+        "date": "2026-05-14",
+        "dd": -0.067
+      },
+      {
+        "date": "2026-05-15",
+        "dd": -2.357
+      },
+      {
+        "date": "2026-05-16",
+        "dd": -2.438
+      },
+      {
+        "date": "2026-05-17",
+        "dd": -2.34
+      },
+      {
+        "date": "2026-05-18",
+        "dd": -2.951
+      },
+      {
+        "date": "2026-05-19",
+        "dd": -3.308
+      },
+      {
+        "date": "2026-05-20",
+        "dd": -2.075
+      },
+      {
+        "date": "2026-05-21",
+        "dd": -0.875
+      },
+      {
+        "date": "2026-05-22",
+        "dd": -1.268
+      },
+      {
+        "date": "2026-05-23",
+        "dd": -1.194
+      },
+      {
+        "date": "2026-05-24",
+        "dd": -1.198
+      },
+      {
+        "date": "2026-05-25",
+        "dd": -1.07
+      },
+      {
+        "date": "2026-05-26",
+        "dd": 0.0
+      },
+      {
+        "date": "2026-05-27",
+        "dd": -0.362
+      },
+      {
+        "date": "2026-05-28",
+        "dd": 0.0
+      },
+      {
+        "date": "2026-05-29",
+        "dd": -0.079
+      },
+      {
+        "date": "2026-05-30",
+        "dd": 0.0
+      },
+      {
+        "date": "2026-05-31",
+        "dd": -0.007
+      },
+      {
+        "date": "2026-06-01",
+        "dd": -0.109
+      },
+      {
+        "date": "2026-06-02",
+        "dd": -0.048
+      },
+      {
         "date": "2026-06-03",
         "dd": 0.0
       }
@@ -11262,7 +11871,7 @@
         null,
         null,
         null,
-        0.11
+        6.96
       ],
       "benchmark": [
         14.44,
@@ -11274,7 +11883,7 @@
         16.4
       ]
     },
-    "generated_at": "2026-06-03 17:54 +07"
+    "generated_at": "2026-06-03 19:19"
   },
-  "generated_at": "2026-06-03 17:54 +07"
+  "generated_at": "2026-06-03 19:19"
 }

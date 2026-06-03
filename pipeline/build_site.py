@@ -475,13 +475,16 @@ function boot(PAYLOAD){
   function perfCharts(){
     const PF=PAYLOAD.performance||{}; const pr=PF.period_returns||{}, st=PF.stats||{}, periods=PF.periods||[];
     const pn=pr.portfolio_net||{}, bm=pr.benchmark||{};
-    const ytd=pn['YTD'], bytd=bm['YTD'], si=st.annualized_return, vol=st.volatility, sh=st.sharpe, dd=st.max_drawdown;
+    const ytd=pn['YTD'], bytd=bm['YTD'], si=st.annualized_return, sicum=st.since_inception_cum, vol=st.volatility, sh=st.sharpe, dd=st.max_drawdown;
+    const days=PF.history_days||0;
+    const siVal = si!=null ? fpct(si) : fpct(sicum);
+    const siLbl = si!=null ? ((days/365.25).toFixed(1)+' yrs · p.a.') : (sicum!=null?'cumulative · '+days+'d':'building');
     const tiles=[
       ['TWR — YTD',fpct(ytd),(ytd!=null&&bytd!=null)?'vs bmk '+fpct(ytd-bytd):'time-weighted',pcls(ytd)],
-      ['Since Inception (p.a.)',fpct(si),((PF.history_days||0)/365.25).toFixed(1)+' yrs',pcls(si)],
+      ['Since Inception',siVal,siLbl,pcls(si!=null?si:sicum)],
       ['Money-Weighted (IRR)',fpct(st.irr),st.irr!=null?'incl. cash flows':'needs cash-flow log',pcls(st.irr)],
       ['Volatility',vol==null?'—':(vol*100).toFixed(1)+'%','annualized',''],
-      ['Sharpe',sh==null?'—':sh.toFixed(2),'rf '+(CFG.risk_free_pct!=null?CFG.risk_free_pct:2)+'%',''],
+      ['Sharpe',sh==null?'—':sh.toFixed(2),sh==null?'needs ≥1yr':'rf '+(CFG.risk_free_pct!=null?CFG.risk_free_pct:2)+'%',''],
       ['Max Drawdown',dd==null?'—':(dd*100).toFixed(1)+'%','since inception',dd==null?'':'neg'],
     ];
     document.getElementById('perfStats').innerHTML=tiles.map(t=>`<div class="card stat"><div class="k">${t[0]}</div><div class="v num ${t[3]}">${t[1]}</div><div class="d">${t[2]}</div></div>`).join('');
@@ -493,7 +496,7 @@ function boot(PAYLOAD){
     document.getElementById('perfPeriod').innerHTML=`<thead><tr>${head}</tr></thead><tbody>`+
       rowFor(pn,'Portfolio (net)',false)+rowFor(bm,PF.benchmark_name||'Benchmark',false)+rowFor(pr.relative,'Relative',true)+`</tbody>`;
 
-    const rr=[['Annualized return',fpct(si)],['Volatility',vol==null?'—':(vol*100).toFixed(1)+'%'],['Sharpe ratio',sh==null?'—':sh.toFixed(2)],['Sortino ratio',st.sortino==null?'—':st.sortino.toFixed(2)],['Max drawdown',dd==null?'—':(dd*100).toFixed(1)+'%'],['Best day',fpct(st.best_period)],['Worst day',fpct(st.worst_period)],['% positive days',st.pct_positive==null?'—':Math.round(st.pct_positive*100)+'%']];
+    const rr=[[si!=null?'Annualized return':'Return (since inception)',fpct(si!=null?si:sicum)],['Volatility',vol==null?'—':(vol*100).toFixed(1)+'%'],['Sharpe ratio',sh==null?'—':sh.toFixed(2)],['Sortino ratio',st.sortino==null?'—':st.sortino.toFixed(2)],['Max drawdown',dd==null?'—':(dd*100).toFixed(1)+'%'],['Best day',fpct(st.best_period)],['Worst day',fpct(st.worst_period)],['% positive days',st.pct_positive==null?'—':Math.round(st.pct_positive*100)+'%']];
     document.getElementById('perfRisk').innerHTML='<tbody>'+rr.map(r=>`<tr><td style="color:var(--ink);font-size:12.5px">${r[0]}</td><td class="num">${r[1]}</td></tr>`).join('')+'</tbody>';
 
     drawGrowth(); drawDD(); drawCal();

@@ -103,18 +103,30 @@ def _stdev(xs):
     return (sum((x - m) ** 2 for x in xs) / (len(xs) - 1)) ** 0.5
 
 
-def _period_returns(steps, asof, annualized_after_days=370):
-    """{label: total_or_annualized_return or None} for standard periods."""
+# trailing periods need enough history to be meaningful (don't show a "5Y"
+# number from one month of data); the to-date / since-inception periods are
+# always valid as the investor's actual return for the time they were invested.
+_MIN_DAYS = {"1Y": 330, "3Y p.a.": int(365 * 3 * 0.9), "5Y p.a.": int(365 * 5 * 0.9)}
+
+
+def _period_returns(steps, asof, hist_days, inception, annualized_after_days=370):
+    """{label: return or None}. Each period is measured over the window the
+    portfolio was actually invested — start is clamped to inception — so the
+    portfolio and benchmark are compared over identical windows."""
     if not steps:
         return {k: None for k in PERIODS}
     out = {}
     for label, start in _period_starts(asof).items():
-        win = _window(steps, start, asof)
+        if label in _MIN_DAYS and hist_days < _MIN_DAYS[label]:
+            out[label] = None
+            continue
+        eff_start = max(start, inception)
+        win = _window(steps, eff_start, asof)
         if not win:
             out[label] = None
             continue
         tot = _link(win)
-        days = (asof - max(start, win[0][0])).days or 1
+        days = (asof - max(eff_start, win[0][0])).days or 1
         if "p.a." in label and days > annualized_after_days:
             out[label] = _annualize(tot, days)
         else:
@@ -188,16 +200,21 @@ def compute(portfolio, wb, generated_at=None):
     inception = _d(history[0]["date"]) if history else asof
     hist_days = (asof - inception).days
 
-    # period returns
-    p_gross = _period_returns(p_steps, asof)
-    p_net = _period_returns(p_steps_net, asof)
-    b_per = _period_returns(b_steps, asof)
+    # period returns — portfolio and benchmark over identical windows (clamped to
+    # inception) and gated on the same history, for a fair like-for-like compare.
+    p_gross = _period_returns(p_steps, asof, hist_days, inception)
+    p_net = _period_returns(p_steps_net, asof, hist_days, inception)
+    b_per = _period_returns(b_steps, asof, hist_days, inception)
     relative = {k: (None if p_net[k] is None or b_per[k] is None else p_net[k] - b_per[k]) for k in PERIODS}
 
-    # stats from portfolio daily steps
+    # stats from portfolio daily steps. Annualized risk-adjusted figures are only
+    # statistically meaningful with >= ~1yr of history, so they are suppressed
+    # below that; the cumulative since-inception return is always available.
     rs = [r for (_, r) in p_steps_net]
-    vol = (_stdev(rs) * (252 ** 0.5)) if _stdev(rs) else None
-    si_ann = _annualize(_link(p_steps_net), hist_days) if p_steps_net and hist_days > 0 else None
+    si_cum = _link(p_steps_net) if p_steps_net else None
+    enough_ann = hist_days >= 365
+    si_ann = _annualize(si_cum, hist_days) if (si_cum is not None and enough_ann) else None
+    vol = (_stdev(rs) * (252 ** 0.5)) if (_stdev(rs) and len(rs) >= 20) else None
     sharpe = ((si_ann - rf) / vol) if (vol and si_ann is not None and vol > 0) else None
     downs = [r for r in rs if r < 0]
     dvol = (_stdev(downs) * (252 ** 0.5)) if _stdev(downs) else None
@@ -247,7 +264,8 @@ def compute(portfolio, wb, generated_at=None):
         "period_returns": {"portfolio_net": p_net, "portfolio_gross": p_gross,
                            "benchmark": b_per, "relative": relative},
         "stats": {
-            "annualized_return": si_ann, "volatility": vol, "sharpe": sharpe, "sortino": sortino,
+            "annualized_return": si_ann, "since_inception_cum": si_cum,
+            "volatility": vol, "sharpe": sharpe, "sortino": sortino,
             "max_drawdown": (max_dd / 100 if max_dd is not None else None),
             "best_period": best, "worst_period": worst,
             "pct_positive": (sum(1 for r in rs if r > 0) / len(rs)) if rs else None,
