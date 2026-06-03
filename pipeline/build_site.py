@@ -176,7 +176,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .g4{grid-template-columns:repeat(4,1fr)} .g3{grid-template-columns:repeat(3,1fr)}
   .g2{grid-template-columns:repeat(2,1fr)} .g23{grid-template-columns:1.4fr 1fr}
   .g6{grid-template-columns:repeat(6,1fr)} .g155{grid-template-columns:1.55fr 1fr}
-  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--shadow)}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--shadow);min-width:0}
   .card.pad{padding:18px}
   .card h3{margin:0 0 2px;font-size:13px;font-weight:640;letter-spacing:.01em}
   .card .hint{color:var(--faint);font-size:11.5px;margin-bottom:12px}
@@ -216,7 +216,8 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     padding:1px 7px;border-radius:5px}
   .wbar{height:6px;border-radius:4px;background:var(--accent-tint);overflow:hidden;min-width:40px}
   .wbar>i{display:block;height:100%;background:var(--accent-2)}
-  .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;min-width:0}
+  .row>*{min-width:0}
   .chartbox{position:relative;height:260px}
 
   .toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
