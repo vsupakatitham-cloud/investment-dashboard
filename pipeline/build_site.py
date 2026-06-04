@@ -212,6 +212,10 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   tbody tr:hover{background:var(--surface-2)}
   .name{font-weight:600}
   .sub{color:var(--faint);font-size:11px}
+  /* "Priced" column: date of the latest price/NAV fetch. fresh=today, stale=>1wk old */
+  .pdate{font-size:11px;color:var(--muted);white-space:nowrap}
+  .pdate.fresh{color:var(--ink);font-weight:600}
+  .pdate.stale{color:#b07a16}
   .chip{display:inline-block;font-size:10.5px;color:var(--muted);background:#f1f3f5;border:1px solid var(--border);
     padding:1px 7px;border-radius:5px}
   .wbar{height:6px;border-radius:4px;background:var(--accent-tint);overflow:hidden;min-width:40px}
@@ -318,6 +322,9 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       </div>
       <div class="scroll tablewrap"><table id="holdTable"></table></div>
       <div class="cardlist" id="holdCards"></div>
+      <div class="hint" style="margin-top:12px"><b>Priced</b> = date the latest price/NAV was fetched —
+        <b class="pdate fresh" style="font-size:inherit">bold</b> updated today,
+        <span class="pdate stale" style="font-size:inherit">amber</span> over a week old (carried forward).</div>
     </div>
   </section>
 
@@ -409,6 +416,10 @@ const fM=n=>B+(n/1e6).toFixed(2)+"M";
 const pc=n=>(n*100).toFixed(1)+"%";
 const sg=n=>n>=0?"+":"";
 const md=iso=>{const p=(iso||"").split("-");return p.length===3?(+p[1])+"/"+(+p[2]):iso;};
+// "Priced" cell: date of the latest price fetched. Bold if it's today's as-of date
+// (freshly updated), amber if the engine flagged it stale (>1 week carried forward).
+const priced=(iso,stale,asof)=>{if(!iso)return '<span class="pdate">—</span>';
+  const cls=stale?'stale':(iso===asof?'fresh':'');return `<span class="pdate ${cls}" title="${iso}">${md(iso)}</span>`;};
 const charts={};
 
 function boot(PAYLOAD){
@@ -442,8 +453,10 @@ function boot(PAYLOAD){
   const pool={};
   P.holdings.forEach(h=>{const k=h.asset_type+"|"+h.name;
     const g=pool[k]||(pool[k]={name:h.name,type:h.asset_type,ac:h.asset_class,geo:h.geography,
-      cur:h.currency||"THB",qty:0,price:h.price,inv:0,val:0});
-    g.qty+=h.quantity;g.inv+=h.invested_thb;g.val+=h.value_thb;});
+      cur:h.currency||"THB",qty:0,price:h.price,inv:0,val:0,asof:"",stale:false});
+    g.qty+=h.quantity;g.inv+=h.invested_thb;g.val+=h.value_thb;
+    // keep the freshest lot's price date + its staleness for the pooled position
+    if(!g.asof||(h.price_asof||"")>g.asof){g.asof=h.price_asof||"";g.stale=!!h.price_stale;}});
   const POOL=Object.values(pool).map(h=>({...h,pnl:h.val-h.inv,pnlpct:h.inv?(h.val-h.inv)/h.inv:0,wt:P.total_value?h.val/P.total_value:0}))
     .sort((a,b)=>b.val-a.val);
 
@@ -559,7 +572,7 @@ function boot(PAYLOAD){
      [...seg.children].forEach(x=>x.classList.remove("active"));b.classList.add("active");renderHold();};seg.appendChild(b);});
   document.getElementById("search").addEventListener("input",e=>{hq=e.target.value.toLowerCase();renderHold();});
   const HCOLS=[["name","Holding"],["type","Type"],["ac","Class"],["geo","Geo"],["qty","Units"],["price","Price"],
-    ["inv","Invested"],["val","Value"],["wt","Wt"],["pnl","P&L"],["pnlpct","P&L %"]];
+    ["inv","Invested"],["val","Value"],["wt","Wt"],["pnl","P&L"],["pnlpct","P&L %"],["asof","Priced"]];
   function renderHold(){
     let rows=POOL.filter(h=>(hfilter==="All"||h.type===hfilter)&&
       (!hq||(h.name+" "+h.ac+" "+h.geo).toLowerCase().includes(hq)));
@@ -575,7 +588,8 @@ function boot(PAYLOAD){
         <td class="num">${f0(h.inv)}</td><td class="num">${f0(h.val)}</td>
         <td class="num">${pc(h.wt)}</td>
         <td class="num ${h.pnl>=0?'pos':'neg'}">${sg(h.pnl)}${f0(h.pnl)}</td>
-        <td class="num ${h.pnl>=0?'pos':'neg'}">${sg(h.pnlpct)}${pc(h.pnlpct)}</td></tr>`).join("")+`</tbody>`;
+        <td class="num ${h.pnl>=0?'pos':'neg'}">${sg(h.pnlpct)}${pc(h.pnlpct)}</td>
+        <td class="num">${priced(h.asof,h.stale,P.as_of)}</td></tr>`).join("")+`</tbody>`;
     document.querySelectorAll("#holdTable th").forEach(t=>t.onclick=()=>{const k=t.dataset.k;
       if(hsort.k===k)hsort.dir*=-1;else{hsort.k=k;hsort.dir=-1;}renderHold();});
     // mobile cards
@@ -587,7 +601,8 @@ function boot(PAYLOAD){
         <div><span>Units</span><b>${h.qty.toLocaleString("en-US",{maximumFractionDigits:3})}</b></div>
         <div><span>Price</span><b>${h.price.toLocaleString("en-US",{maximumFractionDigits:2})}</b></div>
         <div><span>Invested</span><b>${f0(h.inv)}</b></div><div><span>Weight</span><b>${pc(h.wt)}</b></div>
-        <div><span>P&L</span><b class="${c}">${sg(h.pnl)}${f0(h.pnl)}</b></div></div></div>`;}).join("");
+        <div><span>P&L</span><b class="${c}">${sg(h.pnl)}${f0(h.pnl)}</b></div>
+        <div><span>Priced</span><b>${priced(h.asof,h.stale,P.as_of)}</b></div></div></div>`;}).join("");
   }
 
   // performance
@@ -761,14 +776,15 @@ function boot(PAYLOAD){
     function renderLots(){
       let rows=(T.lots||[]).filter(l=>(tf==='All'||l.wrapper===tf)&&(!tq||(l.name+' '+l.wrapper+' '+l.type).toLowerCase().includes(tq)));
       document.getElementById('taxCount').textContent=rows.length+' of '+(T.lots||[]).length+' lots';
-      document.getElementById('taxLots').innerHTML='<thead><tr><th>Holding</th><th>Wrapper</th><th>Acq.</th><th>Held</th><th>Cost</th><th>Value</th><th>Unrealized</th><th>%</th><th>Sellable</th><th>Status</th></tr></thead><tbody>'+
+      document.getElementById('taxLots').innerHTML='<thead><tr><th>Holding</th><th>Wrapper</th><th>Acq.</th><th>Held</th><th>Cost</th><th>Value</th><th>Unrealized</th><th>%</th><th>Sellable</th><th>Status</th><th>Priced</th></tr></thead><tbody>'+
         rows.map(l=>`<tr><td><span class="name">${l.name}</span> <span class="sub">${l.type}</span></td>
           <td class="sub">${l.wrapper}</td><td class="sub">${l.acq_date}</td><td class="num sub">${(l.holding_days/30.44).toFixed(1)}mo</td>
           <td class="num">${f0(l.cost)}</td><td class="num">${f0(l.value)}</td>
           <td class="num ${l.unrealized>=0?'pos':'neg'}">${sg(l.unrealized)}${f0(l.unrealized)}</td>
           <td class="num ${l.unrealized>=0?'pos':'neg'}">${sg(l.unrealized_pct)}${pc(l.unrealized_pct)}</td>
           <td class="num sub">${l.sellable_year||'—'}</td>
-          <td><span class="chip" style="${l.status==='Locked'?'color:var(--neg);border-color:#f0cfcb;background:var(--neg-bg)':'color:var(--pos);border-color:#bfe0cd;background:var(--pos-bg)'}">${l.status}</span></td></tr>`).join('')+'</tbody>';
+          <td><span class="chip" style="${l.status==='Locked'?'color:var(--neg);border-color:#f0cfcb;background:var(--neg-bg)':'color:var(--pos);border-color:#bfe0cd;background:var(--pos-bg)'}">${l.status}</span></td>
+          <td class="num">${priced(l.price_asof,l.price_stale,T.as_of)}</td></tr>`).join('')+'</tbody>';
       // mobile cards
       document.getElementById('taxCards').innerHTML=rows.map(l=>{const c=l.unrealized>=0?'pos':'neg';
         const stc=l.status==='Locked'?'color:var(--neg);border-color:#f0cfcb;background:var(--neg-bg)':'color:var(--pos);border-color:#bfe0cd;background:var(--pos-bg)';
@@ -779,12 +795,13 @@ function boot(PAYLOAD){
           <div><span>Wrapper</span><b>${l.wrapper}</b></div><div><span>Type</span><b>${l.type}</b></div>
           <div><span>Acquired</span><b>${l.acq_date}</b></div><div><span>Held</span><b>${(l.holding_days/30.44).toFixed(1)}mo</b></div>
           <div><span>Cost</span><b>${f0(l.cost)}</b></div><div><span>Unrealized</span><b class="${c}">${sg(l.unrealized)}${f0(l.unrealized)}</b></div>
-          <div><span>Sellable</span><b>${l.sellable_year||'—'}</b></div></div></div>`;}).join('');
+          <div><span>Sellable</span><b>${l.sellable_year||'—'}</b></div>
+          <div><span>Priced</span><b>${priced(l.price_asof,l.price_stale,T.as_of)}</b></div></div></div>`;}).join('');
     }
     seg.onclick=e=>{if(e.target.tagName!=='BUTTON')return;[...seg.children].forEach(b=>b.classList.remove('active'));e.target.classList.add('active');tf=e.target.dataset.w;renderLots();};
     document.getElementById('taxSearch').oninput=e=>{tq=e.target.value.toLowerCase();renderLots();};
     renderLots();
-    document.getElementById('taxNote').innerHTML='Holding periods run from '+T.inception+' (assumed acquisition for all lots). Lock-up maturity uses each fund’s actual Sellable Year. Realized gains populate from the Realized sheet. Not tax advice.';
+    document.getElementById('taxNote').innerHTML='Holding periods run from '+T.inception+' (assumed acquisition for all lots). Lock-up maturity uses each fund’s actual Sellable Year. “Priced” is the date of the latest price/NAV fetched (bold = today, amber = over a week old). Realized gains populate from the Realized sheet. Not tax advice.';
   }
   draw("Overview");
 }

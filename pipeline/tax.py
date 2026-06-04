@@ -66,6 +66,7 @@ def compute(portfolio, wb):
             "unrealized": h["pnl_thb"], "unrealized_pct": h["pnl_pct"],
             "sellable_year": sell_year, "tax_advantaged": is_adv,
             "status": "Locked" if locked else "Available",
+            "price_asof": h.get("price_asof", ""), "price_stale": bool(h.get("price_stale", False)),
         })
 
     tot_val = sum(l["value"] for l in lots)

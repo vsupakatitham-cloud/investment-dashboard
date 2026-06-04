@@ -12387,7 +12387,7 @@
         17.52
       ]
     },
-    "generated_at": "2026-06-04 09:30 +07"
+    "generated_at": "2026-06-04 09:45"
   },
   "tax": {
     "as_of": "2026-06-04",
@@ -12500,7 +12500,9 @@
         "unrealized_pct": 1.2085959208714012,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "SCBKEQTG",
@@ -12516,7 +12518,9 @@
         "unrealized_pct": 1.0211569437279802,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "SCBKEQTG",
@@ -12532,7 +12536,9 @@
         "unrealized_pct": 0.543786218268672,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "K-CHX",
@@ -12548,7 +12554,9 @@
         "unrealized_pct": -0.18665095733080012,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "AAPL",
@@ -12564,7 +12572,9 @@
         "unrealized_pct": 0.8542978279864737,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "K-USA-A(D)",
@@ -12580,7 +12590,9 @@
         "unrealized_pct": -0.25018791664402,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "EWY",
@@ -12596,7 +12608,9 @@
         "unrealized_pct": 1.1965961835997936,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "GULF",
@@ -12612,7 +12626,9 @@
         "unrealized_pct": 5.207070093457945,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "Janus Henderson Horizon Global Technology Leaders Fund A2 (SGD-H)",
@@ -12628,7 +12644,9 @@
         "unrealized_pct": 3.427228608030905,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "SCBKEQTG",
@@ -12644,7 +12662,9 @@
         "unrealized_pct": 1.7614958240514005,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "UOBSG-N",
@@ -12660,7 +12680,9 @@
         "unrealized_pct": 0.05038192035055999,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "TSLA",
@@ -12676,7 +12698,9 @@
         "unrealized_pct": -0.002730311161323777,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "REMX",
@@ -12692,7 +12716,9 @@
         "unrealized_pct": 0.15067095164420033,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "META",
@@ -12708,7 +12734,9 @@
         "unrealized_pct": 2.385760869565218,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "UTSB-THAIESG",
@@ -12724,7 +12752,9 @@
         "unrealized_pct": -0.05003930064199997,
         "sellable_year": 2030,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "UTSB-THAIESG",
@@ -12740,7 +12770,9 @@
         "unrealized_pct": -0.05065064150166659,
         "sellable_year": 2031,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BTC",
@@ -12756,7 +12788,9 @@
         "unrealized_pct": -0.05242612672248386,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "SCBKEQTG",
@@ -12772,7 +12806,9 @@
         "unrealized_pct": 1.0211569401144287,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "Janus Henderson Horizon Global Property Equities Fund A3q (SGD)",
@@ -12788,7 +12824,9 @@
         "unrealized_pct": -0.17794759825327494,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "LionGlobal Vietnam Fund Class A (SGD)",
@@ -12804,7 +12842,9 @@
         "unrealized_pct": 1.140921409214093,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "VCX",
@@ -12820,7 +12860,9 @@
         "unrealized_pct": -0.6008956884248747,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "ES-US500RMF",
@@ -12836,7 +12878,9 @@
         "unrealized_pct": 1.5298227754826,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "K-VIETNAMRMF",
@@ -12852,7 +12896,9 @@
         "unrealized_pct": 0.2509866391024999,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "ASP-AIEQ",
@@ -12868,7 +12914,9 @@
         "unrealized_pct": 1.4670693071774004,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "ES-US500RMF",
@@ -12884,7 +12932,9 @@
         "unrealized_pct": 0.9721750868913599,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "ES-US500RMF",
@@ -12900,7 +12950,9 @@
         "unrealized_pct": 0.7511587562467145,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "BNB",
@@ -12916,7 +12968,9 @@
         "unrealized_pct": 0.12934527167913643,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "SCBTAPX(25D)",
@@ -12932,7 +12986,9 @@
         "unrealized_pct": 0.37663998609000005,
         "sellable_year": 2030,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "SCBTAPX(25D)",
@@ -12948,7 +13004,9 @@
         "unrealized_pct": 0.3680693567944,
         "sellable_year": 2030,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "SCBKEQTG",
@@ -12964,7 +13022,9 @@
         "unrealized_pct": 0.6883060630714999,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "Cash",
@@ -12980,7 +13040,9 @@
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "BlackRock Asian Growth Leaders Fund A2 (SGD-H) Acc",
@@ -12996,7 +13058,9 @@
         "unrealized_pct": 0.4978878556803417,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "BTC",
@@ -13012,7 +13076,9 @@
         "unrealized_pct": 0.8508950990990992,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "SCBKEQTG",
@@ -13028,7 +13094,9 @@
         "unrealized_pct": 0.4714098711788709,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "K-TNZ-ThaiESG",
@@ -13044,7 +13112,9 @@
         "unrealized_pct": 0.19619864281333324,
         "sellable_year": 2029,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "K-TNZ-ThaiESG",
@@ -13060,7 +13130,9 @@
         "unrealized_pct": 0.17804633683833332,
         "sellable_year": 2029,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "ASP-SME-A",
@@ -13076,7 +13148,9 @@
         "unrealized_pct": -0.3067125471232,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "ETH",
@@ -13092,7 +13166,9 @@
         "unrealized_pct": -0.47778878181372497,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "K-GHRMF",
@@ -13108,7 +13184,9 @@
         "unrealized_pct": -0.026875791750400096,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "ASP-SME-A",
@@ -13124,7 +13202,9 @@
         "unrealized_pct": -0.04595111853226651,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "ES-US500RMF",
@@ -13140,7 +13220,9 @@
         "unrealized_pct": 1.579397628604727,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "K-GHRMF",
@@ -13156,7 +13238,9 @@
         "unrealized_pct": 0.4155953102719999,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "ASP-EVOCHINA",
@@ -13172,7 +13256,9 @@
         "unrealized_pct": -0.5786954867293749,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "COIN",
@@ -13188,7 +13274,9 @@
         "unrealized_pct": -0.561201172137538,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "ASP-JHC",
@@ -13204,7 +13292,9 @@
         "unrealized_pct": 0.3314666653352001,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "K-TNZ-ThaiESG",
@@ -13220,7 +13310,9 @@
         "unrealized_pct": 0.24675,
         "sellable_year": 2031,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "K-Vietnam",
@@ -13236,7 +13328,9 @@
         "unrealized_pct": 0.05525768983766217,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "K-VIETNAMRMF",
@@ -13252,7 +13346,9 @@
         "unrealized_pct": 0.2085935218573999,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BFRMF",
@@ -13268,7 +13364,9 @@
         "unrealized_pct": 0.1926983824406001,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "SCBSET-SSFX",
@@ -13284,7 +13382,9 @@
         "unrealized_pct": 0.18396024058440003,
         "sellable_year": 2030,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "UBS China Opportunity Equity Fund P Acc (SGD)",
@@ -13300,7 +13400,9 @@
         "unrealized_pct": -0.08584045398160542,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "SCBSET-SSFX",
@@ -13316,7 +13418,9 @@
         "unrealized_pct": 0.1608003258145001,
         "sellable_year": 2030,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "K-GHRMF",
@@ -13332,7 +13436,9 @@
         "unrealized_pct": 0.3507165850484706,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "BCARERMF",
@@ -13348,7 +13454,9 @@
         "unrealized_pct": 0.33133032584741184,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-28",
+        "price_stale": false
       },
       {
         "name": "SCBSEMI(A)",
@@ -13364,7 +13472,9 @@
         "unrealized_pct": 1.5818424289324133,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "K-VIETNAMRMF",
@@ -13380,7 +13490,9 @@
         "unrealized_pct": 0.05852509337959986,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "K-VIETNAMRMF",
@@ -13396,7 +13508,9 @@
         "unrealized_pct": 0.04222739526559992,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "K-VIETNAMRMF",
@@ -13412,7 +13526,9 @@
         "unrealized_pct": 0.04002439286659996,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "K-VIETNAMRMF",
@@ -13428,7 +13544,9 @@
         "unrealized_pct": 0.019514450916200004,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BCARERMF",
@@ -13444,7 +13562,9 @@
         "unrealized_pct": 0.009661079067699902,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-28",
+        "price_stale": false
       },
       {
         "name": "K-VIETNAMRMF",
@@ -13460,7 +13580,9 @@
         "unrealized_pct": 0.0017421935119999398,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "K-GHRMF",
@@ -13476,7 +13598,9 @@
         "unrealized_pct": 0.0005174862847999611,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "BFLRMF",
@@ -13492,7 +13616,9 @@
         "unrealized_pct": -0.007329354088599939,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "K-VIETNAMRMF",
@@ -13508,7 +13634,9 @@
         "unrealized_pct": -0.016947807662800043,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "K-GHRMF",
@@ -13524,7 +13652,9 @@
         "unrealized_pct": -0.031035583360000018,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "K-VIETNAMRMF",
@@ -13540,7 +13670,9 @@
         "unrealized_pct": -0.05015367157540008,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "Cash",
@@ -13556,7 +13688,9 @@
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "Cash",
@@ -13572,7 +13706,9 @@
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "K-VIETNAMRMF",
@@ -13588,7 +13724,9 @@
         "unrealized_pct": -0.09434066502820017,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BBL",
@@ -13604,7 +13742,9 @@
         "unrealized_pct": -0.21079201226181882,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "SAWAD",
@@ -13620,7 +13760,9 @@
         "unrealized_pct": -0.22913868754696937,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "BFLRMF",
@@ -13636,7 +13778,9 @@
         "unrealized_pct": -0.19579447895319987,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BTC",
@@ -13652,7 +13796,9 @@
         "unrealized_pct": -0.4096995305164319,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "OSP",
@@ -13668,7 +13814,9 @@
         "unrealized_pct": -0.4522475801358256,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "BFLRMF",
@@ -13684,7 +13832,9 @@
         "unrealized_pct": -0.04309357094199986,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BFLRMF",
@@ -13700,7 +13850,9 @@
         "unrealized_pct": -0.14222568962376475,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BCARERMF",
@@ -13716,7 +13868,9 @@
         "unrealized_pct": 0.45107797915720005,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-28",
+        "price_stale": false
       },
       {
         "name": "ES-US500RMF",
@@ -13732,7 +13886,9 @@
         "unrealized_pct": 0.4259810481956002,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "ASP-EUG",
@@ -13748,7 +13904,9 @@
         "unrealized_pct": -0.2911901241656,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "LLY",
@@ -13764,7 +13922,9 @@
         "unrealized_pct": 0.18463937450584197,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "K-GHRMF",
@@ -13780,7 +13940,9 @@
         "unrealized_pct": 0.17327050227200017,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "USDT",
@@ -13796,7 +13958,9 @@
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "ASP-SME-A",
@@ -13812,7 +13976,9 @@
         "unrealized_pct": 0.32664352858880014,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "RJH",
@@ -13828,7 +13994,9 @@
         "unrealized_pct": -0.5400583833487158,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "KF-ASET50-L",
@@ -13844,7 +14012,9 @@
         "unrealized_pct": -0.35960489679319996,
         "sellable_year": 2023,
         "tax_advantaged": true,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "KF-ASET50-L",
@@ -13860,7 +14030,9 @@
         "unrealized_pct": -0.36156198155599995,
         "sellable_year": 2023,
         "tax_advantaged": true,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "NVDA",
@@ -13876,7 +14048,9 @@
         "unrealized_pct": 0.566832044360134,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "BFLRMF",
@@ -13892,7 +14066,9 @@
         "unrealized_pct": -0.1239296088905714,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "ASP-THGEQ-T",
@@ -13908,7 +14084,9 @@
         "unrealized_pct": 0.17816146108159986,
         "sellable_year": 2023,
         "tax_advantaged": true,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "Cash",
@@ -13924,7 +14102,9 @@
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "BCARERMF",
@@ -13940,7 +14120,9 @@
         "unrealized_pct": 0.42655053838999996,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-28",
+        "price_stale": false
       },
       {
         "name": "ES-US500RMF",
@@ -13956,7 +14138,9 @@
         "unrealized_pct": 1.2761779667848003,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "TER",
@@ -13972,7 +14156,9 @@
         "unrealized_pct": 2.432509426057813,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "NCAP",
@@ -13988,7 +14174,9 @@
         "unrealized_pct": -0.6173095600300911,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "OR",
@@ -14004,7 +14192,9 @@
         "unrealized_pct": -0.3055555555555556,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "KLAC",
@@ -14020,7 +14210,9 @@
         "unrealized_pct": 2.285219595900258,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "BFLRMF",
@@ -14036,7 +14228,9 @@
         "unrealized_pct": 0.05272506986480017,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BFLRMF",
@@ -14052,7 +14246,9 @@
         "unrealized_pct": 0.04426064082080018,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "B-MIXED75",
@@ -14068,7 +14264,9 @@
         "unrealized_pct": 0.04183645816639997,
         "sellable_year": 2019,
         "tax_advantaged": true,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "B-EQUITY",
@@ -14084,7 +14282,9 @@
         "unrealized_pct": 0.028869919438399956,
         "sellable_year": 2019,
         "tax_advantaged": true,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BFLRMF",
@@ -14100,7 +14300,9 @@
         "unrealized_pct": 0.01751779085119997,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "B-EQUITY",
@@ -14116,7 +14318,9 @@
         "unrealized_pct": 0.01560051263900008,
         "sellable_year": 2022,
         "tax_advantaged": true,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "ASP-THGEQ-T",
@@ -14132,7 +14336,9 @@
         "unrealized_pct": 0.014072521418399993,
         "sellable_year": 2023,
         "tax_advantaged": true,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BCARERMF",
@@ -14148,7 +14354,9 @@
         "unrealized_pct": -0.0073807209904000045,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-28",
+        "price_stale": false
       },
       {
         "name": "B-MIXED75",
@@ -14164,7 +14372,9 @@
         "unrealized_pct": -0.008492159518400003,
         "sellable_year": 2022,
         "tax_advantaged": true,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "HUMAN",
@@ -14180,7 +14390,9 @@
         "unrealized_pct": -0.372091474324134,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "BCARERMF",
@@ -14196,7 +14408,9 @@
         "unrealized_pct": -0.013066650010400045,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-28",
+        "price_stale": false
       },
       {
         "name": "K-GHRMF",
@@ -14212,7 +14426,9 @@
         "unrealized_pct": -0.023130382355199982,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "K-GHRMF",
@@ -14228,7 +14444,9 @@
         "unrealized_pct": -0.03172780973440007,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "K-GHRMF",
@@ -14244,7 +14462,9 @@
         "unrealized_pct": 0.20841565209199997,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "B-EQUITY",
@@ -14260,7 +14480,9 @@
         "unrealized_pct": -0.03540597665320005,
         "sellable_year": 2022,
         "tax_advantaged": true,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "AMAT",
@@ -14276,7 +14498,9 @@
         "unrealized_pct": 1.9509133765468476,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "K-GHRMF",
@@ -14292,7 +14516,9 @@
         "unrealized_pct": -0.04463904378880004,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "NETBAY",
@@ -14308,7 +14534,9 @@
         "unrealized_pct": -0.7491056865629623,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "BCARERMF",
@@ -14324,7 +14552,9 @@
         "unrealized_pct": 0.18638539108199983,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-28",
+        "price_stale": false
       },
       {
         "name": "K-GHRMF",
@@ -14340,7 +14570,9 @@
         "unrealized_pct": -0.05102461253439993,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "ASP-FLEXPLUS",
@@ -14356,7 +14588,9 @@
         "unrealized_pct": -0.0661080822988,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "B-EQUITY",
@@ -14372,7 +14606,9 @@
         "unrealized_pct": -0.0768568813486,
         "sellable_year": 2022,
         "tax_advantaged": true,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BFLRMF",
@@ -14388,7 +14624,9 @@
         "unrealized_pct": -0.07689207138759986,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "B-EQUITY",
@@ -14404,7 +14642,9 @@
         "unrealized_pct": -0.07762723962700009,
         "sellable_year": 2022,
         "tax_advantaged": true,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BANPU",
@@ -14420,7 +14660,9 @@
         "unrealized_pct": -0.7577908546144344,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "B-MIXED75",
@@ -14436,7 +14678,9 @@
         "unrealized_pct": -0.08930189210120007,
         "sellable_year": 2022,
         "tax_advantaged": true,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "MPWR",
@@ -14452,7 +14696,9 @@
         "unrealized_pct": 1.7842785118792632,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "ES-US500RMF",
@@ -14468,7 +14714,9 @@
         "unrealized_pct": 0.5128505825246668,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "B-EQUITY",
@@ -14484,7 +14732,9 @@
         "unrealized_pct": -0.09398244335200012,
         "sellable_year": 2022,
         "tax_advantaged": true,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BFRMF",
@@ -14500,7 +14750,9 @@
         "unrealized_pct": 0.1248895422695001,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "B-MIXED75",
@@ -14516,7 +14768,9 @@
         "unrealized_pct": -0.10265918149599995,
         "sellable_year": 2022,
         "tax_advantaged": true,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "ES-US500RMF",
@@ -14532,7 +14786,9 @@
         "unrealized_pct": 0.478247204772,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "ES-US500RMF",
@@ -14548,7 +14804,9 @@
         "unrealized_pct": 0.47055091928333326,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "K-GHRMF",
@@ -14564,7 +14822,9 @@
         "unrealized_pct": -0.11827669504959995,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "BFLRMF",
@@ -14580,7 +14840,9 @@
         "unrealized_pct": -0.11907333875079988,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "K-GHRMF",
@@ -14596,7 +14858,9 @@
         "unrealized_pct": 0.08353661134399991,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "BFRMF",
@@ -14612,7 +14876,9 @@
         "unrealized_pct": 0.08104086907250002,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BCARERMF",
@@ -14628,7 +14894,9 @@
         "unrealized_pct": 0.024272780061499907,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-28",
+        "price_stale": false
       },
       {
         "name": "ES-US500RMF",
@@ -14644,7 +14912,9 @@
         "unrealized_pct": 0.34263592606,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "K-GHRMF",
@@ -14660,7 +14930,9 @@
         "unrealized_pct": -0.0051154841440000385,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "BERMF",
@@ -14676,7 +14948,9 @@
         "unrealized_pct": -0.021897364150500108,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BFLRMF",
@@ -14692,7 +14966,9 @@
         "unrealized_pct": -0.03914180276049992,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "KF-ASET50-L",
@@ -14708,7 +14984,9 @@
         "unrealized_pct": -0.30710859548666675,
         "sellable_year": 2024,
         "tax_advantaged": true,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "ACLS",
@@ -14724,7 +15002,9 @@
         "unrealized_pct": 1.2513081600905107,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "KF-ASET50-L",
@@ -14740,7 +15020,9 @@
         "unrealized_pct": -0.2945569176072,
         "sellable_year": 2024,
         "tax_advantaged": true,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BFLRMF",
@@ -14756,7 +15038,9 @@
         "unrealized_pct": -0.1212778420569999,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BFLRMF",
@@ -14772,7 +15056,9 @@
         "unrealized_pct": 0.00375442430685715,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BFRMF",
@@ -14788,7 +15074,9 @@
         "unrealized_pct": 0.15960014245600007,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "ES-US500RMF",
@@ -14804,7 +15092,9 @@
         "unrealized_pct": 0.14006472924933333,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "BFRMF",
@@ -14820,7 +15110,9 @@
         "unrealized_pct": 0.13555103582200004,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "YOU",
@@ -14836,7 +15128,9 @@
         "unrealized_pct": 1.069372693726937,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "SCBSEMI(A)",
@@ -14852,7 +15146,9 @@
         "unrealized_pct": 1.925769707606021,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "KF-ASET50-L",
@@ -14868,7 +15164,9 @@
         "unrealized_pct": -0.3439287731816,
         "sellable_year": 2023,
         "tax_advantaged": true,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "B-EQUITY",
@@ -14884,7 +15182,9 @@
         "unrealized_pct": -0.11658223256378383,
         "sellable_year": 2024,
         "tax_advantaged": true,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BFRMF",
@@ -14900,7 +15200,9 @@
         "unrealized_pct": 0.08249419080600007,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BERMF",
@@ -14916,7 +15218,9 @@
         "unrealized_pct": -0.20056158434900007,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "UVALUE-DIV-LD",
@@ -14932,7 +15236,9 @@
         "unrealized_pct": -0.20369959548400002,
         "sellable_year": 2024,
         "tax_advantaged": true,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "UVALUE-DIV-LD",
@@ -14948,7 +15254,9 @@
         "unrealized_pct": -0.229430369986,
         "sellable_year": 2024,
         "tax_advantaged": true,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BWG",
@@ -14964,7 +15272,9 @@
         "unrealized_pct": -0.8730956414698062,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "CRUS",
@@ -14980,7 +15290,9 @@
         "unrealized_pct": 0.8110953634338939,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "BFLRMF",
@@ -14996,7 +15308,9 @@
         "unrealized_pct": -0.01735699646799997,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BNB",
@@ -15012,7 +15326,9 @@
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "VELO",
@@ -15028,7 +15344,9 @@
         "unrealized_pct": -0.718919512195122,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "K-GHRMF",
@@ -15044,7 +15362,9 @@
         "unrealized_pct": -0.05608687177599992,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "BCARERMF",
@@ -15060,7 +15380,9 @@
         "unrealized_pct": 0.40456444767599986,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-28",
+        "price_stale": false
       },
       {
         "name": "BFLRMF",
@@ -15076,7 +15398,9 @@
         "unrealized_pct": -0.06777516480399996,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "MCHP",
@@ -15092,7 +15416,9 @@
         "unrealized_pct": 0.6980302497361943,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "ES-US500RMF",
@@ -15108,7 +15434,9 @@
         "unrealized_pct": 0.3764103054649999,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "K-GHRMF",
@@ -15124,7 +15452,9 @@
         "unrealized_pct": -0.11630911139200009,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "QRVO",
@@ -15140,7 +15470,9 @@
         "unrealized_pct": 0.532933255269321,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "FTNT",
@@ -15156,7 +15488,9 @@
         "unrealized_pct": 0.5155716502845314,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "BERMF",
@@ -15172,7 +15506,9 @@
         "unrealized_pct": -0.2140287055266667,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "SAMART",
@@ -15188,7 +15524,9 @@
         "unrealized_pct": -0.7179761971910429,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "Cash",
@@ -15204,7 +15542,9 @@
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "TIDLOR",
@@ -15220,7 +15560,9 @@
         "unrealized_pct": -0.40381091779336487,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "BCARERMF",
@@ -15236,7 +15578,9 @@
         "unrealized_pct": 0.10963454669849998,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-28",
+        "price_stale": false
       },
       {
         "name": "BCARERMF",
@@ -15252,7 +15596,9 @@
         "unrealized_pct": 0.09331292443599996,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-28",
+        "price_stale": false
       },
       {
         "name": "BCARERMF",
@@ -15268,7 +15614,9 @@
         "unrealized_pct": 0.057368266810500064,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-28",
+        "price_stale": false
       },
       {
         "name": "BCARERMF",
@@ -15284,7 +15632,9 @@
         "unrealized_pct": 0.05613619089700005,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-28",
+        "price_stale": false
       },
       {
         "name": "BTC",
@@ -15300,7 +15650,9 @@
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "ARB",
@@ -15316,7 +15668,9 @@
         "unrealized_pct": -0.8344213355970572,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "BERMF",
@@ -15332,7 +15686,9 @@
         "unrealized_pct": -0.06354876128699997,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BERMF",
@@ -15348,7 +15704,9 @@
         "unrealized_pct": -0.100637239941,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "K-GHRMF",
@@ -15364,7 +15722,9 @@
         "unrealized_pct": -0.11066015396800012,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-29",
+        "price_stale": false
       },
       {
         "name": "ENPH",
@@ -15380,7 +15740,9 @@
         "unrealized_pct": -0.03441522104085076,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "BCARERMF",
@@ -15396,7 +15758,9 @@
         "unrealized_pct": 0.520661636731,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-05-28",
+        "price_stale": false
       },
       {
         "name": "PENGU",
@@ -15412,7 +15776,9 @@
         "unrealized_pct": -0.7731,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "BERMF",
@@ -15428,7 +15794,9 @@
         "unrealized_pct": 0.2801600866119999,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "NSIT",
@@ -15444,7 +15812,9 @@
         "unrealized_pct": -0.23398051818964954,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "BFLRMF",
@@ -15460,7 +15830,9 @@
         "unrealized_pct": 0.188548425836,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "ASP-THGEQ-T",
@@ -15476,7 +15848,9 @@
         "unrealized_pct": 0.23610998732666666,
         "sellable_year": 2022,
         "tax_advantaged": true,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BFRMF",
@@ -15492,7 +15866,9 @@
         "unrealized_pct": 0.08736696828200001,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BFRMF",
@@ -15508,7 +15884,9 @@
         "unrealized_pct": 0.0862164772340002,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BFRMF",
@@ -15524,7 +15902,9 @@
         "unrealized_pct": 0.08493211265600002,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BERMF",
@@ -15540,7 +15920,9 @@
         "unrealized_pct": 0.07366849031599977,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BFRMF",
@@ -15556,7 +15938,9 @@
         "unrealized_pct": 0.06879484951400008,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BFLRMF",
@@ -15572,7 +15956,9 @@
         "unrealized_pct": 0.06683391240199998,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BFRMF",
@@ -15588,7 +15974,9 @@
         "unrealized_pct": -0.0026170694139998887,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "OLED",
@@ -15604,7 +15992,9 @@
         "unrealized_pct": -0.3897211958347329,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "SOL",
@@ -15620,7 +16010,9 @@
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "ADBE",
@@ -15636,7 +16028,9 @@
         "unrealized_pct": -0.40338541060327365,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "BERMF",
@@ -15652,7 +16046,9 @@
         "unrealized_pct": -0.07789425872400006,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "OKSOL",
@@ -15668,7 +16064,9 @@
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-05-30",
+        "price_stale": false
       },
       {
         "name": "BLAND",
@@ -15684,7 +16082,9 @@
         "unrealized_pct": -0.7753792720990608,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "GSTEEL",
@@ -15700,7 +16100,9 @@
         "unrealized_pct": -0.7192220579151302,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "BFLRMF",
@@ -15716,7 +16118,9 @@
         "unrealized_pct": -0.11130228956800002,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "KUB",
@@ -15732,7 +16136,9 @@
         "unrealized_pct": -0.940948013642244,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "BFLRMF",
@@ -15748,7 +16154,9 @@
         "unrealized_pct": -0.12337096848399996,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BERMF",
@@ -15764,7 +16172,9 @@
         "unrealized_pct": -0.13592176933400005,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BERMF",
@@ -15780,7 +16190,9 @@
         "unrealized_pct": -0.14263159553799998,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BFLRMF",
@@ -15796,7 +16208,9 @@
         "unrealized_pct": -0.15661354652199988,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "ASP-DGOV-R",
@@ -15812,7 +16226,9 @@
         "unrealized_pct": 0.015828584424739316,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "AAVE",
@@ -15828,7 +16244,9 @@
         "unrealized_pct": -0.8010972044027656,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "BFRMF",
@@ -15844,7 +16262,9 @@
         "unrealized_pct": 0.19725348268400011,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BFRMF",
@@ -15860,7 +16280,9 @@
         "unrealized_pct": 0.1290335029400001,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "SUI",
@@ -15876,7 +16298,9 @@
         "unrealized_pct": -0.7735878691983122,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "UVALUE-DIV-LD",
@@ -15892,7 +16316,9 @@
         "unrealized_pct": 0.051875953459999985,
         "sellable_year": 2019,
         "tax_advantaged": true,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "IT",
@@ -15908,7 +16334,9 @@
         "unrealized_pct": -0.6827398948564386,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "B-EQUITY",
@@ -15924,7 +16352,9 @@
         "unrealized_pct": -0.012566802868000014,
         "sellable_year": 2018,
         "tax_advantaged": true,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "B-MIXED75",
@@ -15940,7 +16370,9 @@
         "unrealized_pct": -0.015808993240000017,
         "sellable_year": 2018,
         "tax_advantaged": true,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BFLRMF",
@@ -15956,7 +16388,9 @@
         "unrealized_pct": -0.05230995425199999,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BERMF",
@@ -15972,7 +16406,9 @@
         "unrealized_pct": -0.05600693948400003,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "BERMF",
@@ -15988,7 +16424,9 @@
         "unrealized_pct": -0.16440874370799993,
         "sellable_year": 2037,
         "tax_advantaged": true,
-        "status": "Locked"
+        "status": "Locked",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "VELODROME",
@@ -16004,7 +16442,9 @@
         "unrealized_pct": -0.9373326940742467,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "WORK",
@@ -16020,7 +16460,9 @@
         "unrealized_pct": -0.9635844941120679,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "PLUME",
@@ -16036,7 +16478,9 @@
         "unrealized_pct": -0.8622997003751783,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "DOGE",
@@ -16052,7 +16496,9 @@
         "unrealized_pct": -0.7588226932668329,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "TRUMP",
@@ -16068,7 +16514,9 @@
         "unrealized_pct": -0.9719739433419179,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "ASP-DGOV-R",
@@ -16084,7 +16532,9 @@
         "unrealized_pct": 0.011587143627916173,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "PENGU",
@@ -16100,7 +16550,9 @@
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "SCBGOLDH",
@@ -16116,7 +16568,9 @@
         "unrealized_pct": 0.9429949958,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "SCBSFF",
@@ -16132,7 +16586,9 @@
         "unrealized_pct": 0.004969572600000068,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "TCMF",
@@ -16148,7 +16604,9 @@
         "unrealized_pct": 0.0007227065000000721,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "Cash",
@@ -16164,7 +16622,9 @@
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "SOL",
@@ -16180,7 +16640,9 @@
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "ES-MF",
@@ -16196,7 +16658,9 @@
         "unrealized_pct": 0.06292875754999983,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "ES-MF",
@@ -16212,7 +16676,9 @@
         "unrealized_pct": 0.06139606409999985,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "ES-MF",
@@ -16228,7 +16694,9 @@
         "unrealized_pct": 0.05892737465000011,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-02",
+        "price_stale": false
       },
       {
         "name": "COMP",
@@ -16244,7 +16712,9 @@
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "BWG-W7",
@@ -16260,7 +16730,9 @@
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-05-23",
+        "price_stale": true
       },
       {
         "name": "SOL",
@@ -16276,7 +16748,9 @@
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "USDT",
@@ -16292,7 +16766,9 @@
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-06-04",
+        "price_stale": false
       },
       {
         "name": "NIGHT",
@@ -16308,10 +16784,12 @@
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
-        "status": "Available"
+        "status": "Available",
+        "price_asof": "2026-05-30",
+        "price_stale": false
       }
     ],
     "realized": []
   },
-  "generated_at": "2026-06-04 09:30 +07"
+  "generated_at": "2026-06-04 09:45"
 }
