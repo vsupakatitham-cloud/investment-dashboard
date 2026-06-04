@@ -203,6 +203,12 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   /* Holding/lot name: fixed ~34ch column so names wrap to a 2nd line only past
      ~34 chars (~95% stay 1-line) and don't get squeezed narrower on mobile */
   #holdTable td:first-child,#taxLots td:first-child{white-space:normal;min-width:34ch;max-width:34ch;line-height:1.32}
+  /* Holdings desktop: cap Class & Geo (and let them wrap) so the Priced column
+     stays visible without horizontal scrolling at typical desktop widths */
+  #holdTable th:nth-child(3),#holdTable td:nth-child(3){max-width:78px}
+  #holdTable th:nth-child(4),#holdTable td:nth-child(4){max-width:66px}
+  #holdTable td:nth-child(3),#holdTable td:nth-child(4){white-space:normal;line-height:1.3}  /* wrap multi-word values at spaces, keep single words (Vietnam, Thailand) intact */
+  #holdTable th,#holdTable td{padding-left:6px;padding-right:6px}  /* tighter gutters so all 12 cols fit */
   /* Long names elsewhere wrap instead of overflowing (top movers / largest / concentration) */
   #ovHold td:first-child{white-space:normal;overflow-wrap:anywhere;line-height:1.3;max-width:26ch}
   .conc .nm{overflow-wrap:anywhere;line-height:1.25}
