@@ -53,6 +53,34 @@ def update_history(snapshot: dict, asof: str) -> list:
     return history
 
 
+def read_flows(wb) -> list:
+    """External cash flows from the 'Cash Flows' sheet (date, amount ฿, type, note).
+    Positive = money in (contribution/dividend), negative = money out (withdrawal).
+    Used by the Overview daily card to attribute real flows vs market/FX movement —
+    do NOT infer flows from changes in cost basis, which drift daily with FX."""
+    flows = []
+    if "Cash Flows" not in wb.sheetnames:
+        return flows
+    ws = wb["Cash Flows"]
+    for r in range(5, ws.max_row + 1):
+        dt_, amt = ws.cell(r, 1).value, ws.cell(r, 2).value
+        if dt_ is None or amt in (None, ""):
+            continue
+        if isinstance(dt_, _dt.datetime):
+            dt_ = dt_.date().isoformat()
+        elif isinstance(dt_, _dt.date):
+            dt_ = dt_.isoformat()
+        else:
+            dt_ = str(dt_)[:10]
+        try:
+            amt = float(amt)
+        except (TypeError, ValueError):
+            continue
+        flows.append({"date": dt_, "amount": round(amt),
+                      "type": ws.cell(r, 3).value or "", "note": ws.cell(r, 4).value or ""})
+    return flows
+
+
 def build(workbook=WORKBOOK_DEFAULT, generated_at=None):
     DOCS.mkdir(exist_ok=True)
     cfg = json.loads(CONFIG.read_text())
@@ -62,11 +90,13 @@ def build(workbook=WORKBOOK_DEFAULT, generated_at=None):
     generated_at = generated_at or _dt.datetime.now().strftime("%Y-%m-%d %H:%M")
 
     # institutional performance metrics (benchmark-relative, TWR/IRR, risk stats)
+    flows = []
     try:
         import openpyxl
         import performance
         wb = openpyxl.load_workbook(workbook, data_only=False)
         perf = performance.compute(p, wb, generated_at)
+        flows = read_flows(wb)
     except Exception as e:  # never let perf break the core dashboard
         perf = {"error": str(e), "history_points": len(history)}
 
@@ -76,7 +106,7 @@ def build(workbook=WORKBOOK_DEFAULT, generated_at=None):
     except Exception as e:
         taxobj = {"error": str(e)}
 
-    payload = {"config": cfg, "portfolio": p, "history": history,
+    payload = {"config": cfg, "portfolio": p, "history": history, "flows": flows,
                "performance": perf, "tax": taxobj, "generated_at": generated_at}
     (DOCS / "data.json").write_text(json.dumps(payload, indent=2, default=str))
 
@@ -192,6 +222,16 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .delta.up{color:var(--pos);background:var(--pos-bg)} .delta.down{color:var(--neg);background:var(--neg-bg)}
   .spark{position:absolute;right:10px;bottom:10px;width:74px;height:30px;opacity:.9}
 
+  /* Today's Movement card (Overview): day-over-day change + asset-bucket breakdown */
+  .movcard{padding:16px 18px}
+  .movmain{display:flex;justify-content:space-between;align-items:flex-start;gap:16px 24px;flex-wrap:wrap}
+  .movbig{font-size:29px;font-weight:700;letter-spacing:-.02em;margin-top:5px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .movpct{font-size:13px;font-weight:600;padding:2px 8px;border-radius:20px;letter-spacing:0}
+  .movpct.up{color:var(--pos);background:var(--pos-bg)} .movpct.down{color:var(--neg);background:var(--neg-bg)}
+  .movbreak{display:flex;flex-wrap:wrap;gap:7px;align-items:center;max-width:100%}
+  .movchip{font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:7px;border:1px solid var(--border);white-space:nowrap}
+  .movchip.up{color:var(--pos)} .movchip.down{color:var(--neg)} .movchip.flat{color:var(--muted)}
+
   .barstack{height:22px;border-radius:6px;overflow:hidden;display:flex;background:var(--border)}
   .barstack i{display:block;height:100%}
   .legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:14px;font-size:12px;color:var(--muted)}
@@ -283,6 +323,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 
 <div class="wrap">
   <section data-tab="Overview">
+    <div class="card movcard" id="dailyMove" style="margin-bottom:16px"></div>
     <div class="row g4" id="kpis" style="margin-bottom:16px"></div>
     <div class="row g23" style="margin-bottom:16px">
       <div class="card pad">
@@ -422,6 +463,8 @@ const fM=n=>B+(n/1e6).toFixed(2)+"M";
 const pc=n=>(n*100).toFixed(1)+"%";
 const sg=n=>n>=0?"+":"";
 const md=iso=>{const p=(iso||"").split("-");return p.length===3?(+p[1])+"/"+(+p[2]):iso;};
+const MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const dmon=iso=>{const p=(iso||"").split("-");return p.length===3?(+p[2])+" "+(MON[+p[1]-1]||""):iso;};
 // "Priced" cell: date of the latest price fetched. Bold if it's today's as-of date
 // (freshly updated), amber if the engine flagged it stale (>1 week carried forward).
 const priced=(iso,stale,asof)=>{if(!iso)return '<span class="pdate">—</span>';
@@ -431,6 +474,7 @@ const charts={};
 function boot(PAYLOAD){
   const P=PAYLOAD.portfolio, CFG=PAYLOAD.config||{};
   const HIST=(PAYLOAD.history||[]).slice().sort((a,b)=>a.date<b.date?-1:1);
+  const FLOWS=PAYLOAD.flows||[];
   const hasHist=HIST.length>=2;
   const H={labels:HIST.map(h=>md(h.date)),value:HIST.map(h=>h.total_value),invested:HIST.map(h=>h.total_invested)};
   const TABS=["Overview","Allocation","Holdings","Performance","Risk","Tax & Lots"];
@@ -504,6 +548,22 @@ function boot(PAYLOAD){
     return ref.total_value?(P.total_value-ref.total_value)/ref.total_value:null;
   }
   const wow=changeOver(7);
+  // day-over-day: the two most recent daily snapshots (markets may not move on
+  // weekends, so compare actual adjacent points rather than "exactly yesterday")
+  function dayChange(){
+    if(HIST.length<2)return null;
+    const a=HIST[HIST.length-2], b=HIST[HIST.length-1];
+    const mf=(b.mf_value||0)-(a.mf_value||0), eq=(b.eq_value||0)-(a.eq_value||0), cr=(b.crypto_value||0)-(a.crypto_value||0);
+    const totAbs=b.total_value-a.total_value;
+    // real external cash flows dated within the window (a.date, b.date] — actual
+    // money in/out, NOT inferred from cost basis (which drifts daily with FX).
+    const win=FLOWS.filter(f=>f.date>a.date&&f.date<=b.date);
+    const flow=win.reduce((s,f)=>s+(f.amount||0),0);
+    return {prevDate:a.date, valAbs:totAbs, valPct:a.total_value?totAbs/a.total_value:null,
+      flow, flowItems:win, marketAbs:totAbs-flow,
+      mf, eq, crypto:cr, other:totAbs-mf-eq-cr};
+  }
+  const dc=dayChange();
   function spark(series){
     if(!series||series.length<2)return"";
     const w=74,h=30,mn=Math.min(...series),mx=Math.max(...series),r=mx-mn||1;
@@ -512,20 +572,50 @@ function boot(PAYLOAD){
     const d=pts.map((p,i)=>(i?"L":"M")+p[0].toFixed(1)+" "+p[1].toFixed(1)).join(" ");
     return `<svg class="spark" viewBox="0 0 ${w} ${h}"><path d="${d}" fill="none" stroke="${up?'#0f7a44':'#c0392b'}" stroke-width="1.6"/></svg>`;
   }
+  const d1=dc?dc.valPct:null;
   const kpis=[
-    {label:"Total Portfolio Value",val:f0(P.total_value),d:wow,spark:H.value},
+    {label:"Total Portfolio Value",val:f0(P.total_value),d:d1,dl:"1D",spark:H.value},
     {label:"Invested (Cost Basis)",val:f0(P.total_invested),sub:"THB"},
     {label:"Unrealized P&L",val:sg(P.total_pnl)+f0(P.total_pnl),cls:P.total_pnl>=0?"pos":"neg",sub:"since inception"},
-    {label:"Total Return",val:sg(P.total_pnl_pct)+pc(P.total_pnl_pct),cls:P.total_pnl_pct>=0?"pos":"neg",d:wow,spark:H.value},
+    {label:"Total Return",val:sg(P.total_pnl_pct)+pc(P.total_pnl_pct),cls:P.total_pnl_pct>=0?"pos":"neg",d:d1,dl:"1D",spark:H.value},
   ];
   document.getElementById("kpis").innerHTML=kpis.map(k=>`
     <div class="card kpi">
       <div class="label">${k.label}</div>
       <div class="val num ${k.cls||''}">${k.val}</div>
-      ${k.d!=null?`<div class="delta ${k.d>=0?'up':'down'}">${k.d>=0?'▲':'▼'} ${pc(Math.abs(k.d))} WoW</div>`
+      ${k.d!=null?`<div class="delta ${k.d>=0?'up':'down'}">${k.d>=0?'▲':'▼'} ${pc(Math.abs(k.d))} ${k.dl||'1D'}</div>`
                  :`<div class="mini" style="margin-top:8px">${k.sub||''}</div>`}
       ${k.spark?spark(k.spark):''}
     </div>`).join("");
+
+  // Today's Movement card — headline day-over-day change + asset-bucket breakdown
+  (function(){
+    const el=document.getElementById("dailyMove");
+    if(!dc){el.innerHTML=`<div class="empty" style="padding:16px">Daily movement is building.`
+      +`<br><span class="pillnote">Two daily snapshots needed — populates after the next refresh.</span></div>`;return;}
+    const up=dc.valAbs>=0;
+    const breaks=[["Funds",dc.mf],["Equities",dc.eq],["Crypto",dc.crypto],["Other",dc.other]]
+      .map(([n,v])=>Math.abs(v)<1?`<span class="movchip flat">${n} ·฿0</span>`
+        :`<span class="movchip ${v>=0?'up':'down'}">${n} ${v>=0?'▲':'▼'} ${f0(Math.abs(v))}</span>`).join("");
+    // Only attribute a flow when the Cash Flows sheet has a real dated entry in the
+    // window; otherwise the whole move is market & FX (no contribution).
+    let note="";
+    if(Math.abs(dc.flow)>=1){
+      const lbl=(dc.flowItems.find(f=>f.type)||{}).type
+        || (dc.flow>=0?"contribution":"withdrawal");
+      note=`<div class="mini" style="margin-top:9px">Includes ${sg(dc.flow)}${f0(dc.flow)} ${lbl.toLowerCase()}`
+        +` · market &amp; FX ${sg(dc.marketAbs)}${f0(dc.marketAbs)}</div>`;
+    }
+    el.innerHTML=`<div class="movmain">
+        <div>
+          <div class="label">Today's Movement</div>
+          <div class="movbig num ${up?'pos':'neg'}">${sg(dc.valAbs)}${f0(dc.valAbs)}`
+            +`<span class="movpct ${up?'up':'down'}">${up?'▲':'▼'} ${pc(Math.abs(dc.valPct))}</span></div>
+          <div class="mini">vs ${dmon(dc.prevDate)}</div>
+        </div>
+        <div class="movbreak">${breaks}</div>
+      </div>${note}`;
+  })();
 
   // allocation bar
   const ac=P.by_asset_class.filter(r=>r.value>0);

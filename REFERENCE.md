@@ -79,7 +79,12 @@ driver (pull → `run_weekly.py --no-publish` → commit → push), run by the m
 
 Clean institutional-light design, tabbed; **mobile = bottom nav + card-based tables + PWA**.
 
-1. **Overview** — KPIs with week-over-week deltas + sparklines, allocation ribbon, top movers, value-vs-invested trend, largest holdings.
+1. **Overview** — a **"Today's Movement"** card (day-over-day Δ value + %, dated, with a
+   Funds/Equities/Crypto/**Other** bucket breakdown), KPIs with **1D** deltas + sparklines,
+   allocation ribbon, top movers, value-vs-invested trend, largest holdings. The daily card
+   attributes real **contributions/dividends from the `Cash Flows` sheet** (date-matched) and
+   splits them out from market & FX — it does **not** infer flows from Δ cost basis, which
+   drifts daily with FX (see §8).
 2. **Allocation** — asset class / geography / tax wrapper / theme.
 3. **Holdings** — searchable / sortable / filterable; on mobile, tappable cards. A **Priced**
    column shows the date each position's price/NAV was last fetched (bold = today, muted =
@@ -164,6 +169,11 @@ git push origin main
   over the **same window** as the portfolio (clamped to inception) for a fair relative.
 - **History is reconstructed** from 2026-05-01 ("held-since") and **live daily** from
   2026-06-03 onward.
+- **Cost basis is FX-translated at spot**, so `total_invested` (THB) drifts day-to-day on
+  FX moves alone — e.g. USD/THB 32.59→32.65 raised it ~฿6,254 with zero purchases. So **Δ
+  cost basis is NOT a contribution signal**: the Overview "Today's Movement" card reads real
+  flows from the `Cash Flows` sheet (date-matched, with Type → "dividend"/"contribution"/
+  "withdrawal") and reports the rest as market & FX. `build_site.read_flows()` does the parse.
 - **Mobile:** font-boosting fixed (`text-size-adjust:100%`); long names wrap at a fixed
   34ch column; grid overflow fixed with `min-width:0` (uniform 347px cards).
 
@@ -175,7 +185,8 @@ git push origin main
 SGD unit trusts · **Performance overhaul** (#1) · **Tax & Lots** (#2) · daily history
 backfill · mobile UX trio (bottom nav, card tables, PWA) · **price-freshness "Priced"
 column** (Holdings + Tax) · **reliable scheduling via local launchd** (GitHub cron demoted
-to backstop).
+to backstop) · **Overview "Today's Movement" card** (1D Δ + bucket breakdown, flow-aware
+attribution from `Cash Flows`).
 
 **Not done / next:**
 - **Authentication** (deferred) — the live URL is currently open; gate before sharing widely.
