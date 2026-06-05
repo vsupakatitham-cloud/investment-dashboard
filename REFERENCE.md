@@ -72,6 +72,8 @@ driver (pull → `run_weekly.py --no-publish` → commit → push), run by the m
 - **Output/derived (Excel-internal):** `Dashboard`, `Weekly Snapshot`, the `by-Fund/Ticker/Coin` rollups.
 - **Yellow cells = inputs; black/green text = formulas — don't overwrite formulas.**
 - Lock-up/tax data lives on **MF - Lots** (`Purchase Date`, `Sellable Year`).
+- **Prices cols I/J (`Prev Price`/`Prev Date`) are auto-managed** by `fetch_prices.py` (prior
+  price for the daily-movers calc) — don't hand-edit; they refresh each run.
 
 ---
 
@@ -81,10 +83,13 @@ Clean institutional-light design, tabbed; **mobile = bottom nav + card-based tab
 
 1. **Overview** — a **"Today's Movement"** card (day-over-day Δ value + %, dated, with a
    Funds/Equities/Crypto/**Other** bucket breakdown), KPIs with **1D** deltas + sparklines,
-   allocation ribbon, top movers, value-vs-invested trend, largest holdings. The daily card
+   allocation ribbon, **Top Movers** (toggle **Today** = real 1-day price/NAV move vs **Since
+   inception** = total return), value-vs-invested trend, largest holdings. The daily card
    attributes real **contributions/dividends from the `Cash Flows` sheet** (date-matched) and
    splits them out from market & FX — it does **not** infer flows from Δ cost basis, which
-   drifts daily with FX (see §8).
+   drifts daily with FX (see §8). **Daily movers** use a real prior price captured at fetch
+   time (Yahoo `previousClose`, CoinGecko 24h, SEC prior NAV) and are gated to a recent
+   window so lagged/weekly NAVs don't masquerade as "today" (see §8).
 2. **Allocation** — asset class / geography / tax wrapper / theme.
 3. **Holdings** — searchable / sortable / filterable; on mobile, tappable cards. A **Priced**
    column shows the date each position's price/NAV was last fetched (bold = today, muted =
@@ -174,6 +179,13 @@ git push origin main
   cost basis is NOT a contribution signal**: the Overview "Today's Movement" card reads real
   flows from the `Cash Flows` sheet (date-matched, with Type → "dividend"/"contribution"/
   "withdrawal") and reports the rest as market & FX. `build_site.read_flows()` does the parse.
+- **Daily movers need a prior price** — `history.json` is portfolio-level only, so per-holding
+  1-day moves come from a **prior price captured at fetch time** into Prices cols **I/J
+  ("Prev Price"/"Prev Date")**: Yahoo `previousClose` (equities + SGD UTs), CoinGecko 24h
+  change (crypto), SEC second-latest NAV (Thai MFs). `portfolio.py` computes `day_px_pct` /
+  `day_thb` per holding, **gated** to a recent window (current price fresh ≤4 days; prev→current
+  step ≤5 days) so a fund's lagged/weekly NAV jump (e.g. a 7-day-old step) isn't shown as
+  "today's" move. The capture is best-effort — it never blocks the daily build.
 - **Mobile:** font-boosting fixed (`text-size-adjust:100%`); long names wrap at a fixed
   34ch column; grid overflow fixed with `min-width:0` (uniform 347px cards).
 
@@ -186,7 +198,8 @@ SGD unit trusts · **Performance overhaul** (#1) · **Tax & Lots** (#2) · daily
 backfill · mobile UX trio (bottom nav, card tables, PWA) · **price-freshness "Priced"
 column** (Holdings + Tax) · **reliable scheduling via local launchd** (GitHub cron demoted
 to backstop) · **Overview "Today's Movement" card** (1D Δ + bucket breakdown, flow-aware
-attribution from `Cash Flows`).
+attribution from `Cash Flows`) · **Top Movers "Today" toggle** (real per-holding 1-day moves
+via fetch-time prior prices, recency-gated).
 
 **Not done / next:**
 - **Authentication** (deferred) — the live URL is currently open; gate before sharing widely.

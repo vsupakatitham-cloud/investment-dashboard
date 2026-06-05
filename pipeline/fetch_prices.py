@@ -58,15 +58,39 @@ def _get_json(url, timeout=15):
         return json.loads(r.read().decode())
 
 
-def yahoo_price(symbol, timeout=15):
-    """Latest regular-market price for a Yahoo symbol, or None."""
+def yahoo_quote(symbol, timeout=15):
+    """(price, prev_close) for a Yahoo symbol — prev_close is the prior trading
+    day's close, for the daily-move calc. Either may be None. The 5d/1d series we
+    already pull carries both, so this is free."""
     url = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?range=5d&interval=1d"
     try:
         data = _get_json(url, timeout)
-        meta = data["chart"]["result"][0]["meta"]
-        return float(meta.get("regularMarketPrice") or meta.get("previousClose"))
+        res = data["chart"]["result"][0]
+        meta = res["meta"]
+        price = meta.get("regularMarketPrice") or meta.get("previousClose")
+        price = float(price) if price is not None else None
+        prev = None
+        # prefer the second-to-last daily close vs the current price; fall back to
+        # meta.chartPreviousClose / previousClose when the series is thin.
+        try:
+            closes = [c for c in res["indicators"]["quote"][0]["close"] if c is not None]
+            if price is not None and closes:
+                # last close may equal today's price; the prior distinct close is "prev"
+                prior = [c for c in closes if abs(c - price) > 1e-9] or closes
+                prev = float(prior[-1]) if len(closes) >= 2 else None
+        except Exception:
+            prev = None
+        if prev is None:
+            pc = meta.get("chartPreviousClose") or meta.get("previousClose")
+            prev = float(pc) if pc is not None else None
+        return price, prev
     except Exception:
-        return None
+        return None, None
+
+
+def yahoo_price(symbol, timeout=15):
+    """Latest regular-market price for a Yahoo symbol, or None (FX/simple uses)."""
+    return yahoo_quote(symbol, timeout)[0]
 
 
 def yahoo_symbol_for_isin(isin, timeout=15):
@@ -83,12 +107,23 @@ def yahoo_symbol_for_isin(isin, timeout=15):
 
 
 def coingecko_prices(ids, timeout=20):
+    """{id: {"usd": price, "prev": usd_24h_ago}} — prev derived from the free
+    24h-change field (price / (1 + chg/100))."""
     if not ids:
         return {}
-    url = "https://api.coingecko.com/api/v3/simple/price?ids=" + ",".join(sorted(set(ids))) + "&vs_currencies=usd"
+    url = ("https://api.coingecko.com/api/v3/simple/price?ids=" + ",".join(sorted(set(ids)))
+           + "&vs_currencies=usd&include_24hr_change=true")
     try:
         data = _get_json(url, timeout)
-        return {k: float(v["usd"]) for k, v in data.items() if "usd" in v}
+        out = {}
+        for k, v in data.items():
+            if "usd" not in v:
+                continue
+            usd = float(v["usd"])
+            chg = v.get("usd_24h_change")
+            prev = usd / (1 + float(chg) / 100.0) if chg not in (None, "") and (1 + float(chg) / 100.0) != 0 else None
+            out[k] = {"usd": usd, "prev": prev}
+        return out
     except Exception:
         return {}
 
@@ -134,6 +169,10 @@ def fetch_all(workbook=WORKBOOK_DEFAULT, asof=None, offline=False):
 
     # ---- collect crypto ids to batch ------------------------------------
     pws = wb["Prices"]
+    # auto-managed daily-move reference columns (header on the row-4 label row)
+    if pws.cell(4, 9).value != "Prev Price":
+        pws.cell(4, 9).value = "Prev Price"
+        pws.cell(4, 10).value = "Prev Date"
     crypto_ids = []
     for r in range(5, pws.max_row + 1):
         if pws.cell(r, 2).value == "Crypto":
@@ -163,6 +202,8 @@ def fetch_all(workbook=WORKBOOK_DEFAULT, asof=None, offline=False):
             continue
         key = f"{typ}|{name}|{cust}"
         new_price = None
+        prev_price = None          # prior trading day's price/NAV, same ccy as new_price
+        prev_date = ""
         price_dt = today_dt   # date to stamp in the "Last Update" column
 
         if str(name).strip().lower() == "cash":
@@ -173,20 +214,26 @@ def fetch_all(workbook=WORKBOOK_DEFAULT, asof=None, offline=False):
         if offline:
             new_price = None
         elif typ == "Equity":
-            new_price = yahoo_price(yahoo_symbol(name, ccy))
+            new_price, prev_price = yahoo_quote(yahoo_symbol(name, ccy))
             time.sleep(0.15)
         elif typ == "Crypto":
             sym = name.upper()
             if sym in STABLECOINS:
-                usd = STABLECOINS[sym]
+                usd, usd_prev = STABLECOINS[sym], STABLECOINS[sym]
             else:
-                usd = cg.get(COINGECKO_IDS.get(sym, ""))
+                hit = cg.get(COINGECKO_IDS.get(sym, ""))
+                usd = hit["usd"] if hit else None
+                usd_prev = hit.get("prev") if hit else None
             if usd is not None:
                 new_price = usd if ccy == "USD" else usd * fx_rate
+                if usd_prev is not None:
+                    prev_price = usd_prev if ccy == "USD" else usd_prev * fx_rate
         elif typ == "Mutual Fund":
             hit = sec_navs.get(name)            # NAV from SEC Open API (THB)
             if hit:
                 new_price = hit["nav"]
+                prev_price = hit.get("prev")
+                prev_date = hit.get("prev_date") or ""
                 d = hit.get("date")
                 if d:
                     try:
@@ -200,6 +247,9 @@ def fetch_all(workbook=WORKBOOK_DEFAULT, asof=None, offline=False):
             if price_dt:
                 pws.cell(r, 7).value = price_dt
             pws.cell(r, 8).value = "OK"
+            if prev_price and prev_price > 0:    # daily-move reference (col I/J)
+                pws.cell(r, 9).value = round(prev_price, 6)
+                pws.cell(r, 10).value = prev_date
             report["updated"].append(key)
         else:
             # carry forward existing price; flag the source
@@ -223,11 +273,11 @@ def fetch_all(workbook=WORKBOOK_DEFAULT, asof=None, offline=False):
             symbol = uws.cell(r, 16).value          # P: Yahoo Symbol / ISIN
             if fund and symbol:
                 sym = str(symbol).strip()
-                px = yahoo_price(sym)
+                px, px_prev = yahoo_quote(sym)
                 if (not px) and re.fullmatch(r"[A-Za-z]{2}[A-Za-z0-9]{10}", sym):  # ISIN
                     resolved = yahoo_symbol_for_isin(sym)
                     if resolved:
-                        px = yahoo_price(resolved)
+                        px, px_prev = yahoo_quote(resolved)
                         if px and px > 0:
                             uws.cell(r, 16).value = resolved   # cache the Yahoo symbol
                 time.sleep(0.15)
@@ -237,6 +287,9 @@ def fetch_all(workbook=WORKBOOK_DEFAULT, asof=None, offline=False):
                     if today_dt:
                         pws.cell(prow, 7).value = today_dt
                     pws.cell(prow, 8).value = "OK"
+                    if px_prev and px_prev > 0:                # daily-move reference
+                        pws.cell(prow, 9).value = round(px_prev, 6)
+                        pws.cell(prow, 10).value = ""
                     report["updated"].append(f"Unit Trust|{fund}")
                 else:
                     if prow:

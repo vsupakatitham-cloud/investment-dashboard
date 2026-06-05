@@ -129,8 +129,17 @@ def latest_nav(proj_id: str, fund_class_name: str | None, key: str,
         return None
     items.sort(key=lambda it: it.get("nav_date", ""))
     last = items[-1]
+    # previous NAV (the trading day before `last`) — for daily-move calc; the
+    # response already carries the series so this is free. None if only one point.
+    prev_val, prev_date = None, ""
+    if len(items) >= 2:
+        try:
+            prev_val = float(items[-2]["last_val"])
+            prev_date = items[-2].get("nav_date", "")
+        except (TypeError, ValueError, KeyError):
+            prev_val, prev_date = None, ""
     try:
-        return float(last["last_val"]), last.get("nav_date", "")
+        return float(last["last_val"]), last.get("nav_date", ""), prev_val, prev_date
     except (TypeError, ValueError, KeyError):
         return None
 
@@ -154,7 +163,8 @@ def resolve_navs(abbrs, asof: _dt.date | None = None, **_):
             continue
         res = latest_nav(pin["proj_id"], pin.get("fund_class_name"), key, asof)
         if res:
-            out[abbr] = {"nav": res[0], "date": res[1]}
+            out[abbr] = {"nav": res[0], "date": res[1],
+                         "prev": res[2], "prev_date": res[3]}
         else:
             nodata.append(abbr)
         time.sleep(0.05)

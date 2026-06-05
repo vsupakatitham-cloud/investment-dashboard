@@ -332,7 +332,8 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
         <div class="legend" id="acLegend"></div>
       </div>
       <div class="card pad">
-        <div class="head"><h3>Top Movers</h3><span class="mini">by return</span></div>
+        <div class="head"><h3>Top Movers</h3>
+          <div class="seg" id="moversSeg"><button class="active" data-m="day">Today</button><button data-m="total">Since inception</button></div></div>
         <div id="movers"></div>
       </div>
     </div>
@@ -503,8 +504,13 @@ function boot(PAYLOAD){
   const pool={};
   P.holdings.forEach(h=>{const k=h.asset_type+"|"+h.name;
     const g=pool[k]||(pool[k]={name:h.name,type:h.asset_type,ac:h.asset_class,geo:h.geography,
-      cur:h.currency||"THB",qty:0,price:h.price,inv:0,val:0,asof:"",stale:false});
+      cur:h.currency||"THB",qty:0,price:h.price,inv:0,val:0,asof:"",stale:false,
+      dayThb:0,dayPct:0,hasDay:false});
     g.qty+=h.quantity;g.inv+=h.invested_thb;g.val+=h.value_thb;
+    // daily move: sum the THB price-only P&L; the native % is shared across a
+    // position's lots (same price/NAV), so take it from any lot that has it
+    g.dayThb+=h.day_thb||0;
+    if(h.has_day){g.hasDay=true;g.dayPct=h.day_px_pct;}
     // keep the freshest lot's price date + its staleness for the pooled position
     if(!g.asof||(h.price_asof||"")>g.asof){g.asof=h.price_asof||"";g.stale=!!h.price_stale;}});
   const POOL=Object.values(pool).map(h=>({...h,pnl:h.val-h.inv,pnlpct:h.inv?(h.val-h.inv)/h.inv:0,wt:P.total_value?h.val/P.total_value:0}))
@@ -623,16 +629,41 @@ function boot(PAYLOAD){
   document.getElementById("acBar").innerHTML=ac.map((r,i)=>`<i style="width:${r.pct*100}%;background:${PAL[i%PAL.length]}" title="${r.name} ${pc(r.pct)}"></i>`).join("");
   document.getElementById("acLegend").innerHTML=ac.map((r,i)=>`<div><span class="dot" style="background:${PAL[i%PAL.length]}"></span>${r.name} · <span class="num">${pc(r.pct)}</span></div>`).join("");
 
-  // movers
+  // movers — "Today" (1-day price move) vs "Since inception" (total return)
   const mv=POOL.filter(h=>h.val>50000);
-  const up3=[...mv].sort((a,b)=>b.pnlpct-a.pnlpct).slice(0,3);
-  const dn3=[...mv].sort((a,b)=>a.pnlpct-b.pnlpct).slice(0,3);
-  const mrow=h=>`<div style="display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid var(--border)">
-    <div style="min-width:0"><span class="name" style="white-space:normal;overflow-wrap:anywhere">${h.name}</span> <span class="sub">${h.type}</span></div>
-    <div class="num ${h.pnl>=0?'pos':'neg'}" style="white-space:nowrap;flex-shrink:0">${sg(h.pnlpct)}${pc(h.pnlpct)}</div></div>`;
-  document.getElementById("movers").innerHTML=
-    `<div class="mini" style="margin:2px 0 4px">Gainers</div>${up3.map(mrow).join("")}
-     <div class="mini" style="margin:12px 0 4px">Laggards</div>${dn3.map(mrow).join("")}`;
+  // a sub-line under the % shows ฿ today (day view) or total P&L (inception view)
+  const mrow=(h,mode)=>{
+    const pctv=mode==="day"?h.dayPct:h.pnlpct;
+    const sub=mode==="day"?`${sg(h.dayThb)}${f0(h.dayThb)} today`:`${sg(h.pnl)}${f0(h.pnl)}`;
+    return `<div style="display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid var(--border)">
+      <div style="min-width:0"><span class="name" style="white-space:normal;overflow-wrap:anywhere">${h.name}</span> <span class="sub">${h.type}</span></div>
+      <div style="white-space:nowrap;flex-shrink:0;text-align:right">
+        <div class="num ${pctv>=0?'pos':'neg'}">${sg(pctv)}${pc(pctv)}</div>
+        <div class="sub">${sub}</div></div></div>`;};
+  function renderMovers(mode){
+    const el=document.getElementById("movers");
+    if(mode==="day"){
+      const dm=mv.filter(h=>h.hasDay);
+      if(!dm.length){el.innerHTML=`<div class="empty" style="padding:18px 8px">Daily moves populate after the next price refresh.<br><span class="pillnote">Prior-day prices fill in on the 08:30 update.</span></div>`;return;}
+      const up=[...dm].sort((a,b)=>b.dayPct-a.dayPct).slice(0,3);
+      const dn=[...dm].sort((a,b)=>a.dayPct-b.dayPct).slice(0,3);
+      el.innerHTML=`<div class="mini" style="margin:2px 0 4px">Gainers</div>${up.map(h=>mrow(h,"day")).join("")}
+        <div class="mini" style="margin:12px 0 4px">Laggards</div>${dn.map(h=>mrow(h,"day")).join("")}`;
+    }else{
+      const up=[...mv].sort((a,b)=>b.pnlpct-a.pnlpct).slice(0,3);
+      const dn=[...mv].sort((a,b)=>a.pnlpct-b.pnlpct).slice(0,3);
+      el.innerHTML=`<div class="mini" style="margin:2px 0 4px">Gainers</div>${up.map(h=>mrow(h,"total")).join("")}
+        <div class="mini" style="margin:12px 0 4px">Laggards</div>${dn.map(h=>mrow(h,"total")).join("")}`;
+    }
+  }
+  // default to Today when any holding has a daily move, else Since inception
+  const anyDay=mv.some(h=>h.hasDay);
+  let moversMode=anyDay?"day":"total";
+  (function(){const seg=document.getElementById("moversSeg");
+    [...seg.children].forEach(b=>{b.classList.toggle("active",b.dataset.m===moversMode);
+      b.onclick=()=>{moversMode=b.dataset.m;[...seg.children].forEach(x=>x.classList.remove("active"));b.classList.add("active");renderMovers(moversMode);};});
+  })();
+  renderMovers(moversMode);
 
   // largest holdings
   document.getElementById("ovHold").innerHTML=

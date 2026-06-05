@@ -100,6 +100,9 @@ class Holding:
     price_stale: bool = False
     sellable_year: str = ""        # Thai wrapper maturity (MF lots); "" / "N/A" = none
     purchase_date: str = ""        # real purchase date where the workbook has one
+    day_px_pct: float = 0.0        # 1-day price/NAV move (native ccy) for daily movers
+    day_thb: float = 0.0           # THB P&L from that 1-day price move (price-only)
+    has_day: bool = False          # true when a prior price/NAV was available
 
 
 @dataclass
@@ -189,6 +192,8 @@ def load_portfolio(path: Path | str = WORKBOOK_DEFAULT) -> Portfolio:
             price=_num(pws.cell(r, 5).value, 0.0),
             currency=pws.cell(r, 6).value or "THB",
             last_update=str(last) if last else "",
+            prev=_num(pws.cell(r, 9).value, 0.0),          # prior price/NAV (native)
+            prev_date=str(pws.cell(r, 10).value or ""),
         )
 
     holdings: list[Holding] = []
@@ -322,6 +327,39 @@ def load_portfolio(path: Path | str = WORKBOOK_DEFAULT) -> Portfolio:
                 pnl_pct=((value - invested) / invested) if invested else 0.0,
                 price_asof=nav_asof or as_of, price_stale=(nav_stale and units > 0),
             ))
+
+    # --- daily move per holding (native price move + THB price-only P&L) -----
+    # Keyed to the Prices sheet via asset_type → its "Type" label. Best-effort:
+    # holdings without a stored prior price simply have has_day=False.
+    _PTYPE = {"MF": "Mutual Fund", "Equity": "Equity", "Crypto": "Crypto", "Unit Trust": "Unit Trust"}
+    for h in holdings:
+        pinfo = prices.get(f"{_PTYPE.get(h.asset_type, h.asset_type)}|{h.name}|{h.custodian}")
+        prev = (pinfo or {}).get("prev", 0.0)
+        # Only treat it as a *daily* move when the window is genuinely recent. Thai
+        # NAVs publish on a lag and some funds price weekly — if the prior date is
+        # >5 days before the current price date, the move isn't "today's" (skip it).
+        # Equities/crypto carry no prev_date (Yahoo previousClose / CoinGecko 24h),
+        # which is a true 1-day move, so they always qualify when priced.
+        recent = True
+        prev_date = (pinfo or {}).get("prev_date", "")
+        # (a) current price must itself be fresh — not carried forward for days
+        if h.price_asof and as_of:
+            try:
+                if (_dt.date.fromisoformat(as_of) - _dt.date.fromisoformat(h.price_asof)).days > 4:
+                    recent = False
+            except ValueError:
+                pass
+        # (b) the move window (prev → current) must be a short, recent step
+        if recent and prev_date and h.price_asof:
+            try:
+                gap = (_dt.date.fromisoformat(h.price_asof) - _dt.date.fromisoformat(prev_date)).days
+                recent = 0 < gap <= 5
+            except ValueError:
+                pass
+        if prev and prev > 0 and h.price and recent:
+            h.day_px_pct = h.price / prev - 1.0
+            h.day_thb = (h.price - prev) * h.fx * h.quantity
+            h.has_day = True
 
     return _aggregate(holdings, as_of, fx_rate, reporting_ccy)
 

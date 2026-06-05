@@ -30,15 +30,15 @@
   },
   "portfolio": {
     "as_of": "2026-06-05",
-    "fx_rate": 32.65,
+    "fx_rate": 32.66,
     "reporting_ccy": "THB",
-    "total_value": 27099858.162835732,
-    "total_invested": 22652740.27772408,
-    "total_pnl": 4447117.885111652,
-    "total_pnl_pct": 0.19631699434989744,
+    "total_value": 27109103.90755942,
+    "total_invested": 22654004.55389785,
+    "total_pnl": 4455099.353661571,
+    "total_pnl_pct": 0.19665835870484213,
     "mf_value": 19315301.18738853,
-    "eq_value": 5236944.332077111,
-    "crypto_value": 1154876.5409445087,
+    "eq_value": 5248639.676371774,
+    "crypto_value": 1150522.9648710212,
     "lot_counts": {
       "MF": 161,
       "Equity": 47,
@@ -68,7 +68,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2020-06-24"
+        "purchase_date": "2020-06-24",
+        "day_px_pct": 4.2735225364243234e-05,
+        "day_thb": 0.009084900000011102,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -92,7 +95,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2021-06-24"
+        "purchase_date": "2021-06-24",
+        "day_px_pct": 4.2735225364243234e-05,
+        "day_thb": 0.009071800000011086,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -116,7 +122,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2022-06-23"
+        "purchase_date": "2022-06-23",
+        "day_px_pct": 4.2735225364243234e-05,
+        "day_thb": 0.009050700000011062,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -140,7 +149,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2025-08-28"
+        "purchase_date": "2025-08-28",
+        "day_px_pct": 2.303701587713647e-05,
+        "day_thb": 0.013890899999967626,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -164,7 +176,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2025-01-28"
+        "purchase_date": "2025-01-28",
+        "day_px_pct": 4.679282010977559e-05,
+        "day_thb": 0.34591590000042277,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -188,7 +203,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2025-04-30"
+        "purchase_date": "2025-04-30",
+        "day_px_pct": 4.679282010977559e-05,
+        "day_thb": 0.07580040000009264,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -212,7 +230,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2017-08-01"
+        "purchase_date": "2017-08-01",
+        "day_px_pct": 0.004947814361402791,
+        "day_thb": 231.03619211999876,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -236,7 +257,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2017-08-01"
+        "purchase_date": "2017-08-01",
+        "day_px_pct": -0.0009567089213107227,
+        "day_thb": -63.46058496000181,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -260,7 +284,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2021-01-27"
+        "purchase_date": "2021-01-27",
+        "day_px_pct": -0.0009567089213107227,
+        "day_thb": -136.91206144000392,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -284,7 +311,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2021-12-27"
+        "purchase_date": "2021-12-27",
+        "day_px_pct": -0.0009567089213107227,
+        "day_thb": -165.81857280000474,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -308,7 +338,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2017-09-01"
+        "purchase_date": "2017-09-01",
+        "day_px_pct": 0.06926485106792835,
+        "day_thb": 17088.118813589994,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -332,7 +365,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2021-01-28"
+        "purchase_date": "2021-01-28",
+        "day_px_pct": -0.0037459851199085348,
+        "day_thb": -498.7654315999955,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -356,7 +392,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2021-01-28"
+        "purchase_date": "2021-01-28",
+        "day_px_pct": -0.007385009823456468,
+        "day_thb": -523.4567895999994,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -380,7 +419,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2021-01-27"
+        "purchase_date": "2021-01-27",
+        "day_px_pct": 0.018131319435775728,
+        "day_thb": 2444.4181471499833,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -404,7 +446,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2020-01-17"
+        "purchase_date": "2020-01-17",
+        "day_px_pct": 0.0035208684808920587,
+        "day_thb": 2639.9897308800346,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -428,7 +473,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2021-01-07"
+        "purchase_date": "2021-01-07",
+        "day_px_pct": -0.010683296394477959,
+        "day_thb": -8689.248894999944,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -452,7 +500,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2024-02-07"
+        "purchase_date": "2024-02-07",
+        "day_px_pct": 0.014564821020618401,
+        "day_thb": 1775.1933487499975,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -476,7 +527,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2026-01-06"
+        "purchase_date": "2026-01-06",
+        "day_px_pct": -0.01317713957652722,
+        "day_thb": -6920.5145865600025,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -500,7 +554,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2020-08-26"
+        "purchase_date": "2020-08-26",
+        "day_px_pct": -0.013850181991292176,
+        "day_thb": -10.76433371999997,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -524,7 +581,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2023-12-28"
+        "purchase_date": "2023-12-28",
+        "day_px_pct": 0.04122408497568486,
+        "day_thb": 1363.8366880200053,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -548,7 +608,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2024-05-02"
+        "purchase_date": "2024-05-02",
+        "day_px_pct": 0.04122408497568486,
+        "day_thb": 4629.882988260018,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -572,7 +635,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2025-08-18"
+        "purchase_date": "2025-08-18",
+        "day_px_pct": 0.04197769823592612,
+        "day_thb": 23184.247676360006,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -596,7 +662,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2025-11-03"
+        "purchase_date": "2025-11-03",
+        "day_px_pct": 0.04197769823592612,
+        "day_thb": 11878.092256740001,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -620,7 +689,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2025-11-03"
+        "purchase_date": "2025-11-03",
+        "day_px_pct": 0.04197769823592612,
+        "day_thb": 84843.51627126001,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -644,7 +716,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2026-02-02"
+        "purchase_date": "2026-02-02",
+        "day_px_pct": 0.04197769823592612,
+        "day_thb": 8504.544293460001,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -668,7 +743,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2026-02-18"
+        "purchase_date": "2026-02-18",
+        "day_px_pct": 0.04197769823592612,
+        "day_thb": 81005.74001408002,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -692,7 +770,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2026-04-09"
+        "purchase_date": "2026-04-09",
+        "day_px_pct": 0.04197769823592612,
+        "day_thb": 7659.033544660001,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -716,7 +797,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2023",
-        "purchase_date": "2017-11-13"
+        "purchase_date": "2017-11-13",
+        "day_px_pct": -0.0026987413628645207,
+        "day_thb": -88.52832784000381,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -740,7 +824,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2023",
-        "purchase_date": "2017-12-26"
+        "purchase_date": "2017-12-26",
+        "day_px_pct": -0.0026987413628645207,
+        "day_thb": -172.82607536000742,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -764,7 +851,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2023",
-        "purchase_date": "2017-12-28"
+        "purchase_date": "2017-12-28",
+        "day_px_pct": -0.0026987413628645207,
+        "day_thb": -172.2979088000074,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -788,7 +878,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2024",
-        "purchase_date": "2018-10-11"
+        "purchase_date": "2018-10-11",
+        "day_px_pct": -0.0026987413628645207,
+        "day_thb": -100.97647344000434,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -812,7 +905,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2024",
-        "purchase_date": "2018-12-06"
+        "purchase_date": "2018-12-06",
+        "day_px_pct": -0.0026987413628645207,
+        "day_thb": -95.19042128000409,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -836,7 +932,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2018",
-        "purchase_date": "2014-11-25"
+        "purchase_date": "2014-11-25",
+        "day_px_pct": 0.0031622972559419704,
+        "day_thb": 15.561522600000087,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -860,7 +959,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2019",
-        "purchase_date": "2015-09-08"
+        "purchase_date": "2015-09-08",
+        "day_px_pct": 0.0031622972559419704,
+        "day_thb": 164.7298286400009,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -884,7 +986,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2022",
-        "purchase_date": "2016-06-24"
+        "purchase_date": "2016-06-24",
+        "day_px_pct": 0.0031622972559419704,
+        "day_thb": 156.77212616000088,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -908,7 +1013,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2022",
-        "purchase_date": "2016-11-09"
+        "purchase_date": "2016-11-09",
+        "day_px_pct": 0.0031622972559419704,
+        "day_thb": 141.88292040000078,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -932,7 +1040,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2022",
-        "purchase_date": "2016-11-14"
+        "purchase_date": "2016-11-14",
+        "day_px_pct": 0.0031622972559419704,
+        "day_thb": 143.9949063800008,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -956,7 +1067,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2018",
-        "purchase_date": "2014-11-25"
+        "purchase_date": "2014-11-25",
+        "day_px_pct": 0.004355824678056619,
+        "day_thb": 21.505429440000047,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -980,7 +1094,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2019",
-        "purchase_date": "2015-07-06"
+        "purchase_date": "2015-07-06",
+        "day_px_pct": 0.004355824678056619,
+        "day_thb": 224.07884928000047,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1004,7 +1121,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2022",
-        "purchase_date": "2016-06-24"
+        "purchase_date": "2016-06-24",
+        "day_px_pct": 0.004355824678056619,
+        "day_thb": 221.18888880000046,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1028,7 +1148,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2022",
-        "purchase_date": "2016-09-08"
+        "purchase_date": "2016-09-08",
+        "day_px_pct": 0.004355824678056619,
+        "day_thb": 210.08012256000043,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1052,7 +1175,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2022",
-        "purchase_date": "2016-11-09"
+        "purchase_date": "2016-11-09",
+        "day_px_pct": 0.004355824678056619,
+        "day_thb": 197.32268160000038,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1076,7 +1202,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2022",
-        "purchase_date": "2016-11-14"
+        "purchase_date": "2016-11-14",
+        "day_px_pct": 0.004355824678056619,
+        "day_thb": 200.8847016000004,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1100,7 +1229,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2022",
-        "purchase_date": "2016-12-22"
+        "purchase_date": "2016-12-22",
+        "day_px_pct": 0.004355824678056619,
+        "day_thb": 201.05247888000042,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1124,7 +1256,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2024",
-        "purchase_date": "2018-06-29"
+        "purchase_date": "2018-06-29",
+        "day_px_pct": 0.004355824678056619,
+        "day_thb": 142.37647776000028,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1148,7 +1283,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2031",
-        "purchase_date": "2023-12-21"
+        "purchase_date": "2023-12-21",
+        "day_px_pct": 0.003785843192299909,
+        "day_thb": 472.0000000000013,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1172,7 +1310,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2029",
-        "purchase_date": "2024-12-13"
+        "purchase_date": "2024-12-13",
+        "day_px_pct": 0.003785843192299909,
+        "day_thb": 668.9848056800018,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1196,7 +1337,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2029",
-        "purchase_date": "2024-12-27"
+        "purchase_date": "2024-12-27",
+        "day_px_pct": 0.003785843192299909,
+        "day_thb": 679.2930732800019,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1220,7 +1364,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2019",
-        "purchase_date": "2015-10-26"
+        "purchase_date": "2015-10-26",
+        "day_px_pct": 0.0020933934964069145,
+        "day_thb": 11.009951399999816,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1244,7 +1391,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2024",
-        "purchase_date": "2018-01-29"
+        "purchase_date": "2018-01-29",
+        "day_px_pct": 0.0020933934964069145,
+        "day_thb": 64.52421807999892,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1268,7 +1418,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2024",
-        "purchase_date": "2018-03-07"
+        "purchase_date": "2018-03-07",
+        "day_px_pct": 0.0020933934964069145,
+        "day_thb": 66.67880351999888,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1292,7 +1445,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2030",
-        "purchase_date": "2025-12-25"
+        "purchase_date": "2025-12-25",
+        "day_px_pct": -0.0038379871003757504,
+        "day_thb": -1093.7810729999742,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1316,7 +1472,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2031",
-        "purchase_date": "2026-01-05"
+        "purchase_date": "2026-01-05",
+        "day_px_pct": -0.0038379871003757504,
+        "day_thb": -1093.0771774999741,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1340,7 +1499,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "N/A",
-        "purchase_date": "2026-04-30"
+        "purchase_date": "2026-04-30",
+        "day_px_pct": 4.320427598880627e-05,
+        "day_thb": 0.02594129999993954,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1364,7 +1526,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2022",
-        "purchase_date": "2016-11-23"
+        "purchase_date": "2016-11-23",
+        "day_px_pct": 0.0059050596803709166,
+        "day_thb": 65.69372921999917,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1388,7 +1553,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2023",
-        "purchase_date": "2017-08-18"
+        "purchase_date": "2017-08-18",
+        "day_px_pct": 0.0059050596803709166,
+        "day_thb": 347.8556870399956,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1412,7 +1580,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2023",
-        "purchase_date": "2017-11-10"
+        "purchase_date": "2017-11-10",
+        "day_px_pct": 0.0059050596803709166,
+        "day_thb": 299.4079379599962,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1436,7 +1607,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2030",
-        "purchase_date": "2020-06-22"
+        "purchase_date": "2020-06-22",
+        "day_px_pct": 0.0036044639900183473,
+        "day_thb": 418.40629739999366,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1460,7 +1634,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2030",
-        "purchase_date": "2020-06-25"
+        "purchase_date": "2020-06-25",
+        "day_px_pct": 0.0036044639900183473,
+        "day_thb": 426.75420527999347,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1484,7 +1661,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2030",
-        "purchase_date": "2025-06-27"
+        "purchase_date": "2025-06-27",
+        "day_px_pct": 0.0006512433187995104,
+        "day_thb": 134.47913900000705,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1508,7 +1688,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2030",
-        "purchase_date": "2025-06-30"
+        "purchase_date": "2025-06-30",
+        "day_px_pct": 0.0006512433187995104,
+        "day_thb": 133.641904240007,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1532,7 +1715,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2014-11-25"
+        "purchase_date": "2014-11-25",
+        "day_px_pct": -0.0007061888933533877,
+        "day_thb": -4.227435560000505,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1556,7 +1742,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2014-12-15"
+        "purchase_date": "2014-12-15",
+        "day_px_pct": -0.0007061888933533877,
+        "day_thb": -84.22703508001007,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1580,7 +1769,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2016-12-15"
+        "purchase_date": "2016-12-15",
+        "day_px_pct": -0.0007061888933533877,
+        "day_thb": -24.56690224000294,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1604,7 +1796,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2017-12-18"
+        "purchase_date": "2017-12-18",
+        "day_px_pct": -0.0007061888933533877,
+        "day_thb": -24.057405880002875,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1628,7 +1823,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2018-12-11"
+        "purchase_date": "2018-12-11",
+        "day_px_pct": -0.0007061888933533877,
+        "day_thb": -3.986554600000477,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1652,7 +1850,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2019-03-04"
+        "purchase_date": "2019-03-04",
+        "day_px_pct": -0.0007061888933533877,
+        "day_thb": -31.775380040003796,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1676,7 +1877,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2020-12-21"
+        "purchase_date": "2020-12-21",
+        "day_px_pct": -0.0007061888933533877,
+        "day_thb": -30.53676220000365,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1700,7 +1904,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2021-06-16"
+        "purchase_date": "2021-06-16",
+        "day_px_pct": -0.0007061888933533877,
+        "day_thb": -7.661670080000916,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1724,7 +1931,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2021-07-05"
+        "purchase_date": "2021-07-05",
+        "day_px_pct": -0.0007061888933533877,
+        "day_thb": -22.933361240002743,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1748,7 +1958,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2022-01-31"
+        "purchase_date": "2022-01-31",
+        "day_px_pct": -0.0007061888933533877,
+        "day_thb": -7.670740120000918,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1772,7 +1985,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2023-02-10"
+        "purchase_date": "2023-02-10",
+        "day_px_pct": -0.0007061888933533877,
+        "day_thb": -7.678864760000918,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1796,7 +2012,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2024-02-05"
+        "purchase_date": "2024-02-05",
+        "day_px_pct": -0.0007061888933533877,
+        "day_thb": -7.547710520000903,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1820,7 +2039,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2025-08-18"
+        "purchase_date": "2025-08-18",
+        "day_px_pct": -0.0007061888933533877,
+        "day_thb": -7.043407480000842,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1844,7 +2066,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2014-11-25"
+        "purchase_date": "2014-11-25",
+        "day_px_pct": 0.0030667729465343463,
+        "day_thb": 14.531750969999838,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1868,7 +2093,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2014-12-09"
+        "purchase_date": "2014-12-09",
+        "day_px_pct": 0.0030667729465343463,
+        "day_thb": 234.76917991999738,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1892,7 +2120,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2014-12-15"
+        "purchase_date": "2014-12-15",
+        "day_px_pct": 0.0030667729465343463,
+        "day_thb": 304.42954816999656,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1916,7 +2147,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2014-12-16"
+        "purchase_date": "2014-12-16",
+        "day_px_pct": 0.0030667729465343463,
+        "day_thb": 107.74004196999879,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1940,7 +2174,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2014-12-25"
+        "purchase_date": "2014-12-25",
+        "day_px_pct": 0.0030667729465343463,
+        "day_thb": 90.40628937999898,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1964,7 +2201,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2015-09-23"
+        "purchase_date": "2015-09-23",
+        "day_px_pct": 0.0030667729465343463,
+        "day_thb": 156.02480167999823,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -1988,7 +2228,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2015-12-18"
+        "purchase_date": "2015-12-18",
+        "day_px_pct": 0.0030667729465343463,
+        "day_thb": 161.4234382199982,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2012,7 +2255,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2015-12-29"
+        "purchase_date": "2015-12-29",
+        "day_px_pct": 0.0030667729465343463,
+        "day_thb": 160.1255141199982,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2036,7 +2282,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2016-09-08"
+        "purchase_date": "2016-09-08",
+        "day_px_pct": 0.0030667729465343463,
+        "day_thb": 141.54812110999842,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2060,7 +2309,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2016-10-12"
+        "purchase_date": "2016-10-12",
+        "day_px_pct": 0.0030667729465343463,
+        "day_thb": 85.76765713999903,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2084,7 +2336,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2016-12-19"
+        "purchase_date": "2016-12-19",
+        "day_px_pct": 0.0030667729465343463,
+        "day_thb": 188.06962822999787,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2108,7 +2363,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2016-12-20"
+        "purchase_date": "2016-12-20",
+        "day_px_pct": 0.0030667729465343463,
+        "day_thb": 135.0801026299985,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2132,7 +2390,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2017-12-18"
+        "purchase_date": "2017-12-18",
+        "day_px_pct": 0.0030667729465343463,
+        "day_thb": 246.63157353999725,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2156,7 +2417,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2018-12-11"
+        "purchase_date": "2018-12-11",
+        "day_px_pct": 0.0030667729465343463,
+        "day_thb": 25.86474758999971,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2180,7 +2444,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2019-12-25"
+        "purchase_date": "2019-12-25",
+        "day_px_pct": 0.0030667729465343463,
+        "day_thb": 223.60091918999748,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2204,7 +2471,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2020-12-21"
+        "purchase_date": "2020-12-21",
+        "day_px_pct": 0.0030667729465343463,
+        "day_thb": 117.86935698999866,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2228,7 +2498,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2021-06-16"
+        "purchase_date": "2021-06-16",
+        "day_px_pct": 0.0030667729465343463,
+        "day_thb": 107.79365365999878,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2252,7 +2525,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2022-01-31"
+        "purchase_date": "2022-01-31",
+        "day_px_pct": 0.0030667729465343463,
+        "day_thb": 26.884221979999698,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2276,7 +2552,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2023-02-13"
+        "purchase_date": "2023-02-13",
+        "day_px_pct": 0.0030667729465343463,
+        "day_thb": 27.25434095999969,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2300,7 +2579,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2024-03-04"
+        "purchase_date": "2024-03-04",
+        "day_px_pct": 0.0030667729465343463,
+        "day_thb": 32.71737380999963,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2324,7 +2606,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2025-08-18"
+        "purchase_date": "2025-08-18",
+        "day_px_pct": 0.0030667729465343463,
+        "day_thb": 36.45008157999959,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2348,7 +2633,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2014-11-25"
+        "purchase_date": "2014-11-25",
+        "day_px_pct": 0.004777706161880779,
+        "day_thb": 22.55060730999984,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2372,7 +2660,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2016-09-08"
+        "purchase_date": "2016-09-08",
+        "day_px_pct": 0.004777706161880779,
+        "day_thb": 44.05550281999969,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2396,7 +2687,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2017-12-18"
+        "purchase_date": "2017-12-18",
+        "day_px_pct": 0.004777706161880779,
+        "day_thb": 112.65419689999919,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2420,7 +2714,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2018-12-11"
+        "purchase_date": "2018-12-11",
+        "day_px_pct": 0.004777706161880779,
+        "day_thb": 19.961047469999862,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2444,7 +2741,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2019-08-02"
+        "purchase_date": "2019-08-02",
+        "day_px_pct": 0.004777706161880779,
+        "day_thb": 152.77927377999893,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2468,7 +2768,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2020-12-21"
+        "purchase_date": "2020-12-21",
+        "day_px_pct": 0.004777706161880779,
+        "day_thb": 186.92347960999868,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2492,7 +2795,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2021-07-05"
+        "purchase_date": "2021-07-05",
+        "day_px_pct": 0.004777706161880779,
+        "day_thb": 85.93782000999938,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2516,7 +2822,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2021-08-02"
+        "purchase_date": "2021-08-02",
+        "day_px_pct": 0.004777706161880779,
+        "day_thb": 89.48177706999937,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2540,7 +2849,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2022-01-31"
+        "purchase_date": "2022-01-31",
+        "day_px_pct": 0.004777706161880779,
+        "day_thb": 40.96254308999971,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2564,7 +2876,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2023-02-10"
+        "purchase_date": "2023-02-10",
+        "day_px_pct": 0.004777706161880779,
+        "day_thb": 41.283118869999704,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2588,7 +2903,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2024-03-04"
+        "purchase_date": "2024-03-04",
+        "day_px_pct": 0.004777706161880779,
+        "day_thb": 51.296725619999634,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2612,7 +2930,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2025-08-18"
+        "purchase_date": "2025-08-18",
+        "day_px_pct": 0.004777706161880779,
+        "day_thb": 61.16228733999957,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2636,7 +2957,10 @@
         "price_asof": "2026-05-29",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2015-09-23"
+        "purchase_date": "2015-09-23",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": false
       },
       {
         "asset_type": "MF",
@@ -2660,7 +2984,10 @@
         "price_asof": "2026-05-29",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2016-09-08"
+        "purchase_date": "2016-09-08",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": false
       },
       {
         "asset_type": "MF",
@@ -2684,7 +3011,10 @@
         "price_asof": "2026-05-29",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2017-12-18"
+        "purchase_date": "2017-12-18",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": false
       },
       {
         "asset_type": "MF",
@@ -2708,7 +3038,10 @@
         "price_asof": "2026-05-29",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2018-12-11"
+        "purchase_date": "2018-12-11",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": false
       },
       {
         "asset_type": "MF",
@@ -2732,7 +3065,10 @@
         "price_asof": "2026-05-29",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2019-04-01"
+        "purchase_date": "2019-04-01",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": false
       },
       {
         "asset_type": "MF",
@@ -2756,7 +3092,10 @@
         "price_asof": "2026-05-29",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2020-12-22"
+        "purchase_date": "2020-12-22",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": false
       },
       {
         "asset_type": "MF",
@@ -2780,7 +3119,10 @@
         "price_asof": "2026-05-29",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2021-04-21"
+        "purchase_date": "2021-04-21",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": false
       },
       {
         "asset_type": "MF",
@@ -2804,7 +3146,10 @@
         "price_asof": "2026-05-29",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2021-04-30"
+        "purchase_date": "2021-04-30",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": false
       },
       {
         "asset_type": "MF",
@@ -2828,7 +3173,10 @@
         "price_asof": "2026-05-29",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2022-01-31"
+        "purchase_date": "2022-01-31",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": false
       },
       {
         "asset_type": "MF",
@@ -2852,7 +3200,10 @@
         "price_asof": "2026-05-29",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2022-02-28"
+        "purchase_date": "2022-02-28",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": false
       },
       {
         "asset_type": "MF",
@@ -2876,7 +3227,10 @@
         "price_asof": "2026-05-29",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2023-02-10"
+        "purchase_date": "2023-02-10",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": false
       },
       {
         "asset_type": "MF",
@@ -2900,7 +3254,10 @@
         "price_asof": "2026-05-29",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2023-04-04"
+        "purchase_date": "2023-04-04",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": false
       },
       {
         "asset_type": "MF",
@@ -2924,7 +3281,10 @@
         "price_asof": "2026-05-29",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2024-02-05"
+        "purchase_date": "2024-02-05",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": false
       },
       {
         "asset_type": "MF",
@@ -2948,7 +3308,10 @@
         "price_asof": "2026-05-29",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2025-08-18"
+        "purchase_date": "2025-08-18",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": false
       },
       {
         "asset_type": "MF",
@@ -2972,7 +3335,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2018-07-02"
+        "purchase_date": "2018-07-02",
+        "day_px_pct": 0.003350642987188346,
+        "day_thb": 190.66649354999754,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -2996,7 +3362,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2018-07-17"
+        "purchase_date": "2018-07-17",
+        "day_px_pct": 0.003350642987188346,
+        "day_thb": 7660.6418164499,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3020,7 +3389,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2018-12-21"
+        "purchase_date": "2018-12-21",
+        "day_px_pct": 0.003350642987188346,
+        "day_thb": 475.34523164999376,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3044,7 +3416,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2018-12-26"
+        "purchase_date": "2018-12-26",
+        "day_px_pct": 0.003350642987188346,
+        "day_thb": 847.6532941499889,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3068,7 +3443,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2019-12-26"
+        "purchase_date": "2019-12-26",
+        "day_px_pct": 0.003350642987188346,
+        "day_thb": 826.0068280499892,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3092,7 +3470,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2020-12-24"
+        "purchase_date": "2020-12-24",
+        "day_px_pct": 0.003350642987188346,
+        "day_thb": 821.4510928499893,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3116,7 +3497,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2021-08-02"
+        "purchase_date": "2021-08-02",
+        "day_px_pct": 0.003350642987188346,
+        "day_thb": 147.81873374999807,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3140,7 +3524,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2021-09-02"
+        "purchase_date": "2021-09-02",
+        "day_px_pct": 0.003350642987188346,
+        "day_thb": 238.8976699499969,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3164,7 +3551,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2021-11-08"
+        "purchase_date": "2021-11-08",
+        "day_px_pct": 0.003350642987188346,
+        "day_thb": 92.23719074999879,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3188,7 +3578,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2022-02-28"
+        "purchase_date": "2022-02-28",
+        "day_px_pct": 0.003350642987188346,
+        "day_thb": 148.59235889999806,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3212,7 +3605,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2023-09-18"
+        "purchase_date": "2023-09-18",
+        "day_px_pct": 0.003350642987188346,
+        "day_thb": 152.07066584999802,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3236,7 +3632,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2024-03-04"
+        "purchase_date": "2024-03-04",
+        "day_px_pct": 0.003350642987188346,
+        "day_thb": 134.96080949999825,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3260,7 +3659,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2025-08-18"
+        "purchase_date": "2025-08-18",
+        "day_px_pct": 0.003350642987188346,
+        "day_thb": 114.5984966999985,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3284,7 +3686,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2018-12-28"
+        "purchase_date": "2018-12-28",
+        "day_px_pct": -0.03518619934282585,
+        "day_thb": -4980.941877600001,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3308,7 +3713,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2019-08-05"
+        "purchase_date": "2019-08-05",
+        "day_px_pct": -0.03518619934282585,
+        "day_thb": -4039.759556460001,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3332,7 +3740,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2019-12-16"
+        "purchase_date": "2019-12-16",
+        "day_px_pct": -0.03518619934282585,
+        "day_thb": -1700.7821609400005,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3356,7 +3767,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2020-01-29"
+        "purchase_date": "2020-01-29",
+        "day_px_pct": -0.03518619934282585,
+        "day_thb": -2476.975786560001,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3380,7 +3794,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2020-08-03"
+        "purchase_date": "2020-08-03",
+        "day_px_pct": -0.03518619934282585,
+        "day_thb": -1525.0214080800004,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3404,7 +3821,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2020-12-21"
+        "purchase_date": "2020-12-21",
+        "day_px_pct": -0.03518619934282585,
+        "day_thb": -1400.2481959200004,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3428,7 +3848,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2021-01-29"
+        "purchase_date": "2021-01-29",
+        "day_px_pct": -0.03518619934282585,
+        "day_thb": -1669.5418577400005,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3452,7 +3875,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2021-03-01"
+        "purchase_date": "2021-03-01",
+        "day_px_pct": -0.03518619934282585,
+        "day_thb": -1718.6164549200005,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3476,7 +3902,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2021-11-01"
+        "purchase_date": "2021-11-01",
+        "day_px_pct": -0.03518619934282585,
+        "day_thb": -932.8117129200002,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3500,7 +3929,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2021-12-02"
+        "purchase_date": "2021-12-02",
+        "day_px_pct": -0.03518619934282585,
+        "day_thb": -996.3814647600003,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3524,7 +3956,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2021-12-23"
+        "purchase_date": "2021-12-23",
+        "day_px_pct": -0.03518619934282585,
+        "day_thb": -625.8497821200001,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3548,7 +3983,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2022-04-07"
+        "purchase_date": "2022-04-07",
+        "day_px_pct": -0.03518619934282585,
+        "day_thb": -1551.2245986600005,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3572,7 +4010,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2022-11-29"
+        "purchase_date": "2022-11-29",
+        "day_px_pct": -0.03518619934282585,
+        "day_thb": -5136.0813565200015,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3596,7 +4037,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2023-08-07"
+        "purchase_date": "2023-08-07",
+        "day_px_pct": -0.03518619934282585,
+        "day_thb": -3520.440771840001,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3620,7 +4064,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2024-04-09"
+        "purchase_date": "2024-04-09",
+        "day_px_pct": -0.03518619934282585,
+        "day_thb": -1680.7760524800003,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3644,7 +4091,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2024-05-02"
+        "purchase_date": "2024-05-02",
+        "day_px_pct": -0.03518619934282585,
+        "day_thb": -1703.4909152400005,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3668,7 +4118,10 @@
         "price_asof": "2026-06-02",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2025-12-11"
+        "purchase_date": "2025-12-11",
+        "day_px_pct": -0.03518619934282585,
+        "day_thb": -3409.417512000001,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3692,7 +4145,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2022-12-27"
+        "purchase_date": "2022-12-27",
+        "day_px_pct": 0.01376165342069613,
+        "day_thb": 3443.1289122500193,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3716,7 +4172,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2023-08-07"
+        "purchase_date": "2023-08-07",
+        "day_px_pct": 0.01376165342069613,
+        "day_thb": 1434.277219920008,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3740,7 +4199,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2023-09-05"
+        "purchase_date": "2023-09-05",
+        "day_px_pct": 0.01376165342069613,
+        "day_thb": 1431.245524370008,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3764,7 +4226,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2023-12-01"
+        "purchase_date": "2023-12-01",
+        "day_px_pct": 0.01376165342069613,
+        "day_thb": 1663.2245174300094,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3788,7 +4253,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2024-07-02"
+        "purchase_date": "2024-07-02",
+        "day_px_pct": 0.01376165342069613,
+        "day_thb": 1352.8423565400078,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3812,7 +4280,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2024-09-04"
+        "purchase_date": "2024-09-04",
+        "day_px_pct": 0.01376165342069613,
+        "day_thb": 1403.020453090008,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3836,7 +4307,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2024-11-01"
+        "purchase_date": "2024-11-01",
+        "day_px_pct": 0.01376165342069613,
+        "day_thb": 1456.7055472200082,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3860,7 +4334,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2025-09-03"
+        "purchase_date": "2025-09-03",
+        "day_px_pct": 0.01376165342069613,
+        "day_thb": 1246.336988510007,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3884,7 +4361,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2025-10-02"
+        "purchase_date": "2025-10-02",
+        "day_px_pct": 0.01376165342069613,
+        "day_thb": 1307.1455974700075,
+        "has_day": true
       },
       {
         "asset_type": "MF",
@@ -3908,7 +4388,10 @@
         "price_asof": "2026-06-04",
         "price_stale": false,
         "sellable_year": "2037",
-        "purchase_date": "2025-12-11"
+        "purchase_date": "2025-12-11",
+        "day_px_pct": 0.01376165342069613,
+        "day_thb": 1378.5628884000078,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -3922,17 +4405,20 @@
         "currency": "THB",
         "quantity": 8000.0,
         "avg_cost": 23.73981375,
-        "price": 5.7,
+        "price": 5.65,
         "fx": 1.0,
         "invested_thb": 189918.51,
-        "value_thb": 45600.0,
-        "pnl_thb": -144318.51,
-        "pnl_pct": -0.759897021096048,
+        "value_thb": 45200.0,
+        "pnl_thb": -144718.51,
+        "pnl_pct": -0.7620031875776616,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -3956,7 +4442,10 @@
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.005698005698005715,
+        "day_thb": -500.0,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -3970,17 +4459,20 @@
         "currency": "THB",
         "quantity": 20000.0,
         "avg_cost": 2.003377,
-        "price": 0.46,
+        "price": 0.45,
         "fx": 1.0,
         "invested_thb": 40067.54,
-        "value_thb": 9200.0,
-        "pnl_thb": -30867.54,
-        "pnl_pct": -0.7703877003679288,
+        "value_thb": 9000.0,
+        "pnl_thb": -31067.54,
+        "pnl_pct": -0.7753792720990608,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4004,7 +4496,10 @@
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4028,7 +4523,10 @@
         "price_asof": "2026-05-23",
         "price_stale": true,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": false
       },
       {
         "asset_type": "Equity",
@@ -4052,7 +4550,10 @@
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4066,17 +4567,20 @@
         "currency": "THB",
         "quantity": 10297.0,
         "avg_cost": 10.3913761289696,
-        "price": 67.25,
+        "price": 68.0,
         "fx": 1.0,
         "invested_thb": 106999.99999999997,
-        "value_thb": 692473.25,
-        "pnl_thb": 585473.25,
-        "pnl_pct": 5.4717126168224315,
+        "value_thb": 700196.0,
+        "pnl_thb": 593196.0,
+        "pnl_pct": 5.543887850467291,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.011152416356877248,
+        "day_thb": 7722.75,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4100,7 +4604,10 @@
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4114,17 +4621,20 @@
         "currency": "THB",
         "quantity": 5000.0,
         "avg_cost": 28.297456,
-        "price": 15.3,
+        "price": 15.4,
         "fx": 1.0,
         "invested_thb": 141487.28,
-        "value_thb": 76500.0,
-        "pnl_thb": -64987.28,
-        "pnl_pct": -0.4593153532953634,
+        "value_thb": 77000.0,
+        "pnl_thb": -64487.28,
+        "pnl_pct": -0.4557814667155945,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4138,17 +4648,20 @@
         "currency": "THB",
         "quantity": 5000.0,
         "avg_cost": 28.047038,
-        "price": 13.4,
+        "price": 13.2,
         "fx": 1.0,
         "invested_thb": 140235.19,
-        "value_thb": 67000.0,
-        "pnl_thb": -73235.19,
-        "pnl_pct": -0.5222311889048676,
+        "value_thb": 66000.0,
+        "pnl_thb": -74235.19,
+        "pnl_pct": -0.5293620666824069,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4162,17 +4675,20 @@
         "currency": "THB",
         "quantity": 4000.0,
         "avg_cost": 20.03377,
-        "price": 6.15,
+        "price": 6.1,
         "fx": 1.0,
         "invested_thb": 80135.08,
-        "value_thb": 24600.0,
-        "pnl_thb": -55535.08,
-        "pnl_pct": -0.693018338535383,
+        "value_thb": 24400.0,
+        "pnl_thb": -55735.08,
+        "pnl_pct": -0.695514124400949,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4186,17 +4702,20 @@
         "currency": "THB",
         "quantity": 3993.0,
         "avg_cost": 28.4097796143251,
-        "price": 21.3,
+        "price": 21.6,
         "fx": 1.0,
         "invested_thb": 113440.25000000012,
-        "value_thb": 85050.90000000001,
-        "pnl_thb": -28389.350000000108,
-        "pnl_pct": -0.25025817555938107,
+        "value_thb": 86248.8,
+        "pnl_thb": -27191.450000000114,
+        "pnl_pct": -0.23969843155317522,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4210,17 +4729,20 @@
         "currency": "THB",
         "quantity": 1000.0,
         "avg_cost": 96.66212,
-        "price": 3.56,
+        "price": 3.6,
         "fx": 1.0,
         "invested_thb": 96662.12,
-        "value_thb": 3560.0,
-        "pnl_thb": -93102.12,
-        "pnl_pct": -0.9631706815451596,
+        "value_thb": 3600.0,
+        "pnl_thb": -93062.12,
+        "pnl_pct": -0.9627568689782513,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4244,7 +4766,10 @@
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": false
       },
       {
         "asset_type": "Equity",
@@ -4258,17 +4783,20 @@
         "currency": "THB",
         "quantity": 20000.0,
         "avg_cost": 7.2120955,
-        "price": 2.74,
+        "price": 2.86,
         "fx": 1.0,
         "invested_thb": 144241.91,
-        "value_thb": 54800.00000000001,
-        "pnl_thb": -89441.91,
-        "pnl_pct": -0.6200826791603079,
+        "value_thb": 57200.0,
+        "pnl_thb": -87041.91,
+        "pnl_pct": -0.6034439643790075,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4282,17 +4810,20 @@
         "currency": "THB",
         "quantity": 4400.0,
         "avg_cost": 18.0,
-        "price": 12.4,
+        "price": 12.5,
         "fx": 1.0,
         "invested_thb": 79200.0,
-        "value_thb": 54560.0,
-        "pnl_thb": -24640.0,
-        "pnl_pct": -0.3111111111111111,
+        "value_thb": 55000.0,
+        "pnl_thb": -24200.0,
+        "pnl_pct": -0.3055555555555556,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.008064516129032251,
+        "day_thb": 439.9999999999984,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4306,17 +4837,20 @@
         "currency": "THB",
         "quantity": 1254.0,
         "avg_cost": 29.8562998405104,
-        "price": 17.5,
+        "price": 17.9,
         "fx": 1.0,
         "invested_thb": 37439.80000000004,
-        "value_thb": 21945.0,
-        "pnl_thb": -15494.80000000004,
-        "pnl_pct": -0.41385904839235316,
+        "value_thb": 22446.6,
+        "pnl_thb": -14993.20000000004,
+        "pnl_pct": -0.4004615409270355,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4330,17 +4864,20 @@
         "currency": "THB",
         "quantity": 10000.0,
         "avg_cost": 7.867388,
-        "price": 5.0,
+        "price": 4.96,
         "fx": 1.0,
         "invested_thb": 78673.88,
-        "value_thb": 50000.0,
-        "pnl_thb": -28673.880000000005,
-        "pnl_pct": -0.36446505498394133,
+        "value_thb": 49600.0,
+        "pnl_thb": -29073.880000000005,
+        "pnl_pct": -0.3695493345440698,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4364,7 +4901,10 @@
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": false
       },
       {
         "asset_type": "Equity",
@@ -4388,7 +4928,10 @@
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": false
       },
       {
         "asset_type": "Equity",
@@ -4403,16 +4946,19 @@
         "quantity": 7.0598218,
         "avg_cost": 70.71,
         "price": 161.87,
-        "fx": 32.65,
-        "invested_thb": 16298.879982956698,
-        "value_thb": 37311.550033109896,
-        "pnl_thb": 21012.670050153196,
-        "pnl_pct": 1.2892094470371942,
+        "fx": 32.66,
+        "invested_thb": 16303.871982951476,
+        "value_thb": 37322.977766657554,
+        "pnl_thb": 21019.10578370608,
+        "pnl_pct": 1.2892094470371944,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.01683521556837486,
+        "day_thb": 617.9372692202827,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4427,16 +4973,19 @@
         "quantity": 1.1623088,
         "avg_cost": 429.49,
         "price": 258.42,
-        "fx": 32.65,
-        "invested_thb": 16298.880212616798,
-        "value_thb": 9806.8793791344,
-        "pnl_thb": -6492.000833482398,
-        "pnl_pct": -0.3983096230412814,
+        "fx": 32.66,
+        "invested_thb": 16303.872212681918,
+        "value_thb": 9809.883017535358,
+        "pnl_thb": -6493.98919514656,
+        "pnl_pct": -0.3983096230412816,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.008507688436922178,
+        "day_thb": 82.75537139949553,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4451,16 +5000,19 @@
         "quantity": 2.9416618,
         "avg_cost": 169.7,
         "price": 501.7,
-        "fx": 32.65,
-        "invested_thb": 16298.880243568998,
-        "value_thb": 48185.905823208996,
-        "pnl_thb": 31887.025579639998,
-        "pnl_pct": 1.9563936358279317,
+        "fx": 32.66,
+        "invested_thb": 16303.872243643596,
+        "value_thb": 48200.66414045959,
+        "pnl_thb": 31896.79189681599,
+        "pnl_pct": 1.9563936358279315,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0018571620113601028,
+        "day_thb": 89.35050400225624,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4475,16 +5027,19 @@
         "quantity": 5.0536546,
         "avg_cost": 98.78,
         "price": 175.63,
-        "fx": 32.65,
-        "invested_thb": 16298.8800453182,
-        "value_thb": 28979.270119044697,
-        "pnl_thb": 12680.390073726498,
-        "pnl_pct": 0.7779914962543024,
+        "fx": 32.66,
+        "invested_thb": 16303.872045332077,
+        "value_thb": 28988.145852618676,
+        "pnl_thb": 12684.2738072866,
+        "pnl_pct": 0.7779914962543026,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.018278334877976588,
+        "day_thb": -539.720224387564,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4499,16 +5054,19 @@
         "quantity": 6.9953718,
         "avg_cost": 71.48,
         "price": 68.39,
-        "fx": 32.65,
-        "invested_thb": 16325.952605019602,
-        "value_thb": 15620.2000371753,
-        "pnl_thb": -705.7525678443017,
-        "pnl_pct": -0.043228875209849006,
+        "fx": 32.66,
+        "invested_thb": 16330.95289678224,
+        "value_thb": 15624.984171949318,
+        "pnl_thb": -705.9687248329228,
+        "pnl_pct": -0.04322887520984908,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.00912774597773458,
+        "day_thb": -143.9346856759117,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4523,16 +5081,19 @@
         "quantity": 5.1650285,
         "avg_cost": 96.65,
         "price": 149.67,
-        "fx": 32.65,
-        "invested_thb": 16298.88014774125,
-        "value_thb": 25240.076479176747,
-        "pnl_thb": 8941.196331435496,
-        "pnl_pct": 0.5485773409208482,
+        "fx": 32.66,
+        "invested_thb": 16303.8721477865,
+        "value_thb": 25247.806977332693,
+        "pnl_thb": 8943.934829546193,
+        "pnl_pct": 0.548577340920848,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.021777744996661408,
+        "day_thb": 538.1212350432211,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4547,16 +5108,19 @@
         "quantity": 0.9613126,
         "avg_cost": 519.29,
         "price": 164.87,
-        "fx": 32.65,
-        "invested_thb": 16298.880654763097,
-        "value_thb": 5174.7510130192995,
-        "pnl_thb": -11124.129641743799,
+        "fx": 32.66,
+        "invested_thb": 16303.872654963636,
+        "value_thb": 5176.335929102919,
+        "pnl_thb": -11127.536725860717,
         "pnl_pct": -0.6825088101061064,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0007283763277694533,
+        "day_thb": 3.767576341920142,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4571,16 +5135,19 @@
         "quantity": 0.7717161,
         "avg_cost": 646.87,
         "price": 2131.1,
-        "fx": 32.65,
-        "invested_thb": 16298.87979126855,
-        "value_thb": 53696.3265001815,
-        "pnl_thb": 37397.446708912954,
-        "pnl_pct": 2.294479570856587,
+        "fx": 32.66,
+        "invested_thb": 16303.87179120462,
+        "value_thb": 53712.7725419886,
+        "pnl_thb": 37408.90075078398,
+        "pnl_pct": 2.2944795708565864,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.002818627129140161,
+        "day_thb": 150.97074762322103,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4595,16 +5162,19 @@
         "quantity": 2.0,
         "avg_cost": 910.64,
         "price": 1125.27,
-        "fx": 32.65,
-        "invested_thb": 59464.791999999994,
-        "value_thb": 73480.131,
-        "pnl_thb": 14015.339,
-        "pnl_pct": 0.23569138188526753,
+        "fx": 32.66,
+        "invested_thb": 59483.004799999995,
+        "value_thb": 73502.63639999999,
+        "pnl_thb": 14019.631599999993,
+        "pnl_pct": 0.23569138188526742,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.04309494961924254,
+        "day_thb": 3036.7249057199974,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4619,16 +5189,19 @@
         "quantity": 8.7794583,
         "avg_cost": 56.86,
         "price": 96.3,
-        "fx": 32.65,
-        "invested_thb": 16298.879965325697,
-        "value_thb": 27604.328889568496,
-        "pnl_thb": 11305.448924242799,
-        "pnl_pct": 0.6936334857544847,
+        "fx": 32.66,
+        "invested_thb": 16303.871965315077,
+        "value_thb": 27612.783507911397,
+        "pnl_thb": 11308.911542596321,
+        "pnl_pct": 0.6936334857544849,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.0025893629438831223,
+        "day_thb": -71.68513723082613,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4643,16 +5216,19 @@
         "quantity": 0.8224839,
         "avg_cost": 606.94,
         "price": 1652.6,
-        "fx": 32.65,
-        "invested_thb": 16298.827050384902,
-        "value_thb": 44379.084561020994,
-        "pnl_thb": 28080.257510636093,
-        "pnl_pct": 1.7228391603782904,
+        "fx": 32.66,
+        "invested_thb": 16303.81903416756,
+        "value_thb": 44392.676929952395,
+        "pnl_thb": 28088.857895784837,
+        "pnl_pct": 1.7228391603782909,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.02206653372053924,
+        "day_thb": -1001.6964713833236,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4667,16 +5243,19 @@
         "quantity": 3.3079319,
         "avg_cost": 150.91,
         "price": 118.83,
-        "fx": 32.65,
-        "invested_thb": 16298.880098896849,
-        "value_thb": 12834.112531654047,
-        "pnl_thb": -3464.7675672428013,
-        "pnl_pct": -0.212577032668478,
+        "fx": 32.66,
+        "invested_thb": 16303.872098927137,
+        "value_thb": 12838.043347130817,
+        "pnl_thb": -3465.82875179632,
+        "pnl_pct": -0.21257703266847794,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.02794119425503805,
+        "day_thb": 348.95990648253155,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4691,16 +5270,19 @@
         "quantity": 8.7798045,
         "avg_cost": 137.06,
         "price": 218.66,
-        "fx": 32.65,
-        "invested_thb": 39289.704155740495,
-        "value_thb": 62681.210496820495,
-        "pnl_thb": 23391.50634108,
+        "fx": 32.66,
+        "invested_thb": 39301.73775578819,
+        "value_thb": 62700.408417340186,
+        "pnl_thb": 23398.670661551994,
         "pnl_pct": 0.595359696483292,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.018207217694994116,
+        "day_thb": 1121.1863025326988,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4715,16 +5297,19 @@
         "quantity": 3.3590863,
         "avg_cost": 148.85,
         "price": 90.2,
-        "fx": 32.65,
-        "invested_thb": 16324.999861400749,
-        "value_thb": 9892.609926089,
-        "pnl_thb": -6432.389935311749,
-        "pnl_pct": -0.3940208263352368,
+        "fx": 32.66,
+        "invested_thb": 16329.999861358297,
+        "value_thb": 9895.6398219316,
+        "pnl_thb": -6434.360039426698,
+        "pnl_pct": -0.3940208263352367,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.007045310746160771,
+        "day_thb": -70.21252664608537,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4739,16 +5324,19 @@
         "quantity": 7.3067916,
         "avg_cost": 68.32,
         "price": 103.97,
-        "fx": 32.65,
-        "invested_thb": 16298.8800689568,
-        "value_thb": 24803.7845545878,
-        "pnl_thb": 8504.904485631001,
-        "pnl_pct": 0.5218091334894615,
+        "fx": 32.66,
+        "invested_thb": 16303.872068977918,
+        "value_thb": 24811.38142581432,
+        "pnl_thb": 8507.509356836403,
+        "pnl_pct": 0.5218091334894616,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.007256783903653696,
+        "day_thb": -181.36697429800037,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4763,16 +5351,19 @@
         "quantity": 4.189359,
         "avg_cost": 119.35,
         "price": 406.86,
-        "fx": 32.65,
-        "invested_thb": 16324.999890622497,
-        "value_thb": 55651.356979460994,
-        "pnl_thb": 39326.3570888385,
+        "fx": 32.66,
+        "invested_thb": 16329.999890588997,
+        "value_thb": 55668.40180548839,
+        "pnl_thb": 39338.4019148994,
         "pnl_pct": 2.4089652283200675,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.006859210854664122,
+        "day_thb": -384.47852519944,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4787,16 +5378,19 @@
         "quantity": 23.5371652,
         "avg_cost": 424.86,
         "price": 418.45,
-        "fx": 32.65,
-        "invested_thb": 326500.0002243708,
-        "value_thb": 321573.989299741,
-        "pnl_thb": -4926.010924629809,
-        "pnl_pct": -0.01508732288283202,
+        "fx": 32.66,
+        "invested_thb": 326600.0002244395,
+        "value_thb": 321672.48056752037,
+        "pnl_thb": -4927.519656919118,
+        "pnl_pct": -0.015087322882831987,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.012390870548287913,
+        "day_thb": -4035.8092557038053,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4811,16 +5405,19 @@
         "quantity": 18.4206642,
         "avg_cost": 27.1,
         "price": 54.48,
-        "fx": 32.65,
-        "invested_thb": 16298.879994123,
-        "value_thb": 32766.1617003624,
-        "pnl_thb": 16467.281706239402,
-        "pnl_pct": 1.0103321033210333,
+        "fx": 32.66,
+        "invested_thb": 16303.8719941212,
+        "value_thb": 32776.197278218555,
+        "pnl_thb": 16472.325284097355,
+        "pnl_pct": 1.0103321033210328,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.028530705116594057,
+        "day_thb": -962.5914316729876,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4835,16 +5432,19 @@
         "quantity": 103.15111,
         "avg_cost": 96.95,
         "price": 203.97,
-        "fx": 32.65,
-        "invested_thb": 326516.328738425,
-        "value_thb": 686947.2467537549,
-        "pnl_thb": 360430.9180153299,
+        "fx": 32.66,
+        "invested_thb": 326616.33373957,
+        "value_thb": 687157.644072822,
+        "pnl_thb": 360541.31033325195,
         "pnl_pct": 1.1038679731820524,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.04221453185808732,
+        "day_thb": -30286.571703280737,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4868,7 +5468,10 @@
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": false
       },
       {
         "asset_type": "Equity",
@@ -4883,16 +5486,19 @@
         "quantity": 2839.64,
         "avg_cost": 1.0,
         "price": 1.0,
-        "fx": 32.65,
-        "invested_thb": 92714.24599999998,
-        "value_thb": 92714.24599999998,
+        "fx": 32.66,
+        "invested_thb": 92742.64239999998,
+        "value_thb": 92742.64239999998,
         "pnl_thb": 0.0,
         "pnl_pct": 0.0,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": false
       },
       {
         "asset_type": "Equity",
@@ -4907,16 +5513,19 @@
         "quantity": 100.0,
         "avg_cost": 85.4458,
         "price": 97.0,
-        "fx": 32.65,
-        "invested_thb": 278980.537,
-        "value_thb": 316705.0,
-        "pnl_thb": 37724.46299999999,
-        "pnl_pct": 0.13522256213880607,
+        "fx": 32.66,
+        "invested_thb": 279065.98279999994,
+        "value_thb": 316801.99999999994,
+        "pnl_thb": 37736.0172,
+        "pnl_pct": 0.13522256213880615,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.013425549227013778,
+        "day_thb": -4311.119999999977,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4931,16 +5540,19 @@
         "quantity": 80.0,
         "avg_cost": 167.3194,
         "price": 311.23,
-        "fx": 32.65,
-        "invested_thb": 437038.2728,
-        "value_thb": 812932.76,
-        "pnl_thb": 375894.48720000003,
+        "fx": 32.66,
+        "invested_thb": 437172.12831999996,
+        "value_thb": 813181.744,
+        "pnl_thb": 376009.61568,
         "pnl_pct": 0.8600951234584873,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0031263777758532285,
+        "day_thb": 2534.3898719999884,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4955,16 +5567,19 @@
         "quantity": 25.0,
         "avg_cost": 371.97,
         "price": 164.13,
-        "fx": 32.65,
-        "invested_thb": 303620.5125,
-        "value_thb": 133971.1125,
-        "pnl_thb": -169649.40000000002,
-        "pnl_pct": -0.5587547382853456,
+        "fx": 32.66,
+        "invested_thb": 303713.50499999995,
+        "value_thb": 134012.145,
+        "pnl_thb": -169701.35999999996,
+        "pnl_pct": -0.5587547382853455,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.005575290984099368,
+        "day_thb": 743.0141834999991,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -4979,16 +5594,19 @@
         "quantity": 15.0,
         "avg_cost": 184.0,
         "price": 627.57,
-        "fx": 32.65,
-        "invested_thb": 90114.0,
-        "value_thb": 307352.40750000003,
-        "pnl_thb": 217238.40750000003,
+        "fx": 32.66,
+        "invested_thb": 90141.59999999999,
+        "value_thb": 307446.543,
+        "pnl_thb": 217304.94300000003,
         "pnl_pct": 2.410706521739131,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.007367845111170501,
+        "day_thb": 2248.6507980000465,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -5003,16 +5621,19 @@
         "quantity": 50.0,
         "avg_cost": 390.8502,
         "price": 166.0,
-        "fx": 32.65,
-        "invested_thb": 638062.9515,
-        "value_thb": 270995.0,
-        "pnl_thb": -367067.95149999997,
-        "pnl_pct": -0.575284853378609,
+        "fx": 32.66,
+        "invested_thb": 638258.3765999998,
+        "value_thb": 271078.0,
+        "pnl_thb": -367180.37659999984,
+        "pnl_pct": -0.5752848533786089,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.06417074606799322,
+        "day_thb": 16346.321835000002,
+        "has_day": true
       },
       {
         "asset_type": "Equity",
@@ -5027,16 +5648,19 @@
         "quantity": 1765.8,
         "avg_cost": 1.0,
         "price": 1.0,
-        "fx": 32.65,
-        "invested_thb": 57653.369999999995,
-        "value_thb": 57653.369999999995,
+        "fx": 32.66,
+        "invested_thb": 57671.02799999999,
+        "value_thb": 57671.02799999999,
         "pnl_thb": 0.0,
         "pnl_pct": 0.0,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": false
       },
       {
         "asset_type": "Crypto",
@@ -5050,17 +5674,20 @@
         "currency": "USD",
         "quantity": 0.00935763,
         "avg_cost": 0.0,
-        "price": 62716.0,
-        "fx": 32.65,
+        "price": 62651.0,
+        "fx": 32.66,
         "invested_thb": 0.0,
-        "value_thb": 19161.407468562,
-        "pnl_thb": 19161.407468562,
+        "value_thb": 19147.4108870658,
+        "pnl_thb": 19147.4108870658,
         "pnl_pct": 0.0,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.025246905520880936,
+        "day_thb": -495.9336639947365,
+        "has_day": true
       },
       {
         "asset_type": "Crypto",
@@ -5075,16 +5702,19 @@
         "quantity": 3.37992961,
         "avg_cost": 0.0,
         "price": 82.67,
-        "fx": 32.65,
+        "fx": 32.66,
         "invested_thb": 0.0,
-        "value_thb": 9123.023195036556,
-        "pnl_thb": 9123.023195036556,
+        "value_thb": 9125.817382845142,
+        "pnl_thb": 9125.817382845142,
         "pnl_pct": 0.0,
         "lots": 1,
         "price_asof": "2026-05-30",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": false
       },
       {
         "asset_type": "Crypto",
@@ -5098,17 +5728,20 @@
         "currency": "USD",
         "quantity": 7121.91924256,
         "avg_cost": 0.0,
-        "price": 0.006737,
-        "fx": 32.65,
+        "price": 0.00662,
+        "fx": 32.66,
         "invested_thb": 0.0,
-        "value_thb": 1566.5590784471874,
-        "pnl_thb": 1566.5590784471874,
+        "value_thb": 1539.8244618985034,
+        "pnl_thb": 1539.8244618985034,
         "pnl_pct": 0.0,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.06139231532681133,
+        "day_thb": -100.71661510605021,
+        "has_day": true
       },
       {
         "asset_type": "Crypto",
@@ -5122,17 +5755,20 @@
         "currency": "USD",
         "quantity": 0.16259573,
         "avg_cost": 0.0,
-        "price": 16.79,
-        "fx": 32.65,
+        "price": 16.55,
+        "fx": 32.66,
         "invested_thb": 0.0,
-        "value_thb": 89.133922313755,
-        "pnl_thb": 89.133922313755,
+        "value_thb": 87.88673176678999,
+        "pnl_thb": 87.88673176678999,
         "pnl_pct": 0.0,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.06794610915088817,
+        "day_thb": -6.406884331657028,
+        "has_day": true
       },
       {
         "asset_type": "Crypto",
@@ -5147,16 +5783,19 @@
         "quantity": 2.99434087,
         "avg_cost": 0.0,
         "price": 7.25e-06,
-        "fx": 32.65,
+        "fx": 32.66,
         "invested_thb": 0.0,
-        "value_thb": 0.000708797913189875,
-        "pnl_thb": 0.000708797913189875,
+        "value_thb": 0.0007090150029029499,
+        "pnl_thb": 0.0007090150029029499,
         "pnl_pct": 0.0,
         "lots": 1,
         "price_asof": "2026-05-30",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": false
       },
       {
         "asset_type": "Crypto",
@@ -5170,17 +5809,20 @@
         "currency": "USD",
         "quantity": 3.62e-05,
         "avg_cost": 0.0,
-        "price": 67.86,
-        "fx": 32.65,
+        "price": 67.02,
+        "fx": 32.66,
         "invested_thb": 0.0,
-        "value_thb": 0.08020576979999999,
-        "pnl_thb": 0.08020576979999999,
+        "value_thb": 0.07923720983999999,
+        "pnl_thb": 0.07923720983999999,
         "pnl_pct": 0.0,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.060768778552779734,
+        "day_thb": -0.0051266912214519966,
+        "has_day": true
       },
       {
         "asset_type": "Crypto",
@@ -5195,16 +5837,19 @@
         "quantity": 0.0009077,
         "avg_cost": 0.0,
         "price": 1.0,
-        "fx": 32.65,
+        "fx": 32.66,
         "invested_thb": 0.0,
-        "value_thb": 0.029636404999999998,
-        "pnl_thb": 0.029636404999999998,
+        "value_thb": 0.029645481999999997,
+        "pnl_thb": 0.029645481999999997,
         "pnl_pct": 0.0,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": true
       },
       {
         "asset_type": "Crypto",
@@ -5218,17 +5863,20 @@
         "currency": "USD",
         "quantity": 0.03780216,
         "avg_cost": 106500.0,
-        "price": 62716.0,
-        "fx": 32.65,
-        "invested_thb": 131446.615806,
-        "value_thb": 77406.628703184,
-        "pnl_thb": -54039.98710281598,
-        "pnl_pct": -0.4111173708920187,
+        "price": 62651.0,
+        "fx": 32.66,
+        "invested_thb": 131486.8751064,
+        "value_thb": 77350.08650038559,
+        "pnl_thb": -54136.78860601441,
+        "pnl_pct": -0.4117276995305165,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.025246905520880936,
+        "day_thb": -2003.4307528418271,
+        "has_day": true
       },
       {
         "asset_type": "Crypto",
@@ -5242,17 +5890,20 @@
         "currency": "USD",
         "quantity": 2.78721,
         "avg_cost": 358.4162796,
-        "price": 70.04,
-        "fx": 32.65,
-        "invested_thb": 32616.743972376855,
-        "value_thb": 6373.80855126,
-        "pnl_thb": -26242.935421116854,
-        "pnl_pct": -0.8045847692014266,
+        "price": 68.93,
+        "fx": 32.66,
+        "invested_thb": 32626.733786763492,
+        "value_thb": 6274.717103898,
+        "pnl_thb": -26352.01668286549,
+        "pnl_pct": -0.8076817267426375,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.05450624067717147,
+        "day_thb": -361.7276552847693,
+        "has_day": true
       },
       {
         "asset_type": "Crypto",
@@ -5266,17 +5917,20 @@
         "currency": "USD",
         "quantity": 37.830132,
         "avg_cost": 66.01,
-        "price": 1.78,
-        "fx": 32.65,
-        "invested_thb": 81532.50298489799,
-        "value_thb": 2198.573781444,
-        "pnl_thb": -79333.929203454,
-        "pnl_pct": -0.9730343887289805,
+        "price": 1.75,
+        "fx": 32.66,
+        "invested_thb": 81557.4746550312,
+        "value_thb": 2162.18119446,
+        "pnl_thb": -79395.29346057119,
+        "pnl_pct": -0.9734888653234358,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.08040613468949775,
+        "day_thb": -189.05371045091564,
+        "has_day": true
       },
       {
         "asset_type": "Crypto",
@@ -5290,17 +5944,20 @@
         "currency": "USD",
         "quantity": 7253.84165494,
         "avg_cost": 0.08920823,
-        "price": 0.011969,
-        "fx": 32.65,
-        "invested_thb": 21127.892535178333,
-        "value_thb": 2834.7131845744443,
-        "pnl_thb": -18293.17935060389,
-        "pnl_pct": -0.8658307647175603,
+        "price": 0.011612,
+        "fx": 32.66,
+        "invested_thb": 21134.363558925706,
+        "value_thb": 2751.004359645353,
+        "pnl_thb": -18383.359199280352,
+        "pnl_pct": -0.8698326376389263,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.07510951812027078,
+        "day_thb": -223.4065717486708,
+        "has_day": true
       },
       {
         "asset_type": "Crypto",
@@ -5314,17 +5971,20 @@
         "currency": "USD",
         "quantity": 0.1415321,
         "avg_cost": 0.0,
-        "price": 67.86,
-        "fx": 32.65,
+        "price": 67.02,
+        "fx": 32.66,
         "invested_thb": 0.0,
-        "value_thb": 313.5826251909,
-        "pnl_thb": 313.5826251909,
+        "value_thb": 309.7958206297199,
+        "pnl_thb": 309.7958206297199,
         "pnl_pct": 0.0,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.060768778552779734,
+        "day_thb": -20.043960624963155,
+        "has_day": true
       },
       {
         "asset_type": "Crypto",
@@ -5339,16 +5999,19 @@
         "quantity": 2079.92753123,
         "avg_cost": 0.0,
         "price": 1.0,
-        "fx": 32.65,
+        "fx": 32.66,
         "invested_thb": 0.0,
-        "value_thb": 67909.6338946595,
-        "pnl_thb": 67909.6338946595,
+        "value_thb": 67930.4331699718,
+        "pnl_thb": 67930.4331699718,
         "pnl_pct": 0.0,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": true
       },
       {
         "asset_type": "Crypto",
@@ -5362,17 +6025,20 @@
         "currency": "USD",
         "quantity": 1.47965673,
         "avg_cost": 0.0,
-        "price": 597.53,
-        "fx": 32.65,
+        "price": 595.12,
+        "fx": 32.66,
         "invested_thb": 0.0,
-        "value_thb": 28867.147683880783,
-        "pnl_thb": 28867.147683880783,
+        "value_thb": 28759.524407727215,
+        "pnl_thb": 28759.524407727215,
         "pnl_pct": 0.0,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.03758021869627859,
+        "day_thb": -1122.9914823438914,
+        "has_day": true
       },
       {
         "asset_type": "Crypto",
@@ -5386,17 +6052,20 @@
         "currency": "USD",
         "quantity": 66699.17877316,
         "avg_cost": 0.03,
-        "price": 0.006737,
-        "fx": 32.65,
-        "invested_thb": 65331.84560831022,
-        "value_thb": 14671.35479543953,
-        "pnl_thb": -50660.49081287069,
-        "pnl_pct": -0.7754333333333333,
+        "price": 0.00662,
+        "fx": 32.66,
+        "invested_thb": 65351.855361942165,
+        "value_thb": 14420.976083201906,
+        "pnl_thb": -50930.87927874026,
+        "pnl_pct": -0.7793333333333333,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.06139231532681133,
+        "day_thb": -943.2451123906991,
+        "has_day": true
       },
       {
         "asset_type": "Crypto",
@@ -5410,17 +6079,20 @@
         "currency": "USD",
         "quantity": 4.39206703,
         "avg_cost": 0.0,
-        "price": 67.86,
-        "fx": 32.65,
+        "price": 67.02,
+        "fx": 32.66,
         "invested_thb": 0.0,
-        "value_thb": 9731.191081611869,
-        "pnl_thb": 9731.191081611869,
+        "value_thb": 9613.677814570594,
+        "pnl_thb": 9613.677814570594,
         "pnl_pct": 0.0,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.060768778552779734,
+        "day_thb": -622.0102620643576,
+        "has_day": true
       },
       {
         "asset_type": "Crypto",
@@ -5434,17 +6106,20 @@
         "currency": "USD",
         "quantity": 7965.82876355,
         "avg_cost": 0.223210489,
-        "price": 0.013728,
-        "fx": 32.65,
-        "invested_thb": 58053.54582211382,
-        "value_thb": 3570.43739573537,
-        "pnl_thb": -54483.10842637845,
-        "pnl_pct": -0.9384975138869931,
+        "price": 0.013579,
+        "fx": 32.66,
+        "invested_thb": 58071.32638744984,
+        "value_thb": 3532.7665135628163,
+        "pnl_thb": -54538.55987388702,
+        "pnl_pct": -0.9391650452412207,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.04862327471449579,
+        "day_thb": -180.55379338777442,
+        "has_day": true
       },
       {
         "asset_type": "Crypto",
@@ -5458,17 +6133,20 @@
         "currency": "THB",
         "quantity": 0.09009006,
         "avg_cost": 1110000.0,
-        "price": 2047677.4,
+        "price": 2046181.66,
         "fx": 1.0,
         "invested_thb": 99999.9666,
-        "value_thb": 184475.379826644,
-        "pnl_thb": 84475.413226644,
-        "pnl_pct": 0.8447544144144145,
+        "value_thb": 184340.6285202996,
+        "pnl_thb": 84340.6619202996,
+        "pnl_pct": 0.8434069009009009,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.02524690551977571,
+        "day_thb": -4774.573641327898,
+        "has_day": true
       },
       {
         "asset_type": "Crypto",
@@ -5482,17 +6160,20 @@
         "currency": "THB",
         "quantity": 0.13841141,
         "avg_cost": 2168161.89,
-        "price": 2047677.4,
+        "price": 2046181.66,
         "fx": 1.0,
         "invested_thb": 300098.3443031649,
-        "value_thb": 283421.916159134,
-        "pnl_thb": -16676.428144030913,
-        "pnl_pct": -0.055569877210598924,
+        "value_thb": 283214.88867674064,
+        "pnl_thb": -16883.455626424286,
+        "pnl_pct": -0.05625974267078363,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.02524690551977571,
+        "day_thb": -7335.498165336206,
+        "has_day": true
       },
       {
         "asset_type": "Crypto",
@@ -5506,17 +6187,20 @@
         "currency": "THB",
         "quantity": 11.40962468,
         "avg_cost": 17528.95,
-        "price": 19509.3545,
+        "price": 19436.6192,
         "fx": 1.0,
         "invested_thb": 199998.74053448602,
-        "value_thb": 222594.4125940691,
-        "pnl_thb": 22595.67205958307,
-        "pnl_pct": 0.1129790717641388,
+        "value_thb": 221764.53012008188,
+        "pnl_thb": 21765.789585595863,
+        "pnl_pct": 0.10882963326382929,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.03758021884877438,
+        "day_thb": -8659.381008191045,
+        "has_day": true
       },
       {
         "asset_type": "Crypto",
@@ -5530,17 +6214,20 @@
         "currency": "THB",
         "quantity": 831.25,
         "avg_cost": 12.03,
-        "price": 2.846068,
+        "price": 2.809707,
         "fx": 1.0,
         "invested_thb": 9999.9375,
-        "value_thb": 2365.7940249999997,
-        "pnl_thb": -7634.143475000001,
-        "pnl_pct": -0.763419118869493,
+        "value_thb": 2335.56894375,
+        "pnl_thb": -7664.3685562499995,
+        "pnl_pct": -0.7664416458852867,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.056713859392735655,
+        "day_thb": -140.42306250000001,
+        "has_day": true
       },
       {
         "asset_type": "Crypto",
@@ -5554,17 +6241,20 @@
         "currency": "THB",
         "quantity": 2.71757576,
         "avg_cost": 110391.82,
-        "price": 56728.3955,
+        "price": 56438.4396,
         "fx": 1.0,
         "invested_thb": 299998.13413428323,
-        "value_thb": 154163.71251449306,
-        "pnl_thb": -145834.42161979017,
-        "pnl_pct": -0.48611776216752306,
+        "value_thb": 153375.7353891841,
+        "pnl_thb": -146622.39874509914,
+        "pnl_pct": -0.48874436892153794,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.04333800273024779,
+        "day_thb": -6948.115486995729,
+        "has_day": true
       },
       {
         "asset_type": "Crypto",
@@ -5578,17 +6268,20 @@
         "currency": "THB",
         "quantity": 352.81837899,
         "avg_cost": 425.15,
-        "price": 25.852335,
+        "price": 25.85395,
         "fx": 1.0,
         "invested_thb": 150000.73382759848,
-        "value_thb": 9121.17892780644,
-        "pnl_thb": -140879.55489979204,
-        "pnl_pct": -0.9391924379630718,
+        "value_thb": 9121.74872948851,
+        "pnl_thb": -140878.98509810996,
+        "pnl_pct": -0.939188639303775,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.028583816296023246,
+        "day_thb": 253.48871511618782,
+        "has_day": true
       },
       {
         "asset_type": "Crypto",
@@ -5602,17 +6295,20 @@
         "currency": "THB",
         "quantity": 253826.30552,
         "avg_cost": 0.41,
-        "price": 0.120901,
+        "price": 0.116987,
         "fx": 1.0,
         "invested_thb": 104068.78526319998,
-        "value_thb": 30687.854163673517,
-        "pnl_thb": -73380.93109952647,
-        "pnl_pct": -0.7051195121951219,
+        "value_thb": 29694.378003868238,
+        "pnl_thb": -74374.40725933175,
+        "pnl_pct": -0.7146658536585366,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.01134126038418315,
+        "day_thb": -340.63490200784247,
+        "has_day": true
       },
       {
         "asset_type": "Crypto",
@@ -5626,17 +6322,20 @@
         "currency": "THB",
         "quantity": 218.253,
         "avg_cost": 113.76,
-        "price": 24.463992,
+        "price": 23.898824,
         "fx": 1.0,
         "invested_thb": 24828.46128,
-        "value_thb": 5339.339645976,
-        "pnl_thb": -19489.121634024,
-        "pnl_pct": -0.7849508438818565,
+        "value_thb": 5215.990034472,
+        "pnl_thb": -19612.471245528,
+        "pnl_pct": -0.7899189170182841,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.10020768529724988,
+        "day_thb": -580.8921451619997,
+        "has_day": true
       },
       {
         "asset_type": "Crypto",
@@ -5650,17 +6349,20 @@
         "currency": "THB",
         "quantity": 6565.4,
         "avg_cost": 17.67,
-        "price": 2.877151,
+        "price": 2.810687,
         "fx": 1.0,
         "invested_thb": 116010.618,
-        "value_thb": 18889.647175399998,
-        "pnl_thb": -97120.97082460001,
-        "pnl_pct": -0.83717311827957,
+        "value_thb": 18453.2844298,
+        "pnl_thb": -97557.3335702,
+        "pnl_pct": -0.8409345217883418,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -0.0656768364436584,
+        "day_thb": -1297.1457741999984,
+        "has_day": true
       },
       {
         "asset_type": "Unit Trust",
@@ -5675,16 +6377,19 @@
         "quantity": 477.101,
         "avg_cost": 27.48,
         "price": 22.56,
-        "fx": 25.4183,
-        "invested_thb": 333252.60765128396,
-        "value_thb": 273587.29361764796,
-        "pnl_thb": -59665.31403363601,
+        "fx": 25.4261,
+        "invested_thb": 333354.871388028,
+        "value_thb": 273671.248126416,
+        "pnl_thb": -59683.623261612025,
         "pnl_pct": -0.17903930131004372,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 4.432624289840703e-08,
+        "day_thb": 0.01213081770547263,
+        "has_day": true
       },
       {
         "asset_type": "Unit Trust",
@@ -5698,17 +6403,20 @@
         "currency": "SGD",
         "quantity": 9678.99,
         "avg_cost": 0.5166,
-        "price": 1.088,
-        "fx": 25.4183,
-        "invested_thb": 127095.72538568218,
-        "value_thb": 267673.537010496,
-        "pnl_thb": 140577.81162481382,
-        "pnl_pct": 1.1060782036391796,
+        "price": 1.094,
+        "fx": 25.4261,
+        "invested_thb": 127134.72668230739,
+        "value_thb": 269232.27059706603,
+        "pnl_thb": 142097.54391475866,
+        "pnl_pct": 1.117692605497484,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 0.0,
+        "day_thb": 0.0,
+        "has_day": true
       },
       {
         "asset_type": "Unit Trust",
@@ -5723,16 +6431,19 @@
         "quantity": 27.562,
         "avg_cost": 181.4092,
         "price": 785.53,
-        "fx": 25.4183,
-        "invested_thb": 127091.50941493831,
-        "value_thb": 550325.966878838,
-        "pnl_thb": 423234.45746389974,
-        "pnl_pct": 3.3301552512221,
+        "fx": 25.4261,
+        "invested_thb": 127130.50941782744,
+        "value_thb": 550494.842946146,
+        "pnl_thb": 423364.33352831856,
+        "pnl_pct": 3.3301552512220987,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -3.691774852487839e-08,
+        "day_thb": -0.020323030906160354,
+        "has_day": true
       },
       {
         "asset_type": "Unit Trust",
@@ -5747,16 +6458,19 @@
         "quantity": 340.12,
         "avg_cost": 14.7007,
         "price": 21.64,
-        "fx": 25.4183,
-        "invested_thb": 127091.55297173718,
-        "value_thb": 187083.69032144,
-        "pnl_thb": 59992.13734970281,
-        "pnl_pct": 0.47203874645425065,
+        "fx": 25.4261,
+        "invested_thb": 127130.5529879924,
+        "value_thb": 187141.09985648002,
+        "pnl_thb": 60010.546868487625,
+        "pnl_pct": 0.4720387464542507,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": 4.6210723025907896e-08,
+        "day_thb": 0.00864792514088969,
+        "has_day": true
       },
       {
         "asset_type": "Unit Trust",
@@ -5771,41 +6485,44 @@
         "quantity": 20.014,
         "avg_cost": 249.8251,
         "price": 224.22,
-        "fx": 25.4183,
-        "invested_thb": 127091.48859735059,
-        "value_thb": 114065.61459716398,
-        "pnl_thb": -13025.87400018661,
-        "pnl_pct": -0.10249210347559147,
+        "fx": 25.4261,
+        "invested_thb": 127130.48859385154,
+        "value_thb": 114100.617401988,
+        "pnl_thb": -13029.871191863538,
+        "pnl_pct": -0.10249210347559151,
         "lots": 1,
         "price_asof": "2026-06-05",
         "price_stale": false,
         "sellable_year": "",
-        "purchase_date": ""
+        "purchase_date": "",
+        "day_px_pct": -4.459905444953449e-09,
+        "day_thb": -0.0005088779641152066,
+        "has_day": true
       }
     ],
     "by_asset_class": [
       {
         "name": "Equity",
-        "invested": 17888732.11355249,
-        "value": 22913111.60626771,
-        "pnl": 5024379.492715223,
-        "pct": 0.8455066985439188,
-        "pnl_pct": 0.28086839586069695
+        "invested": 17889830.853198607,
+        "value": 22926664.87266488,
+        "pnl": 5036834.019466282,
+        "pct": 0.8457182852979416,
+        "pnl_pct": 0.2815473248907618
       },
       {
         "name": "Digital Assets",
-        "invested": 1695112.8681716097,
-        "value": 1154876.5409445087,
-        "pnl": -540236.3272271012,
-        "pct": 0.04261559355791338,
-        "pnl_pct": -0.3187022748578467
+        "invested": 1695232.350299245,
+        "value": 1150522.9648710212,
+        "pnl": -544709.385428224,
+        "pct": 0.0424404646053312,
+        "pnl_pct": -0.3213184230067761
       },
       {
         "name": "Multi-Asset",
         "invested": 1170000.0,
         "value": 1103106.51114582,
         "pnl": -66893.48885417996,
-        "pct": 0.040705250356572006,
+        "pct": 0.04069136755340027,
         "pnl_pct": -0.05717392209758971
       },
       {
@@ -5813,7 +6530,7 @@
         "invested": 930000.0,
         "value": 941057.0299576999,
         "pnl": 11057.029957700028,
-        "pct": 0.03472553340696997,
+        "pct": 0.03471369002703496,
         "pnl_pct": 0.011889279524408632
       },
       {
@@ -5821,81 +6538,81 @@
         "invested": 500400.0,
         "value": 519036.87925332,
         "pnl": 18636.879253319974,
-        "pct": 0.01915275261348482,
+        "pct": 0.01914622043661818,
         "pnl_pct": 0.03724396333597117
       },
       {
         "name": "Cash & Equivalents",
-        "invested": 468495.2959999999,
-        "value": 468669.5952666599,
+        "invested": 468541.35039999994,
+        "value": 468715.64966665994,
         "pnl": 174.29926665999997,
-        "pct": 0.017294171521140475,
-        "pnl_pct": 0.0003720405906914378
+        "pct": 0.017289972079673123,
+        "pnl_pct": 0.0003720040216540085
       }
     ],
     "by_geography": [
       {
         "name": "United States",
-        "invested": 5595144.235531501,
-        "value": 7870606.726243311,
-        "pnl": 2275462.490711811,
-        "pct": 0.2904298125455476,
-        "pnl_pct": 0.4066852247099681
+        "invested": 5596030.764528599,
+        "value": 7871699.820537975,
+        "pnl": 2275669.0560093746,
+        "pct": 0.2903710815149053,
+        "pnl_pct": 0.40665771003871054
       },
       {
         "name": "Thailand",
         "invested": 6686152.67,
-        "value": 6175416.678146722,
-        "pnl": -510735.9918532802,
-        "pct": 0.22787634684433808,
-        "pnl_pct": -0.07638712680685472
+        "value": 6186018.928146721,
+        "pnl": -500133.74185328034,
+        "pct": 0.22818972361612214,
+        "pnl_pct": -0.07480142415792015
       },
       {
         "name": "South Korea",
         "invested": 2834000.0,
         "value": 5388277.57864144,
         "pnl": 2554277.57864144,
-        "pct": 0.1988304715937897,
+        "pct": 0.1987626591057814,
         "pnl_pct": 0.9012976635996612
       },
       {
         "name": "Global",
-        "invested": 4420664.605237832,
-        "value": 4640917.485107645,
-        "pnl": 220252.8798698125,
-        "pct": 0.1712524640247792,
-        "pnl_pct": 0.04982347668014567
+        "invested": 4420925.3511051005,
+        "value": 4636816.739610232,
+        "pnl": 215891.38850513258,
+        "pct": 0.17104278899891073,
+        "pnl_pct": 0.0488339818837172
       },
       {
         "name": "Vietnam",
-        "invested": 1342595.7253856822,
-        "value": 1578563.3017142962,
-        "pnl": 235967.5763286138,
-        "pct": 0.05824987319967269,
-        "pnl_pct": 0.1757547501954308
+        "invested": 1342634.7266823074,
+        "value": 1580122.0353008662,
+        "pnl": 237487.30861855863,
+        "pct": 0.058287505211865244,
+        "pnl_pct": 0.17688154782455034
       },
       {
         "name": "China",
-        "invested": 1447091.4885973507,
-        "value": 1055987.270765114,
-        "pnl": -391104.2178322366,
-        "pct": 0.03896652389912787,
-        "pnl_pct": -0.27026917158591646
+        "invested": 1447130.4885938514,
+        "value": 1056022.273569938,
+        "pnl": -391108.21502391354,
+        "pct": 0.038954525283126915,
+        "pnl_pct": -0.2702646500136596
       },
       {
         "name": "Asian",
-        "invested": 127091.55297173718,
-        "value": 187083.69032144,
-        "pnl": 59992.13734970281,
-        "pct": 0.006903493339238331,
-        "pnl_pct": 0.47203874645425065
+        "invested": 127130.5529879924,
+        "value": 187141.09985648002,
+        "pnl": 60010.546868487625,
+        "pct": 0.006903256577370505,
+        "pnl_pct": 0.4720387464542507
       },
       {
         "name": "Japan",
         "invested": 100000.0,
         "value": 132647.90110192,
         "pnl": 32647.901101919997,
-        "pct": 0.004894782116750374,
+        "pct": 0.004893112717935723,
         "pnl_pct": 0.32647901101919996
       },
       {
@@ -5903,25 +6620,25 @@
         "invested": 100000.0,
         "value": 70357.53079384001,
         "pnl": -29642.469206159993,
-        "pct": 0.002596232436755964,
+        "pct": 0.002595346973981707,
         "pnl_pct": -0.29642469206159994
       }
     ],
     "by_tax_status": [
       {
         "name": "Taxable",
-        "invested": 14192548.687724104,
-        "value": 16568264.239938267,
-        "pnl": 2375715.5522141643,
-        "pct": 0.6113782640626397,
-        "pnl_pct": 0.1673917493247036
+        "invested": 14193812.96389785,
+        "value": 16577509.984661955,
+        "pnl": 2383697.0207640985,
+        "pct": 0.6115108061553922,
+        "pnl_pct": 0.16793915960616526
       },
       {
         "name": "RMF",
         "invested": 5865191.59,
         "value": 7887103.549440508,
         "pnl": 2021911.9594405103,
-        "pct": 0.2910385545949736,
+        "pct": 0.29093929391156215,
         "pnl_pct": 0.3447307608651383
       },
       {
@@ -5929,7 +6646,7 @@
         "invested": 1000000.0,
         "value": 1050238.18393311,
         "pnl": 50238.183933110035,
-        "pct": 0.03875437936326132,
+        "pct": 0.038741161917943336,
         "pnl_pct": 0.05023818393311003
       },
       {
@@ -5937,7 +6654,7 @@
         "invested": 1095000.0,
         "value": 946956.44990537,
         "pnl": -148043.55009463002,
-        "pct": 0.03494322531931217,
+        "pct": 0.03493130769406618,
         "pnl_pct": -0.135199589127516
       },
       {
@@ -5945,41 +6662,41 @@
         "invested": 500000.0,
         "value": 647295.73961847,
         "pnl": 147295.73961847002,
-        "pct": 0.023885576659812925,
+        "pct": 0.02387743032103582,
         "pnl_pct": 0.29459147923694
       }
     ],
     "by_theme": [
       {
         "name": "Korea",
-        "invested": 3160516.328738425,
-        "value": 6075224.825395195,
-        "pnl": 2914708.49665677,
-        "pct": 0.22417921115641304,
-        "pnl_pct": 0.9222254193574208
+        "invested": 3160616.33373957,
+        "value": 6075435.222714262,
+        "pnl": 2914818.8889746917,
+        "pct": 0.22411051443939894,
+        "pnl_pct": 0.9222311667060025
       },
       {
         "name": "US Large Cap",
         "invested": 2700191.59,
         "value": 4301218.384166201,
         "pnl": 1601026.7941662003,
-        "pct": 0.15871737624312793,
+        "pct": 0.15866324459978917,
         "pnl_pct": 0.5929308127969544
       },
       {
         "name": "US Single Stock",
-        "invested": 2138652.693793075,
-        "value": 2414933.009323356,
-        "pnl": 276280.3155302813,
-        "pct": 0.08911238556352125,
-        "pnl_pct": 0.1291842833257211
+        "invested": 2139307.71758903,
+        "value": 2415672.6518989527,
+        "pnl": 276364.9343099231,
+        "pct": 0.0891092770951141,
+        "pnl_pct": 0.12918428332572116
       },
       {
         "name": "Thai Equity",
         "invested": 2096000.0,
         "value": 2220098.8335138992,
         "pnl": 124098.83351389997,
-        "pct": 0.08192289495295232,
+        "pct": 0.08189495459105975,
         "pnl_pct": 0.059207458737547694
       },
       {
@@ -5987,95 +6704,95 @@
         "invested": 1610000.0,
         "value": 1727908.39748604,
         "pnl": 117908.39748603996,
-        "pct": 0.06376079118582484,
+        "pct": 0.06373904513325539,
         "pnl_pct": 0.07323502949443476
       },
       {
         "name": "Vietnam Equity",
-        "invested": 1342595.7253856822,
-        "value": 1578563.3017142962,
-        "pnl": 235967.5763286138,
-        "pct": 0.05824987319967269,
-        "pnl_pct": 0.1757547501954308
+        "invested": 1342634.7266823074,
+        "value": 1580122.0353008662,
+        "pnl": 237487.30861855863,
+        "pct": 0.058287505211865244,
+        "pnl_pct": 0.17688154782455034
       },
       {
         "name": "Thai Single Stock",
         "invested": 1818460.4600000004,
-        "value": 1360542.45,
-        "pnl": -457918.0100000001,
-        "pct": 0.050204781214162365,
-        "pnl_pct": -0.25181631389444675
+        "value": 1371144.7000000002,
+        "pnl": -447315.76000000024,
+        "pct": 0.05057875408480965,
+        "pnl_pct": -0.24598596991215313
       },
       {
         "name": "Thai Balanced",
         "invested": 1170000.0,
         "value": 1103106.51114582,
         "pnl": -66893.48885417996,
-        "pct": 0.040705250356572006,
+        "pct": 0.04069136755340027,
         "pnl_pct": -0.05717392209758971
       },
       {
         "name": "China Equity",
-        "invested": 1447091.4885973507,
-        "value": 1055987.270765114,
-        "pnl": -391104.2178322366,
-        "pct": 0.03896652389912787,
-        "pnl_pct": -0.27026917158591646
+        "invested": 1447130.4885938514,
+        "value": 1056022.273569938,
+        "pnl": -391108.21502391354,
+        "pct": 0.038954525283126915,
+        "pnl_pct": -0.2702646500136596
       },
       {
         "name": "Major Crypto",
-        "invested": 1031541.8013779342,
-        "value": 980135.4588625395,
-        "pnl": -51406.342515394645,
-        "pct": 0.03616754940092934,
-        "pnl_pct": -0.0498344734519978
+        "invested": 1031582.0606783342,
+        "value": 977876.3573738949,
+        "pnl": -53705.703304439216,
+        "pct": 0.0360718805279732,
+        "pnl_pct": -0.0520614940406429
       },
       {
         "name": "TH Gov Bond",
         "invested": 930000.0,
         "value": 941057.0299576999,
         "pnl": 11057.029957700028,
-        "pct": 0.03472553340696997,
+        "pct": 0.03471369002703496,
         "pnl_pct": 0.011889279524408632
       },
       {
         "name": "Global Technology",
-        "invested": 127091.50941493831,
-        "value": 550325.966878838,
-        "pnl": 423234.45746389974,
-        "pct": 0.020307337535572248,
-        "pnl_pct": 3.3301552512221
+        "invested": 127130.50941782744,
+        "value": 550494.842946146,
+        "pnl": 423364.33352831856,
+        "pct": 0.020306641076123493,
+        "pnl_pct": 3.3301552512220987
       },
       {
         "name": "Gold",
         "invested": 500400.0,
         "value": 519036.87925332,
         "pnl": 18636.879253319974,
-        "pct": 0.01915275261348482,
+        "pct": 0.01914622043661818,
         "pnl_pct": 0.03724396333597117
       },
       {
         "name": "Brokerage Cash",
-        "invested": 457816.62599999993,
-        "value": 457816.62599999993,
+        "invested": 457862.6803999999,
+        "value": 457862.6803999999,
         "pnl": 0.0,
-        "pct": 0.0168936908543618,
+        "pct": 0.016889627999556418,
         "pnl_pct": 0.0
       },
       {
         "name": "Rare Earth",
-        "invested": 278980.537,
-        "value": 316705.0,
-        "pnl": 37724.46299999999,
-        "pct": 0.011686592531112346,
-        "pnl_pct": 0.13522256213880607
+        "invested": 279065.98279999994,
+        "value": 316801.99999999994,
+        "pnl": 37736.0172,
+        "pct": 0.011686184872811645,
+        "pnl_pct": 0.13522256213880615
       },
       {
         "name": "Global Property",
-        "invested": 333252.60765128396,
-        "value": 273587.29361764796,
-        "pnl": -59665.31403363601,
-        "pct": 0.010095524927611642,
+        "invested": 333354.871388028,
+        "value": 273671.248126416,
+        "pnl": -59683.623261612025,
+        "pct": 0.010095178691985547,
         "pnl_pct": -0.17903930131004372
       },
       {
@@ -6083,7 +6800,7 @@
         "invested": 100000.0,
         "value": 263795.04953133,
         "pnl": 163795.04953133,
-        "pct": 0.00973418561625883,
+        "pct": 0.00973086570588452,
         "pnl_pct": 1.6379504953133
       },
       {
@@ -6091,23 +6808,23 @@
         "invested": 354000.0,
         "value": 232745.34426263996,
         "pnl": -121254.65573736001,
-        "pct": 0.008588434037703667,
+        "pct": 0.008585504893717217,
         "pnl_pct": -0.34252727609423733
       },
       {
         "name": "Asian Equity",
-        "invested": 127091.55297173718,
-        "value": 187083.69032144,
-        "pnl": 59992.13734970281,
-        "pct": 0.006903493339238331,
-        "pnl_pct": 0.47203874645425065
+        "invested": 127130.5529879924,
+        "value": 187141.09985648002,
+        "pnl": 60010.546868487625,
+        "pct": 0.006903256577370505,
+        "pnl_pct": 0.4720387464542507
       },
       {
         "name": "Semiconductor",
         "invested": 54807.62,
         "value": 151387.35739596002,
         "pnl": 96579.73739596001,
-        "pct": 0.0055862785881134235,
+        "pct": 0.005584373349712434,
         "pnl_pct": 1.7621589369500081
       },
       {
@@ -6115,31 +6832,31 @@
         "invested": 100000.0,
         "value": 132647.90110192,
         "pnl": 32647.901101919997,
-        "pct": 0.004894782116750374,
+        "pct": 0.004893112717935723,
         "pnl_pct": 0.32647901101919996
       },
       {
         "name": "Altcoin",
-        "invested": 663571.0667936758,
-        "value": 106831.4185509047,
-        "pnl": -556739.648242771,
-        "pct": 0.003942139398257495,
-        "pnl_pct": -0.839005309458253
+        "invested": 663650.2896209109,
+        "value": 104716.14468167225,
+        "pnl": -558934.1449392386,
+        "pct": 0.003862766731012159,
+        "pnl_pct": -0.8422118601929819
       },
       {
         "name": "Europe Equity",
         "invested": 100000.0,
         "value": 70357.53079384001,
         "pnl": -29642.469206159993,
-        "pct": 0.002596232436755964,
+        "pct": 0.002595346973981707,
         "pnl_pct": -0.29642469206159994
       },
       {
         "name": "Stablecoin",
         "invested": 0.0,
-        "value": 67909.6635310645,
-        "pnl": 67909.6635310645,
-        "pct": 0.0025059047587265466,
+        "value": 67930.46281545381,
+        "pnl": 67930.46281545381,
+        "pct": 0.0025058173463458257,
         "pnl_pct": 0.0
       },
       {
@@ -6147,7 +6864,7 @@
         "invested": 9478.67,
         "value": 9615.8320548,
         "pnl": 137.16205480000008,
-        "pct": 0.0003548296082223405,
+        "pct": 0.00035470859116514756,
         "pnl_pct": 0.01447060133963943
       },
       {
@@ -6155,7 +6872,7 @@
         "invested": 1200.0,
         "value": 1237.1372118599998,
         "pnl": 37.137211859999894,
-        "pct": 4.565105855633547e-05,
+        "pct": 4.563548895155557e-05,
         "pnl_pct": 0.03094767654999991
       }
     ],
@@ -6171,7 +6888,7 @@
         "value": 5388277.57864144,
         "pnl": 2554277.57864144,
         "lots": 6,
-        "pct": 0.1988304715937897,
+        "pct": 0.1987626591057814,
         "pnl_pct": 0.9012976635996612
       },
       {
@@ -6185,7 +6902,7 @@
         "value": 3548766.31107934,
         "pnl": 1848574.7210793402,
         "lots": 13,
-        "pct": 0.130951471766227,
+        "pct": 0.13090680987392433,
         "pnl_pct": 1.0872743589323015
       },
       {
@@ -6199,7 +6916,7 @@
         "value": 1187232.3081788002,
         "pnl": 87232.3081788,
         "lots": 10,
-        "pct": 0.04380953955718298,
+        "pct": 0.04379459801501363,
         "pnl_pct": 0.07930209834436364
       },
       {
@@ -6213,7 +6930,7 @@
         "value": 1071263.5923819598,
         "pnl": 26263.59238195997,
         "lots": 17,
-        "pct": 0.03953022875415163,
+        "pct": 0.03951674670010896,
         "pnl_pct": 0.02513262428895691
       },
       {
@@ -6227,7 +6944,7 @@
         "value": 858567.82147812,
         "pnl": -56432.178521879956,
         "lots": 21,
-        "pct": 0.031681635243963925,
+        "pct": 0.0316708300062514,
         "pnl_pct": -0.061674512045770444
       },
       {
@@ -6237,11 +6954,11 @@
         "asset_class": "Equity",
         "geography": "United States",
         "theme": "US Single Stock",
-        "invested": 437038.2728,
-        "value": 812932.76,
-        "pnl": 375894.48720000003,
+        "invested": 437172.12831999996,
+        "value": 813181.744,
+        "pnl": 376009.61568,
         "lots": 1,
-        "pct": 0.029997675822334806,
+        "pct": 0.029996629426516853,
         "pnl_pct": 0.8600951234584873
       },
       {
@@ -6255,7 +6972,7 @@
         "value": 804659.7937742,
         "pnl": -195340.20622579998,
         "lots": 1,
-        "pct": 0.029692398718075073,
+        "pct": 0.02968227192304277,
         "pnl_pct": -0.19534020622579998
       },
       {
@@ -6269,7 +6986,7 @@
         "value": 752452.07308686,
         "pnl": -247547.92691314,
         "lots": 1,
-        "pct": 0.027765904476900898,
+        "pct": 0.02775643472586482,
         "pnl_pct": -0.24754792691313998
       },
       {
@@ -6280,11 +6997,11 @@
         "geography": "Thailand",
         "theme": "Thai Single Stock",
         "invested": 106999.99999999997,
-        "value": 692473.25,
-        "pnl": 585473.25,
+        "value": 700196.0,
+        "pnl": 593196.0,
         "lots": 1,
-        "pct": 0.025552652188772177,
-        "pnl_pct": 5.4717126168224315
+        "pct": 0.02582881390648804,
+        "pnl_pct": 5.543887850467291
       },
       {
         "asset_type": "Equity",
@@ -6293,11 +7010,11 @@
         "asset_class": "Equity",
         "geography": "United States",
         "theme": "Korea",
-        "invested": 326516.328738425,
-        "value": 686947.2467537549,
-        "pnl": 360430.9180153299,
+        "invested": 326616.33373957,
+        "value": 687157.644072822,
+        "pnl": 360541.31033325195,
         "lots": 1,
-        "pct": 0.02534873956262333,
+        "pct": 0.025347855333617532,
         "pnl_pct": 1.1038679731820524
       }
     ],
@@ -6693,14 +7410,14 @@
     },
     {
       "date": "2026-06-05",
-      "total_value": 27099858,
-      "total_invested": 22652740,
-      "total_pnl": 4447118,
-      "pnl_pct": 0.1963,
+      "total_value": 27109104,
+      "total_invested": 22654005,
+      "total_pnl": 4455099,
+      "pnl_pct": 0.1967,
       "mf_value": 19315301,
-      "eq_value": 5236944,
-      "crypto_value": 1154877,
-      "fx_rate": 32.65
+      "eq_value": 5248640,
+      "crypto_value": 1150523,
+      "fx_rate": 32.66
     }
   ],
   "flows": [],
@@ -6722,22 +7439,22 @@
     ],
     "period_returns": {
       "portfolio_net": {
-        "MTD": 0.0018118101810267184,
-        "QTD": 0.07112484072863356,
-        "YTD": 0.07112484072863356,
+        "MTD": 0.0021536109386890434,
+        "QTD": 0.07149028988624084,
+        "YTD": 0.07149028988624084,
         "1Y": null,
         "3Y p.a.": null,
         "5Y p.a.": null,
-        "SI p.a.": 0.07112484072863356
+        "SI p.a.": 0.07149028988624084
       },
       "portfolio_gross": {
-        "MTD": 0.0018118101810267184,
-        "QTD": 0.07112484072863356,
-        "YTD": 0.07112484072863356,
+        "MTD": 0.0021536109386890434,
+        "QTD": 0.07149028988624084,
+        "YTD": 0.07149028988624084,
         "1Y": null,
         "3Y p.a.": null,
         "5Y p.a.": null,
-        "SI p.a.": 0.07112484072863356
+        "SI p.a.": 0.07149028988624084
       },
       "benchmark": {
         "MTD": 0.005793403960830279,
@@ -6749,19 +7466,19 @@
         "SI p.a.": 0.05162156218659142
       },
       "relative": {
-        "MTD": -0.0039815937798035606,
-        "QTD": 0.019503278542042146,
-        "YTD": 0.019503278542042146,
+        "MTD": -0.0036397930221412356,
+        "QTD": 0.019868727699649424,
+        "YTD": 0.019868727699649424,
         "1Y": null,
         "3Y p.a.": null,
         "5Y p.a.": null,
-        "SI p.a.": 0.019503278542042146
+        "SI p.a.": 0.019868727699649424
       }
     },
     "stats": {
       "annualized_return": null,
-      "since_inception_cum": 0.07112484072863356,
-      "volatility": 0.150462944847266,
+      "since_inception_cum": 0.07149028988624084,
+      "volatility": 0.15057004587223966,
       "sharpe": null,
       "sortino": null,
       "max_drawdown": -0.03308,
@@ -6914,7 +7631,7 @@
         },
         {
           "date": "2026-06-05",
-          "level": 107.112
+          "level": 107.149
         }
       ],
       "benchmark": [
@@ -12395,7 +13112,7 @@
         null,
         null,
         null,
-        7.11
+        7.15
       ],
       "benchmark": [
         11.77,
@@ -12407,36 +13124,36 @@
         16.39
       ]
     },
-    "generated_at": "2026-06-05 10:26"
+    "generated_at": "2026-06-05 11:10"
   },
   "tax": {
     "as_of": "2026-06-05",
     "inception": "2026-05-01",
     "holding_days": 35,
     "totals": {
-      "value": 27099858,
-      "cost": 22652740,
-      "unrealized": 4447118,
-      "unrealized_pct": 0.19631699434989744,
+      "value": 27109104,
+      "cost": 22654005,
+      "unrealized": 4455099,
+      "unrealized_pct": 0.19665835870484213,
       "realized_ytd": 0,
       "realized_count": 0,
       "tax_adv_value": 10531594,
-      "tax_adv_pct": 0.38862173593736,
+      "tax_adv_pct": 0.3884891938446075,
       "locked_value": 9584637,
-      "available_value": 17515221,
+      "available_value": 17524466,
       "available_in_wrapper": 946956
     },
     "by_wrapper": [
       {
         "wrapper": "Taxable",
         "count": 106,
-        "invested": 14192549,
-        "value": 16568264,
-        "unrealized": 2375716,
+        "invested": 14193813,
+        "value": 16577510,
+        "unrealized": 2383697,
         "locked": 0,
         "advantaged": false,
         "next_unlock": null,
-        "pct": 0.6113782640626397
+        "pct": 0.6115108061553922
       },
       {
         "wrapper": "RMF",
@@ -12447,7 +13164,7 @@
         "locked": 7887104,
         "advantaged": true,
         "next_unlock": 2037,
-        "pct": 0.2910385545949736
+        "pct": 0.29093929391156215
       },
       {
         "wrapper": "Thai ESG",
@@ -12458,7 +13175,7 @@
         "locked": 1050238,
         "advantaged": true,
         "next_unlock": 2029,
-        "pct": 0.03875437936326132
+        "pct": 0.038741161917943336
       },
       {
         "wrapper": "LTF",
@@ -12469,7 +13186,7 @@
         "locked": 0,
         "advantaged": true,
         "next_unlock": null,
-        "pct": 0.03494322531931217
+        "pct": 0.03493130769406618
       },
       {
         "wrapper": "SSF",
@@ -12480,7 +13197,7 @@
         "locked": 647296,
         "advantaged": true,
         "next_unlock": 2030,
-        "pct": 0.023885576659812925
+        "pct": 0.02387743032103582
       }
     ],
     "maturity": [
@@ -12502,7 +13219,7 @@
       }
     ],
     "holding_buckets": {
-      "short": 27099858,
+      "short": 27109104,
       "long": 0
     },
     "lots": [
@@ -12568,9 +13285,9 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 80.0,
-        "cost": 437038.2728,
-        "value": 812932.76,
-        "unrealized": 375894.48720000003,
+        "cost": 437172.12831999996,
+        "value": 813181.744,
+        "unrealized": 376009.61568,
         "unrealized_pct": 0.8600951234584873,
         "sellable_year": null,
         "tax_advantaged": false,
@@ -12623,9 +13340,9 @@
         "holding_days": 35,
         "units": 10297.0,
         "cost": 106999.99999999997,
-        "value": 692473.25,
-        "unrealized": 585473.25,
-        "unrealized_pct": 5.4717126168224315,
+        "value": 700196.0,
+        "unrealized": 593196.0,
+        "unrealized_pct": 5.543887850467291,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -12640,9 +13357,9 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 103.15111,
-        "cost": 326516.328738425,
-        "value": 686947.2467537549,
-        "unrealized": 360430.9180153299,
+        "cost": 326616.33373957,
+        "value": 687157.644072822,
+        "unrealized": 360541.31033325195,
         "unrealized_pct": 1.1038679731820524,
         "sellable_year": null,
         "tax_advantaged": false,
@@ -12676,10 +13393,10 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 27.562,
-        "cost": 127091.50941493831,
-        "value": 550325.966878838,
-        "unrealized": 423234.45746389974,
-        "unrealized_pct": 3.3301552512221,
+        "cost": 127130.50941782744,
+        "value": 550494.842946146,
+        "unrealized": 423364.33352831856,
+        "unrealized_pct": 3.3301552512220987,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -12712,10 +13429,10 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 23.5371652,
-        "cost": 326500.0002243708,
-        "value": 321573.989299741,
-        "unrealized": -4926.010924629809,
-        "unrealized_pct": -0.01508732288283202,
+        "cost": 326600.0002244395,
+        "value": 321672.48056752037,
+        "unrealized": -4927.519656919118,
+        "unrealized_pct": -0.015087322882831987,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -12730,10 +13447,10 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 100.0,
-        "cost": 278980.537,
-        "value": 316705.0,
-        "unrealized": 37724.46299999999,
-        "unrealized_pct": 0.13522256213880607,
+        "cost": 279065.98279999994,
+        "value": 316801.99999999994,
+        "unrealized": 37736.0172,
+        "unrealized_pct": 0.13522256213880615,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -12748,9 +13465,9 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 15.0,
-        "cost": 90114.0,
-        "value": 307352.40750000003,
-        "unrealized": 217238.40750000003,
+        "cost": 90141.59999999999,
+        "value": 307446.543,
+        "unrealized": 217304.94300000003,
         "unrealized_pct": 2.410706521739131,
         "sellable_year": null,
         "tax_advantaged": false,
@@ -12821,9 +13538,9 @@
         "holding_days": 35,
         "units": 0.13841141,
         "cost": 300098.3443031649,
-        "value": 283421.916159134,
-        "unrealized": -16676.428144030913,
-        "unrealized_pct": -0.055569877210598924,
+        "value": 283214.88867674064,
+        "unrealized": -16883.455626424286,
+        "unrealized_pct": -0.05625974267078363,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -12838,9 +13555,9 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 477.101,
-        "cost": 333252.60765128396,
-        "value": 273587.29361764796,
-        "unrealized": -59665.31403363601,
+        "cost": 333354.871388028,
+        "value": 273671.248126416,
+        "unrealized": -59683.623261612025,
         "unrealized_pct": -0.17903930131004372,
         "sellable_year": null,
         "tax_advantaged": false,
@@ -12856,10 +13573,10 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 50.0,
-        "cost": 638062.9515,
-        "value": 270995.0,
-        "unrealized": -367067.95149999997,
-        "unrealized_pct": -0.575284853378609,
+        "cost": 638258.3765999998,
+        "value": 271078.0,
+        "unrealized": -367180.37659999984,
+        "unrealized_pct": -0.5752848533786089,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -12874,10 +13591,10 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 9678.99,
-        "cost": 127095.72538568218,
-        "value": 267673.537010496,
-        "unrealized": 140577.81162481382,
-        "unrealized_pct": 1.1060782036391796,
+        "cost": 127134.72668230739,
+        "value": 269232.27059706603,
+        "unrealized": 142097.54391475866,
+        "unrealized_pct": 1.117692605497484,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -12983,9 +13700,9 @@
         "holding_days": 35,
         "units": 11.40962468,
         "cost": 199998.74053448602,
-        "value": 222594.4125940691,
-        "unrealized": 22595.67205958307,
-        "unrealized_pct": 0.1129790717641388,
+        "value": 221764.53012008188,
+        "unrealized": 21765.789585595863,
+        "unrealized_pct": 0.10882963326382929,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -13090,10 +13807,10 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 340.12,
-        "cost": 127091.55297173718,
-        "value": 187083.69032144,
-        "unrealized": 59992.13734970281,
-        "unrealized_pct": 0.47203874645425065,
+        "cost": 127130.5529879924,
+        "value": 187141.09985648002,
+        "unrealized": 60010.546868487625,
+        "unrealized_pct": 0.4720387464542507,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -13109,9 +13826,9 @@
         "holding_days": 35,
         "units": 0.09009006,
         "cost": 99999.9666,
-        "value": 184475.379826644,
-        "unrealized": 84475.413226644,
-        "unrealized_pct": 0.8447544144144145,
+        "value": 184340.6285202996,
+        "unrealized": 84340.6619202996,
+        "unrealized_pct": 0.8434069009009009,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -13181,9 +13898,9 @@
         "holding_days": 35,
         "units": 2.71757576,
         "cost": 299998.13413428323,
-        "value": 154163.71251449306,
-        "unrealized": -145834.42161979017,
-        "unrealized_pct": -0.48611776216752306,
+        "value": 153375.7353891841,
+        "unrealized": -146622.39874509914,
+        "unrealized_pct": -0.48874436892153794,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -13288,10 +14005,10 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 25.0,
-        "cost": 303620.5125,
-        "value": 133971.1125,
-        "unrealized": -169649.40000000002,
-        "unrealized_pct": -0.5587547382853456,
+        "cost": 303713.50499999995,
+        "value": 134012.145,
+        "unrealized": -169701.35999999996,
+        "unrealized_pct": -0.5587547382853455,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -13450,10 +14167,10 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 20.014,
-        "cost": 127091.48859735059,
-        "value": 114065.61459716398,
-        "unrealized": -13025.87400018661,
-        "unrealized_pct": -0.10249210347559147,
+        "cost": 127130.48859385154,
+        "value": 114100.617401988,
+        "unrealized": -13029.871191863538,
+        "unrealized_pct": -0.10249210347559151,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -13720,8 +14437,8 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 2839.64,
-        "cost": 92714.24599999998,
-        "value": 92714.24599999998,
+        "cost": 92742.64239999998,
+        "value": 92742.64239999998,
         "unrealized": 0.0,
         "unrealized_pct": 0.0,
         "sellable_year": null,
@@ -13775,9 +14492,9 @@
         "holding_days": 35,
         "units": 3993.0,
         "cost": 113440.25000000012,
-        "value": 85050.90000000001,
-        "unrealized": -28389.350000000108,
-        "unrealized_pct": -0.25025817555938107,
+        "value": 86248.8,
+        "unrealized": -27191.450000000114,
+        "unrealized_pct": -0.23969843155317522,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -13810,10 +14527,28 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 0.03780216,
-        "cost": 131446.615806,
-        "value": 77406.628703184,
-        "unrealized": -54039.98710281598,
-        "unrealized_pct": -0.4111173708920187,
+        "cost": 131486.8751064,
+        "value": 77350.08650038559,
+        "unrealized": -54136.78860601441,
+        "unrealized_pct": -0.4117276995305165,
+        "sellable_year": null,
+        "tax_advantaged": false,
+        "status": "Available",
+        "price_asof": "2026-06-05",
+        "price_stale": false
+      },
+      {
+        "name": "OSP",
+        "custodian": "Asia Plus Securities",
+        "type": "Equity",
+        "wrapper": "Taxable",
+        "acq_date": "2026-05-01",
+        "holding_days": 35,
+        "units": 5000.0,
+        "cost": 141487.28,
+        "value": 77000.0,
+        "unrealized": -64487.28,
+        "unrealized_pct": -0.4557814667155945,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -13839,24 +14574,6 @@
         "price_stale": false
       },
       {
-        "name": "OSP",
-        "custodian": "Asia Plus Securities",
-        "type": "Equity",
-        "wrapper": "Taxable",
-        "acq_date": "2026-05-01",
-        "holding_days": 35,
-        "units": 5000.0,
-        "cost": 141487.28,
-        "value": 76500.0,
-        "unrealized": -64987.28,
-        "unrealized_pct": -0.4593153532953634,
-        "sellable_year": null,
-        "tax_advantaged": false,
-        "status": "Available",
-        "price_asof": "2026-06-05",
-        "price_stale": false
-      },
-      {
         "name": "LLY",
         "custodian": "Dime",
         "type": "Equity",
@@ -13864,10 +14581,10 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 2.0,
-        "cost": 59464.791999999994,
-        "value": 73480.131,
-        "unrealized": 14015.339,
-        "unrealized_pct": 0.23569138188526753,
+        "cost": 59483.004799999995,
+        "value": 73502.63639999999,
+        "unrealized": 14019.631599999993,
+        "unrealized_pct": 0.23569138188526742,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -13947,6 +14664,24 @@
         "price_stale": false
       },
       {
+        "name": "USDT",
+        "custodian": "Binance",
+        "type": "Crypto",
+        "wrapper": "Taxable",
+        "acq_date": "2026-05-01",
+        "holding_days": 35,
+        "units": 2079.92753123,
+        "cost": 0.0,
+        "value": 67930.4331699718,
+        "unrealized": 67930.4331699718,
+        "unrealized_pct": 0.0,
+        "sellable_year": null,
+        "tax_advantaged": false,
+        "status": "Available",
+        "price_asof": "2026-06-05",
+        "price_stale": false
+      },
+      {
         "name": "K-GHRMF",
         "custodian": "K Asset",
         "type": "MF",
@@ -13965,42 +14700,6 @@
         "price_stale": false
       },
       {
-        "name": "USDT",
-        "custodian": "Binance",
-        "type": "Crypto",
-        "wrapper": "Taxable",
-        "acq_date": "2026-05-01",
-        "holding_days": 35,
-        "units": 2079.92753123,
-        "cost": 0.0,
-        "value": 67909.6338946595,
-        "unrealized": 67909.6338946595,
-        "unrealized_pct": 0.0,
-        "sellable_year": null,
-        "tax_advantaged": false,
-        "status": "Available",
-        "price_asof": "2026-06-05",
-        "price_stale": false
-      },
-      {
-        "name": "RJH",
-        "custodian": "Asia Plus Securities",
-        "type": "Equity",
-        "wrapper": "Taxable",
-        "acq_date": "2026-05-01",
-        "holding_days": 35,
-        "units": 5000.0,
-        "cost": 140235.19,
-        "value": 67000.0,
-        "unrealized": -73235.19,
-        "unrealized_pct": -0.5222311889048676,
-        "sellable_year": null,
-        "tax_advantaged": false,
-        "status": "Available",
-        "price_asof": "2026-06-05",
-        "price_stale": false
-      },
-      {
         "name": "ASP-SME-A",
         "custodian": "Asset Plus",
         "type": "MF",
@@ -14016,6 +14715,24 @@
         "tax_advantaged": false,
         "status": "Available",
         "price_asof": "2026-06-04",
+        "price_stale": false
+      },
+      {
+        "name": "RJH",
+        "custodian": "Asia Plus Securities",
+        "type": "Equity",
+        "wrapper": "Taxable",
+        "acq_date": "2026-05-01",
+        "holding_days": 35,
+        "units": 5000.0,
+        "cost": 140235.19,
+        "value": 66000.0,
+        "unrealized": -74235.19,
+        "unrealized_pct": -0.5293620666824069,
+        "sellable_year": null,
+        "tax_advantaged": false,
+        "status": "Available",
+        "price_asof": "2026-06-05",
         "price_stale": false
       },
       {
@@ -14062,9 +14779,9 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 8.7798045,
-        "cost": 39289.704155740495,
-        "value": 62681.210496820495,
-        "unrealized": 23391.50634108,
+        "cost": 39301.73775578819,
+        "value": 62700.408417340186,
+        "unrealized": 23398.670661551994,
         "unrealized_pct": 0.595359696483292,
         "sellable_year": null,
         "tax_advantaged": false,
@@ -14116,10 +14833,28 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 1765.8,
-        "cost": 57653.369999999995,
-        "value": 57653.369999999995,
+        "cost": 57671.02799999999,
+        "value": 57671.02799999999,
         "unrealized": 0.0,
         "unrealized_pct": 0.0,
+        "sellable_year": null,
+        "tax_advantaged": false,
+        "status": "Available",
+        "price_asof": "2026-06-05",
+        "price_stale": false
+      },
+      {
+        "name": "NCAP",
+        "custodian": "DBS Vickers",
+        "type": "Equity",
+        "wrapper": "Taxable",
+        "acq_date": "2026-05-01",
+        "holding_days": 35,
+        "units": 20000.0,
+        "cost": 144241.91,
+        "value": 57200.0,
+        "unrealized": -87041.91,
+        "unrealized_pct": -0.6034439643790075,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -14170,28 +14905,10 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 4.189359,
-        "cost": 16324.999890622497,
-        "value": 55651.356979460994,
-        "unrealized": 39326.3570888385,
+        "cost": 16329.999890588997,
+        "value": 55668.40180548839,
+        "unrealized": 39338.4019148994,
         "unrealized_pct": 2.4089652283200675,
-        "sellable_year": null,
-        "tax_advantaged": false,
-        "status": "Available",
-        "price_asof": "2026-06-05",
-        "price_stale": false
-      },
-      {
-        "name": "NCAP",
-        "custodian": "DBS Vickers",
-        "type": "Equity",
-        "wrapper": "Taxable",
-        "acq_date": "2026-05-01",
-        "holding_days": 35,
-        "units": 20000.0,
-        "cost": 144241.91,
-        "value": 54800.00000000001,
-        "unrealized": -89441.91,
-        "unrealized_pct": -0.6200826791603079,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -14207,9 +14924,9 @@
         "holding_days": 35,
         "units": 4400.0,
         "cost": 79200.0,
-        "value": 54560.0,
-        "unrealized": -24640.0,
-        "unrealized_pct": -0.3111111111111111,
+        "value": 55000.0,
+        "unrealized": -24200.0,
+        "unrealized_pct": -0.3055555555555556,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -14224,10 +14941,10 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 0.7717161,
-        "cost": 16298.87979126855,
-        "value": 53696.3265001815,
-        "unrealized": 37397.446708912954,
-        "unrealized_pct": 2.294479570856587,
+        "cost": 16303.87179120462,
+        "value": 53712.7725419886,
+        "unrealized": 37408.90075078398,
+        "unrealized_pct": 2.2944795708565864,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -14361,24 +15078,6 @@
         "price_stale": false
       },
       {
-        "name": "HUMAN",
-        "custodian": "DBS Vickers",
-        "type": "Equity",
-        "wrapper": "Taxable",
-        "acq_date": "2026-05-01",
-        "holding_days": 35,
-        "units": 10000.0,
-        "cost": 78673.88,
-        "value": 50000.0,
-        "unrealized": -28673.880000000005,
-        "unrealized_pct": -0.36446505498394133,
-        "sellable_year": null,
-        "tax_advantaged": false,
-        "status": "Available",
-        "price_asof": "2026-06-05",
-        "price_stale": false
-      },
-      {
         "name": "B-MIXED75",
         "custodian": "BBLAM",
         "type": "MF",
@@ -14394,6 +15093,24 @@
         "tax_advantaged": true,
         "status": "Available",
         "price_asof": "2026-06-04",
+        "price_stale": false
+      },
+      {
+        "name": "HUMAN",
+        "custodian": "DBS Vickers",
+        "type": "Equity",
+        "wrapper": "Taxable",
+        "acq_date": "2026-05-01",
+        "holding_days": 35,
+        "units": 10000.0,
+        "cost": 78673.88,
+        "value": 49600.0,
+        "unrealized": -29073.880000000005,
+        "unrealized_pct": -0.3695493345440698,
+        "sellable_year": null,
+        "tax_advantaged": false,
+        "status": "Available",
+        "price_asof": "2026-06-05",
         "price_stale": false
       },
       {
@@ -14458,10 +15175,10 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 2.9416618,
-        "cost": 16298.880243568998,
-        "value": 48185.905823208996,
-        "unrealized": 31887.025579639998,
-        "unrealized_pct": 1.9563936358279317,
+        "cost": 16303.872243643596,
+        "value": 48200.66414045959,
+        "unrealized": 31896.79189681599,
+        "unrealized_pct": 1.9563936358279315,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -14685,24 +15402,6 @@
         "price_stale": false
       },
       {
-        "name": "BANPU",
-        "custodian": "Asia Plus Securities",
-        "type": "Equity",
-        "wrapper": "Taxable",
-        "acq_date": "2026-05-01",
-        "holding_days": 35,
-        "units": 8000.0,
-        "cost": 189918.51,
-        "value": 45600.0,
-        "unrealized": -144318.51,
-        "unrealized_pct": -0.759897021096048,
-        "sellable_year": null,
-        "tax_advantaged": false,
-        "status": "Available",
-        "price_asof": "2026-06-05",
-        "price_stale": false
-      },
-      {
         "name": "ES-US500RMF",
         "custodian": "East Spring",
         "type": "MF",
@@ -14736,6 +15435,24 @@
         "tax_advantaged": true,
         "status": "Available",
         "price_asof": "2026-06-04",
+        "price_stale": false
+      },
+      {
+        "name": "BANPU",
+        "custodian": "Asia Plus Securities",
+        "type": "Equity",
+        "wrapper": "Taxable",
+        "acq_date": "2026-05-01",
+        "holding_days": 35,
+        "units": 8000.0,
+        "cost": 189918.51,
+        "value": 45200.0,
+        "unrealized": -144718.51,
+        "unrealized_pct": -0.7620031875776616,
+        "sellable_year": null,
+        "tax_advantaged": false,
+        "status": "Available",
+        "price_asof": "2026-06-05",
         "price_stale": false
       },
       {
@@ -14800,10 +15517,10 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 0.8224839,
-        "cost": 16298.827050384902,
-        "value": 44379.084561020994,
-        "unrealized": 28080.257510636093,
-        "unrealized_pct": 1.7228391603782904,
+        "cost": 16303.81903416756,
+        "value": 44392.676929952395,
+        "unrealized": 28088.857895784837,
+        "unrealized_pct": 1.7228391603782909,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -14991,6 +15708,24 @@
         "price_stale": false
       },
       {
+        "name": "ACLS",
+        "custodian": "Dime",
+        "type": "Equity",
+        "wrapper": "Taxable",
+        "acq_date": "2026-05-01",
+        "holding_days": 35,
+        "units": 7.0598218,
+        "cost": 16303.871982951476,
+        "value": 37322.977766657554,
+        "unrealized": 21019.10578370608,
+        "unrealized_pct": 1.2892094470371944,
+        "sellable_year": null,
+        "tax_advantaged": false,
+        "status": "Available",
+        "price_asof": "2026-06-05",
+        "price_stale": false
+      },
+      {
         "name": "KF-ASET50-L",
         "custodian": "Krungsri AM",
         "type": "MF",
@@ -15006,24 +15741,6 @@
         "tax_advantaged": true,
         "status": "Available",
         "price_asof": "2026-06-04",
-        "price_stale": false
-      },
-      {
-        "name": "ACLS",
-        "custodian": "Dime",
-        "type": "Equity",
-        "wrapper": "Taxable",
-        "acq_date": "2026-05-01",
-        "holding_days": 35,
-        "units": 7.0598218,
-        "cost": 16298.879982956698,
-        "value": 37311.550033109896,
-        "unrealized": 21012.670050153196,
-        "unrealized_pct": 1.2892094470371942,
-        "sellable_year": null,
-        "tax_advantaged": false,
-        "status": "Available",
-        "price_asof": "2026-06-05",
         "price_stale": false
       },
       {
@@ -15178,10 +15895,10 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 18.4206642,
-        "cost": 16298.879994123,
-        "value": 32766.1617003624,
-        "unrealized": 16467.281706239402,
-        "unrealized_pct": 1.0103321033210333,
+        "cost": 16303.8719941212,
+        "value": 32776.197278218555,
+        "unrealized": 16472.325284097355,
+        "unrealized_pct": 1.0103321033210328,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -15305,9 +16022,9 @@
         "holding_days": 35,
         "units": 253826.30552,
         "cost": 104068.78526319998,
-        "value": 30687.854163673517,
-        "unrealized": -73380.93109952647,
-        "unrealized_pct": -0.7051195121951219,
+        "value": 29694.378003868238,
+        "unrealized": -74374.40725933175,
+        "unrealized_pct": -0.7146658536585366,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -15340,10 +16057,10 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 5.0536546,
-        "cost": 16298.8800453182,
-        "value": 28979.270119044697,
-        "unrealized": 12680.390073726498,
-        "unrealized_pct": 0.7779914962543024,
+        "cost": 16303.872045332077,
+        "value": 28988.145852618676,
+        "unrealized": 12684.2738072866,
+        "unrealized_pct": 0.7779914962543026,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -15359,8 +16076,8 @@
         "holding_days": 35,
         "units": 1.47965673,
         "cost": 0.0,
-        "value": 28867.147683880783,
-        "unrealized": 28867.147683880783,
+        "value": 28759.524407727215,
+        "unrealized": 28759.524407727215,
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
@@ -15430,10 +16147,10 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 8.7794583,
-        "cost": 16298.879965325697,
-        "value": 27604.328889568496,
-        "unrealized": 11305.448924242799,
-        "unrealized_pct": 0.6936334857544847,
+        "cost": 16303.871965315077,
+        "value": 27612.783507911397,
+        "unrealized": 11308.911542596321,
+        "unrealized_pct": 0.6936334857544849,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -15484,10 +16201,10 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 5.1650285,
-        "cost": 16298.88014774125,
-        "value": 25240.076479176747,
-        "unrealized": 8941.196331435496,
-        "unrealized_pct": 0.5485773409208482,
+        "cost": 16303.8721477865,
+        "value": 25247.806977332693,
+        "unrealized": 8943.934829546193,
+        "unrealized_pct": 0.548577340920848,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -15502,10 +16219,10 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 7.3067916,
-        "cost": 16298.8800689568,
-        "value": 24803.7845545878,
-        "unrealized": 8504.904485631001,
-        "unrealized_pct": 0.5218091334894615,
+        "cost": 16303.872068977918,
+        "value": 24811.38142581432,
+        "unrealized": 8507.509356836403,
+        "unrealized_pct": 0.5218091334894616,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -15521,9 +16238,9 @@
         "holding_days": 35,
         "units": 4000.0,
         "cost": 80135.08,
-        "value": 24600.0,
-        "unrealized": -55535.08,
-        "unrealized_pct": -0.693018338535383,
+        "value": 24400.0,
+        "unrealized": -55735.08,
+        "unrealized_pct": -0.695514124400949,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -15546,6 +16263,24 @@
         "tax_advantaged": true,
         "status": "Locked",
         "price_asof": "2026-06-04",
+        "price_stale": false
+      },
+      {
+        "name": "TIDLOR",
+        "custodian": "DBS Vickers",
+        "type": "Equity",
+        "wrapper": "Taxable",
+        "acq_date": "2026-05-01",
+        "holding_days": 35,
+        "units": 1254.0,
+        "cost": 37439.80000000004,
+        "value": 22446.6,
+        "unrealized": -14993.20000000004,
+        "unrealized_pct": -0.4004615409270355,
+        "sellable_year": null,
+        "tax_advantaged": false,
+        "status": "Available",
+        "price_asof": "2026-06-05",
         "price_stale": false
       },
       {
@@ -15582,24 +16317,6 @@
         "tax_advantaged": true,
         "status": "Locked",
         "price_asof": "2026-05-29",
-        "price_stale": false
-      },
-      {
-        "name": "TIDLOR",
-        "custodian": "DBS Vickers",
-        "type": "Equity",
-        "wrapper": "Taxable",
-        "acq_date": "2026-05-01",
-        "holding_days": 35,
-        "units": 1254.0,
-        "cost": 37439.80000000004,
-        "value": 21945.0,
-        "unrealized": -15494.80000000004,
-        "unrealized_pct": -0.41385904839235316,
-        "sellable_year": null,
-        "tax_advantaged": false,
-        "status": "Available",
-        "price_asof": "2026-06-05",
         "price_stale": false
       },
       {
@@ -15665,27 +16382,9 @@
         "holding_days": 35,
         "units": 0.00935763,
         "cost": 0.0,
-        "value": 19161.407468562,
-        "unrealized": 19161.407468562,
+        "value": 19147.4108870658,
+        "unrealized": 19147.4108870658,
         "unrealized_pct": 0.0,
-        "sellable_year": null,
-        "tax_advantaged": false,
-        "status": "Available",
-        "price_asof": "2026-06-05",
-        "price_stale": false
-      },
-      {
-        "name": "ARB",
-        "custodian": "Bitazza",
-        "type": "Crypto",
-        "wrapper": "Taxable",
-        "acq_date": "2026-05-01",
-        "holding_days": 35,
-        "units": 6565.4,
-        "cost": 116010.618,
-        "value": 18889.647175399998,
-        "unrealized": -97120.97082460001,
-        "unrealized_pct": -0.83717311827957,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -15708,6 +16407,24 @@
         "tax_advantaged": true,
         "status": "Locked",
         "price_asof": "2026-06-04",
+        "price_stale": false
+      },
+      {
+        "name": "ARB",
+        "custodian": "Bitazza",
+        "type": "Crypto",
+        "wrapper": "Taxable",
+        "acq_date": "2026-05-01",
+        "holding_days": 35,
+        "units": 6565.4,
+        "cost": 116010.618,
+        "value": 18453.2844298,
+        "unrealized": -97557.3335702,
+        "unrealized_pct": -0.8409345217883418,
+        "sellable_year": null,
+        "tax_advantaged": false,
+        "status": "Available",
+        "price_asof": "2026-06-05",
         "price_stale": false
       },
       {
@@ -15754,10 +16471,10 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 6.9953718,
-        "cost": 16325.952605019602,
-        "value": 15620.2000371753,
-        "unrealized": -705.7525678443017,
-        "unrealized_pct": -0.043228875209849006,
+        "cost": 16330.95289678224,
+        "value": 15624.984171949318,
+        "unrealized": -705.9687248329228,
+        "unrealized_pct": -0.04322887520984908,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -15790,10 +16507,10 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 66699.17877316,
-        "cost": 65331.84560831022,
-        "value": 14671.35479543953,
-        "unrealized": -50660.49081287069,
-        "unrealized_pct": -0.7754333333333333,
+        "cost": 65351.855361942165,
+        "value": 14420.976083201906,
+        "unrealized": -50930.87927874026,
+        "unrealized_pct": -0.7793333333333333,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -15826,10 +16543,10 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 3.3079319,
-        "cost": 16298.880098896849,
-        "value": 12834.112531654047,
-        "unrealized": -3464.7675672428013,
-        "unrealized_pct": -0.212577032668478,
+        "cost": 16303.872098927137,
+        "value": 12838.043347130817,
+        "unrealized": -3465.82875179632,
+        "unrealized_pct": -0.21257703266847794,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -16006,10 +16723,10 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 3.3590863,
-        "cost": 16324.999861400749,
-        "value": 9892.609926089,
-        "unrealized": -6432.389935311749,
-        "unrealized_pct": -0.3940208263352368,
+        "cost": 16329.999861358297,
+        "value": 9895.6398219316,
+        "unrealized": -6434.360039426698,
+        "unrealized_pct": -0.3940208263352367,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -16024,10 +16741,10 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 1.1623088,
-        "cost": 16298.880212616798,
-        "value": 9806.8793791344,
-        "unrealized": -6492.000833482398,
-        "unrealized_pct": -0.3983096230412814,
+        "cost": 16303.872212681918,
+        "value": 9809.883017535358,
+        "unrealized": -6493.98919514656,
+        "unrealized_pct": -0.3983096230412816,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -16043,8 +16760,8 @@
         "holding_days": 35,
         "units": 4.39206703,
         "cost": 0.0,
-        "value": 9731.191081611869,
-        "unrealized": 9731.191081611869,
+        "value": 9613.677814570594,
+        "unrealized": 9613.677814570594,
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
@@ -16071,24 +16788,6 @@
         "price_stale": false
       },
       {
-        "name": "BLAND",
-        "custodian": "Asia Plus Securities",
-        "type": "Equity",
-        "wrapper": "Taxable",
-        "acq_date": "2026-05-01",
-        "holding_days": 35,
-        "units": 20000.0,
-        "cost": 40067.54,
-        "value": 9200.0,
-        "unrealized": -30867.54,
-        "unrealized_pct": -0.7703877003679288,
-        "sellable_year": null,
-        "tax_advantaged": false,
-        "status": "Available",
-        "price_asof": "2026-06-05",
-        "price_stale": false
-      },
-      {
         "name": "OKSOL",
         "custodian": "OKX",
         "type": "Crypto",
@@ -16097,8 +16796,8 @@
         "holding_days": 35,
         "units": 3.37992961,
         "cost": 0.0,
-        "value": 9123.023195036556,
-        "unrealized": 9123.023195036556,
+        "value": 9125.817382845142,
+        "unrealized": 9125.817382845142,
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
@@ -16115,9 +16814,27 @@
         "holding_days": 35,
         "units": 352.81837899,
         "cost": 150000.73382759848,
-        "value": 9121.17892780644,
-        "unrealized": -140879.55489979204,
-        "unrealized_pct": -0.9391924379630718,
+        "value": 9121.74872948851,
+        "unrealized": -140878.98509810996,
+        "unrealized_pct": -0.939188639303775,
+        "sellable_year": null,
+        "tax_advantaged": false,
+        "status": "Available",
+        "price_asof": "2026-06-05",
+        "price_stale": false
+      },
+      {
+        "name": "BLAND",
+        "custodian": "Asia Plus Securities",
+        "type": "Equity",
+        "wrapper": "Taxable",
+        "acq_date": "2026-05-01",
+        "holding_days": 35,
+        "units": 20000.0,
+        "cost": 40067.54,
+        "value": 9000.0,
+        "unrealized": -31067.54,
+        "unrealized_pct": -0.7753792720990608,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -16258,10 +16975,10 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 2.78721,
-        "cost": 32616.743972376855,
-        "value": 6373.80855126,
-        "unrealized": -26242.935421116854,
-        "unrealized_pct": -0.8045847692014266,
+        "cost": 32626.733786763492,
+        "value": 6274.717103898,
+        "unrealized": -26352.01668286549,
+        "unrealized_pct": -0.8076817267426375,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -16305,24 +17022,6 @@
         "price_stale": false
       },
       {
-        "name": "SUI",
-        "custodian": "Bitazza",
-        "type": "Crypto",
-        "wrapper": "Taxable",
-        "acq_date": "2026-05-01",
-        "holding_days": 35,
-        "units": 218.253,
-        "cost": 24828.46128,
-        "value": 5339.339645976,
-        "unrealized": -19489.121634024,
-        "unrealized_pct": -0.7849508438818565,
-        "sellable_year": null,
-        "tax_advantaged": false,
-        "status": "Available",
-        "price_asof": "2026-06-05",
-        "price_stale": false
-      },
-      {
         "name": "UVALUE-DIV-LD",
         "custodian": "UOBAM",
         "type": "MF",
@@ -16341,6 +17040,24 @@
         "price_stale": false
       },
       {
+        "name": "SUI",
+        "custodian": "Bitazza",
+        "type": "Crypto",
+        "wrapper": "Taxable",
+        "acq_date": "2026-05-01",
+        "holding_days": 35,
+        "units": 218.253,
+        "cost": 24828.46128,
+        "value": 5215.990034472,
+        "unrealized": -19612.471245528,
+        "unrealized_pct": -0.7899189170182841,
+        "sellable_year": null,
+        "tax_advantaged": false,
+        "status": "Available",
+        "price_asof": "2026-06-05",
+        "price_stale": false
+      },
+      {
         "name": "IT",
         "custodian": "Dime",
         "type": "Equity",
@@ -16348,9 +17065,9 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 0.9613126,
-        "cost": 16298.880654763097,
-        "value": 5174.7510130192995,
-        "unrealized": -11124.129641743799,
+        "cost": 16303.872654963636,
+        "value": 5176.335929102919,
+        "unrealized": -11127.536725860717,
         "unrealized_pct": -0.6825088101061064,
         "sellable_year": null,
         "tax_advantaged": false,
@@ -16449,24 +17166,6 @@
         "price_stale": false
       },
       {
-        "name": "VELODROME",
-        "custodian": "Binance",
-        "type": "Crypto",
-        "wrapper": "Taxable",
-        "acq_date": "2026-05-01",
-        "holding_days": 35,
-        "units": 7965.82876355,
-        "cost": 58053.54582211382,
-        "value": 3570.43739573537,
-        "unrealized": -54483.10842637845,
-        "unrealized_pct": -0.9384975138869931,
-        "sellable_year": null,
-        "tax_advantaged": false,
-        "status": "Available",
-        "price_asof": "2026-06-05",
-        "price_stale": false
-      },
-      {
         "name": "WORK",
         "custodian": "Asia Plus Securities",
         "type": "Equity",
@@ -16475,9 +17174,27 @@
         "holding_days": 35,
         "units": 1000.0,
         "cost": 96662.12,
-        "value": 3560.0,
-        "unrealized": -93102.12,
-        "unrealized_pct": -0.9631706815451596,
+        "value": 3600.0,
+        "unrealized": -93062.12,
+        "unrealized_pct": -0.9627568689782513,
+        "sellable_year": null,
+        "tax_advantaged": false,
+        "status": "Available",
+        "price_asof": "2026-06-05",
+        "price_stale": false
+      },
+      {
+        "name": "VELODROME",
+        "custodian": "Binance",
+        "type": "Crypto",
+        "wrapper": "Taxable",
+        "acq_date": "2026-05-01",
+        "holding_days": 35,
+        "units": 7965.82876355,
+        "cost": 58071.32638744984,
+        "value": 3532.7665135628163,
+        "unrealized": -54538.55987388702,
+        "unrealized_pct": -0.9391650452412207,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -16492,10 +17209,10 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 7253.84165494,
-        "cost": 21127.892535178333,
-        "value": 2834.7131845744443,
-        "unrealized": -18293.17935060389,
-        "unrealized_pct": -0.8658307647175603,
+        "cost": 21134.363558925706,
+        "value": 2751.004359645353,
+        "unrealized": -18383.359199280352,
+        "unrealized_pct": -0.8698326376389263,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -16511,9 +17228,9 @@
         "holding_days": 35,
         "units": 831.25,
         "cost": 9999.9375,
-        "value": 2365.7940249999997,
-        "unrealized": -7634.143475000001,
-        "unrealized_pct": -0.763419118869493,
+        "value": 2335.56894375,
+        "unrealized": -7664.3685562499995,
+        "unrealized_pct": -0.7664416458852867,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -16528,10 +17245,10 @@
         "acq_date": "2026-05-01",
         "holding_days": 35,
         "units": 37.830132,
-        "cost": 81532.50298489799,
-        "value": 2198.573781444,
-        "unrealized": -79333.929203454,
-        "unrealized_pct": -0.9730343887289805,
+        "cost": 81557.4746550312,
+        "value": 2162.18119446,
+        "unrealized": -79395.29346057119,
+        "unrealized_pct": -0.9734888653234358,
         "sellable_year": null,
         "tax_advantaged": false,
         "status": "Available",
@@ -16565,8 +17282,8 @@
         "holding_days": 35,
         "units": 7121.91924256,
         "cost": 0.0,
-        "value": 1566.5590784471874,
-        "unrealized": 1566.5590784471874,
+        "value": 1539.8244618985034,
+        "unrealized": 1539.8244618985034,
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
@@ -16655,8 +17372,8 @@
         "holding_days": 35,
         "units": 0.1415321,
         "cost": 0.0,
-        "value": 313.5826251909,
-        "unrealized": 313.5826251909,
+        "value": 309.7958206297199,
+        "unrealized": 309.7958206297199,
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
@@ -16727,8 +17444,8 @@
         "holding_days": 35,
         "units": 0.16259573,
         "cost": 0.0,
-        "value": 89.133922313755,
-        "unrealized": 89.133922313755,
+        "value": 87.88673176678999,
+        "unrealized": 87.88673176678999,
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
@@ -16763,8 +17480,8 @@
         "holding_days": 35,
         "units": 3.62e-05,
         "cost": 0.0,
-        "value": 0.08020576979999999,
-        "unrealized": 0.08020576979999999,
+        "value": 0.07923720983999999,
+        "unrealized": 0.07923720983999999,
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
@@ -16781,8 +17498,8 @@
         "holding_days": 35,
         "units": 0.0009077,
         "cost": 0.0,
-        "value": 0.029636404999999998,
-        "unrealized": 0.029636404999999998,
+        "value": 0.029645481999999997,
+        "unrealized": 0.029645481999999997,
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
@@ -16799,8 +17516,8 @@
         "holding_days": 35,
         "units": 2.99434087,
         "cost": 0.0,
-        "value": 0.000708797913189875,
-        "unrealized": 0.000708797913189875,
+        "value": 0.0007090150029029499,
+        "unrealized": 0.0007090150029029499,
         "unrealized_pct": 0.0,
         "sellable_year": null,
         "tax_advantaged": false,
@@ -16811,5 +17528,5 @@
     ],
     "realized": []
   },
-  "generated_at": "2026-06-05 10:26"
+  "generated_at": "2026-06-05 11:10"
 }
