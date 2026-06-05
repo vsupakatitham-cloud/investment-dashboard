@@ -18,6 +18,10 @@ investment-dashboard/
 *.rtf
 *token*
 *secret*
+.env.local
+
+# local launchd automation artifacts
+logs/
 
 # but DO track PWA app icons
 !docs/icon-*.png
