@@ -1,17 +1,18 @@
 # TH Investment — Private Client Dashboard
 
 Converts the lot-level **Private Banking Summary** workbook into a branded,
-**self-updating online dashboard** that refreshes **every Saturday at 09:00
-Bangkok time**, plus a **blank onboarding template** for new private clients.
+**self-updating online dashboard** that refreshes **daily at 08:30 Bangkok
+time**, plus a **blank onboarding template** for new private clients.
 
 The dashboard (v2) is a clean, institutional, tabbed web app:
-**Overview** (KPIs with week-over-week deltas + sparklines, allocation, top movers,
-performance) · **Allocation** (asset class / geography / tax wrapper / theme) ·
-**Holdings** (searchable, sortable, filterable) · **Performance** (value-vs-cost
-trend, weekly P&L, cumulative return) · **Risk** (single-name concentration,
-top-5/10 weight, effective holdings, currency exposure, risk-posture band).
-Performance and WoW visuals use the real accumulating Weekly Snapshot history and
-show a "history is building" state until a second weekly point exists.
+**Overview** (KPIs with deltas + sparklines, allocation, top movers, value-vs-invested
+trend) · **Allocation** (asset class / geography / tax wrapper / theme) ·
+**Holdings** (searchable, sortable, filterable; a **Priced** column shows the date each
+position's price/NAV was last fetched) · **Performance** (period returns vs MSCI ACWI
+benchmark, TWR/IRR, growth-of-฿100, drawdown, risk stats) · **Risk** (single-name
+concentration, top-5/10 weight, effective holdings, currency exposure, risk-posture
+band) · **Tax & Lots** (wrapper breakdown, lock-up/maturity calendar, lot table — also
+with the **Priced** column). Mobile is a bottom-nav, card-based PWA (installable/offline).
 
 ```
 investment-dashboard/
@@ -27,23 +28,36 @@ investment-dashboard/
 │   └─ make_template.py   ← regenerates the blank template
 ├─ docs/                  ← the published site (GitHub Pages serves this folder)
 │   ├─ index.html  data.json  history.json
-├─ .github/workflows/weekly.yml   ← the Saturday 09:00 BKT scheduler (cloud)
-└─ scripts/setup_github.sh        ← one-time GitHub Pages setup
+├─ scripts/
+│   ├─ daily_update.sh    ← local 08:30 BKT driver (run by launchd; the PRIMARY scheduler)
+│   └─ setup_github.sh    ← one-time GitHub Pages setup
+├─ .env.local             ← (gitignored) local secrets: SEC_OPENAPI_KEY for the launchd job
+└─ .github/workflows/weekly.yml   ← cloud scheduler — now a BACKSTOP (see below)
 ```
 
-## How the weekly auto-update works
+## How the daily auto-update works
 
-`.github/workflows/weekly.yml` runs in GitHub's cloud on `cron: "0 2 * * 6"`
-(02:00 UTC Saturday = **09:00 Asia/Bangkok**). Each run:
+The refresh runs every day at **08:30 Asia/Bangkok**. Each run:
 
 1. **Fetches live prices** — US & Thai equities and FX from Yahoo Finance, crypto
    from CoinGecko, and **Thai mutual-fund NAVs from the SEC Thailand Open API**
    (see below). Any fund the SEC can't match is carried forward and flagged.
-2. **Logs a weekly snapshot** into the workbook's `Weekly Snapshot` sheet (history).
+2. **Logs a snapshot** into the workbook's `Weekly Snapshot` sheet (history).
 3. **Rebuilds** `docs/` (the dashboard + JSON data + trend history).
 4. **Commits & pushes** — GitHub Pages redeploys automatically.
 
-Because it runs in the cloud, the dashboard updates **whether or not your Mac is on**.
+**Two triggers, primary + backstop:**
+
+- **Primary — local launchd (reliable):** `scripts/daily_update.sh`, run by the macOS
+  LaunchAgent `~/Library/LaunchAgents/com.jack.dashboard-daily.plist` at 08:30 BKT
+  (the Mac is on Bangkok time). It pulls, runs the pipeline, and pushes. If the Mac is
+  asleep at 08:30, launchd runs it once on the next wake.
+- **Backstop — GitHub Actions:** `.github/workflows/weekly.yml` (`cron: "30 1"` + `"30 2"`
+  UTC) still runs in the cloud for days the Mac is off, and is runnable on demand from
+  the **Actions** tab. *Note:* GitHub's **scheduled** cron is unreliable — it has dropped
+  the morning ticks and run many hours late — which is exactly why the local launchd
+  driver is the primary. The pipeline is idempotent (commits only on a real diff), so if
+  both fire on the same day the second is a harmless no-op or a small refresh.
 
 ## First-time setup (≈5 min)
 
@@ -53,10 +67,10 @@ Because it runs in the cloud, the dashboard updates **whether or not your Mac is
    scripts/setup_github.sh https://github.com/<you>/<repo>.git
    ```
 3. In the repo: **Settings → Pages → Deploy from a branch → `main` → `/docs`**.
-4. Your dashboard is live at `https://<you>.github.io/<repo>/` and refreshes every Saturday.
+4. Your dashboard is live at `https://<you>.github.io/<repo>/` and refreshes daily.
 
-Trigger an update any time from the repo's **Actions** tab → *Weekly Dashboard
-Update* → *Run workflow*.
+Trigger an update any time from the repo's **Actions** tab → *Daily Dashboard
+Update* → *Run workflow*, or locally with `bash scripts/daily_update.sh`.
 
 ## Thai mutual-fund NAVs (SEC Open Data — Fund API v2)
 
@@ -78,11 +92,12 @@ To enable:
    copy the key from your **`fund_api` (Product: sec-openapi-normal)** subscription.
    *(The separate legacy "Fund Daily Info" subscription is the old `/FundDailyInfo`
    API and is not needed.)*
-2. Provide it as an env var (local) **or** a GitHub Actions secret
-   (`Settings → Secrets and variables → Actions`):
-   ```bash
-   export SEC_OPENAPI_KEY="your-fund_api-key"
-   ```
+2. Provide it in **both** places so primary and backstop can each fetch NAVs:
+   - **Local launchd job:** put it in `.env.local` (gitignored) at the repo root —
+     `echo 'export SEC_OPENAPI_KEY="your-fund_api-key"' > .env.local` (the driver
+     sources this; a plain `export …` in your shell also works for manual runs).
+   - **GitHub Actions backstop:** add it as a repo secret
+     (`Settings → Secrets and variables → Actions → SEC_OPENAPI_KEY`).
 3. Check it:
    ```bash
    python pipeline/fetch_thai_nav.py --selftest          # key + connectivity + pin count

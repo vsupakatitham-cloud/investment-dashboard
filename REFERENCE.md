@@ -9,7 +9,7 @@ and the decisions/gotchas worth remembering. (For the quick-start, see `README.m
 
 An Excel workbook of a private client's holdings (Thai mutual funds, Thai + US
 equities, crypto, cash, SGD unit trusts) is converted into a **branded, self-updating,
-institutional-grade web dashboard** that refreshes **daily at 09:00 Bangkok time** and
+institutional-grade web dashboard** that refreshes **daily at 08:30 Bangkok time** and
 is published to **GitHub Pages**. Reporting currency is **THB**.
 
 - **Live site:** `https://vsupakatitham-cloud.github.io/investment-dashboard/`
@@ -58,6 +58,10 @@ save). `portfolio.py` re-derives every value from the raw inputs + Reference + P
 | `config.json` | Branding, FX/fee/benchmark/tax settings, disclaimer, schedule text. |
 | `sec_fund_map.json` | abbreviation → SEC proj_id + share class (NAV-verified). **Public ids only, no secrets.** |
 
+**Automation (outside `pipeline/`):** `scripts/daily_update.sh` is the local 08:30-BKT
+driver (pull → `run_weekly.py --no-publish` → commit → push), run by the macOS LaunchAgent
+`~/Library/LaunchAgents/com.jack.dashboard-daily.plist`. See §7.
+
 ---
 
 ## 4. Workbook sheets
@@ -77,10 +81,12 @@ Clean institutional-light design, tabbed; **mobile = bottom nav + card-based tab
 
 1. **Overview** — KPIs with week-over-week deltas + sparklines, allocation ribbon, top movers, value-vs-invested trend, largest holdings.
 2. **Allocation** — asset class / geography / tax wrapper / theme.
-3. **Holdings** — searchable / sortable / filterable; on mobile, tappable cards.
+3. **Holdings** — searchable / sortable / filterable; on mobile, tappable cards. A **Priced**
+   column shows the date each position's price/NAV was last fetched (bold = today, muted =
+   carried forward, amber = >1 week stale) — sourced from Prices col G via `price_asof`.
 4. **Performance** — period table vs **MSCI ACWI (THB)** benchmark, TWR/IRR, growth-of-฿100, drawdown, calendar-year, risk stats.
 5. **Risk** — concentration (top-5/10, effective holdings), currency exposure (THB/USD/SGD), risk-posture band.
-6. **Tax & Lots** — wrapper breakdown, **lock-up & maturity schedule**, lot table with Locked/Available status.
+6. **Tax & Lots** — wrapper breakdown, **lock-up & maturity schedule**, lot table with Locked/Available status (and the same **Priced** column as Holdings).
 
 ---
 
@@ -90,9 +96,15 @@ Clean institutional-light design, tabbed; **mobile = bottom nav + card-based tab
   `benchmark`, `annual_fee_pct`, `risk_free_pct`, `tax_inception_date` (2026-05-01),
   `tax_advantaged_wrappers`, `schedule_text`, `disclaimer`.
 - **Secret:** `SEC_OPENAPI_KEY` — the SEC "fund_api" (product `sec-openapi-normal`) key from
-  https://secopendata.sec.or.th/. Local: `export SEC_OPENAPI_KEY=…`. Cloud: repo →
-  Settings → Secrets → Actions. **Never commit keys.** `.gitignore` blocks `*.png` (except
-  app icons), `*token*`, `*secret*`, `*.rtf`, screenshots.
+  https://secopendata.sec.or.th/. Set it in **both** places: the local launchd job reads
+  `.env.local` (gitignored) at the repo root (`export SEC_OPENAPI_KEY=…`); the GitHub Actions
+  backstop reads the repo secret (Settings → Secrets → Actions). Without it, Thai NAVs carry
+  forward. **Never commit keys.** `.gitignore` blocks `*.png` (except app icons), `*token*`,
+  `*secret*`, `*.rtf`, `.env.local`, `logs/`, screenshots.
+- **GitHub token (local push):** the launchd driver reads a fine-grained PAT from
+  `Github token.rtf` (gitignored) to push. That PAT has **Contents:write** but **not
+  Actions:write**, so it can't trigger `workflow_dispatch` via the API (returns 403) — use
+  the Actions tab UI or `bash scripts/daily_update.sh` to run on demand.
 
 ---
 
@@ -112,12 +124,24 @@ python3 pipeline/build_site.py
 python3 pipeline/add_holding.py equity --ticker GOOGL --broker Dime --ccy USD --shares 10 --avg-cost 150 \
    --asset-class Equity --geography "United States" --theme "US Large Cap" --tax Taxable
 
-# publish (from your machine — sandbox is read-only)
+# run the full daily job exactly as automation does (build + commit + push)
+bash scripts/daily_update.sh                # DRY_RUN=1 to build without committing
+
+# publish a manual change (from your machine — sandbox is read-only)
 git push origin main
 ```
 
-- **Daily job:** `.github/workflows/weekly.yml`, cron `0 2 * * *` (= 09:00 BKT). Needs the
-  `SEC_OPENAPI_KEY` secret + token `workflow` scope to edit the workflow file.
+- **Daily job (PRIMARY) — local launchd:** `scripts/daily_update.sh`, driven by
+  `~/Library/LaunchAgents/com.jack.dashboard-daily.plist` at **08:30 BKT** (Mac on Bangkok
+  time; runs on next wake if asleep). Manage it with
+  `launchctl bootout|bootstrap gui/$(id -u) <plist>`; logs in `logs/launchd.{out,err}.log`.
+- **Daily job (BACKSTOP) — GitHub Actions:** `.github/workflows/weekly.yml`, cron `30 1`
+  + `30 2 * * *` UTC. ⚠️ **GitHub's scheduled cron is unreliable** — it dropped both morning
+  ticks and ran ~12 h late (2026-06-04), which is why launchd is primary. Kept on for
+  Mac-off days; runnable on demand from the Actions tab. Editing the workflow file needs a
+  token with `workflow` scope.
+- **Recovering a missed day:** just run `bash scripts/daily_update.sh` (idempotent — commits
+  only on a real diff).
 - **PWA install:** open the live URL on a phone → "Add to Home Screen".
 
 ---
@@ -149,7 +173,9 @@ git push origin main
 
 **Done:** template + auto-update · SEC v2 NAVs · v2 tabbed redesign · mobile-friendly ·
 SGD unit trusts · **Performance overhaul** (#1) · **Tax & Lots** (#2) · daily history
-backfill · mobile UX trio (bottom nav, card tables, PWA).
+backfill · mobile UX trio (bottom nav, card tables, PWA) · **price-freshness "Priced"
+column** (Holdings + Tax) · **reliable scheduling via local launchd** (GitHub cron demoted
+to backstop).
 
 **Not done / next:**
 - **Authentication** (deferred) — the live URL is currently open; gate before sharing widely.
@@ -162,6 +188,8 @@ backfill · mobile UX trio (bottom nav, card tables, PWA).
 
 ## 10. Change history (commits, newest first)
 
+**local launchd daily driver (08:30 BKT; GitHub cron → backstop)** · Holdings/Tax **"Priced"
+column** + desktop column-width fit · daily cadence → **08:30 BKT, off-the-hour cron** ·
 Touch-ups (timestamp, daily footer) · uniform mobile width · mobile UX trio (bottom nav /
 cards / PWA) · long-name wrapping · tax maturity labels · **Tax & Lots page** · overview
 backfill · **daily history backfill** · **Performance overhaul + benchmark + daily** · mobile
