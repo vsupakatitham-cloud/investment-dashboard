@@ -430,13 +430,13 @@
   },
   {
     "date": "2026-06-09",
-    "total_value": 25610409,
-    "total_invested": 22675070,
-    "total_pnl": 2935339,
-    "pnl_pct": 0.1295,
+    "total_value": 25609056,
+    "total_invested": 22674183,
+    "total_pnl": 2934873,
+    "pnl_pct": 0.1294,
     "mf_value": 18067456,
-    "eq_value": 5003719,
-    "crypto_value": 1150834,
-    "fx_rate": 32.83
+    "eq_value": 5002687,
+    "crypto_value": 1150318,
+    "fx_rate": 32.82
   }
 ]
