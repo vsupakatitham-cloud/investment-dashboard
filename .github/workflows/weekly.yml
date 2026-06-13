@@ -1,18 +1,21 @@
 name: Daily Dashboard Update
 
-# Runs every day 08:30 Asia/Bangkok (= 01:30 UTC) so performance history (TWR,
-# risk stats, benchmark-relative) builds quickly. Also runnable on demand.
+# BACKSTOP ONLY. The primary scheduler is the local macOS launchd job
+# (com.jack.dashboard-daily -> scripts/daily_update.sh) at 08:30 Asia/Bangkok,
+# which is reliable. This workflow exists to cover days the Mac is off/asleep.
 #
-# NOTE: deliberately OFF the top of the hour. GitHub load-sheds scheduled jobs
-# during peak (minute :00) load and silently drops them — an on-the-hour cron
-# ("0 2 * * *") frequently never fires. A backstop tick an hour later recovers
-# the day if the first is dropped; the pipeline is idempotent (commits only on a
-# real diff), so a double-run just no-ops.
+# GitHub's scheduled cron is unreliable for this repo — it fires hours late
+# (often 19:00-24:00 BKT). If it ran unconditionally it would re-fetch evening
+# prices and overwrite the morning update with a night-time one. So the guard
+# step below SKIPS the run when today's local update (BKT date) is already in
+# the history, and only proceeds when the morning job is genuinely missing.
+#
+# Crons are deliberately off the top of the hour (GitHub load-sheds :00 jobs).
 on:
   schedule:
-    - cron: "30 1 * * *"   # 08:30 BKT — primary
-    - cron: "30 2 * * *"   # 09:30 BKT — backstop if the first is dropped
-  workflow_dispatch:
+    - cron: "30 1 * * *"   # 08:30 BKT — only acts if the local job didn't
+    - cron: "30 2 * * *"   # 09:30 BKT — second chance if the first is dropped
+  workflow_dispatch:        # manual runs always proceed (bypass the guard)
 
 permissions:
   contents: write   # allow committing the refreshed docs/ + workbook back
@@ -27,16 +30,41 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 50   # enough history to detect today's local commit
+
+      - name: Backstop guard — skip if today's update already published
+        id: guard
+        run: |
+          # Manual runs always proceed.
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "Manual dispatch — proceeding."
+            echo "run=true" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          BKT_TODAY=$(TZ=Asia/Bangkok date +%F)
+          # Any "Daily dashboard update ... <BKT date>" commit (local OR a prior
+          # backstop tick) means today is already covered — stand down.
+          if git log --since="40 hours ago" --pretty=%s \
+               | grep "Daily dashboard update" | grep -q "${BKT_TODAY}"; then
+            echo "Update for ${BKT_TODAY} already present — backstop skipping."
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "No update for ${BKT_TODAY} yet — backstop running."
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Set up Python
+        if: steps.guard.outputs.run == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
       - name: Install dependencies
+        if: steps.guard.outputs.run == 'true'
         run: pip install -r requirements.txt
 
       - name: Fetch prices, log snapshot, rebuild dashboard
+        if: steps.guard.outputs.run == 'true'
         env:
           # Repo -> Settings -> Secrets and variables -> Actions -> New secret.
           # Use the "fund_api" subscription key (Product: sec-openapi-normal) from
@@ -46,6 +74,7 @@ jobs:
         run: python pipeline/run_weekly.py --no-publish
 
       - name: Commit & push refreshed dashboard
+        if: steps.guard.outputs.run == 'true'
         run: |
           git config user.name  "dashboard-bot"
           git config user.email "actions@github.com"
@@ -53,6 +82,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to publish."
           else
-            git commit -m "Weekly dashboard update — $(date -u +%Y-%m-%d)"
+            git commit -m "Daily dashboard update (backstop) — $(TZ=Asia/Bangkok date +%F)"
             git push
           fi
