@@ -134,6 +134,10 @@
   "TCMF": {
    "proj_id": "M0035_2543",
    "fund_class_name": "TCMF"
+  },
+  "K-GTECHRMF": {
+   "proj_id": "M0599_2566",
+   "fund_class_name": "main"
   }
  }
 }
