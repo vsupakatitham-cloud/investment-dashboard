@@ -104,7 +104,8 @@ Clean institutional-light design, tabbed; **mobile = bottom nav + card-based tab
 
 - **`pipeline/config.json`** — `firm_name`, `logo_text`, `client_name`, accent colors,
   `benchmark`, `annual_fee_pct`, `risk_free_pct`, `tax_inception_date` (2026-05-01),
-  `tax_advantaged_wrappers`, `schedule_text`, `disclaimer`.
+  `tax_advantaged_wrappers`, `client_birth_year` (drives the RMF sellable-year rule — see §8),
+  `schedule_text`, `disclaimer`.
 - **Secret:** `SEC_OPENAPI_KEY` — the SEC "fund_api" (product `sec-openapi-normal`) key from
   https://secopendata.sec.or.th/. Set it in **both** places: the local launchd job reads
   `.env.local` (gitignored) at the repo root (`export SEC_OPENAPI_KEY=…`); the GitHub Actions
@@ -192,6 +193,16 @@ git push origin main
   `day_thb` per holding, **gated** to a recent window (current price fresh ≤4 days; prev→current
   step ≤5 days) so a fund's lagged/weekly NAV jump (e.g. a 7-day-old step) isn't shown as
   "today's" move. The capture is best-effort — it never blocks the daily build.
+- **RMF "Sellable Year" is derived, not hand-keyed.** Thai RMF redeems tax-free only when
+  **both** ≥5 years have passed since the investor's *first-ever* RMF purchase (the clock does
+  **not** restart per lot) **and** age ≥55 — so sellable year = `max(first_rmf_year + 5,
+  birth_year + 55)` (mainstream Revenue Dept / AMC reading; SCB/Krungsri). `tax_rules.py` holds
+  the rule; `config.client_birth_year` (1982 → age 55 in **2037**) is the only input.
+  `add_holding.py` auto-fills the lot's Sellable Year (RMF membership resolved via the
+  **Reference** sheet — MF-Lots' Tax Status cell is an INDEX/MATCH formula, not a literal).
+  `tax.py` cross-checks every stored RMF sellable year against the rule and emits a
+  `[tax] WARN …` (+ `tax.warnings`) on drift. For this client every RMF lot derives to 2037.
+  (Other wrappers differ: SSF = purchase+10y per-lot, Thai ESG +5–8y, legacy LTF ≈7 cal-yrs.)
 - **Mobile:** font-boosting fixed (`text-size-adjust:100%`); long names wrap at a fixed
   34ch column; grid overflow fixed with `min-width:0` (uniform 347px cards).
 
@@ -205,7 +216,8 @@ backfill · mobile UX trio (bottom nav, card tables, PWA) · **price-freshness "
 column** (Holdings + Tax) · **reliable scheduling via local launchd** (GitHub cron demoted
 to backstop) · **Overview "Today's Movement" card** (1D Δ + bucket breakdown, flow-aware
 attribution from `Cash Flows`) · **Top Movers "Today" toggle** (real per-holding 1-day moves
-via fetch-time prior prices, recency-gated).
+via fetch-time prior prices, recency-gated) · **derived RMF Sellable Year** (rule-based from
+`client_birth_year` + first-RMF year; auto-filled on add, validated in `tax.py`).
 
 **Not done / next:**
 - **Authentication** (deferred) — the live URL is currently open; gate before sharing widely.
