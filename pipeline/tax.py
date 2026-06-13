@@ -17,6 +17,8 @@ import datetime as _dt
 import json
 from pathlib import Path
 
+import tax_rules
+
 CONFIG = Path(__file__).resolve().parent / "config.json"
 
 
@@ -68,6 +70,25 @@ def compute(portfolio, wb):
             "status": "Locked" if locked else "Available",
             "price_asof": h.get("price_asof", ""), "price_stale": bool(h.get("price_stale", False)),
         })
+
+    # Validate stored RMF Sellable Years against the derived rule (config birth
+    # year + the first-ever RMF purchase). Under the mainstream rule every RMF lot
+    # shares one sellable year; warn on any mismatch so a stray manual entry can't
+    # silently skew the lock-up maturity calendar.
+    warnings = []
+    birth_year = cfg.get("client_birth_year")
+    rmf_years = [int(h["purchase_date"][:4]) for h in portfolio["holdings"]
+                 if (h.get("tax_status") or "") == "RMF"
+                 and str(h.get("purchase_date") or "")[:4].isdigit()]
+    rmf_sellable = tax_rules.rmf_sellable_year(birth_year, min(rmf_years)) if rmf_years else None
+    if rmf_sellable:
+        for l in lots:
+            if l["wrapper"] == "RMF" and l["sellable_year"] and l["sellable_year"] != rmf_sellable:
+                warnings.append(f"{l['name']}: stored Sellable Year {l['sellable_year']} "
+                                f"!= derived {rmf_sellable} (first-RMF {min(rmf_years)}+5 / "
+                                f"age-55 {birth_year + 55 if birth_year else '--'})")
+    for w in warnings:
+        print(f"  [tax] WARN {w}")
 
     tot_val = sum(l["value"] for l in lots)
     tot_cost = sum(l["cost"] for l in lots)
@@ -129,4 +150,6 @@ def compute(portfolio, wb):
         "holding_buckets": {"short": round(short), "long": round(long)},
         "lots": sorted(lots, key=lambda x: x["value"], reverse=True),
         "realized": realized,
+        "rmf_sellable_year": rmf_sellable,
+        "warnings": warnings,
     }

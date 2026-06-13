@@ -5,6 +5,7 @@
   "client_name": "Private Client Portfolio",
   "client_ref": "PC-0001",
   "advisor": "",
+  "client_birth_year": 1982,
   "currency_symbol": "฿",
   "timezone": "Asia/Bangkok",
   "benchmark": {"name": "MSCI ACWI (THB)", "symbol": "ACWI", "fx_symbol": "THB=X"},

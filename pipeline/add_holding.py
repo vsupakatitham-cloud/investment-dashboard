@@ -45,6 +45,34 @@ from openpyxl.formula.translate import Translator
 ROOT = Path(__file__).resolve().parent.parent
 WB = ROOT / "TH Investment - Private Banking Summary.xlsx"
 PIPE = Path(__file__).resolve().parent
+CONFIG = PIPE / "config.json"
+
+import tax_rules
+
+
+def _earliest_rmf_year(wb):
+    """Year of the earliest existing RMF purchase (start of the 5-year clock), or
+    None. Tax status is Reference-driven (MF-Lots col 7 is an INDEX/MATCH formula),
+    so RMF membership is resolved via the Reference sheet, keyed by fund + AMC."""
+    if "MF - Lots" not in wb.sheetnames or "Reference" not in wb.sheetnames:
+        return None
+    ref = wb["Reference"]
+    rmf = set()                                   # (fund, amc) whose wrapper is RMF
+    for r in range(2, ref.max_row + 1):
+        if ref.cell(r, 2).value == "Mutual Fund" and (ref.cell(r, 9).value or "") == "RMF":
+            rmf.add((ref.cell(r, 3).value, ref.cell(r, 4).value))
+    ws, years = wb["MF - Lots"], []
+    for r in range(5, ws.max_row + 1):
+        if (ws.cell(r, 3).value, ws.cell(r, 2).value) not in rmf:
+            continue
+        d, yr = ws.cell(r, 8).value, ws.cell(r, 9).value
+        if isinstance(d, _dt.datetime):
+            years.append(d.year)
+        elif isinstance(d, str) and len(d) >= 4 and d[:4].isdigit():
+            years.append(int(d[:4]))
+        elif isinstance(yr, (int, float)):
+            years.append(int(yr))
+    return min(years) if years else None
 
 # Per-asset layout of each Lots sheet: input columns (name->col idx), formula
 # columns to copy from the row above, and the TOTAL-row formula templates.
@@ -256,6 +284,28 @@ def run(asset, values, meta, *, coingecko_id=None, mf_class=None, workbook=WB, d
     wb = openpyxl.load_workbook(workbook, data_only=False)
 
     log = []
+    if asset == "mf":
+        # default Purch. Yr from the purchase date
+        if not values.get("year") and values.get("date"):
+            try:
+                values["year"] = _dt.date.fromisoformat(str(values["date"])[:10]).year
+            except ValueError:
+                pass
+        # auto-fill the RMF Sellable Year from config birth year + first-RMF year
+        # (no need to hand-key it) — max(first_rmf+5, birth+55). See tax_rules.
+        if not values.get("sellable") and meta.get("tax_status") == "RMF":
+            try:
+                birth = json.loads(CONFIG.read_text()).get("client_birth_year")
+            except Exception:
+                birth = None
+            first = _earliest_rmf_year(wb)
+            this_yr = values.get("year")
+            first = min(y for y in (first, this_yr) if y) if (first or this_yr) else None
+            sy = tax_rules.rmf_sellable_year(birth, first)
+            if sy:
+                values["sellable"] = sy
+                log.append(f"RMF Sellable Year auto-set to {sy} "
+                           f"(max of first-RMF {first}+5, age-55 {birth + 55 if birth else '—'})")
     T = insert_lot(wb, spec, values)
     log.append(f"{spec['sheet']}: lot added at row {T}")
     log.append(ensure_reference(wb, spec["wb_type"], name, cust, meta))

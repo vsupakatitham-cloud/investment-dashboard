@@ -6,6 +6,7 @@
     "client_name": "Private Client Portfolio",
     "client_ref": "PC-0001",
     "advisor": "",
+    "client_birth_year": 1982,
     "currency_symbol": "\u0e3f",
     "timezone": "Asia/Bangkok",
     "benchmark": {
@@ -13321,7 +13322,7 @@
         14.91
       ]
     },
-    "generated_at": "2026-06-13 08:30 +07"
+    "generated_at": "2026-06-13 09:08"
   },
   "tax": {
     "as_of": "2026-06-13",
@@ -17741,7 +17742,9 @@
         "price_stale": true
       }
     ],
-    "realized": []
+    "realized": [],
+    "rmf_sellable_year": 2037,
+    "warnings": []
   },
-  "generated_at": "2026-06-13 08:30 +07"
+  "generated_at": "2026-06-13 09:08"
 }
