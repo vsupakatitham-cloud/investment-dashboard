@@ -150,6 +150,12 @@ git push origin main
   ticks and ran ~12 h late (2026-06-04), which is why launchd is primary. Kept on for
   Mac-off days; runnable on demand from the Actions tab. Editing the workflow file needs a
   token with `workflow` scope.
+  - **Skip-if-already-updated guard:** because the late cron used to re-fetch *evening*
+    prices and overwrite the morning update with a night-time one (it fires ~19:00–24:00 BKT,
+    not 08:30), a guard step now stands the run down when a `Daily dashboard update … <BKT
+    date>` commit already exists (local job **or** a prior backstop tick). It only proceeds
+    when the morning update is genuinely missing (Mac off). Manual `workflow_dispatch` bypasses
+    the guard. Backstop commits are labelled **`Daily dashboard update (backstop) — <BKT date>`**.
 - **Recovering a missed day:** just run `bash scripts/daily_update.sh` (idempotent — commits
   only on a real diff).
 - **PWA install:** open the live URL on a phone → "Add to Home Screen".
