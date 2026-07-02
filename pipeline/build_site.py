@@ -359,6 +359,17 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       <div class="card pad"><div class="head"><h3>Asset Class Detail</h3></div><div class="scroll"><table id="acTable"></table></div></div>
       <div class="card pad"><div class="head"><h3>Theme / Sector Exposure</h3></div><div id="themeBars"></div></div>
     </div>
+    <div class="row g2" style="margin-top:16px">
+      <div class="card pad">
+        <div class="head"><h3>Target vs Actual</h3><span class="mini">policy mix drift</span></div>
+        <div id="driftRows"></div>
+      </div>
+      <div class="card pad">
+        <div class="head"><h3>Rebalance Signals</h3><span class="mini">illustrative, lock-up aware</span></div>
+        <div class="scroll"><table id="rebalTable"></table></div>
+        <div class="note" id="rebalNote"></div>
+      </div>
+    </div>
   </section>
 
   <section data-tab="Holdings" hidden>
@@ -400,6 +411,10 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       <div class="head"><h3>Calendar-Year Returns</h3><span class="mini">portfolio vs benchmark</span></div>
       <div class="chartbox" style="height:240px"><canvas id="perfCal"></canvas></div>
     </div>
+    <div class="card pad" style="margin-top:16px">
+      <div class="head"><h3>Income Received</h3><span class="mini" id="incomeChip"></span></div>
+      <div id="incomeBody"></div>
+    </div>
     <div class="note" id="perfNote"></div>
   </section>
 
@@ -436,6 +451,11 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
         <div class="head"><h3>By Tax Wrapper</h3></div>
         <div class="scroll"><table id="taxWrapper"></table></div>
       </div>
+    </div>
+    <div class="card pad" style="margin-bottom:16px">
+      <div class="head"><h3>Tax Planning — Annual Allowances</h3><span class="mini" id="taxPlanChip"></span></div>
+      <div id="taxPlanRows"></div>
+      <div class="note" id="taxPlanNote"></div>
     </div>
     <div class="card pad">
       <div class="head"><h3>Lots</h3>
@@ -930,6 +950,95 @@ function boot(PAYLOAD){
     renderLots();
     document.getElementById('taxNote').innerHTML='Holding periods run from '+T.inception+' (assumed acquisition for all lots). Lock-up maturity uses each fund’s actual Sellable Year. “Priced” is the date of the latest price/NAV fetched (bold = today, amber = over a week old). Realized gains populate from the Realized sheet. Not tax advice.';
   }
+  // ---- Phase 2.1: target vs actual drift + lock-up-aware rebalance signals ----
+  (function(){
+    const tgt=CFG.target_allocation||{}; if(!Object.keys(tgt).length){
+      document.getElementById("driftRows").innerHTML='<div class="empty">Set <b>target_allocation</b> in config.json to enable drift tracking.</div>';
+      return;}
+    const amber=CFG.drift_amber_pp!=null?CFG.drift_amber_pp:3, red=CFG.drift_red_pp!=null?CFG.drift_red_pp:5;
+    const actual={}; (P.by_asset_class||[]).forEach(r=>actual[r.name]=r.value);
+    const names=[...new Set([...Object.keys(tgt),...Object.keys(actual)])];
+    const tot=P.total_value||1, curYear=+(P.as_of||"").slice(0,4);
+    // locked (wrapper still in lock-up) value per asset class — sells must avoid it
+    const advSet=new Set(CFG.tax_advantaged_wrappers||["RMF","SSF","Thai ESG","LTF"]);
+    const locked={};
+    P.holdings.forEach(h=>{
+      const sy=parseInt(h.sellable_year,10);
+      if(advSet.has(h.tax_status)&&sy&&sy>curYear) locked[h.asset_class]=(locked[h.asset_class]||0)+h.value_thb;});
+    const rows=names.map(n=>{
+      const av=actual[n]||0, ap=av/tot*100, tp=+(tgt[n]||0), drift=ap-tp;
+      const sev=Math.abs(drift)>=red?"red":Math.abs(drift)>=amber?"amber":"ok";
+      return {n,av,ap,tp,drift,sev,locked:locked[n]||0};
+    }).sort((a,b)=>b.av-a.av);
+    const sevCol={ok:"var(--pos)",amber:"#b07a16",red:"var(--neg)"};
+    document.getElementById("driftRows").innerHTML=rows.map(r=>`
+      <div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--border)">
+        <div style="flex:1;min-width:0"><span class="name">${r.n}</span>
+          <div class="sub">actual ${r.ap.toFixed(1)}% · target ${r.tp.toFixed(1)}%</div></div>
+        <div class="wbar" style="flex:1"><i style="width:${Math.min(r.ap,100).toFixed(0)}%"></i></div>
+        <span class="chip num" style="color:${sevCol[r.sev]};min-width:64px;text-align:right">${(r.drift>=0?"+":"")+r.drift.toFixed(1)} pp</span>
+      </div>`).join("");
+    // rebalance ticket: trades to return each class to target, sells capped at unlocked value
+    let constrained=false, net=0;
+    const trows=rows.map(r=>{
+      const delta=r.tp/100*tot-r.av;                 // + = buy, − = sell
+      let act="—", amt=0;
+      if(Math.abs(r.drift)>=amber){
+        if(delta>0){act="Buy";amt=delta;}
+        else{const sellable=Math.max(r.av-r.locked,0);amt=Math.min(-delta,sellable);
+             act=amt>0?"Sell":"Locked";if(amt< -delta-1)constrained=true;}
+        net+=(act==="Buy"?amt:-amt);
+      }
+      return `<tr><td>${r.n}</td><td class="num">${f0(r.av)}</td><td class="num">${r.tp.toFixed(0)}%</td>
+        <td class="num" style="color:${sevCol[r.sev]}">${(r.drift>=0?"+":"")+r.drift.toFixed(1)}pp</td>
+        <td class="num ${act==="Buy"?"pos":act==="Sell"?"neg":""}">${act==="—"?"—":act+" "+f0(amt)}</td></tr>`;});
+    document.getElementById("rebalTable").innerHTML=
+      `<thead><tr><th>Class</th><th>Value</th><th>Target</th><th>Drift</th><th>Signal</th></tr></thead><tbody>${trows.join("")}</tbody>`;
+    document.getElementById("rebalNote").innerHTML=
+      `Signals fire at ±${amber}pp drift (red ±${red}pp). Sells never touch lots still in a tax lock-up${constrained?" — <b>note: lock-ups constrain some sells; residual rebalances via new contributions</b>":""}. `
+      +`Illustrative drift arithmetic only — not investment advice.`;
+  })();
+
+  // ---- Phase 2.2: Thai tax-allowance planning card ----
+  (function(){
+    const T=PAYLOAD.tax||{}, pl=T.planning;
+    if(!pl){document.getElementById("taxPlanRows").innerHTML='<div class="empty">Planning data unavailable.</div>';return;}
+    const chip=document.getElementById("taxPlanChip");
+    if(pl.q4)chip.innerHTML=`<span class="chip" style="color:#b07a16">⏳ ${pl.days_to_yearend} days to 31 Dec deadline</span>`;
+    else chip.textContent=`${pl.days_to_yearend} days left in ${(P.as_of||"").slice(0,4)}`;
+    const cont=pl.rmf_continuity||{};
+    const contChip=cont.status==="ok"?`<span class="chip" style="color:var(--pos)">✓ ${cont.message||"on track"}</span>`
+      :cont.status==="due"?`<span class="chip" style="color:#b07a16">⚠ ${cont.message}</span>`
+      :`<span class="chip" style="color:var(--neg)">✗ ${cont.message}</span>`;
+    document.getElementById("taxPlanRows").innerHTML=(pl.wrappers||[]).map(w=>{
+      const pct=w.cap?Math.min(w.ytd/w.cap*100,100):null;
+      return `<div style="padding:8px 0;border-bottom:1px solid var(--border)">
+        <div style="display:flex;justify-content:space-between;gap:10px">
+          <span class="name">${w.wrapper}</span>
+          <span class="num">${f0(w.ytd)} YTD${w.cap?` · <span class="sub">cap ${f0(w.cap)} → <b>${f0(w.remaining)} room</b></span>`:""}</span></div>
+        ${pct!=null?`<div class="wbar" style="margin-top:6px"><i style="width:${pct.toFixed(0)}%"></i></div>`:""}
+        <div class="sub" style="margin-top:4px">${w.note}</div></div>`;}).join("")
+      +`<div style="padding:10px 0 2px">RMF continuity: ${contChip}</div>`;
+    document.getElementById("taxPlanNote").innerHTML=pl.income_configured
+      ?"Caps assume the configured annual income; the ฿500k retirement cap is shared with PVD/pension products this dashboard cannot see. Not tax advice."
+      :"Set <b>annual_income</b> in config.json to see remaining allowance against the 30%-of-income caps. Not tax advice.";
+  })();
+
+  // ---- Phase 2.3: income received (from real logged Cash Flows) ----
+  (function(){
+    const isInc=f=>f.amount>0&&/divid|interest|distribut|income|coupon/i.test(f.type||"");
+    const inc=FLOWS.filter(isInc).sort((a,b)=>a.date<b.date?1:-1);
+    const cut=new Date((P.as_of||"")+"T00:00:00");cut.setDate(cut.getDate()-365);
+    const t12=inc.filter(f=>new Date(f.date+"T00:00:00")>=cut).reduce((s,f)=>s+f.amount,0);
+    const chip=document.getElementById("incomeChip"), body=document.getElementById("incomeBody");
+    if(!inc.length){chip.textContent="";
+      body.innerHTML='<div class="empty">No income recorded yet.<br><span class="pillnote">Log dividends/interest in the Cash Flows sheet (Type: Dividend) — they appear here and in Today\'s Movement.</span></div>';return;}
+    chip.innerHTML=`T12M <b class="num">${f0(t12)}</b> · yield ${pc(P.total_value?t12/P.total_value:0)}`;
+    body.innerHTML='<table><thead><tr><th>Date</th><th>Type</th><th>Note</th><th>Amount</th></tr></thead><tbody>'
+      +inc.slice(0,12).map(f=>`<tr><td>${f.date}</td><td>${f.type||"—"}</td><td>${f.note||""}</td><td class="num pos">+${f0(f.amount)}</td></tr>`).join("")
+      +'</tbody></table>';
+  })();
+
   draw("Overview");
 }
 

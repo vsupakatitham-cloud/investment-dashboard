@@ -90,13 +90,20 @@ Clean institutional-light design, tabbed; **mobile = bottom nav + card-based tab
    drifts daily with FX (see §8). **Daily movers** use a real prior price captured at fetch
    time (Yahoo `previousClose`, CoinGecko 24h, SEC prior NAV) and are gated to a recent
    window so lagged/weekly NAVs don't masquerade as "today" (see §8).
-2. **Allocation** — asset class / geography / tax wrapper / theme.
+2. **Allocation** — asset class / geography / tax wrapper / theme, plus **Target vs Actual**
+   (policy mix from `config.target_allocation`, drift chips at ±3/±5pp) and **Rebalance
+   Signals** (illustrative buy/sell ฿ to target; sells never touch locked wrapper lots).
 3. **Holdings** — searchable / sortable / filterable; on mobile, tappable cards. A **Priced**
    column shows the date each position's price/NAV was last fetched (bold = today, muted =
    carried forward, amber = >1 week stale) — sourced from Prices col G via `price_asof`.
-4. **Performance** — period table vs **MSCI ACWI (THB)** benchmark, TWR/IRR, growth-of-฿100, drawdown, calendar-year, risk stats.
+4. **Performance** — period table vs **MSCI ACWI (THB)** benchmark, TWR/IRR, growth-of-฿100,
+   drawdown, calendar-year, risk stats, and **Income Received** (T12M income + yield from real
+   `Cash Flows` entries typed Dividend/Interest/Distribution; empty-state until logged).
 5. **Risk** — concentration (top-5/10, effective holdings), currency exposure (THB/USD/SGD), risk-posture band.
-6. **Tax & Lots** — wrapper breakdown, **lock-up & maturity schedule**, lot table with Locked/Available status (and the same **Priced** column as Holdings).
+6. **Tax & Lots** — wrapper breakdown, **lock-up & maturity schedule**, **Tax Planning card**
+   (YTD RMF/Thai ESG purchases vs `tax_rules.WRAPPER_CAPS`, remaining room when
+   `annual_income` set, RMF continuity chip, Q4 year-end countdown), lot table with
+   Locked/Available status (and the same **Priced** column as Holdings).
 
 ---
 
@@ -105,6 +112,9 @@ Clean institutional-light design, tabbed; **mobile = bottom nav + card-based tab
 - **`pipeline/config.json`** — `firm_name`, `logo_text`, `client_name`, accent colors,
   `benchmark`, `annual_fee_pct`, `risk_free_pct`, `tax_inception_date` (2026-05-01),
   `tax_advantaged_wrappers`, `client_birth_year` (drives the RMF sellable-year rule — see §8),
+  `annual_income` (optional — unlocks ฿ allowance caps on the Tax Planning card),
+  `target_allocation` (policy mix % by asset class — **defaults were seeded from the
+  2026-07 actual mix; set to the client's real policy**), `drift_amber_pp`/`drift_red_pp`,
   `schedule_text`, `disclaimer`.
 - **Secret:** `SEC_OPENAPI_KEY` — the SEC "fund_api" (product `sec-openapi-normal`) key from
   https://secopendata.sec.or.th/. Set it in **both** places: the local launchd job reads
@@ -217,14 +227,15 @@ column** (Holdings + Tax) · **reliable scheduling via local launchd** (GitHub c
 to backstop) · **Overview "Today's Movement" card** (1D Δ + bucket breakdown, flow-aware
 attribution from `Cash Flows`) · **Top Movers "Today" toggle** (real per-holding 1-day moves
 via fetch-time prior prices, recency-gated) · **derived RMF Sellable Year** (rule-based from
-`client_birth_year` + first-RMF year; auto-filled on add, validated in `tax.py`).
+`client_birth_year` + first-RMF year; auto-filled on add, validated in `tax.py`) ·
+**target vs actual + rebalance signals** (Roadmap 2.1) · **Thai tax-allowance planner**
+(Roadmap 2.2: YTD vs caps, RMF continuity, year-end countdown) · **income view, flows-first**
+(Roadmap 2.3: T12M received + yield from `Cash Flows`).
 
-**Not done / next:**
-- **Authentication** (deferred) — the live URL is currently open; gate before sharing widely.
-- Allocation: **target vs actual + drift / rebalance flags**.
-- **Income & cash-flow** view (yield, projected income, distribution calendar).
-- Risk deepening (VaR, liquidity profile).
-- Actionability (contact RM, PDF statement, alerts); native shell.
+**Not done / next:** see **`ROADMAP.md`** (the 10x plan with acceptance criteria).
+Headlines: **authentication** (Phase 1.1 — live URL still open), tests + CI (1.2),
+alerting (1.3), multi-client (3.1), statement ingestion (3.2), VaR/stress (4.1),
+PDF statements (4.2), projected income via external yield data (2.3 follow-up).
 
 ---
 

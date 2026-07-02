@@ -6,6 +6,17 @@
   "client_ref": "PC-0001",
   "advisor": "",
   "client_birth_year": 1982,
+  "annual_income": null,
+  "target_allocation": {
+    "Equity": 85,
+    "Digital Assets": 4,
+    "Multi-Asset": 4,
+    "Fixed Income": 4,
+    "Alternatives": 2,
+    "Cash & Equivalents": 1
+  },
+  "drift_amber_pp": 3,
+  "drift_red_pp": 5,
   "currency_symbol": "฿",
   "timezone": "Asia/Bangkok",
   "benchmark": {"name": "MSCI ACWI (THB)", "symbol": "ACWI", "fx_symbol": "THB=X"},

@@ -7,6 +7,17 @@
     "client_ref": "PC-0001",
     "advisor": "",
     "client_birth_year": 1982,
+    "annual_income": null,
+    "target_allocation": {
+      "Equity": 85,
+      "Digital Assets": 4,
+      "Multi-Asset": 4,
+      "Fixed Income": 4,
+      "Alternatives": 2,
+      "Cash & Equivalents": 1
+    },
+    "drift_amber_pp": 3,
+    "drift_red_pp": 5,
     "currency_symbol": "\u0e3f",
     "timezone": "Asia/Bangkok",
     "benchmark": {
@@ -13675,7 +13686,7 @@
         17.33
       ]
     },
-    "generated_at": "2026-07-02 08:30 +07"
+    "generated_at": "2026-07-02 23:27"
   },
   "tax": {
     "as_of": "2026-07-02",
@@ -18097,7 +18108,32 @@
     ],
     "realized": [],
     "rmf_sellable_year": 2037,
-    "warnings": []
+    "warnings": [],
+    "planning": {
+      "wrappers": [
+        {
+          "wrapper": "RMF",
+          "ytd": 100000,
+          "cap": null,
+          "remaining": null,
+          "note": "cap shared with SSF/PVD/pension insurance"
+        },
+        {
+          "wrapper": "Thai ESG",
+          "ytd": 300000,
+          "cap": null,
+          "remaining": null,
+          "note": "separate from RMF pool"
+        }
+      ],
+      "income_configured": false,
+      "days_to_yearend": 182,
+      "q4": false,
+      "rmf_continuity": {
+        "status": "ok",
+        "message": "2026 contribution made"
+      }
+    }
   },
-  "generated_at": "2026-07-02 08:30 +07"
+  "generated_at": "2026-07-02 23:27"
 }

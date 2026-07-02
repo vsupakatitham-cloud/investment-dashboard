@@ -129,6 +129,32 @@ def compute(portfolio, wb):
     realized = _read_realized(wb)
     realized_ytd = sum(r["gain"] for r in realized if r["date"][:4] == str(cur_year))
 
+    # --- Tax-allowance planning (Phase 2.2) -------------------------------
+    # YTD purchases per tax-advantaged wrapper vs the annual deduction caps in
+    # tax_rules.WRAPPER_CAPS. Purchase dates come from the lots (per-lot holdings).
+    income = cfg.get("annual_income")
+    planning = {"wrappers": [], "income_configured": bool(income),
+                "days_to_yearend": (_dt.date(cur_year, 12, 31) - asof).days,
+                "q4": asof.month >= 10}
+    for wrap in tax_rules.WRAPPER_CAPS:
+        ytd = sum(h["invested_thb"] for h in portfolio["holdings"]
+                  if (h.get("tax_status") or "") == wrap
+                  and str(h.get("purchase_date") or "")[:4] == str(cur_year))
+        cap = tax_rules.allowance(wrap, income)
+        planning["wrappers"].append({
+            "wrapper": wrap, "ytd": round(ytd),
+            "cap": round(cap) if cap else None,
+            "remaining": round(cap - ytd) if cap else None,
+            "note": tax_rules.WRAPPER_CAPS[wrap]["note"],
+        })
+    rmf_years = [h["purchase_date"][:4] for h in portfolio["holdings"]
+                 if (h.get("tax_status") or "") == "RMF"
+                 and str(h.get("purchase_date") or "")[:4].isdigit()]
+    status, msg = tax_rules.rmf_continuity(rmf_years, cur_year)
+    planning["rmf_continuity"] = {"status": status, "message": msg}
+    if status == "at_risk":
+        warnings.append(f"RMF continuity: {msg}")
+
     # holding-period buckets (1yr split) — uniform from inception for now
     short = sum(l["value"] for l in lots if l["holding_days"] < 365)
     long = tot_val - short
@@ -152,4 +178,5 @@ def compute(portfolio, wb):
         "realized": realized,
         "rmf_sellable_year": rmf_sellable,
         "warnings": warnings,
+        "planning": planning,
     }
