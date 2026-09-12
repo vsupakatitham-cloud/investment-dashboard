@@ -1472,5 +1472,16 @@
     "eq_value": 4875143,
     "crypto_value": 1445970,
     "fx_rate": 33.1
+  },
+  {
+    "date": "2026-09-12",
+    "total_value": 26625745,
+    "total_invested": 22813729,
+    "total_pnl": 3812017,
+    "pnl_pct": 0.1671,
+    "mf_value": 18883007,
+    "eq_value": 4901488,
+    "crypto_value": 1458544,
+    "fx_rate": 33.04
   }
 ]
