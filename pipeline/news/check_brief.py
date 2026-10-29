@@ -2,26 +2,33 @@
 """
 check_brief.py — validate a Morning Brief draft before it is published.
 
-    python3 pipeline/news/check_brief.py news_work/<date>/draft.json
+    python3 pipeline/news/check_brief.py news_work/<date>/draft.json [--no-links]
 
 Checks the draft against the source policy (sources.json) and that day's
 context.json: every source is https and on the allowlist (never a blocked or
 'never' domain), 'primary' is only claimed for primary domains, trust labels
-match the sources given, holdings exist, lengths fit the design, and the text
-contains no trade advice, long quotations, links or markup.
+match the sources given, holdings exist, lengths fit the design, the text
+contains no trade advice, long quotations, links or markup, nothing is copied
+from example_draft.json on another day, and no link is dead (404/410 or an
+unknown host; skip that network check with --no-links).
 Exit 0 = publishable (warnings may print). Exit 1 = fix the listed errors.
 """
 from __future__ import annotations
 
 import json
 import re
+import socket
 import sys
+import urllib.error
+import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from urllib.parse import urlparse
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
 SOURCES = json.loads((HERE / "sources.json").read_text())
+EXAMPLE = HERE / "example_draft.json"
 
 DIRS = {"pos", "neg", "watch", "neutral"}
 VERIFY = {"primary", "multi", "single", "differ"}
@@ -220,7 +227,61 @@ class Checker:
                 self.sources(w, [e.get("source")] if e.get("source") else [])
         if not stories and not d.get("briefly"):
             self.warn("draft", "no stories or short items; fine on a quiet day, but double-check the searches ran")
+        self.not_the_example()
         return self
+
+    def not_the_example(self):
+        """example_draft.json shows the format only; on any other day its links and headlines are stale."""
+        try:
+            ex = json.loads(EXAMPLE.read_text())
+        except (OSError, ValueError):
+            return
+        if ex.get("edition_date") == self.d.get("edition_date"):
+            return
+        urls, heads = set(), set()
+        for item in ex.get("stories", []) + ex.get("briefly", []):
+            heads.add(item.get("headline"))
+            urls.update(s.get("url") for s in item.get("sources", []))
+            for r in item.get("related") or []:
+                urls.update(s.get("url") for s in r.get("sources", []))
+        for sec in ("stories", "briefly"):
+            for i, item in enumerate(self.d.get(sec) or []):
+                w = f"{sec}[{i}]"
+                if item.get("headline") in heads:
+                    self.err(w, "headline copied from example_draft.json; write today's own")
+                srcs = list(item.get("sources") or []) + [s for r in item.get("related") or [] for s in r.get("sources", [])]
+                for s in srcs:
+                    if (s or {}).get("url") in urls:
+                        self.err(w, f"link reused from example_draft.json ({ex.get('edition_date')} news): {s['url'][:80]}")
+
+
+def all_links(draft: dict) -> list[str]:
+    urls = []
+    for sec in ("stories", "briefly", "radar"):
+        for item in draft.get(sec) or []:
+            urls += [s.get("url") for s in item.get("sources") or []]
+            for r in item.get("related") or []:
+                urls += [s.get("url") for s in r.get("sources") or []]
+    urls += [e["source"].get("url") for e in draft.get("new_events") or [] if e.get("source")]
+    return [u for u in dict.fromkeys(urls) if u and u.startswith("https://")]
+
+
+def dead_links(urls: list[str], timeout: int = 15) -> list[tuple[str, str]]:
+    """Links that are definitely gone: 404/410 or a host that doesn't resolve.
+    Bot blocks (401/403/429), paid gateways and timeouts are inconclusive and pass."""
+    def probe(u):
+        try:
+            req = urllib.request.Request(u, headers={"User-Agent": "Mozilla/5.0 (compatible; THInvestmentBrief/1.0; link check)"})
+            with urllib.request.urlopen(req, timeout=timeout):
+                return None
+        except urllib.error.HTTPError as e:
+            return (u, f"HTTP {e.code}") if e.code in (404, 410) else None
+        except urllib.error.URLError as e:
+            return (u, "host not found") if isinstance(e.reason, socket.gaierror) else None
+        except Exception:
+            return None
+    with ThreadPoolExecutor(8) as ex:
+        return [x for x in ex.map(probe, urls) if x]
 
 
 def check(draft: dict, ctx: dict) -> Checker:
@@ -228,15 +289,19 @@ def check(draft: dict, ctx: dict) -> Checker:
 
 
 def main():
-    if len(sys.argv) != 2:
+    args = [a for a in sys.argv[1:] if a != "--no-links"]
+    if len(args) != 1:
         print(__doc__)
         return 2
-    path = Path(sys.argv[1])
+    path = Path(args[0])
     draft = json.loads(path.read_text())
     ctx_path = ROOT / "news_work" / draft.get("edition_date", "") / "context.json"
     if not ctx_path.exists():
         ctx_path = path.parent / "context.json"
     c = check(draft, json.loads(ctx_path.read_text()))
+    if "--no-links" not in sys.argv:
+        for url, why in dead_links(all_links(draft)):
+            c.err("link", f"{why}: {url[:90]} (fix or drop this source)")
     for w in c.warnings:
         print("warning:", w)
     for e in c.errors:

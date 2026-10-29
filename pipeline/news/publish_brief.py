@@ -102,13 +102,18 @@ def date_bits(iso, edition):
 def build(draft, ctx, status):
     book = Book(ctx)
     edition = dt.date.fromisoformat(ctx["edition_date"])
-    mentioned, outlets = set(), set()
+    mentioned, outlets = set(), {}
+
+    def note(srcs):  # host -> display name, for the "N sources" stat and the outlet list
+        for s in srcs:
+            h = check_brief.host_of(s["url"])
+            outlets.setdefault(h, SOURCES["outlet_names"].get(h) or s["name"])
 
     def item_common(x):
         pct, names = book.exposure(x)
         mentioned.update(book.covered(x))
         srcs = source_list(x.get("sources"))
-        outlets.update(check_brief.host_of(s["url"]) for s in srcs)
+        note(srcs)
         return pct, names, srcs
 
     top3 = []
@@ -124,7 +129,7 @@ def build(draft, ctx, status):
         related = []
         for r in s.get("related") or []:
             rs = source_list(r.get("sources"))
-            outlets.update(check_brief.host_of(x["url"]) for x in rs)
+            note(rs)
             related.append({"label": r["label"], "headline": r["headline"], "text": r["text"], "sources": rs})
         stories.append({
             "id": s["id"], "group": s.get("group") or (book.h[names[0]]["group"] if names else ""),
@@ -145,7 +150,7 @@ def build(draft, ctx, status):
     radar = []
     for r in draft.get("radar", []):
         rs = source_list(r.get("sources"))
-        outlets.update(check_brief.host_of(x["url"]) for x in rs)
+        note(rs)
         radar.append({"topic": r["topic"], "text": r["text"], "notes": radar_notes.get(r["topic"], []), "sources": rs})
 
     # calendar: verified events from calendar.json plus today's new ones
@@ -175,7 +180,6 @@ def build(draft, ctx, status):
     words = sum(len((x.get("lead", "") + " " + x.get("text", "")).split()) for x in top3) + \
         sum(len((s["what"] + " " + s["why"]).split()) for s in stories) + sum(len(b["text"].split()) for b in briefly)
     primary_checked = sum(1 for x in stories + briefly if x["verify"] == "primary")
-    names = {h: SOURCES["outlet_names"].get(h, h) for h in outlets}
     m = ctx["markets"]
     tiles = [{"label": t["label"], "value": t["value_text"], "change": t["change_text"], "dir": t.get("dir", "neutral"),
               "asof_date": t.get("asof_date"), "window": t.get("window"),
@@ -190,7 +194,7 @@ def build(draft, ctx, status):
         "window": ctx["window"], "portfolio_as_of": ctx["portfolio"]["as_of"],
         "read_minutes": max(2, round(words / 200)),
         "stats": {"stories": len(stories), "short_items": len(briefly), "outlets": len(outlets),
-                  "outlet_names": sorted(set(names.values())), "primary_checked": primary_checked},
+                  "outlet_names": sorted(set(outlets.values())), "primary_checked": primary_checked},
         "markets": {"tiles": tiles, "early": early, "fetched_at": m.get("fetched_at")},
         "top3": top3, "also": draft.get("also", []), "stories": stories, "briefly": briefly,
         "upcoming": upcoming, "radar": radar,

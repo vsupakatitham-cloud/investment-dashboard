@@ -24,6 +24,12 @@ it and publish it. Work in the repository checkout; every path below is relative
    sell, hold, trim, add, accumulate, price target or "you should".
 6. **Plain, calm English.** Short sentences. A reader should finish the 60-second brief in a
    minute.
+7. **The example is not news.** pipeline/news/example_draft.json is the 29 Oct 2026 edition,
+   kept only to show the format. Never reuse its facts, wording or links; on any other day the
+   check rejects its links and headlines.
+8. **Paid gateways.** If an outlet on the list sends you to a paid gateway instead of the page
+   (Bangkok Post redirects AI tools to TollBit), don't follow it. Use that story only when a
+   readable source on the list confirms it, and cite the one you read.
 
 ## Command discipline
 
@@ -78,7 +84,8 @@ something these commands don't cover, stop and say so in the report.
    - Holdings under 0.5% appear only for major events: results, deals, regulatory action.
 5. **Write** the draft with the Write tool (schema below; pipeline/news/example_draft.json is
    a full example).
-6. **Check.** Run the check command. Fix every ERROR and run it again until it prints OK.
+6. **Check.** Run the check command. Fix every ERROR and run it again until it prints OK. It
+   also opens every link: one that is gone (404) or on a host that doesn't exist is an error.
 7. **Publish.** Run the publish command. It writes docs/brief.json and the archive copy,
    commits "Morning brief — <date>" and pushes to GitHub Pages.
 8. **Report** in 4–6 lines, starting "Morning brief <date>: published" (or "NOT published —
