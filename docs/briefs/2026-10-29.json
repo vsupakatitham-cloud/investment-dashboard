@@ -2,37 +2,34 @@
  "schema": 1,
  "status": "live",
  "edition_date": "2026-10-29",
- "generated_at": "2026-10-29T10:41+07:00",
+ "generated_at": "2026-10-29T10:44+07:00",
  "window": {
   "from": "2026-10-28T06:00+07:00",
-  "to": "2026-10-29T10:41+07:00"
+  "to": "2026-10-29T10:43+07:00"
  },
  "portfolio_as_of": "2026-10-29",
  "read_minutes": 3,
  "stats": {
   "stories": 5,
-  "short_items": 4,
-  "outlets": 10,
+  "short_items": 1,
+  "outlets": 7,
   "outlet_names": [
-   "Bangkok Post",
-   "Bloomberg",
-   "CNBC",
+   "Bank of Thailand",
    "CoinDesk",
    "Federal Reserve",
    "Korea Herald",
    "Korea Times",
    "SEC EDGAR",
-   "The Nation",
-   "Vietnam News"
+   "investor.lilly.com"
   ],
-  "primary_checked": 4
+  "primary_checked": 3
  },
  "markets": {
   "tiles": [
    {
     "label": "SET",
-    "value": "1,551.51",
-    "change": "▼ 0.93%",
+    "value": "1,551.06",
+    "change": "▼ 0.96%",
     "dir": "neg",
     "asof_date": "2026-10-29",
     "window": "close",
@@ -41,8 +38,8 @@
    },
    {
     "label": "KOSPI",
-    "value": "5,861.16",
-    "change": "▼ 2.52%",
+    "value": "5,844.61",
+    "change": "▼ 2.79%",
     "dir": "neg",
     "asof_date": "2026-10-29",
     "window": "close",
@@ -61,8 +58,8 @@
    },
    {
     "label": "USD/THB",
-    "value": "33.72",
-    "change": "▲ 0.03%",
+    "value": "33.74",
+    "change": "▲ 0.09%",
     "dir": "neutral",
     "asof_date": "2026-10-29",
     "window": "close",
@@ -81,8 +78,8 @@
    },
    {
     "label": "VN-Index",
-    "value": "1,760.26",
-    "change": "▼ 0.36%",
+    "value": "1,760.82",
+    "change": "▼ 0.33%",
     "dir": "neg",
     "asof_date": "2026-10-29",
     "window": "close",
@@ -91,8 +88,8 @@
    },
    {
     "label": "Bitcoin",
-    "value": "$79,655",
-    "change": "▼ 1.98%",
+    "value": "$79,755",
+    "change": "▼ 1.85%",
     "dir": "neg",
     "asof_date": "2026-10-29",
     "window": "24h",
@@ -112,8 +109,8 @@
    {
     "label": "Gold",
     "value": "$4,052",
-    "change": "▲ 0.02%",
-    "dir": "pos",
+    "change": "—",
+    "dir": "neutral",
     "asof_date": "2026-10-28",
     "window": "24h",
     "exposure_label": "Your gold",
@@ -133,12 +130,12 @@
   "early": [
    {
     "label": "S&P 500 futures",
-    "change": "▼ 0.55%",
+    "change": "▼ 0.51%",
     "dir": "neg"
    },
    {
     "label": "Nasdaq-100 futures",
-    "change": "▼ 1.54%",
+    "change": "▼ 1.45%",
     "dir": "neg"
    },
    {
@@ -148,30 +145,30 @@
    },
    {
     "label": "KOSPI",
-    "change": "▼ 2.52%",
+    "change": "▼ 2.79%",
     "dir": "neg"
    }
   ],
-  "fetched_at": "2026-10-29T10:41+07:00"
+  "fetched_at": "2026-10-29T10:43+07:00"
  },
  "top3": [
   {
-   "lead": "Korea swings: up 6.6% on Wednesday, down 3% this morning.",
-   "text": "SK hynix’s record quarter lifted KOSPI past 6,000, then Samsung’s slightly-short results reversed part of it. SCBKEQTG is still priced at 26 Oct, so most of this week’s gain isn’t in your numbers yet.",
+   "lead": "Korea whipsawed: up 6.6% on Wednesday, down about 3% this morning.",
+   "text": "SK hynix's record quarter lifted the KOSPI above 6,000. Samsung's results then landed slightly below forecasts and the index gave back part of it. SCBKEQTG is still priced at its 26 Oct NAV, so most of this week's gain isn't in your numbers yet.",
    "dir": "watch",
    "exposure_pct": 17.1,
    "exposure_label": "Korea"
   },
   {
-   "lead": "The Fed held at 3.75–4.00%, but two officials wanted a hike.",
-   "text": "Futures now price a strong chance of a December increase, and the 10-year Treasury yield closed just above 5%.",
+   "lead": "The Fed held at 3.75–4.00%, with two officials wanting a hike.",
+   "text": "The vote was 10–2 and the statement calls inflation elevated. The 10-year Treasury yield closed at 5.04%, up 5 basis points.",
    "dir": "watch",
    "exposure_pct": 25.0,
    "exposure_label": "United States"
   },
   {
-   "lead": "Alphabet missed on revenue and profit, and US futures slipped.",
-   "text": "Its shares fell about 10% after hours; Nasdaq-100 futures were down about 1.5% this morning.",
+   "lead": "Alphabet missed on revenue, and US futures are lower.",
+   "text": "Its shares fell about 10% after hours. Nasdaq-100 futures are down 1.45% and S&P 500 futures 0.51% this morning.",
    "dir": "neg",
    "exposure_pct": 16.6,
    "exposure_label": "United States"
@@ -186,10 +183,10 @@
   {
    "id": "korea-swing",
    "group": "Korea",
-   "headline": "KOSPI gives back 3% after Wednesday’s 6.6% jump as Samsung’s quarter falls short",
+   "headline": "KOSPI gives back 3% after Wednesday's 6.6% jump as Samsung's quarter falls short",
    "when": "Wed 28 Oct to Thu 11:20 KST",
-   "what": "The KOSPI closed Wednesday at 6,012.44, up 6.63%, after SK hynix posted record quarterly revenue of ₩104.6 trillion and a 2026 shareholder-return plan worth more than ₩100 trillion. On Thursday it was down 3.0% by late morning after Samsung’s third-quarter results came in slightly below forecasts and its shares fell 6.6%; SK hynix edged up 0.4%.",
-   "why": "Korea is your largest exposure. Your dashboard still prices SCBKEQTG at its 26 Oct NAV, and the KOSPI is about 7% above that close even after today’s drop, so most of this week’s gain isn’t in your portfolio value yet. EWY, which you hold directly, rose 5.4% in New York on Wednesday.",
+   "what": "The KOSPI closed Wednesday at 6,012.44, up 6.63%, after SK hynix reported record quarterly revenue and operating profit and a 2026 shareholder-return programme above ₩100 trillion. On Thursday it was down 3.01% at 5,831.34 by 11:20 after Samsung's third-quarter results came in slightly below analyst expectations. Samsung shares fell 6.61%; SK hynix rose 0.4%.",
+   "why": "Korea is your largest exposure after the US and Thailand. This morning your dashboard prices SCBKEQTG at its 26 Oct NAV, and the KOSPI is about 6.9% above its level then, so most of this week's gain isn't in your portfolio value yet. The dashboard refreshes again at 11:30. EWY, which you hold directly, is already priced at today's level.",
    "dir": "watch",
    "impact": 3,
    "exposure_pct": 17.1,
@@ -204,7 +201,7 @@
     }
    ],
    "verify": "multi",
-   "verify_note": "Reported by 3 outlets",
+   "verify_note": "Reported by 2 outlets",
    "sources": [
     {
      "name": "Korea Herald",
@@ -219,20 +216,13 @@
      "tier": "regional",
      "primary": false,
      "paywall": false
-    },
-    {
-     "name": "CNBC",
-     "url": "https://www.cnbc.com/2026/10/29/samsung-electronics-third-quarter-earnings.html",
-     "tier": "major",
-     "primary": false,
-     "paywall": false
     }
    ],
    "related": [
     {
-     "label": "Samsung’s results",
-     "headline": "Record ₩107.4 trillion profit, slightly below forecasts; ₩30 trillion dividend approved",
-     "text": "Revenue was ₩195.3 trillion. Bloomberg reports the chip division’s profit missed estimates, and a CLSA analyst told Bloomberg the shares fell on a lack of buybacks. The ₩4,601-a-share dividend is paid on 27 Nov.",
+     "label": "Samsung's results",
+     "headline": "Record ₩107.4 trillion operating profit; ₩30 trillion dividend approved",
+     "text": "Revenue was ₩195.25 trillion and net profit ₩75.14 trillion. The board approved a ₩30 trillion cash dividend, payable on 27 Nov. Korea Herald says operating profit matched the preliminary figure Samsung gave on 8 Oct. CoinDesk adds that the chip unit's profit came in slightly below estimates.",
      "sources": [
       {
        "name": "Korea Herald",
@@ -242,15 +232,8 @@
        "paywall": false
       },
       {
-       "name": "Bloomberg",
-       "url": "https://www.bloomberg.com/news/articles/2026-10-29/samsung-chip-profit-misses-estimates-lifted-by-resurgent-ai-hope",
-       "tier": "major",
-       "primary": false,
-       "paywall": true
-      },
-      {
-       "name": "Korea Times",
-       "url": "https://www.koreatimes.co.kr/business/companies/20261029/samsung-electronics-q3-dividend-jumps-12-fold-totals-to-225-bil",
+       "name": "CoinDesk",
+       "url": "https://www.coindesk.com/markets/2026/10/29/bitcoin-dips-below-usd80-000-as-samsung-led-risk-aversion-in-tech-and-a-hawkish-fed-weigh-on-crypto",
        "tier": "regional",
        "primary": false,
        "paywall": false
@@ -275,8 +258,8 @@
    "group": "United States",
    "headline": "Fed holds at 3.75–4.00%; two officials voted for a hike",
    "when": "Wed 28 Oct · 14:00 ET",
-   "what": "The FOMC voted 10–2 to leave its target range unchanged. Governor Lisa Cook and Cleveland Fed President Beth Hammack wanted a quarter-point increase. The statement described inflation as elevated and growth as strong. The Fed raised rates in September for the first time since 2023.",
-   "why": "Futures now price a strong chance of another hike at the 8–9 December meeting, and the 10-year Treasury yield closed just above 5%. Higher US rates tend to weigh on share valuations and support the dollar against the baht. A quarter of your portfolio is in US assets.",
+   "what": "The FOMC voted 10–2 to leave its target range unchanged. Lisa Cook and Beth Hammack wanted a quarter-point increase. The statement says inflation remains elevated and economic activity is expanding at a strong pace. It says the Committee will gather more information before settling on the stance needed to return inflation to 2%.",
+   "why": "Higher US rates tend to weigh on share valuations and can support the dollar against the baht. The 10-year Treasury yield closed at 5.04%, up 5 basis points. About a quarter of your portfolio is in US assets, mostly through S&P 500 funds.",
    "dir": "watch",
    "impact": 3,
    "exposure_pct": 25.0,
@@ -290,20 +273,6 @@
      "tier": "primary",
      "primary": true,
      "paywall": false
-    },
-    {
-     "name": "CNBC",
-     "url": "https://www.cnbc.com/2026/10/28/fed-interest-rate-decision-october-2026.html",
-     "tier": "major",
-     "primary": false,
-     "paywall": false
-    },
-    {
-     "name": "Bloomberg",
-     "url": "https://www.bloomberg.com/news/articles/2026-10-28/key-takeaways-from-fed-decision-to-hold-rates-steady",
-     "tier": "major",
-     "primary": false,
-     "paywall": true
     }
    ],
    "related": [],
@@ -322,10 +291,10 @@
   {
    "id": "alphabet-miss",
    "group": "United States",
-   "headline": "Alphabet misses on revenue and profit; its shares fall about 10% after hours",
+   "headline": "Alphabet misses on revenue; its shares fall about 10% after hours",
    "when": "Wed 28 Oct · after the US close",
-   "what": "Third-quarter revenue was $127.6 billion against $128.2 billion expected, and Search revenue of $63.4 billion also fell short. Cloud revenue doubled, but free cash flow turned negative at $9.1 billion as capital spending reached $51.4 billion. Analysts quoted by CNBC called it the first miss on both revenue and earnings in nearly four years.",
-   "why": "You don’t hold Alphabet directly. It is one of the largest companies in the S&P 500, which ES-US500RMF tracks through the iShares Core S&P 500 ETF. Nasdaq-100 futures were down about 1.5% and S&P 500 futures about 0.5% this morning.",
+   "what": "Third-quarter revenue was $127.6 billion, up 25%. Search and other revenue was $63.4 billion, up 12%, and Cloud revenue was $30.7 billion, up 103%. Free cash flow was negative $9.1 billion as capital spending reached $51.4 billion. CNBC reports revenue was below analysts' expectations of about $128.2 billion.",
+   "why": "You don't hold Alphabet directly. It is among the largest companies in the S&P 500, which ES-US500RMF tracks. Nasdaq-100 futures are down 1.45% and S&P 500 futures 0.51% this morning.",
    "dir": "neg",
    "impact": 2,
    "exposure_pct": 16.6,
@@ -340,20 +309,13 @@
     }
    ],
    "verify": "primary",
-   "verify_note": "Figures match Alphabet’s SEC filing",
+   "verify_note": "Figures checked in Alphabet's SEC filing",
    "sources": [
     {
      "name": "Alphabet 8-K",
      "url": "https://www.sec.gov/Archives/edgar/data/0001652044/000165204426000080/googexhibit991q32026.htm",
      "tier": "primary",
      "primary": true,
-     "paywall": false
-    },
-    {
-     "name": "CNBC",
-     "url": "https://www.cnbc.com/2026/10/28/alphabet-googl-earnings-q3-2026.html",
-     "tier": "major",
-     "primary": false,
      "paywall": false
     }
    ],
@@ -373,37 +335,23 @@
   {
    "id": "bot-hold",
    "group": "Thailand",
-   "headline": "Bank of Thailand holds at 1.00% and raises its growth forecast",
+   "headline": "Bank of Thailand holds at 1.00% and sees stronger growth",
    "when": "Wed 28 Oct",
-   "what": "The Monetary Policy Committee kept the policy rate at 1.00%. It raised its 2026 growth forecast to 2.4% (2.1% for 2027), citing exports and investment tied to the AI cycle, and warned that inflation could overshoot its 2.1% forecast because of energy costs and the war in the Middle East.",
-   "why": "A hold was widely expected, so little changes for your Thai bond funds (3.7%) today. The bank also noted a weaker baht, driven by US policy expectations and oil prices.",
+   "what": "The Monetary Policy Committee voted unanimously to keep the policy rate at 1.00%; one member was absent. It expects growth of 2.4% in 2026 and 2.1% in 2027, helped by exports and investment tied to technology and AI. Headline inflation is forecast at 2.1% in 2026 and should rise into early 2027 because of energy prices and El Niño.",
+   "why": "A hold was widely expected, so little changes for your Thai funds today. The bank notes the baht has weakened as markets expect tighter US policy, and that Thai government bond yields have edged up. Thailand is 23.8% of your portfolio.",
    "dir": "neutral",
    "impact": 2,
    "exposure_pct": 23.8,
    "holdings": [],
-   "verify": "multi",
-   "verify_note": "Reported by 3 outlets",
+   "verify": "primary",
+   "verify_note": "Checked against the Bank of Thailand decision",
    "sources": [
     {
-     "name": "The Nation",
-     "url": "https://www.nationthailand.com/business/economy/40072832",
-     "tier": "regional",
-     "primary": false,
+     "name": "Bank of Thailand",
+     "url": "https://www.bot.or.th/en/news-and-media/news/mpc/news-20261028-5FWvBPSf.html",
+     "tier": "primary",
+     "primary": true,
      "paywall": false
-    },
-    {
-     "name": "Bangkok Post",
-     "url": "https://www.bangkokpost.com/business/general/3345184/bank-of-thailand-keeps-interest-rate-unchanged",
-     "tier": "regional",
-     "primary": false,
-     "paywall": false
-    },
-    {
-     "name": "Bloomberg",
-     "url": "https://www.bloomberg.com/news/articles/2026-10-28/thailand-holds-key-rate-as-high-energy-costs-weigh-on-economy",
-     "tier": "major",
-     "primary": false,
-     "paywall": true
     }
    ],
    "related": [],
@@ -422,10 +370,10 @@
   {
    "id": "bitcoin-80k",
    "group": "Crypto",
-   "headline": "Bitcoin slips back below $80,000 after the Fed decision",
-   "when": "Wed 28 Oct to Thu morning",
-   "what": "Bitcoin traded just above $81,000 around the Fed decision and was near $79,800 this morning, down about 1.7% over 24 hours. Ether and BNB also fell.",
-   "why": "A modest move for the 6% of your portfolio held in crypto, most of it in Bitcoin.",
+   "headline": "Bitcoin slips below $80,000 as tech jitters and the Fed weigh",
+   "when": "Thu morning, Asian session",
+   "what": "Bitcoin fell from above $81,700 to about $79,800, erasing a two-day rebound. CoinDesk points to the Asian tech sell-off after Samsung's results and the Fed's hold with inflation above target. About $356 million of futures were liquidated over 24 hours. Ether was near $2,305.",
+   "why": "Crypto is about 6% of your portfolio, mostly Bitcoin. Our market data shows Bitcoin down 1.85% over 24 hours.",
    "dir": "neg",
    "impact": 1,
    "exposure_pct": 6.0,
@@ -435,7 +383,7 @@
    "sources": [
     {
      "name": "CoinDesk",
-     "url": "https://www.coindesk.com/business/2026/10/28/live-updates-bitcoin-climbs-above-usd81-000-as-majors-rally-ahead-of-fed-decision",
+     "url": "https://www.coindesk.com/markets/2026/10/29/bitcoin-dips-below-usd80-000-as-samsung-led-risk-aversion-in-tech-and-a-hawkish-fed-weigh-on-crypto",
      "tier": "regional",
      "primary": false,
      "paywall": false
@@ -457,100 +405,18 @@
  ],
  "briefly": [
   {
-   "headline": "Brent stays above $110 on Iran tensions",
-   "text": "CNBC reports Brent settled 1.3% higher at $115.32 on Wednesday, while Bloomberg reported prices dipping on signs of fresh diplomacy with Iran. The Bank of Thailand cited energy costs as an inflation risk.",
-   "exposure_pct": 23.8,
-   "exposure_label": "Thailand",
-   "verify": "differ",
-   "verify_note": "Sources differ",
-   "sources": [
-    {
-     "name": "CNBC",
-     "url": "https://www.cnbc.com/2026/10/28/oil-price-today-wti-brent-hormuz.html",
-     "tier": "major",
-     "primary": false,
-     "paywall": false
-    },
-    {
-     "name": "Bloomberg",
-     "url": "https://www.bloomberg.com/news/articles/2026-10-28/oil-declines-as-traders-parse-signs-of-fresh-diplomacy-on-iran",
-     "tier": "major",
-     "primary": false,
-     "paywall": true
-    }
-   ],
-   "set_links": []
-  },
-  {
-   "headline": "VN-Index edged up 0.27% to 1,766.65 on Wednesday",
-   "text": "Banks led the gain while foreign investors stayed net sellers.",
-   "exposure_pct": 6.1,
-   "exposure_label": "Vietnam",
+   "headline": "Eli Lilly reports third-quarter results today",
+   "text": "Lilly's investor site confirms results and a call today. The numbers weren't out when this brief was written.",
+   "exposure_pct": 8.1,
+   "exposure_label": "Healthcare",
    "verify": "single",
-   "verify_note": "Single source",
+   "verify_note": "Company announcement of the date",
    "sources": [
     {
-     "name": "Vietnam News",
-     "url": "https://vietnamnews.vn/economy/1803085/vn-index-ticks-up-as-banking-stocks-support-market.html",
-     "tier": "regional",
+     "name": "Lilly IR",
+     "url": "https://investor.lilly.com/news-releases/news-release-details/lilly-confirms-date-and-conference-call-third-quarter-2026",
+     "tier": "primary",
      "primary": false,
-     "paywall": false
-    }
-   ],
-   "set_links": []
-  },
-  {
-   "headline": "Meta’s ~$95 billion AI-funding share sale moves ahead",
-   "text": "CNBC reported on 26 Oct that Meta launched a stock offering of about $95 billion to fund AI expansion. Prospectus supplements were filed with the SEC on 26 and 28 Oct.",
-   "exposure_pct": 1.2,
-   "exposure_label": "META",
-   "verify": "primary",
-   "verify_note": "SEC filings checked",
-   "sources": [
-    {
-     "name": "CNBC",
-     "url": "https://www.cnbc.com/2026/10/26/meta-stock-offering-ai.html",
-     "tier": "major",
-     "primary": false,
-     "paywall": false
-    },
-    {
-     "name": "SEC filing",
-     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526436410/d94886d424b5.htm",
-     "tier": "primary",
-     "primary": true,
-     "paywall": false
-    }
-   ],
-   "set_links": []
-  },
-  {
-   "headline": "Five of your smaller US stocks filed quarterly results",
-   "text": "Teradyne, Fortinet, Universal Display, KLA and Enphase filed results with the SEC on 27–28 Oct. Together they are under 0.5% of your portfolio; the filings are linked here.",
-   "exposure_pct": 0.4,
-   "exposure_label": "TER, FTNT",
-   "verify": "primary",
-   "verify_note": "Filed with the SEC",
-   "sources": [
-    {
-     "name": "Teradyne 8-K",
-     "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526434981/ter-20261027.htm",
-     "tier": "primary",
-     "primary": true,
-     "paywall": false
-    },
-    {
-     "name": "Fortinet 8-K",
-     "url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203926000024/ftnt-20261028.htm",
-     "tier": "primary",
-     "primary": true,
-     "paywall": false
-    },
-    {
-     "name": "KLA 8-K",
-     "url": "https://www.sec.gov/Archives/edgar/data/319201/000031920126000032/klac-20261028.htm",
-     "tier": "primary",
-     "primary": true,
      "paywall": false
     }
    ],
@@ -664,13 +530,8 @@
  "radar": [],
  "quiet": [
   {
-   "name": "K-GHRMF",
-   "weight": 4.8,
-   "set_url": null
-  },
-  {
-   "name": "BCARERMF",
-   "weight": 2.9,
+   "name": "K-VIETNAMRMF",
+   "weight": 4.6,
    "set_url": null
   },
   {
@@ -691,6 +552,11 @@
   {
    "name": "Janus Henderson Horizon Global Property Equities Fund A3q (SGD)",
    "weight": 1.1,
+   "set_url": null
+  },
+  {
+   "name": "LionGlobal Vietnam Fund Class A (SGD)",
+   "weight": 1.0,
    "set_url": null
   },
   {
@@ -804,7 +670,7 @@
    "nav_date": "2026-10-26",
    "proxy_symbol": "^KS11",
    "proxy_last_date": "2026-10-29",
-   "proxy_move_since_nav": 0.0716
+   "proxy_move_since_nav": 0.0686
   }
  ],
  "method": {
