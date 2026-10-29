@@ -1,0 +1,14 @@
+{
+  "_about": "Verified upcoming events for the Morning Brief's 'Coming up' list. Each event needs a source on the allowlist, except fixed public dates (kind 'fixed'). The morning task adds events it has verified; past events are skipped automatically. time_bkt is Bangkok time; holdings or group decide the exposure shown.",
+  "events": [
+    {"date": "2026-10-29", "time_bkt": "21:00", "title": "Eli Lilly Q3 results call", "detail": "Results come out before the US open", "holdings": ["LLY", "K-GHRMF", "BCARERMF"], "kind": "earnings",
+     "source": {"name": "Lilly IR", "url": "https://investor.lilly.com/news-releases/news-release-details/lilly-confirms-date-and-conference-call-third-quarter-2026"}},
+    {"date": "2026-11-03", "time_bkt": "05:00", "title": "Apple FY26 Q4 results", "detail": "Mon 2 Nov, 17:00 ET", "holdings": ["AAPL"], "kind": "earnings",
+     "source": {"name": "Apple IR", "url": "https://investor.apple.com/investor-relations/event-details/2026/FY-26-Fourth-Quarter-Results/default.aspx"}},
+    {"date": "2026-11-03", "time_bkt": "", "title": "US midterm elections", "detail": "Polls close on Wednesday morning, Bangkok time", "group": "United States", "kind": "fixed", "source": null},
+    {"date": "2026-11-27", "time_bkt": "", "title": "Samsung pays its ₩30 trillion dividend", "detail": "₩4,601 a share", "group": "Korea", "kind": "dividend",
+     "source": {"name": "Korea Herald", "url": "https://www.koreaherald.com/article/10918617"}},
+    {"date": "2026-12-10", "time_bkt": "02:00", "title": "Fed decision and new projections", "detail": "Wed 9 Dec, 14:00 ET", "group": "United States", "kind": "central-bank",
+     "source": {"name": "Federal Reserve", "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"}}
+  ]
+}

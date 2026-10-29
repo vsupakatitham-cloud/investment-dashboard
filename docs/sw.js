@@ -1,13 +1,13 @@
 /* Service worker — offline shell for the TH Investment dashboard.
-   App shell + Chart.js (CDN, opaque) are cache-first; data.json / benchmark.json
-   are network-first (fresh when online, cached fallback offline). */
-const VERSION = "thw-v1";
+   App shell + Chart.js (CDN, opaque) are cache-first; data.json / benchmark.json /
+   brief.json and briefs/ are network-first (fresh when online, cached fallback offline). */
+const VERSION = "thw-v2";
 const SHELL = [
   "./index.html", "./manifest.webmanifest",
   "./icon-192.png", "./icon-512.png", "./apple-touch-icon.png",
   "https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js",
 ];
-const DATA = ["data.json", "benchmark.json", "history.json"];
+const DATA = ["data.json", "benchmark.json", "history.json", "brief.json"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(VERSION).then(c =>
@@ -24,7 +24,8 @@ self.addEventListener("activate", e => {
 self.addEventListener("fetch", e => {
   const req = e.request;
   if (req.method !== "GET") return;
-  const isData = DATA.some(d => req.url.endsWith(d));
+  // briefs/ holds the Morning Brief archive; like the data files it must never be served stale
+  const isData = DATA.some(d => req.url.endsWith(d)) || req.url.includes("/briefs/");
   if (isData) {
     // network-first for data, fall back to cache when offline
     e.respondWith(

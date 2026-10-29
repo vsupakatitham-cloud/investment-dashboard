@@ -1,0 +1,124 @@
+{
+  "edition_date": "2026-10-29",
+  "top3": [
+    {"lead": "Korea swings: up 6.6% on Wednesday, down 3% this morning.",
+     "text": "SK hynix’s record quarter lifted KOSPI past 6,000, then Samsung’s slightly-short results reversed part of it. SCBKEQTG is still priced at 26 Oct, so most of this week’s gain isn’t in your numbers yet.",
+     "holdings": ["SCBKEQTG", "EWY"], "group": "Korea", "dir": "watch"},
+    {"lead": "The Fed held at 3.75–4.00%, but two officials wanted a hike.",
+     "text": "Futures now price a strong chance of a December increase, and the 10-year Treasury yield closed just above 5%.",
+     "group": "United States", "dir": "watch"},
+    {"lead": "Alphabet missed on revenue and profit, and US futures slipped.",
+     "text": "Its shares fell about 10% after hours; Nasdaq-100 futures were down about 1.5% this morning.",
+     "holdings": ["ES-US500RMF", "K-USA-A(D)"], "group": "United States", "dir": "neg"}
+  ],
+  "also": ["Bank of Thailand held at 1.00%", "Eli Lilly reports today, call at 21:00", "Apple reports Tue 3 Nov, 05:00"],
+  "stories": [
+    {
+      "id": "korea-swing", "group": "Korea", "holdings": ["SCBKEQTG", "EWY"],
+      "headline": "KOSPI gives back 3% after Wednesday’s 6.6% jump as Samsung’s quarter falls short",
+      "when": "Wed 28 Oct to Thu 11:20 KST",
+      "what": "The KOSPI closed Wednesday at 6,012.44, up 6.63%, after SK hynix posted record quarterly revenue of ₩104.6 trillion and a 2026 shareholder-return plan worth more than ₩100 trillion. On Thursday it was down 3.0% by late morning after Samsung’s third-quarter results came in slightly below forecasts and its shares fell 6.6%; SK hynix edged up 0.4%.",
+      "why": "Korea is your largest exposure. Your dashboard still prices SCBKEQTG at its 26 Oct NAV, and the KOSPI is about 7% above that close even after today’s drop, so most of this week’s gain isn’t in your portfolio value yet. EWY, which you hold directly, rose 5.4% in New York on Wednesday.",
+      "dir": "watch", "impact": 3, "verify": "multi", "verify_note": "Reported by 3 outlets",
+      "sources": [
+        {"name": "Korea Herald", "url": "https://www.koreaherald.com/article/10918082"},
+        {"name": "Korea Times", "url": "https://www.koreatimes.co.kr/economy/20261029/seoul-stocks-down-3-late-thursday-morning-after-weaker-than-expected-samsung-earnings"},
+        {"name": "CNBC", "url": "https://www.cnbc.com/2026/10/29/samsung-electronics-third-quarter-earnings.html"}
+      ],
+      "related": [
+        {"label": "Samsung’s results",
+         "headline": "Record ₩107.4 trillion profit, slightly below forecasts; ₩30 trillion dividend approved",
+         "text": "Revenue was ₩195.3 trillion. Bloomberg reports the chip division’s profit missed estimates, and a CLSA analyst told Bloomberg the shares fell on a lack of buybacks. The ₩4,601-a-share dividend is paid on 27 Nov.",
+         "sources": [
+           {"name": "Korea Herald", "url": "https://www.koreaherald.com/article/10918617"},
+           {"name": "Bloomberg", "url": "https://www.bloomberg.com/news/articles/2026-10-29/samsung-chip-profit-misses-estimates-lifted-by-resurgent-ai-hope"},
+           {"name": "Korea Times", "url": "https://www.koreatimes.co.kr/business/companies/20261029/samsung-electronics-q3-dividend-jumps-12-fold-totals-to-225-bil"}
+         ]}
+      ],
+      "search": "Samsung KOSPI"
+    },
+    {
+      "id": "fed-hold", "group": "United States",
+      "headline": "Fed holds at 3.75–4.00%; two officials voted for a hike",
+      "when": "Wed 28 Oct · 14:00 ET",
+      "what": "The FOMC voted 10–2 to leave its target range unchanged. Governor Lisa Cook and Cleveland Fed President Beth Hammack wanted a quarter-point increase. The statement described inflation as elevated and growth as strong. The Fed raised rates in September for the first time since 2023.",
+      "why": "Futures now price a strong chance of another hike at the 8–9 December meeting, and the 10-year Treasury yield closed just above 5%. Higher US rates tend to weigh on share valuations and support the dollar against the baht. A quarter of your portfolio is in US assets.",
+      "dir": "watch", "impact": 3, "verify": "primary", "verify_note": "Checked against the FOMC statement",
+      "sources": [
+        {"name": "Federal Reserve", "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm", "primary": true},
+        {"name": "CNBC", "url": "https://www.cnbc.com/2026/10/28/fed-interest-rate-decision-october-2026.html"},
+        {"name": "Bloomberg", "url": "https://www.bloomberg.com/news/articles/2026-10-28/key-takeaways-from-fed-decision-to-hold-rates-steady"}
+      ],
+      "search": "Federal Reserve rates"
+    },
+    {
+      "id": "alphabet-miss", "group": "United States", "holdings": ["ES-US500RMF", "K-USA-A(D)"],
+      "headline": "Alphabet misses on revenue and profit; its shares fall about 10% after hours",
+      "when": "Wed 28 Oct · after the US close",
+      "what": "Third-quarter revenue was $127.6 billion against $128.2 billion expected, and Search revenue of $63.4 billion also fell short. Cloud revenue doubled, but free cash flow turned negative at $9.1 billion as capital spending reached $51.4 billion. Analysts quoted by CNBC called it the first miss on both revenue and earnings in nearly four years.",
+      "why": "You don’t hold Alphabet directly. It is one of the largest companies in the S&P 500, which ES-US500RMF tracks through the iShares Core S&P 500 ETF. Nasdaq-100 futures were down about 1.5% and S&P 500 futures about 0.5% this morning.",
+      "dir": "neg", "impact": 2, "verify": "primary", "verify_note": "Figures match Alphabet’s SEC filing",
+      "sources": [
+        {"name": "Alphabet 8-K", "url": "https://www.sec.gov/Archives/edgar/data/0001652044/000165204426000080/googexhibit991q32026.htm", "primary": true},
+        {"name": "CNBC", "url": "https://www.cnbc.com/2026/10/28/alphabet-googl-earnings-q3-2026.html"}
+      ],
+      "search": "Alphabet earnings"
+    },
+    {
+      "id": "bot-hold", "group": "Thailand",
+      "headline": "Bank of Thailand holds at 1.00% and raises its growth forecast",
+      "when": "Wed 28 Oct",
+      "what": "The Monetary Policy Committee kept the policy rate at 1.00%. It raised its 2026 growth forecast to 2.4% (2.1% for 2027), citing exports and investment tied to the AI cycle, and warned that inflation could overshoot its 2.1% forecast because of energy costs and the war in the Middle East.",
+      "why": "A hold was widely expected, so little changes for your Thai bond funds (3.7%) today. The bank also noted a weaker baht, driven by US policy expectations and oil prices.",
+      "dir": "neutral", "impact": 2, "verify": "multi", "verify_note": "Reported by 3 outlets",
+      "sources": [
+        {"name": "The Nation", "url": "https://www.nationthailand.com/business/economy/40072832"},
+        {"name": "Bangkok Post", "url": "https://www.bangkokpost.com/business/general/3345184/bank-of-thailand-keeps-interest-rate-unchanged"},
+        {"name": "Bloomberg", "url": "https://www.bloomberg.com/news/articles/2026-10-28/thailand-holds-key-rate-as-high-energy-costs-weigh-on-economy"}
+      ],
+      "search": "Bank of Thailand rate"
+    },
+    {
+      "id": "bitcoin-80k", "group": "Crypto",
+      "headline": "Bitcoin slips back below $80,000 after the Fed decision",
+      "when": "Wed 28 Oct to Thu morning",
+      "what": "Bitcoin traded just above $81,000 around the Fed decision and was near $79,800 this morning, down about 1.7% over 24 hours. Ether and BNB also fell.",
+      "why": "A modest move for the 6% of your portfolio held in crypto, most of it in Bitcoin.",
+      "dir": "neg", "impact": 1, "verify": "single", "verify_note": "Single news source · prices from market data",
+      "sources": [
+        {"name": "CoinDesk", "url": "https://www.coindesk.com/business/2026/10/28/live-updates-bitcoin-climbs-above-usd81-000-as-majors-rally-ahead-of-fed-decision"}
+      ],
+      "search": "bitcoin"
+    }
+  ],
+  "briefly": [
+    {"headline": "Brent stays above $110 on Iran tensions", "group": "Thailand",
+     "text": "CNBC reports Brent settled 1.3% higher at $115.32 on Wednesday, while Bloomberg reported prices dipping on signs of fresh diplomacy with Iran. The Bank of Thailand cited energy costs as an inflation risk.",
+     "verify": "differ", "verify_note": "Sources differ",
+     "sources": [
+       {"name": "CNBC", "url": "https://www.cnbc.com/2026/10/28/oil-price-today-wti-brent-hormuz.html"},
+       {"name": "Bloomberg", "url": "https://www.bloomberg.com/news/articles/2026-10-28/oil-declines-as-traders-parse-signs-of-fresh-diplomacy-on-iran"}
+     ]},
+    {"headline": "VN-Index edged up 0.27% to 1,766.65 on Wednesday", "group": "Vietnam",
+     "text": "Banks led the gain while foreign investors stayed net sellers.",
+     "verify": "single", "verify_note": "Single source",
+     "sources": [{"name": "Vietnam News", "url": "https://vietnamnews.vn/economy/1803085/vn-index-ticks-up-as-banking-stocks-support-market.html"}]},
+    {"headline": "Meta’s ~$95 billion AI-funding share sale moves ahead", "holdings": ["META"],
+     "text": "CNBC reported on 26 Oct that Meta launched a stock offering of about $95 billion to fund AI expansion. Prospectus supplements were filed with the SEC on 26 and 28 Oct.",
+     "verify": "primary", "verify_note": "SEC filings checked",
+     "sources": [
+       {"name": "CNBC", "url": "https://www.cnbc.com/2026/10/26/meta-stock-offering-ai.html"},
+       {"name": "SEC filing", "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526436410/d94886d424b5.htm", "primary": true}
+     ]},
+    {"headline": "Five of your smaller US stocks filed quarterly results", "holdings": ["TER", "FTNT", "OLED", "KLAC", "ENPH"],
+     "text": "Teradyne, Fortinet, Universal Display, KLA and Enphase filed results with the SEC on 27–28 Oct. Together they are under 0.5% of your portfolio; the filings are linked here.",
+     "verify": "primary", "verify_note": "Filed with the SEC",
+     "sources": [
+       {"name": "Teradyne 8-K", "url": "https://www.sec.gov/Archives/edgar/data/97210/000119312526434981/ter-20261027.htm", "primary": true},
+       {"name": "Fortinet 8-K", "url": "https://www.sec.gov/Archives/edgar/data/1262039/000126203926000024/ftnt-20261028.htm", "primary": true},
+       {"name": "KLA 8-K", "url": "https://www.sec.gov/Archives/edgar/data/319201/000031920126000032/klac-20261028.htm", "primary": true}
+     ]}
+  ],
+  "radar": [],
+  "new_events": []
+}

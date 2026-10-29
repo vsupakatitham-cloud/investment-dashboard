@@ -6,9 +6,11 @@ Outputs (into docs/, which GitHub Pages serves):
   * docs/history.json  : appended weekly time-series for the trend/performance views
   * docs/index.html    : branded, self-contained client dashboard (v2)
 
-v2 design: clean institutional light, tabbed sections (Overview / Allocation /
-Holdings / Performance / Risk), with concentration, currency and risk-posture
-analytics. The page embeds the snapshot inline so it renders as a local file and
+v2 design: clean institutional light, tabbed sections (Overview / Brief /
+Allocation / Holdings / Performance / Risk / Tax & Lots), with concentration,
+currency and risk-posture analytics. The Brief tab renders docs/brief.json, which
+the morning news job (pipeline/news/, scripts/morning_brief.sh) publishes
+separately; this build never writes it. The page embeds the snapshot inline so it renders as a local file and
 also re-fetches data.json so a hosted copy always shows the latest. Performance
 and week-over-week visuals use the REAL accumulating Weekly Snapshot history and
 degrade gracefully to a "history is building" state until a second point exists.
@@ -305,6 +307,129 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     .g4{grid-template-columns:1fr 1fr}
     .kpi .val{font-size:21px} .spark{display:none}
   }
+
+  /* ---- Morning Brief tab (docs/brief.json, written by the 06:30 news job) ---- */
+  .bf-m{font-size:12px;color:var(--muted)}
+  .bf-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px 24px;margin-bottom:14px}
+  .bf-eyebrow{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-2);font-weight:700}
+  .bf-title{margin:4px 0 5px;font-size:27px;line-height:1.15;font-weight:700;letter-spacing:-.02em}
+  .bf-stats{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:8px;font-size:12px;color:#3f474f}
+  .bf-stats b{font-weight:650}
+  .bf-ok{color:#0f5f3a;display:inline-flex;align-items:center;gap:5px}
+  .bf-ok svg,.bf-ver svg,.bf-flag svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+  .bf-btn{appearance:none;font:inherit;font-size:12.5px;font-weight:600;color:var(--ink);background:#fff;border:1px solid var(--border-2);border-radius:8px;padding:8px 12px;min-height:36px;cursor:pointer}
+  .bf-btn.primary{background:var(--accent);color:#fff;border-color:var(--accent);font-size:13.5px;padding:10px 16px;min-height:44px}
+  .bf-link{appearance:none;border:0;background:none;font:inherit;font-size:12px;font-weight:600;color:var(--accent-2);padding:0;cursor:pointer;text-decoration:underline}
+  .bf-banner{border:1px solid #efe3c8;background:#fbf7ee;color:#6b4f12;border-radius:8px;padding:9px 12px;font-size:13px;margin-bottom:14px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+  .bf-tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:10px}
+  .bf-tile{border:1px solid var(--border);border-radius:8px;padding:10px 11px;min-width:0}
+  .bf-tile .l{font-size:11.5px;color:var(--muted);font-weight:600;white-space:nowrap}
+  .bf-tile .v{font-size:17px;font-weight:650;letter-spacing:-.01em;margin-top:3px;white-space:nowrap}
+  .bf-tile .e{font-size:11px;line-height:1.35;color:var(--muted);margin-top:7px;border-top:1px dashed var(--border);padding-top:6px}
+  .bf-chg{display:inline-block;margin-top:5px;font-size:11.5px;font-weight:650;padding:1px 7px;border-radius:20px;white-space:nowrap}
+  .bf-chg.pos,.bf-dir.pos{color:var(--pos);background:var(--pos-bg)}
+  .bf-chg.neg,.bf-dir.neg{color:#b03a2e;background:var(--neg-bg)}
+  .bf-chg.neutral,.bf-dir.neutral{color:#4b545c;background:#f1f3f5}
+  .bf-dir.watch{color:#7a5a14;background:#fbf4e2}
+  .bf-early{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:12px;padding-top:12px;border-top:1px solid #eef0f2;font-size:12.5px;color:#3f474f}
+  .bf-early b.pos{color:var(--pos)} .bf-early b.neg{color:#b03a2e} .bf-early b.neutral{color:#4b545c}
+  .bf-cols{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}
+  .bf-main{flex:999 1 560px;min-width:0;display:flex;flex-direction:column;gap:16px}
+  .bf-side{flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:16px}
+  .bf-h2{margin:0;font-size:16px;font-weight:680;letter-spacing:-.01em}
+  .bf-bar{display:flex;justify-content:space-between;align-items:center;gap:6px 16px;flex-wrap:wrap}
+  .bf-top3{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:16px}
+  .bf-top3 li,.bf-teaser li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;align-items:start}
+  .bf-n{width:28px;height:28px;border-radius:8px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;font-size:13px}
+  .bf-top3 .t{font-size:15px;line-height:1.5}
+  .bf-top3 .t b{font-weight:680}
+  .bf-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:7px;align-items:center}
+  .bf-expo{font-size:11.5px;font-weight:600;color:#22292f;background:#f1f3f5;border:1px solid var(--border);border-radius:5px;padding:2px 7px;white-space:nowrap}
+  .bf-dir{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:650;padding:2px 8px;border-radius:20px;white-space:nowrap}
+  .bf-also{margin-top:16px;padding-top:12px;border-top:1px solid #eef0f2;font-size:13px;color:#3f474f;line-height:1.5}
+  .bf-also b{color:var(--ink);font-weight:650}
+  .bf-filters{display:flex;gap:8px;flex-wrap:wrap}
+  .bf-filters button{appearance:none;font:inherit;font-size:12.5px;font-weight:600;padding:7px 13px;min-height:36px;border-radius:20px;cursor:pointer;background:#fff;color:#3f474f;border:1px solid var(--border-2);white-space:nowrap}
+  .bf-filters button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .bf-story{padding:18px 20px}
+  .bf-top{display:flex;justify-content:space-between;gap:8px 14px;flex-wrap:wrap;align-items:center}
+  .bf-tags{display:flex;gap:8px;align-items:center;flex-wrap:wrap;min-width:0}
+  .bf-region{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;font-weight:700;color:var(--accent);background:var(--accent-tint);border-radius:5px;padding:3px 7px}
+  .bf-hold{font-size:12px;color:var(--muted)}
+  .bf-badges{display:flex;gap:12px;align-items:center}
+  .bf-imp{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;color:var(--muted);white-space:nowrap}
+  .bf-imp>span{display:inline-flex;gap:2px;align-items:flex-end}
+  .bf-imp i{display:block;width:4px;border-radius:1px;background:var(--border-2)}
+  .bf-imp i:nth-child(1){height:7px} .bf-imp i:nth-child(2){height:10px} .bf-imp i:nth-child(3){height:13px}
+  .bf-imp i.on{background:var(--accent-2)}
+  .bf-story .bf-hl{margin:10px 0 0;font-size:17px;line-height:1.3;font-weight:680;letter-spacing:-.01em}
+  .bf-meta{font-size:12px;color:var(--muted);margin-top:4px}
+  .bf-meta b{color:var(--ink);font-weight:650}
+  .bf-body{display:none}
+  .bf-story.open .bf-body{display:block}
+  .bf-what{margin:10px 0 0;font-size:14px;line-height:1.6;color:#22292f}
+  .bf-why{margin-top:12px;background:var(--accent-tint);border-radius:8px;padding:12px 14px}
+  .bf-why p{margin:0;font-size:13.5px;line-height:1.6;color:#1d2a25}
+  .bf-lbl{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;font-weight:700;color:var(--accent)}
+  .bf-lbl.m{color:var(--muted)}
+  .bf-ai{font-size:10.5px;letter-spacing:0;text-transform:none;font-weight:600;color:#2f4d42;border:1px solid #c3d6ce;border-radius:4px;padding:0 5px}
+  .bf-rel{margin-top:12px;border:1px solid var(--border);border-radius:8px;padding:12px 14px}
+  .bf-rel .h{font-size:14.5px;font-weight:650;line-height:1.35}
+  .bf-rel p{margin:4px 0 0;font-size:13.5px;line-height:1.6;color:#22292f}
+  .bf-srcs{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+  .bf-src{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;color:#22292f;text-decoration:none;border:1px solid var(--border-2);border-radius:6px;padding:4px 8px;background:#fff}
+  .bf-src:hover{border-color:var(--accent-2)}
+  .bf-src svg{width:11px;height:11px;stroke:#5f6870;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .bf-prim{font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#fff;background:var(--accent);border-radius:3px;padding:1px 4px}
+  .bf-foot{display:flex;justify-content:space-between;gap:8px 12px;flex-wrap:wrap;align-items:center;margin-top:12px;padding-top:12px;border-top:1px solid #eef0f2}
+  .bf-ver{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:var(--muted)}
+  .bf-ver.primary{color:#0f5f3a;font-weight:650} .bf-ver.differ{color:#7a5a14;font-weight:650}
+  .bf-find{margin-top:9px;font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 14px}
+  .bf-find a{color:var(--accent-2);font-weight:600}
+  .bf-tg{display:none}
+  .bf-list{list-style:none;margin:0;padding:0}
+  .bf-list>li{padding:12px 0;border-top:1px solid #eef0f2}
+  .bf-cal>li{display:grid;grid-template-columns:50px minmax(0,1fr);gap:12px}
+  .bf-date{text-align:center;border:1px solid var(--border);border-radius:8px;padding:5px 0;align-self:start}
+  .bf-date.today{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .bf-date .d1{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+  .bf-date .d2{font-size:17px;font-weight:700;line-height:1.1}
+  .bf-date .d3{font-size:10px;font-weight:600}
+  .bf-flag{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:650;padding:2px 7px;border-radius:4px;color:#4b545c;background:#f1f3f5;white-space:nowrap}
+  .bf-flag.primary{color:#0f5f3a;background:var(--pos-bg)} .bf-flag.differ{color:#7a5a14;background:#fbf4e2}
+  details.bf-det>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:40px}
+  details.bf-det>summary::-webkit-details-marker{display:none}
+  details.bf-det>summary::after{content:"";flex:0 0 auto;width:7px;height:7px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);margin:0 4px 4px 0;transition:transform .15s}
+  details.bf-det[open]>summary::after{transform:rotate(-135deg);margin-bottom:0}
+  .bf-pill{font-size:12px;border:1px solid var(--border);background:var(--surface-2);border-radius:6px;padding:3px 8px;color:var(--ink);text-decoration:none;display:inline-block}
+  a.bf-pill:hover{border-color:var(--accent-2)}
+  .bf-method{display:flex;flex-direction:column;gap:12px;margin-top:10px;font-size:13px;line-height:1.55;color:#22292f}
+  .bf-method .bf-chips{margin-top:4px}
+  .bf-legal{font-size:11.5px;color:var(--muted);line-height:1.6;margin-top:16px}
+  .bf-teaser{padding:16px 18px;display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;margin-bottom:16px}
+  .bf-teaser .tm{flex:999 1 560px;min-width:0}
+  .bf-teaser ol{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:12px 20px}
+  .bf-teaser li{flex:1 1 240px;min-width:0;grid-template-columns:24px minmax(0,1fr);gap:10px}
+  .bf-teaser .bf-n{width:24px;height:24px;border-radius:7px;font-size:12px}
+  .bf-teaser .cta{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+  .bf-sun{width:28px;height:28px;border-radius:8px;background:var(--accent-tint);color:var(--accent);display:grid;place-items:center}
+  .bf-sun svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .bdot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent-2);margin-left:6px;vertical-align:middle}
+  @media(max-width:640px){
+    .bf-title{font-size:23px}
+    .bf-tiles{display:flex;overflow-x:auto;gap:8px;padding-bottom:2px}
+    .bf-tile{flex:0 0 122px}
+    .bf-story{padding:14px 14px 4px}
+    .bf-story .bf-hl{font-size:16px}
+    .bf-seg{display:none}
+    .bf-filters{flex-wrap:nowrap;overflow-x:auto;margin:0 -14px;padding:0 14px 2px}
+    .bf-filters button{flex:0 0 auto;min-height:40px;font-size:13px}
+    .bf-src{padding:7px 9px;font-size:12.5px}
+    .bf-tg{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:10px;border-top:1px solid #eef0f2}
+    .bf-story.open .bf-tg .bf-ver{visibility:hidden}
+    .bf-toggle{flex:0 0 auto;appearance:none;border:0;background:none;font:inherit;font-size:13px;font-weight:650;color:var(--accent-2);min-height:44px;padding:0 0 0 10px;cursor:pointer}
+    .bf-teaser .cta{flex-basis:100%}
+  }
 </style>
 </head>
 <body>
@@ -323,6 +448,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 
 <div class="wrap">
   <section data-tab="Overview">
+    <div id="briefTeaser"></div>
     <div class="card movcard" id="dailyMove" style="margin-bottom:16px"></div>
     <div class="row g4" id="kpis" style="margin-bottom:16px"></div>
     <div class="row g23" style="margin-bottom:16px">
@@ -348,6 +474,8 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
       </div>
     </div>
   </section>
+
+  <section data-tab="Brief" hidden><div id="briefRoot"></div></section>
 
   <section data-tab="Allocation" hidden>
     <div class="row g3" style="margin-bottom:16px">
@@ -498,7 +626,7 @@ function boot(PAYLOAD){
   const FLOWS=PAYLOAD.flows||[];
   const hasHist=HIST.length>=2;
   const H={labels:HIST.map(h=>md(h.date)),value:HIST.map(h=>h.total_value),invested:HIST.map(h=>h.total_invested)};
-  const TABS=["Overview","Allocation","Holdings","Performance","Risk","Tax & Lots"];
+  const TABS=["Overview","Brief","Allocation","Holdings","Performance","Risk","Tax & Lots"];
 
   if(CFG.accent)document.documentElement.style.setProperty("--accent",CFG.accent);
   if(CFG.accent_soft)document.documentElement.style.setProperty("--accent-2",CFG.accent_soft);
@@ -542,18 +670,20 @@ function boot(PAYLOAD){
   const drawn={};
   const ICONS={
     "Overview":'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>',
+    "Brief":'<path d="M3 19h18"/><path d="M7 19a5 5 0 0 1 10 0"/><path d="M12 5v4"/><path d="m5.2 10.2 1.6 1.6"/><path d="m18.8 10.2-1.6 1.6"/>',
     "Allocation":'<circle cx="12" cy="12" r="9"/><path d="M12 12V3"/><path d="M12 12l7.5 5"/>',
     "Holdings":'<line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><circle cx="3.6" cy="6" r="1"/><circle cx="3.6" cy="12" r="1"/><circle cx="3.6" cy="18" r="1"/>',
     "Performance":'<path d="M3 17l5-6 4 3 6-9"/><path d="M3 21h18"/>',
     "Risk":'<path d="M12 3l8 3v6c0 5-3.6 8-8 9-4.4-1-8-4-8-9V6z"/>',
     "Tax & Lots":'<path d="M6 3h9l4 4v14H6z"/><path d="M9 10h6M9 14h6M9 18h4"/>'
   };
-  const BLABEL={"Overview":"Overview","Allocation":"Alloc.","Holdings":"Holdings","Performance":"Perf.","Risk":"Risk","Tax & Lots":"Tax"};
+  const BLABEL={"Overview":"Overview","Brief":"Brief","Allocation":"Alloc.","Holdings":"Holdings","Performance":"Perf.","Risk":"Risk","Tax & Lots":"Tax"};
   function selectTab(t){
     document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("active",x.dataset.t===t));
     document.querySelectorAll(".bottomnav button").forEach(x=>x.classList.toggle("active",x.dataset.t===t));
     document.querySelectorAll("section[data-tab]").forEach(s=>s.hidden=s.dataset.tab!==t);
     window.scrollTo(0,0);draw(t);
+    if(t==="Brief"&&BRIEF){setSeen(BRIEF.edition_date);markUnread();}
   }
   TABS.forEach((t,i)=>{
     const b=document.createElement("button");b.className="tab"+(i?"":" active");b.textContent=t;b.dataset.t=t;b.onclick=()=>selectTab(t);nav.appendChild(b);
@@ -877,6 +1007,7 @@ function boot(PAYLOAD){
     if(tab==="Performance"&&!drawn.pe){perfCharts();drawn.pe=1;}
     if(tab==="Risk"&&!drawn.ri){riskViews();drawn.ri=1;}
     if(tab==="Tax & Lots"&&!drawn.tx){renderTax();drawn.tx=1;}
+    if(tab==="Brief")renderBrief();
   }
 
   function renderTax(){
@@ -1039,6 +1170,176 @@ function boot(PAYLOAD){
       +'</tbody></table>';
   })();
 
+  // ---- Morning Brief: docs/brief.json, written each morning by the news job ----
+  // All brief text comes from outside sources via the news job, so it is escaped
+  // before it touches innerHTML and links must be plain https URLs.
+  const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const href=u=>/^https:\/\/[^\s"'<>]+$/.test(u||"")?esc(u):"#";
+  const bkkDate=()=>new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Bangkok"}).format(new Date());
+  const hhmm=iso=>(iso||"").slice(11,16);
+  const dayFmt=(iso,o)=>new Date(iso.slice(0,10)+"T12:00:00").toLocaleDateString("en-GB",o);
+  const longDay=iso=>dayFmt(iso,{weekday:"long",day:"numeric",month:"long"});
+  const shortDay=iso=>dayFmt(iso,{weekday:"short",day:"numeric",month:"short"});
+  const isPhone=()=>window.matchMedia("(max-width:640px)").matches;
+  const TONE={pos:["▲","Positive"],neg:["▼","Negative"],watch:["◆","Watch"],neutral:["–","Neutral"]};
+  const IMPACT={3:"High impact",2:"Medium impact",1:"Low impact"};
+  const TICK='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
+  const LOCK='<svg viewBox="0 0 24 24" role="img" aria-label="Paywalled"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>';
+  const SUN='<svg viewBox="0 0 24 24">'+ICONS["Brief"]+'</svg>';
+  let BRIEF, briefView=null, briefFilter="All", briefMode="Full", briefIdx=null;
+  const getSeen=()=>{try{return localStorage.getItem("thw-brief-seen")||"";}catch(e){return "";}};
+  const setSeen=d=>{try{localStorage.setItem("thw-brief-seen",d);}catch(e){}};
+  const tone=d=>TONE[d]?d:"neutral";
+  const dirTag=d=>`<span class="bf-dir ${tone(d)}">${TONE[tone(d)][0]} ${TONE[tone(d)][1]}</span>`;
+  const impTag=n=>`<span class="bf-imp"><span aria-hidden="true"><i class="${n>=1?'on':''}"></i><i class="${n>=2?'on':''}"></i><i class="${n>=3?'on':''}"></i></span>${IMPACT[n]||''}</span>`;
+  const srcs=list=>(list||[]).map(s=>`<a class="bf-src" href="${href(s.url)}" target="_blank" rel="noopener">${esc(s.name)}${s.primary?'<span class="bf-prim">Primary</span>':''}${s.paywall?LOCK:''}</a>`).join("");
+  const vcls=v=>v==="primary"||v==="differ"?v:"";
+  const verTag=x=>`<span class="bf-ver ${vcls(x.verify)}">${x.verify==="primary"?TICK:''}${esc(x.verify_note)}</span>`;
+  const flagTag=x=>`<span class="bf-flag ${vcls(x.verify)}">${x.verify==="primary"?TICK:''}${esc(x.verify_note)}</span>`;
+  const pct1=x=>x==null?"":Number(x).toFixed(1)+"%";
+  const expo=(label,pct)=>`<span class="bf-expo">${esc(label)}${pct!=null?' · '+pct1(pct):''}</span>`;
+
+  function storyCard(s,i){
+    const open=isPhone()?i===0:briefMode==="Full";
+    const hold=(s.holdings||[]).map(h=>`${esc(h.name)} ${h.weight}%`).join(" · ");
+    const find=(s.find||[]).map(f=>`<a href="${href(f.url)}" target="_blank" rel="noopener">${esc(f.name)}</a>`).join(" · ");
+    const set=(s.set_links||[]).map(l=>`<a href="${href(l.url)}" target="_blank" rel="noopener">${esc(l.symbol)}</a>`).join(" · ");
+    return `<article class="card bf-story${open?' open':''}">
+      <div class="bf-top"><div class="bf-tags"><span class="bf-region">${esc(s.group)}</span><span class="bf-hold">${hold}</span></div>
+        <div class="bf-badges">${dirTag(s.dir)}${impTag(s.impact)}</div></div>
+      <h3 class="bf-hl">${esc(s.headline)}</h3>
+      <div class="bf-meta">${s.when?esc(s.when)+' · ':''}touches <b>${pct1(s.exposure_pct)}</b> of your portfolio</div>
+      <div class="bf-body">
+        <p class="bf-what">${esc(s.what)}</p>
+        <div class="bf-why"><div class="bf-lbl">Why it matters to you <span class="bf-ai">AI analysis</span></div><p>${esc(s.why)}</p></div>
+        ${(s.related||[]).map(r=>`<div class="bf-rel"><div class="bf-lbl m">${esc(r.label)}</div><div class="h">${esc(r.headline)}</div><p>${esc(r.text)}</p><div class="bf-srcs" style="margin-top:8px">${srcs(r.sources)}</div></div>`).join("")}
+        <div class="bf-foot"><div class="bf-srcs">${srcs(s.sources)}</div>${verTag(s)}</div>
+        <div class="bf-find">${find?`<span>Find on ${find}</span>`:''}${set?`<span>Check on SET: ${set}</span>`:''}</div>
+      </div>
+      <div class="bf-tg">${verTag(s)}<button type="button" class="bf-toggle" aria-expanded="${open}">${open?'Less':'Details'}</button></div>
+    </article>`;
+  }
+
+  function renderBrief(){
+    const root=document.getElementById("briefRoot");
+    const b=briefView||BRIEF;
+    if(b===undefined){root.innerHTML='<div class="card pad empty">Loading this morning’s brief…</div>';return;}
+    if(!b){root.innerHTML='<div class="card pad empty">No brief yet. The Morning Brief lands at 06:30 Bangkok time.<br><span class="pillnote">News that affects your holdings, from a fixed list of reliable sources.</span></div>';return;}
+    const st=b.stats||{}, m=b.markets||{tiles:[],early:[]}, md=b.method||{}, q=b.quiet||[];
+    const banner=briefView?`<div class="bf-banner">You’re reading the ${esc(shortDay(b.edition_date))} edition.<button type="button" class="bf-btn" id="bfLatest">Back to the latest</button></div>`
+      :(b.edition_date<bkkDate()?`<div class="bf-banner">Today’s brief isn’t in yet; it lands at 06:30. This is the latest edition, from ${esc(shortDay(b.edition_date))}.</div>`:"");
+    const head=`<div class="bf-head"><div style="min-width:0;flex:1 1 480px">
+        <div class="bf-eyebrow">Morning Brief${b.status==="preview"?" · Preview edition":""}</div>
+        <h1 class="bf-title">${esc(longDay(b.edition_date))}</h1>
+        <div class="bf-m" style="font-size:12.5px">Compiled ${esc(hhmm(b.generated_at))} BKT · news since ${esc(shortDay(b.window.from))} ${esc(hhmm(b.window.from))} · about a ${b.read_minutes}-minute read</div>
+        <div class="bf-stats"><span><b>${st.stories||0}</b> stories</span><span><b>${st.short_items||0}</b> short items</span><span><b>${st.outlets||0}</b> sources</span>${st.primary_checked?`<span class="bf-ok">${TICK}<span><b>${st.primary_checked}</b> checked against primary documents</span></span>`:''}</div>
+      </div><div style="display:flex;gap:8px;align-items:center"><button type="button" class="bf-btn" id="bfArch">Earlier editions</button><select id="bfArchSel" class="bf-btn" hidden aria-label="Choose an edition"></select></div></div>`;
+    const mk=`<section class="card pad" style="margin-bottom:16px" aria-label="Overnight markets">
+      <div class="head" style="flex-wrap:wrap;gap:4px 12px"><h3>Overnight markets <span style="font-weight:400;color:var(--muted)">· ordered by how much of your portfolio each one moves</span></h3><span class="bf-m">as of ${esc(hhmm(m.fetched_at))} BKT</span></div>
+      <div class="bf-tiles">${m.tiles.map(t=>`<div class="bf-tile"><div class="l">${esc(t.label)}</div><div class="v num">${esc(t.value)}</div><span class="bf-chg num ${tone(t.dir)}">${esc(t.change)}</span><div class="e">${esc(t.exposure_label)}${t.exposure_pct!=null?' · '+pct1(t.exposure_pct):''}</div></div>`).join("")}</div>
+      ${(m.early||[]).length?`<div class="bf-early"><b style="color:var(--ink);font-weight:650">Early trade</b>${m.early.map(e=>`<span>${esc(e.label)} <b class="num ${tone(e.dir)}">${esc(e.change)}</b></span>`).join("")}</div>`:''}
+      <div class="bf-m" style="margin-top:10px;font-size:11.5px">Index levels are the latest close or today’s session so far; Bitcoin and gold are 24-hour moves. Market data via Yahoo Finance; may be delayed.</div>
+    </section>`;
+    const top=`<section class="card pad" aria-label="The 60-second brief">
+      <div class="bf-bar"><h2 class="bf-h2">The 60-second brief</h2><span class="bf-m">What matters to your portfolio this morning</span></div>
+      <ol class="bf-top3">${(b.top3||[]).map((t,i)=>`<li><span class="bf-n" aria-hidden="true">${i+1}</span><div style="min-width:0"><div class="t"><b>${esc(t.lead)}</b> ${esc(t.text)}</div><div class="bf-chips">${expo(t.exposure_label,t.exposure_pct)}${dirTag(t.dir)}</div></div></li>`).join("")}</ol>
+      ${(b.also||[]).length?`<div class="bf-also"><b>Also:</b> ${b.also.map(esc).join(" · ")}</div>`:''}
+    </section>`;
+    const stories=b.stories||[], groups=["All",...new Set(stories.map(s=>s.group))];
+    if(!groups.includes(briefFilter))briefFilter="All";
+    const list=stories.filter(s=>briefFilter==="All"||s.group===briefFilter);
+    const news=`<section aria-label="Your holdings in the news" style="display:flex;flex-direction:column;gap:12px">
+      <div class="bf-bar"><div style="min-width:0"><h2 class="bf-h2">Your holdings in the news</h2><div class="bf-m" style="margin-top:2px">Ranked by impact: the share of your portfolio exposed, times how big the event is</div></div>
+        <div class="seg bf-seg" role="group" aria-label="Detail level">${["Full","Headlines"].map(x=>`<button type="button" data-mode="${x}" class="${briefMode===x?'active':''}" aria-pressed="${briefMode===x}">${x}</button>`).join("")}</div></div>
+      ${groups.length>2?`<div class="bf-filters" role="group" aria-label="Filter stories">${groups.map(g=>`<button type="button" data-g="${esc(g)}" class="${g===briefFilter?'active':''}" aria-pressed="${g===briefFilter}">${esc(g)} <span style="opacity:.8;font-weight:500">${g==="All"?stories.length:stories.filter(s=>s.group===g).length}</span></button>`).join("")}</div>`:''}
+      ${list.length?list.map(storyCard).join(""):`<div class="card pad empty">No stories${briefFilter!=="All"?" for this filter":""} today.</div>`}
+    </section>`;
+    const brf=(b.briefly||[]).length?`<section class="card pad" aria-label="Briefly"><h2 class="bf-h2" style="font-size:14px;margin-bottom:4px">Briefly</h2><ul class="bf-list">${b.briefly.map(x=>`<li>
+        <div class="bf-bar" style="align-items:baseline"><b style="font-size:14px;font-weight:650;line-height:1.35">${esc(x.headline)}</b>${expo(x.exposure_label,x.exposure_pct)}</div>
+        <p style="margin:5px 0 0;font-size:13.5px;line-height:1.55;color:#22292f">${esc(x.text)}</p>
+        <div class="bf-chips">${flagTag(x)}${srcs(x.sources)}${(x.set_links||[]).map(l=>`<a class="bf-src" href="${href(l.url)}" target="_blank" rel="noopener">Check ${esc(l.symbol)} on SET</a>`).join("")}</div></li>`).join("")}</ul></section>`:'';
+    const cal=(b.upcoming||[]).length?`<section class="card pad" aria-label="Coming up"><div class="head"><h3 style="font-size:14px">Coming up</h3><span class="bf-m">Bangkok time</span></div><ul class="bf-list bf-cal">${b.upcoming.map(u=>{
+        const lab=(u.date_label||"").split(" ");
+        return `<li><div class="bf-date${u.dow==="Today"&&!u.date_label?' today':''}"><div class="d1">${esc(u.date_label?lab[0]:u.dow)}</div><div class="d2">${esc(u.date_label?(lab[1]||""):u.day)}</div><div class="d3">${esc(u.date_label?u.date.slice(0,4):u.mon)}</div></div>
+        <div style="min-width:0"><div style="font-size:13.5px;font-weight:650;line-height:1.35">${esc(u.title)}</div>
+          <div class="bf-m" style="margin-top:2px">${[u.time_bkt,u.detail].filter(Boolean).map(esc).join(" · ")}</div>
+          <div class="bf-chips" style="margin-top:6px">${u.exposure_label&&!u.tab?expo(u.exposure_label):''}${u.source?`<a href="${href(u.source.url)}" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:var(--accent-2)">${esc(u.source.name)}</a>`:''}${u.tab?`<button type="button" class="bf-link" data-tab="${esc(u.tab)}">Open ${esc(u.tab)}</button>`:''}</div></div></li>`;}).join("")}</ul></section>`:'';
+    const rad=(b.radar||[]).length?`<section class="card pad" aria-label="On your radar"><div class="head"><h3 style="font-size:14px">On your radar</h3><span class="bf-m">From your research notes</span></div>${b.radar.map(r=>`<div style="margin-top:4px">
+        <div class="bf-chips" style="margin-top:0"><b style="font-size:14.5px;font-weight:680">${esc(r.topic)}</b><span class="bf-flag">Not a holding</span></div>
+        <p style="margin:6px 0 0;font-size:13.5px;line-height:1.55;color:#22292f">${esc(r.text)}</p>
+        ${(r.notes||[]).length?`<div class="bf-m" style="margin-top:8px">Your notes: ${r.notes.map(esc).join(" · ")}</div>`:''}
+        <div class="bf-srcs" style="margin-top:8px">${srcs(r.sources)}</div></div>`).join("")}</section>`:'';
+    const thai=(b.thai_stocks||[]).length?`<section class="card pad" aria-label="Thai stock announcements"><div class="head"><h3 style="font-size:14px">Thai stock announcements</h3><span class="bf-m">${b.thai_stocks.length} stocks</span></div>
+        <div class="bf-m" style="margin:-4px 0 10px;line-height:1.5">SET’s announcement pages block automated reading, so the brief can’t check them. Tap a stock to see its announcements on SET.</div>
+        <div class="bf-chips" style="margin-top:0;gap:6px">${b.thai_stocks.map(t=>`<a class="bf-pill" href="${href(t.url)}" target="_blank" rel="noopener">${esc(t.symbol)} <span class="bf-m">${t.weight}%</span></a>`).join("")}</div></section>`:'';
+    const quiet=`<section class="card pad"><details class="bf-det"><summary><span><span style="display:block;font-size:14px;font-weight:680">Quiet holdings · ${q.length}</span><span class="bf-m">Nothing material in this morning’s sources</span></span></summary>
+        <div class="bf-chips" style="margin-top:10px;gap:6px">${q.map(h=>h.set_url?`<a class="bf-pill" href="${href(h.set_url)}" target="_blank" rel="noopener">${esc(h.name)} <span class="bf-m">${h.weight}%</span></a>`:`<span class="bf-pill">${esc(h.name)} <span class="bf-m">${h.weight}%</span></span>`).join("")}</div>
+        ${b.quiet_small_count?`<div class="bf-m" style="margin-top:8px">Plus ${b.quiet_small_count} holdings under 0.5%, which appear only for major events.</div>`:''}</details></section>`;
+    const method=`<section class="card pad"><details class="bf-det"><summary><span><span style="display:block;font-size:14px;font-weight:680">How this brief works</span><span class="bf-m">Sources, trust labels and ranking</span></span></summary><div class="bf-method">
+        <div><div class="bf-lbl m">Sources it reads</div><div><b>Primary:</b> ${esc(md.primary)}.</div><div><b>Business press:</b> ${(md.press||[]).map(esc).join(", ")}.</div><div><b>Regional and sector press:</b> ${(md.regional||[]).map(esc).join(", ")}.</div></div>
+        <div><div class="bf-lbl m">Never used</div><div>Social media, forums, blogs, video, contributor sites and aggregators. The brief goes to the original source instead.</div></div>
+        <div><div class="bf-lbl m">Can’t be read</div><div>${(md.blocked||[]).map(esc).join(", ")} block AI tools, so the brief doesn’t use them. Each story links to a Reuters and FT search so you can check them yourself.</div></div>
+        <div><div class="bf-lbl m">Trust labels</div>
+          <div class="bf-chips"><span class="bf-flag primary">${TICK}Checked</span><span class="bf-m">figures match the filing or official statement</span></div>
+          <div class="bf-chips"><span class="bf-flag">Reported by 2+ outlets</span><span class="bf-m">independent outlets agree</span></div>
+          <div class="bf-chips"><span class="bf-flag">Single source</span><span class="bf-m">only one outlet on the list has it</span></div>
+          <div class="bf-chips"><span class="bf-flag differ">Sources differ</span><span class="bf-m">outlets disagree, so both versions are shown</span></div></div>
+        <div><div class="bf-lbl m">Ranking</div><div>Impact is the share of your portfolio exposed, looking through each fund to what it owns, times how material the event is.</div></div>
+        <div><div class="bf-lbl m">AI analysis</div><div>“Why it matters to you” is written by AI from the reported facts and your holdings. It explains; it doesn’t recommend trades.</div></div>
+      </div></details></section>`;
+    const next=new Date(b.edition_date+"T12:00:00");next.setDate(next.getDate()+1);
+    root.innerHTML=banner+head+mk+`<div class="bf-cols"><div class="bf-main">${top}${news}${brf}</div><aside class="bf-side" aria-label="Calendar and notes">${cal}${rad}${thai}${quiet}${method}</aside></div>`
+      +`<div class="bf-legal">Next edition: ${esc(next.toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long"}))}, 06:30 BKT. Summaries are written by AI from the linked sources and can contain errors, so check the source before acting. Not investment advice.</div>`;
+  }
+
+  function renderTeaser(){
+    const el=document.getElementById("briefTeaser"), b=BRIEF;
+    if(!b||!(b.top3||[]).length){el.innerHTML="";return;}
+    const st=b.stats||{};
+    el.innerHTML=`<div class="card bf-teaser"><div class="tm">
+        <div class="bf-chips" style="margin-top:0;gap:10px"><span class="bf-sun" aria-hidden="true">${SUN}</span><h3 style="margin:0;font-size:14px;font-weight:680">${b.edition_date<bkkDate()?"Latest brief":"This morning’s brief"}</h3><span class="bf-m">${esc(shortDay(b.edition_date))} · ${b.read_minutes}-minute read</span></div>
+        <ol>${b.top3.map((t,i)=>`<li><span class="bf-n" aria-hidden="true">${i+1}</span><div style="min-width:0"><div style="font-size:13.5px;font-weight:650;line-height:1.4">${esc(t.lead)}</div><div class="bf-chips" style="margin-top:6px">${expo(t.exposure_label,t.exposure_pct)}${dirTag(t.dir)}</div></div></li>`).join("")}</ol></div>
+      <div class="cta"><button type="button" class="bf-btn primary" id="bfRead">Read the brief →</button><span class="bf-m">${st.stories||0} stories · ${st.outlets||0} sources</span></div></div>`;
+    document.getElementById("bfRead").onclick=()=>selectTab("Brief");
+  }
+
+  function markUnread(){
+    const unread=!!(BRIEF&&getSeen()!==BRIEF.edition_date);
+    document.querySelectorAll('.tab[data-t="Brief"], .bottomnav button[data-t="Brief"]').forEach(x=>{
+      let d=x.querySelector(".bdot");
+      if(unread&&!d){d=document.createElement("span");d.className="bdot";d.title="New edition";(x.querySelector("span")||x).appendChild(d);}
+      if(!unread&&d)d.remove();});
+  }
+
+  function openArchive(){
+    const sel=document.getElementById("bfArchSel"),btn=document.getElementById("bfArch");
+    const fill=idx=>{sel.innerHTML='<option value="">Choose an edition…</option>'+idx.map(x=>`<option value="${esc(x.date)}">${esc(shortDay(x.date))}${x.lead?" — "+esc(x.lead.slice(0,50)):""}</option>`).join("");sel.hidden=false;btn.hidden=true;sel.focus();};
+    if(briefIdx)return fill(briefIdx);
+    fetch("briefs/index.json",{cache:"no-store"}).then(r=>r.ok?r.json():[]).then(x=>{briefIdx=x||[];fill(briefIdx);}).catch(()=>fill([]));
+  }
+
+  const bRoot=document.getElementById("briefRoot");
+  bRoot.addEventListener("click",e=>{
+    const t=e.target.closest("button");if(!t)return;
+    if(t.classList.contains("bf-toggle")){const c=t.closest(".bf-story"),o=c.classList.toggle("open");t.textContent=o?"Less":"Details";t.setAttribute("aria-expanded",o);}
+    else if(t.dataset.mode){briefMode=t.dataset.mode;renderBrief();}
+    else if(t.dataset.g){briefFilter=t.dataset.g;renderBrief();}
+    else if(t.dataset.tab){selectTab(t.dataset.tab);}
+    else if(t.id==="bfLatest"){briefView=null;renderBrief();}
+    else if(t.id==="bfArch"){openArchive();}
+  });
+  bRoot.addEventListener("change",e=>{
+    if(e.target.id!=="bfArchSel"||!e.target.value)return;
+    const d=e.target.value;
+    if(BRIEF&&d===BRIEF.edition_date){briefView=null;renderBrief();return;}
+    fetch("briefs/"+encodeURIComponent(d)+".json",{cache:"no-store"}).then(r=>r.ok?r.json():Promise.reject())
+      .then(x=>{briefView=x;renderBrief();window.scrollTo(0,0);}).catch(()=>{});
+  });
+  fetch("brief.json",{cache:"no-store"}).then(r=>r.ok?r.json():null).catch(()=>null).then(x=>{
+    BRIEF=x;renderTeaser();markUnread();
+    if(!document.querySelector('section[data-tab="Brief"]').hidden)renderBrief();
+  });
+
   draw("Overview");
 }
 
@@ -1055,7 +1356,15 @@ if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.s
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--workbook", default=str(WORKBOOK_DEFAULT))
+    ap.add_argument("--render-only", action="store_true",
+                    help="re-render docs/index.html from the existing docs/data.json (template changes only; "
+                         "no workbook read, no history update)")
     args = ap.parse_args()
+    if args.render_only:
+        payload = json.loads((DOCS / "data.json").read_text())
+        (DOCS / "index.html").write_text(HTML_TEMPLATE.replace("/*__DATA__*/null", json.dumps(payload, default=str)))
+        print(f"Re-rendered docs/index.html from docs/data.json (generated {payload.get('generated_at')}).")
+        raise SystemExit(0)
     out = build(args.workbook)
     pf = out["portfolio"]
     print(f"Built docs/index.html + data.json (v2) — total ฿{pf['total_value']:,.0f}, "

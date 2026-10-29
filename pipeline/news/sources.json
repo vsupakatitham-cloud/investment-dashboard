@@ -1,0 +1,87 @@
+{
+  "_about": "Source policy for the Morning Brief. Only domains listed under tiers may be cited or fetched. Blocked outlets refuse AI tools; never route around them. 'never' lists low-reliability or aggregator domains that must not be used even if reachable.",
+  "user_agent": "Mozilla/5.0 (compatible; THInvestmentBrief/1.0; personal feed reader)",
+  "sec_user_agent": "Mozilla/5.0 (personal research script)",
+  "tiers": {
+    "primary": {
+      "label": "Primary",
+      "domains": [
+        "federalreserve.gov", "sec.gov", "treasury.gov", "bls.gov", "bea.gov",
+        "bot.or.th", "sec.or.th", "set.or.th", "bok.or.kr", "fss.or.kr", "krx.co.kr",
+        "sbv.gov.vn", "hsx.vn", "pbc.gov.cn", "stats.gov.cn", "ecb.europa.eu", "boj.or.jp",
+        "apple.com", "abc.xyz", "atmeta.com", "tesla.com", "nvidia.com", "lilly.com", "coinbase.com",
+        "appliedmaterials.com", "adobe.com", "kla.com", "microchip.com", "fortinet.com", "teradyne.com",
+        "qorvo.com", "monolithicpower.com", "enphase.com", "gartner.com", "cirrus.com", "oled.com",
+        "axcelis.com", "insight.com", "samsung.com", "skhynix.com", "gulf.co.th",
+        "scbam.com", "kasikornasset.com", "eastspring.co.th", "bblam.co.th", "assetfund.co.th",
+        "uobam.co.th", "krungsriasset.com"
+      ]
+    },
+    "major": {
+      "label": "Business press",
+      "domains": ["bloomberg.com", "cnbc.com", "asia.nikkei.com", "axios.com"]
+    },
+    "regional": {
+      "label": "Regional and sector press",
+      "domains": [
+        "koreaherald.com", "koreatimes.co.kr", "kedglobal.com", "koreajoongangdaily.joins.com",
+        "bangkokpost.com", "nationthailand.com", "e.vnexpress.net", "vietnamnews.vn", "theinvestor.vn",
+        "vir.com.vn", "scmp.com", "caixinglobal.com", "coindesk.com", "theblock.co",
+        "statnews.com", "fiercepharma.com", "fiercebiotech.com"
+      ]
+    }
+  },
+  "paywalled": ["bloomberg.com", "asia.nikkei.com"],
+  "blocked": [
+    "reuters.com", "apnews.com", "yna.co.kr", "afp.com", "ft.com", "wsj.com", "barrons.com",
+    "marketwatch.com", "economist.com", "bbc.com", "bbc.co.uk", "nytimes.com", "theguardian.com"
+  ],
+  "never": [
+    "x.com", "twitter.com", "facebook.com", "instagram.com", "threads.net", "reddit.com", "youtube.com",
+    "tiktok.com", "medium.com", "substack.com", "pantip.com", "seekingalpha.com", "fool.com",
+    "benzinga.com", "zacks.com", "investorplace.com", "finance.yahoo.com", "news.yahoo.com", "msn.com",
+    "investing.com", "news.google.com"
+  ],
+  "feeds": [
+    {"name": "Federal Reserve press releases", "url": "https://www.federalreserve.gov/feeds/press_all.xml", "group": "United States"},
+    {"name": "Bank of Korea press releases", "url": "https://www.bok.or.kr/eng/bbs/E0000634/news.rss", "group": "Korea"},
+    {"name": "Bloomberg markets", "url": "https://feeds.bloomberg.com/markets/news.rss"},
+    {"name": "Bloomberg technology", "url": "https://feeds.bloomberg.com/technology/news.rss"},
+    {"name": "Bloomberg economics", "url": "https://feeds.bloomberg.com/economics/news.rss"},
+    {"name": "CNBC top news", "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html"},
+    {"name": "CNBC markets", "url": "https://www.cnbc.com/id/20910258/device/rss/rss.html"},
+    {"name": "CNBC earnings", "url": "https://www.cnbc.com/id/15839135/device/rss/rss.html"},
+    {"name": "CNBC Asia", "url": "https://www.cnbc.com/id/19832390/device/rss/rss.html"},
+    {"name": "Nikkei Asia", "url": "https://asia.nikkei.com/rss/feed/nar"},
+    {"name": "Axios", "url": "https://api.axios.com/feed/"},
+    {"name": "Korea Herald", "url": "https://www.koreaherald.com/rss/newsAll", "group": "Korea"},
+    {"name": "Korea Times business", "url": "https://www.koreatimes.co.kr/www/rss/biz.xml", "group": "Korea"},
+    {"name": "Korea Times", "url": "https://www.koreatimes.co.kr/www/rss/rss.xml", "group": "Korea"},
+    {"name": "KED Global", "url": "https://www.kedglobal.com/rss/allArticle.xml", "group": "Korea"},
+    {"name": "Bangkok Post business", "url": "https://www.bangkokpost.com/rss/data/business.xml", "group": "Thailand"},
+    {"name": "Bangkok Post latest", "url": "https://www.bangkokpost.com/rss/data/most-recent.xml", "group": "Thailand"},
+    {"name": "VnExpress business", "url": "https://e.vnexpress.net/rss/business.rss", "group": "Vietnam"},
+    {"name": "Vietnam News economy", "url": "https://vietnamnews.vn/rss/economy.rss", "group": "Vietnam"},
+    {"name": "SCMP business", "url": "https://www.scmp.com/rss/92/feed"},
+    {"name": "SCMP China economy", "url": "https://www.scmp.com/rss/318421/feed", "group": "China"},
+    {"name": "CoinDesk", "url": "https://www.coindesk.com/arc/outboundfeeds/rss/", "group": "Crypto"},
+    {"name": "The Block", "url": "https://www.theblock.co/rss.xml", "group": "Crypto"},
+    {"name": "STAT", "url": "https://www.statnews.com/feed/", "group": "Healthcare"}
+  ],
+  "find_links": [
+    {"name": "Reuters", "template": "https://www.reuters.com/site-search/?query={q}"},
+    {"name": "FT", "template": "https://www.ft.com/search?q={q}"}
+  ],
+  "set_news_template": "https://www.set.or.th/en/market/product/stock/quote/{symbol}/news",
+  "outlet_names": {
+    "federalreserve.gov": "Federal Reserve", "sec.gov": "SEC EDGAR", "bot.or.th": "Bank of Thailand",
+    "bok.or.kr": "Bank of Korea", "set.or.th": "SET", "sec.or.th": "Thai SEC",
+    "bloomberg.com": "Bloomberg", "cnbc.com": "CNBC", "asia.nikkei.com": "Nikkei Asia", "axios.com": "Axios",
+    "koreaherald.com": "Korea Herald", "koreatimes.co.kr": "Korea Times", "kedglobal.com": "KED Global",
+    "koreajoongangdaily.joins.com": "Korea JoongAng Daily", "bangkokpost.com": "Bangkok Post",
+    "nationthailand.com": "The Nation", "e.vnexpress.net": "VnExpress", "vietnamnews.vn": "Vietnam News",
+    "theinvestor.vn": "The Investor", "vir.com.vn": "Vietnam Investment Review", "scmp.com": "SCMP",
+    "caixinglobal.com": "Caixin", "coindesk.com": "CoinDesk", "theblock.co": "The Block",
+    "statnews.com": "STAT", "fiercepharma.com": "Fierce Pharma", "fiercebiotech.com": "Fierce Biotech"
+  }
+}

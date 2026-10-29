@@ -1,7 +1,7 @@
 # TH Investment — Private Client Dashboard
 
 Converts the lot-level **Private Banking Summary** workbook into a branded,
-**self-updating online dashboard** that refreshes **daily at 08:30 Bangkok
+**self-updating online dashboard** that refreshes **daily at 05:30 and 11:30 Bangkok
 time**, plus a **blank onboarding template** for new private clients.
 
 The dashboard (v2) is a clean, institutional, tabbed web app:
@@ -37,6 +37,10 @@ investment-dashboard/
 
 ## How the daily auto-update works
 
+> **Since October 2026 the primary trigger is the Claude cloud routine "Investment dashboard
+> daily refresh" at 05:30 and 11:30 BKT** (the 11:30 run picks up the Thai fund NAVs the SEC
+> publishes mid-morning). The launchd job below is disabled; GitHub Actions remains the backstop.
+
 The refresh runs every day at **08:30 Asia/Bangkok**. Each run:
 
 1. **Fetches live prices** — US & Thai equities and FX from Yahoo Finance, crypto
@@ -58,6 +62,32 @@ The refresh runs every day at **08:30 Asia/Bangkok**. Each run:
   the morning ticks and run many hours late — which is exactly why the local launchd
   driver is the primary. The pipeline is idempotent (commits only on a real diff), so if
   both fire on the same day the second is a harmless no-op or a small refresh.
+
+## Morning Brief tab (daily 06:30 news)
+
+The **Brief** tab (plus a "This morning's brief" card on Overview) shows news that affects
+the holdings, ranked by how much of the portfolio each story touches, looking through funds
+to their markets. The Claude cloud routine "Morning brief (cloud)" runs at **05:45 BKT**, right after the
+05:30 dashboard refresh, and follows `pipeline/news/TASK.md`:
+
+1. `scripts/morning_brief.sh prepare` pulls the repo and runs `pipeline/news/collect.py`:
+   holdings from `docs/data.json`, market closes (Yahoo), allowlisted RSS feeds, SEC filings
+   for the US stocks held, fund NAV lags and the calendar → `news_work/<date>/context.json`
+   (gitignored).
+2. Claude researches with web search limited to the allowlist and writes `draft.json`.
+3. `scripts/morning_brief.sh check` runs `check_brief.py`: allowlisted https sources only, no
+   blocked outlets, honest trust labels, real holdings, no trade advice or long quotes.
+4. `scripts/morning_brief.sh publish` runs `publish_brief.py` → `docs/brief.json` and
+   `docs/briefs/<date>.json` (archive), then commits and pushes. The portfolio build never
+   writes these files; `build_site.py --render-only` re-renders the page after template edits.
+
+**Sources** live in `pipeline/news/sources.json`: primary (central banks, regulators, SEC,
+SET, company and fund-house pages), business press (Bloomberg, CNBC, Nikkei Asia, Axios) and
+named regional and sector outlets. Reuters, AP, Yonhap, AFP, FT, WSJ, Barron's, MarketWatch,
+The Economist, BBC, NYT and The Guardian block AI tools and are never used; each story links
+to a Reuters and FT search instead. SET blocks automated reading of company announcements, so
+the tab lists "Check on SET" links for the Thai stocks. Look-through groups and keywords:
+`exposures.json`; verified events: `calendar.json`; research topics: `radar.json`.
 
 ## First-time setup (≈5 min)
 

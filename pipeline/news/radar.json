@@ -1,0 +1,7 @@
+{
+  "_about": "Topics you follow that are not holdings, usually from your research notes. The brief shows a topic only on days it has news from the allowlist.",
+  "topics": [
+    {"topic": "Anthropic IPO", "keywords": ["Anthropic"], "notes": ["AI Stocks — Anthropic IPO Scenarios (28 Oct 2026)", "Anthropic IPO vs SpaceX (28 Oct 2026)"]},
+    {"topic": "SpaceX", "keywords": ["SpaceX"], "notes": ["Anthropic IPO vs SpaceX (28 Oct 2026)"]}
+  ]
+}

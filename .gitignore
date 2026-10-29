@@ -26,3 +26,5 @@ logs/
 # but DO track PWA app icons
 !docs/icon-*.png
 !docs/apple-touch-icon.png
+# Morning Brief working files (third-party feed text; never published)
+news_work/
