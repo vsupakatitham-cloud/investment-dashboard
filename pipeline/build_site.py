@@ -1198,6 +1198,7 @@ function boot(PAYLOAD){
   const flagTag=x=>`<span class="bf-flag ${vcls(x.verify)}">${x.verify==="primary"?TICK:''}${esc(x.verify_note)}</span>`;
   const pct1=x=>x==null?"":Number(x).toFixed(1)+"%";
   const expo=(label,pct)=>`<span class="bf-expo">${esc(label)}${pct!=null?' · '+pct1(pct):''}</span>`;
+  const word=(n,one,many)=>(n||0)===1?one:many;
 
   function storyCard(s,i){
     const open=isPhone()?i===0:briefMode==="Full";
@@ -1232,7 +1233,7 @@ function boot(PAYLOAD){
         <div class="bf-eyebrow">Morning Brief${b.status==="preview"?" · Preview edition":""}</div>
         <h1 class="bf-title">${esc(longDay(b.edition_date))}</h1>
         <div class="bf-m" style="font-size:12.5px">Compiled ${esc(hhmm(b.generated_at))} BKT · news since ${esc(shortDay(b.window.from))} ${esc(hhmm(b.window.from))} · about a ${b.read_minutes}-minute read</div>
-        <div class="bf-stats"><span><b>${st.stories||0}</b> stories</span><span><b>${st.short_items||0}</b> short items</span><span><b>${st.outlets||0}</b> sources</span>${st.primary_checked?`<span class="bf-ok">${TICK}<span><b>${st.primary_checked}</b> checked against primary documents</span></span>`:''}</div>
+        <div class="bf-stats"><span><b>${st.stories||0}</b> ${word(st.stories,"story","stories")}</span><span><b>${st.short_items||0}</b> ${word(st.short_items,"short item","short items")}</span><span><b>${st.outlets||0}</b> ${word(st.outlets,"source","sources")}</span>${st.primary_checked?`<span class="bf-ok">${TICK}<span><b>${st.primary_checked}</b> checked against primary documents</span></span>`:''}</div>
       </div><div style="display:flex;gap:8px;align-items:center"><button type="button" class="bf-btn" id="bfArch">Earlier editions</button><select id="bfArchSel" class="bf-btn" hidden aria-label="Choose an edition"></select></div></div>`;
     const mk=`<section class="card pad" style="margin-bottom:16px" aria-label="Overnight markets">
       <div class="head" style="flex-wrap:wrap;gap:4px 12px"><h3>Overnight markets <span style="font-weight:400;color:var(--muted)">· ordered by how much of your portfolio each one moves</span></h3><span class="bf-m">as of ${esc(hhmm(m.fetched_at))} BKT</span></div>
@@ -1299,7 +1300,7 @@ function boot(PAYLOAD){
     el.innerHTML=`<div class="card bf-teaser"><div class="tm">
         <div class="bf-chips" style="margin-top:0;gap:10px"><span class="bf-sun" aria-hidden="true">${SUN}</span><h3 style="margin:0;font-size:14px;font-weight:680">${b.edition_date<bkkDate()?"Latest brief":"This morning’s brief"}</h3><span class="bf-m">${esc(shortDay(b.edition_date))} · ${b.read_minutes}-minute read</span></div>
         <ol>${b.top3.map((t,i)=>`<li><span class="bf-n" aria-hidden="true">${i+1}</span><div style="min-width:0"><div style="font-size:13.5px;font-weight:650;line-height:1.4">${esc(t.lead)}</div><div class="bf-chips" style="margin-top:6px">${expo(t.exposure_label,t.exposure_pct)}${dirTag(t.dir)}</div></div></li>`).join("")}</ol></div>
-      <div class="cta"><button type="button" class="bf-btn primary" id="bfRead">Read the brief →</button><span class="bf-m">${st.stories||0} stories · ${st.outlets||0} sources</span></div></div>`;
+      <div class="cta"><button type="button" class="bf-btn primary" id="bfRead">Read the brief →</button><span class="bf-m">${st.stories||0} ${word(st.stories,"story","stories")} · ${st.outlets||0} ${word(st.outlets,"source","sources")}</span></div></div>`;
     document.getElementById("bfRead").onclick=()=>selectTab("Brief");
   }
 
