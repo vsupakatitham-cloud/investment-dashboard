@@ -2014,13 +2014,13 @@
   },
   {
     "date": "2026-10-31",
-    "total_value": 25691327,
+    "total_value": 25263815,
     "total_invested": 22895417,
-    "total_pnl": 2795910,
-    "pnl_pct": 0.1221,
-    "mf_value": 18141704,
+    "total_pnl": 2368398,
+    "pnl_pct": 0.1034,
+    "mf_value": 17727526,
     "eq_value": 4748957,
-    "crypto_value": 1441297,
+    "crypto_value": 1447768,
     "fx_rate": 33.74
   }
 ]
