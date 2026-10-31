@@ -1,0 +1,834 @@
+{
+ "schema": 1,
+ "status": "live",
+ "edition_date": "2026-11-01",
+ "generated_at": "2026-11-01T05:47+07:00",
+ "window": {
+  "from": "2026-10-31T06:00+07:00",
+  "to": "2026-11-01T05:45+07:00"
+ },
+ "portfolio_as_of": "2026-11-01",
+ "read_minutes": 3,
+ "stats": {
+  "stories": 5,
+  "short_items": 0,
+  "outlets": 5,
+  "outlet_names": [
+   "CNBC",
+   "CoinDesk",
+   "Korea Herald",
+   "Korea Times",
+   "VnExpress"
+  ],
+  "primary_checked": 0
+ },
+ "markets": {
+  "tiles": [
+   {
+    "label": "SET",
+    "value": "1,518.59",
+    "change": "▼ 1.68%",
+    "dir": "neg",
+    "asof_date": "2026-10-30",
+    "window": "close",
+    "exposure_label": "Your Thailand",
+    "exposure_pct": 23.8
+   },
+   {
+    "label": "S&P 500",
+    "value": "7,580.07",
+    "change": "▼ 1.82%",
+    "dir": "neg",
+    "asof_date": "2026-10-30",
+    "window": "close",
+    "exposure_label": "Your US large cap",
+    "exposure_pct": 17.0
+   },
+   {
+    "label": "KOSPI",
+    "value": "5,730.74",
+    "change": "▼ 3.48%",
+    "dir": "neg",
+    "asof_date": "2026-10-30",
+    "window": "close",
+    "exposure_label": "Your Korea",
+    "exposure_pct": 16.7
+   },
+   {
+    "label": "USD/THB",
+    "value": "33.74",
+    "change": "▲ 0.15%",
+    "dir": "neutral",
+    "asof_date": "2026-10-30",
+    "window": "close",
+    "exposure_label": "Your USD-priced holdings",
+    "exposure_pct": 13.2
+   },
+   {
+    "label": "Nasdaq",
+    "value": "25,437.00",
+    "change": "▼ 2.86%",
+    "dir": "neg",
+    "asof_date": "2026-10-30",
+    "window": "close",
+    "exposure_label": "Your US stocks",
+    "exposure_pct": 8.7
+   },
+   {
+    "label": "VN-Index",
+    "value": "1,741.62",
+    "change": "▼ 0.80%",
+    "dir": "neg",
+    "asof_date": "2026-10-30",
+    "window": "close",
+    "exposure_label": "Your Vietnam",
+    "exposure_pct": 6.2
+   },
+   {
+    "label": "Bitcoin",
+    "value": "$77,476",
+    "change": "▲ 0.35%",
+    "dir": "pos",
+    "asof_date": "2026-10-31",
+    "window": "24h",
+    "exposure_label": "Your crypto",
+    "exposure_pct": 5.8
+   },
+   {
+    "label": "China A50",
+    "value": "12,891.02",
+    "change": "▼ 1.09%",
+    "dir": "neg",
+    "asof_date": "2026-10-30",
+    "window": "close",
+    "exposure_label": "Your China",
+    "exposure_pct": 3.4
+   },
+   {
+    "label": "Gold",
+    "value": "$3,899",
+    "change": "▼ 3.29%",
+    "dir": "neg",
+    "asof_date": "2026-10-30",
+    "window": "24h",
+    "exposure_label": "Your gold",
+    "exposure_pct": 1.9
+   },
+   {
+    "label": "US 10-year",
+    "value": "4.93%",
+    "change": "▼ 6 bp",
+    "dir": "neutral",
+    "asof_date": "2026-10-30",
+    "window": "close",
+    "exposure_label": "Rates",
+    "exposure_pct": null
+   }
+  ],
+  "early": [
+   {
+    "label": "S&P 500 futures",
+    "change": "▼ 1.81%",
+    "dir": "neg"
+   },
+   {
+    "label": "Nasdaq-100 futures",
+    "change": "▼ 3.48%",
+    "dir": "neg"
+   }
+  ],
+  "fetched_at": "2026-11-01T05:45+07:00"
+ },
+ "top3": [
+  {
+   "lead": "An AI-spending scare hit tech on Friday, and your US and Korea funds sit in its path.",
+   "text": "Weak results from Alphabet and Amazon, and Intel's steep fall, raised doubts about AI payback. The Nasdaq closed down 2.86% and the S&P 500 down 1.82%.",
+   "dir": "neg",
+   "exposure_pct": 17.2,
+   "exposure_label": "United States"
+  },
+  {
+   "lead": "Korea's KOSPI fell 3.48% as chip stocks took the blow.",
+   "text": "SK hynix lost 7.08% and Samsung 3.02%. SCBKEQTG is still priced at its 22 Oct NAV this morning, so Friday's fall is not in your numbers yet.",
+   "dir": "neg",
+   "exposure_pct": 16.7,
+   "exposure_label": "Korea"
+  },
+  {
+   "lead": "Binance's record hack unsettled crypto, but the exchange says it is making users whole.",
+   "text": "About $6.3 billion was taken on 29 Oct. Binance says it has replaced 90% and plans to reopen withdrawals today. Bitcoin held near $77,500.",
+   "dir": "watch",
+   "exposure_pct": 4.9,
+   "exposure_label": "Crypto"
+  }
+ ],
+ "also": [
+  "SET fell 1.68% to 1,518.59 on Friday",
+  "Gold fell 3.29% to $3,899, hitting your gold fund",
+  "Healthcare funds priced 27 Oct; sector proxy up 3.1% since",
+  "Apple reports Monday after the US close"
+ ],
+ "stories": [
+  {
+   "id": "ai-spending-tech-selloff",
+   "group": "United States",
+   "headline": "Tech sell-off deepens on doubts that AI spending will pay off",
+   "when": "Fri 30 Oct · US session",
+   "what": "US stocks fell for a second day. The S&P 500 closed down 1.82% at 7,580.07 and the Nasdaq down 2.86%. Intel dropped about 29% at one point after warning it will burn cash this year. Nvidia fell around 4% and Coinbase 13% during the session. Alphabet had its worst day on record on Thursday. Separately, OpenAI is reported to have cut its funding target to up to $20 billion from $30 billion.",
+   "why": "Your US exposure is mostly index funds and large tech, so they move with this theme. ES-US500RMF and K-USA-A(D) are priced at 28 Oct NAVs this morning. The S&P 500 is down about 2.1% since then, so that fall is not yet in your numbers. The dashboard refreshes again at 11:30.",
+   "dir": "neg",
+   "impact": 3,
+   "exposure_pct": 23.8,
+   "holdings": [
+    {
+     "name": "ES-US500RMF",
+     "weight": 14.1
+    },
+    {
+     "name": "AAPL",
+     "weight": 3.7
+    },
+    {
+     "name": "K-USA-A(D)",
+     "weight": 2.8
+    },
+    {
+     "name": "TSLA",
+     "weight": 1.3
+    },
+    {
+     "name": "META",
+     "weight": 1.2
+    },
+    {
+     "name": "COIN",
+     "weight": 0.5
+    },
+    {
+     "name": "NVDA",
+     "weight": 0.2
+    }
+   ],
+   "verify": "multi",
+   "verify_note": "Two outlets agree on the direction; intraday figures differ by outlet",
+   "sources": [
+    {
+     "name": "The Korea Times",
+     "url": "https://www.koreatimes.co.kr/world/20261031/the-sell-off-for-tech-stocks-worsens-and-overwhelms-wall-street",
+     "tier": "regional",
+     "primary": false,
+     "paywall": false
+    },
+    {
+     "name": "CNBC",
+     "url": "https://www.cnbc.com/2026/10/31/openai-funding-target-cut-10-billion.html",
+     "tier": "major",
+     "primary": false,
+     "paywall": false
+    }
+   ],
+   "related": [],
+   "find": [
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/site-search/?query=tech+stocks+AI+spending+selloff+Nasdaq+Intel"
+    },
+    {
+     "name": "FT",
+     "url": "https://www.ft.com/search?q=tech+stocks+AI+spending+selloff+Nasdaq+Intel"
+    }
+   ],
+   "set_links": []
+  },
+  {
+   "id": "kospi-chip-rout",
+   "group": "Korea",
+   "headline": "KOSPI drops 3.48% as chipmakers lead the slide",
+   "when": "Fri 30 Oct · Seoul close",
+   "what": "The KOSPI closed at 5,730.74, down 206.92 points. It fell as much as 5% during the morning. SK hynix lost 7.08% and Samsung Electronics 3.02%. Trading in program sell orders was briefly halted by an exchange safeguard. An analyst blamed disappointing results from big US tech firms. The won ended at 1,334.3 per dollar.",
+   "why": "Korea is 16.7% of your portfolio, mostly SCBKEQTG, which is concentrated in these chipmakers. The fund is priced at its 22 Oct NAV this morning. The KOSPI is still up about 3.6% since then despite Friday's fall, so the next NAV may show a net gain.",
+   "dir": "neg",
+   "impact": 3,
+   "exposure_pct": 16.7,
+   "holdings": [
+    {
+     "name": "SCBKEQTG",
+     "weight": 14.6
+    },
+    {
+     "name": "EWY",
+     "weight": 2.1
+    }
+   ],
+   "verify": "single",
+   "verify_note": "One outlet read in full",
+   "sources": [
+    {
+     "name": "The Korea Times",
+     "url": "https://www.koreatimes.co.kr/economy/others/20261030/kospi-falls-348-as-us-tech-earnings-fuel-ai-investment-concerns",
+     "tier": "regional",
+     "primary": false,
+     "paywall": false
+    }
+   ],
+   "related": [
+    {
+     "label": "Also this weekend",
+     "headline": "Samsung executives meet OpenAI's chief",
+     "text": "About 50 Samsung senior executives met Sam Altman on Saturday at a training centre in Yongin to discuss AI in business. The report gives no chip volumes or contract values.",
+     "sources": [
+      {
+       "name": "The Korea Herald",
+       "url": "https://www.koreaherald.com/article/10921312",
+       "tier": "regional",
+       "primary": false,
+       "paywall": false
+      }
+     ]
+    }
+   ],
+   "find": [
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/site-search/?query=KOSPI+SK+hynix+Samsung+sell-off"
+    },
+    {
+     "name": "FT",
+     "url": "https://www.ft.com/search?q=KOSPI+SK+hynix+Samsung+sell-off"
+    }
+   ],
+   "set_links": []
+  },
+  {
+   "id": "binance-hack",
+   "group": "Crypto",
+   "headline": "Binance says it has replaced 90% of the $6.3 billion stolen",
+   "when": "Sat 31 Oct",
+   "what": "Binance reported about $6.3 billion taken on Thursday 29 Oct, the largest crypto theft on record. It says it has replaced 90% of the assets from company funds and its user-protection reserve, and plans to reopen withdrawals today. Partners froze roughly $2.7 to $3 billion. Security firms link the attack to a North Korea-linked group, but the FBI has not confirmed that.",
+   "why": "BNB, bitcoin and ether are named among tokens Binance says are fully backed. A smooth reopening would ease pressure on crypto prices. Bitcoin is near $77,500, down from above $86,000 earlier in the month. Coinbase, a small US holding, fell about 13% on Friday.",
+   "dir": "watch",
+   "impact": 2,
+   "exposure_pct": 5.4,
+   "holdings": [
+    {
+     "name": "BTC",
+     "weight": 2.9
+    },
+    {
+     "name": "BNB",
+     "weight": 1.2
+    },
+    {
+     "name": "ETH",
+     "weight": 0.8
+    },
+    {
+     "name": "COIN",
+     "weight": 0.5
+    }
+   ],
+   "verify": "multi",
+   "verify_note": "Amounts differ: frozen funds $2.7bn vs about $3bn",
+   "sources": [
+    {
+     "name": "CoinDesk",
+     "url": "https://www.coindesk.com/business/2026/10/31/binance-says-it-has-replaced-90-of-stolen-crypto-after-massive-usd6-3-billion-breach",
+     "tier": "regional",
+     "primary": false,
+     "paywall": false
+    },
+    {
+     "name": "The Korea Herald",
+     "url": "https://www.koreaherald.com/article/10921226",
+     "tier": "regional",
+     "primary": false,
+     "paywall": false
+    }
+   ],
+   "related": [],
+   "find": [
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/site-search/?query=Binance+hack+North+Korea+withdrawals"
+    },
+    {
+     "name": "FT",
+     "url": "https://www.ft.com/search?q=Binance+hack+North+Korea+withdrawals"
+    }
+   ],
+   "set_links": []
+  },
+  {
+   "id": "fed-hold-rates",
+   "group": "United States",
+   "headline": "Fed holds rates with two votes for a hike; yields ease",
+   "when": "Wed 28 Oct · 14:00 ET",
+   "what": "The Fed kept its rate at 3.75% to 4% in a 10-2 vote. Two members wanted a quarter-point rise. The statement says inflation remains elevated. The 10-year Treasury yield fell about 6 basis points to 4.93% on Friday. Thursday's PCE inflation reading was 3.6% over the year. October jobs data is due on Friday 6 Nov.",
+   "why": "Elevated inflation and hike votes keep rate pressure on US stocks, which affects your S&P 500 and US funds. Lower yields on Friday gave only a little relief.",
+   "dir": "watch",
+   "impact": 2,
+   "exposure_pct": 16.9,
+   "holdings": [
+    {
+     "name": "ES-US500RMF",
+     "weight": 14.1
+    },
+    {
+     "name": "K-USA-A(D)",
+     "weight": 2.8
+    }
+   ],
+   "verify": "single",
+   "verify_note": "Fed statement read; one linkable outlet",
+   "sources": [
+    {
+     "name": "CNBC",
+     "url": "https://www.cnbc.com/amp/2026/10/30/us-treasury-yields-fed-interest-rates.html",
+     "tier": "major",
+     "primary": false,
+     "paywall": false
+    }
+   ],
+   "related": [],
+   "find": [
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/site-search/?query=Fed+holds+rates+dissent+hike+PCE"
+    },
+    {
+     "name": "FT",
+     "url": "https://www.ft.com/search?q=Fed+holds+rates+dissent+hike+PCE"
+    }
+   ],
+   "set_links": []
+  },
+  {
+   "id": "gold-slide",
+   "group": "Gold & metals",
+   "headline": "Gold and silver slide as the stock sell-off spreads",
+   "when": "Fri 30 Oct",
+   "what": "Gold futures closed down 3.29% at $3,899 in our market data. A Vietnamese outlet reports spot gold down 3.5% to $3,881, the lowest since October 2025, and silver down 6.5% to $49. It links the drop to the tech sell-off.",
+   "why": "UOBSG-N is 1.9% of your portfolio and is priced at its 28 Oct NAV this morning. Gold is down about 3.8% since then, which is not yet in your numbers.",
+   "dir": "neg",
+   "impact": 1,
+   "exposure_pct": 2.6,
+   "holdings": [
+    {
+     "name": "UOBSG-N",
+     "weight": 1.9
+    },
+    {
+     "name": "REMX",
+     "weight": 0.7
+    }
+   ],
+   "verify": "single",
+   "verify_note": "One outlet; futures and spot prices differ slightly",
+   "sources": [
+    {
+     "name": "VnExpress International",
+     "url": "https://e.vnexpress.net/news/business/markets/gold-dips-to-4-month-low-5139100.html",
+     "tier": "regional",
+     "primary": false,
+     "paywall": false
+    }
+   ],
+   "related": [],
+   "find": [
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/site-search/?query=gold+price+falls+silver+below+50"
+    },
+    {
+     "name": "FT",
+     "url": "https://www.ft.com/search?q=gold+price+falls+silver+below+50"
+    }
+   ],
+   "set_links": []
+  }
+ ],
+ "briefly": [],
+ "upcoming": [
+  {
+   "dow": "Tue",
+   "day": "3",
+   "mon": "Nov",
+   "date": "2026-11-03",
+   "date_label": null,
+   "time_bkt": "05:00",
+   "title": "Apple FY26 Q4 results",
+   "detail": "Mon 2 Nov, 17:00 ET",
+   "exposure_label": "AAPL 3.7%",
+   "tab": null,
+   "source": {
+    "name": "Apple IR",
+    "url": "https://investor.apple.com/investor-relations/event-details/2026/FY-26-Fourth-Quarter-Results/default.aspx",
+    "tier": "primary",
+    "primary": false,
+    "paywall": false
+   }
+  },
+  {
+   "dow": "Tue",
+   "day": "3",
+   "mon": "Nov",
+   "date": "2026-11-03",
+   "date_label": null,
+   "time_bkt": "",
+   "title": "US midterm elections",
+   "detail": "Polls close on Wednesday morning, Bangkok time",
+   "exposure_label": "United States 25.2%",
+   "tab": null,
+   "source": null
+  },
+  {
+   "dow": "Fri",
+   "day": "27",
+   "mon": "Nov",
+   "date": "2026-11-27",
+   "date_label": null,
+   "time_bkt": "",
+   "title": "Samsung pays its ₩30 trillion dividend",
+   "detail": "₩4,601 a share",
+   "exposure_label": "Korea 16.7%",
+   "tab": null,
+   "source": {
+    "name": "Korea Herald",
+    "url": "https://www.koreaherald.com/article/10918617",
+    "tier": "regional",
+    "primary": false,
+    "paywall": false
+   }
+  },
+  {
+   "dow": "Thu",
+   "day": "10",
+   "mon": "Dec",
+   "date": "2026-12-10",
+   "date_label": null,
+   "time_bkt": "02:00",
+   "title": "Fed decision and new projections",
+   "detail": "Wed 9 Dec, 14:00 ET",
+   "exposure_label": "United States 25.2%",
+   "tab": null,
+   "source": {
+    "name": "Federal Reserve",
+    "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "tier": "primary",
+    "primary": false,
+    "paywall": false
+   }
+  },
+  {
+   "dow": "Thu",
+   "day": "31",
+   "mon": "Dec",
+   "date": "2026-12-31",
+   "date_label": "Late Dec",
+   "time_bkt": "",
+   "title": "Last chance for 2026 RMF and Thai ESG purchases",
+   "detail": "Cut-off dates vary by fund house",
+   "exposure_label": "See Tax & Lots",
+   "tab": "Tax & Lots",
+   "source": null
+  }
+ ],
+ "radar": [],
+ "quiet": [
+  {
+   "name": "K-GHRMF",
+   "weight": 4.9,
+   "set_url": null
+  },
+  {
+   "name": "K-VIETNAMRMF",
+   "weight": 4.6,
+   "set_url": null
+  },
+  {
+   "name": "BFLRMF",
+   "weight": 3.4,
+   "set_url": null
+  },
+  {
+   "name": "BCARERMF",
+   "weight": 3.0,
+   "set_url": null
+  },
+  {
+   "name": "K-CHX",
+   "weight": 2.6,
+   "set_url": null
+  },
+  {
+   "name": "GULF",
+   "weight": 2.5,
+   "set_url": "https://www.set.or.th/en/market/product/stock/quote/GULF/news"
+  },
+  {
+   "name": "UTSB-THAIESG",
+   "weight": 2.3,
+   "set_url": null
+  },
+  {
+   "name": "Janus Henderson Horizon Global Technology Leaders Fund A2 (SGD-H)",
+   "weight": 2.0,
+   "set_url": null
+  },
+  {
+   "name": "K-TNZ-ThaiESG",
+   "weight": 2.0,
+   "set_url": null
+  },
+  {
+   "name": "ASP-SME-A",
+   "weight": 1.7,
+   "set_url": null
+  },
+  {
+   "name": "SCBTAPX(25D)",
+   "weight": 1.6,
+   "set_url": null
+  },
+  {
+   "name": "BFRMF",
+   "weight": 1.5,
+   "set_url": null
+  },
+  {
+   "name": "B-EQUITY",
+   "weight": 1.3,
+   "set_url": null
+  },
+  {
+   "name": "Janus Henderson Horizon Global Property Equities Fund A3q (SGD)",
+   "weight": 1.1,
+   "set_url": null
+  },
+  {
+   "name": "LionGlobal Vietnam Fund Class A (SGD)",
+   "weight": 1.1,
+   "set_url": null
+  },
+  {
+   "name": "KF-ASET50-L",
+   "weight": 1.0,
+   "set_url": null
+  },
+  {
+   "name": "SCBSET-SSFX",
+   "weight": 0.9,
+   "set_url": null
+  },
+  {
+   "name": "B-MIXED75",
+   "weight": 0.8,
+   "set_url": null
+  },
+  {
+   "name": "BlackRock Asian Growth Leaders Fund A2 (SGD-H) Acc",
+   "weight": 0.7,
+   "set_url": null
+  },
+  {
+   "name": "BERMF",
+   "weight": 0.7,
+   "set_url": null
+  },
+  {
+   "name": "ASP-AIEQ",
+   "weight": 0.7,
+   "set_url": null
+  },
+  {
+   "name": "SCBSEMI(A)",
+   "weight": 0.5,
+   "set_url": null
+  },
+  {
+   "name": "ASP-THGEQ-T",
+   "weight": 0.5,
+   "set_url": null
+  },
+  {
+   "name": "ASP-JHC",
+   "weight": 0.5,
+   "set_url": null
+  }
+ ],
+ "quiet_small_count": 60,
+ "thai_stocks": [
+  {
+   "symbol": "GULF",
+   "weight": 2.49,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/GULF/news"
+  },
+  {
+   "symbol": "BANPU",
+   "weight": 0.45,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/BANPU/news"
+  },
+  {
+   "symbol": "BBL",
+   "weight": 0.37,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/BBL/news"
+  },
+  {
+   "symbol": "OSP",
+   "weight": 0.36,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/OSP/news"
+  },
+  {
+   "symbol": "SAWAD",
+   "weight": 0.35,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/SAWAD/news"
+  },
+  {
+   "symbol": "RJH",
+   "weight": 0.32,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/RJH/news"
+  },
+  {
+   "symbol": "NCAP",
+   "weight": 0.26,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/NCAP/news"
+  },
+  {
+   "symbol": "NETBAY",
+   "weight": 0.22,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/NETBAY/news"
+  },
+  {
+   "symbol": "OR",
+   "weight": 0.22,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/OR/news"
+  },
+  {
+   "symbol": "HUMAN",
+   "weight": 0.17,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/HUMAN/news"
+  },
+  {
+   "symbol": "SAMART",
+   "weight": 0.09,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/SAMART/news"
+  },
+  {
+   "symbol": "TIDLOR",
+   "weight": 0.08,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/TIDLOR/news"
+  },
+  {
+   "symbol": "BWG",
+   "weight": 0.08,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/BWG/news"
+  },
+  {
+   "symbol": "BLAND",
+   "weight": 0.04,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/BLAND/news"
+  },
+  {
+   "symbol": "GSTEEL",
+   "weight": 0.04,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/GSTEEL/news"
+  },
+  {
+   "symbol": "WORK",
+   "weight": 0.01,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/WORK/news"
+  }
+ ],
+ "nav_lags": [
+  {
+   "fund": "SCBKEQTG",
+   "weight": 0.1459,
+   "nav_date": "2026-10-22",
+   "proxy_symbol": "^KS11",
+   "proxy_last_date": "2026-10-30",
+   "proxy_move_since_nav": 0.0356
+  },
+  {
+   "fund": "ES-US500RMF",
+   "weight": 0.1413,
+   "nav_date": "2026-10-28",
+   "proxy_symbol": "^GSPC",
+   "proxy_last_date": "2026-10-30",
+   "proxy_move_since_nav": -0.0212
+  },
+  {
+   "fund": "K-GHRMF",
+   "weight": 0.0486,
+   "nav_date": "2026-10-27",
+   "proxy_symbol": "IXJ",
+   "proxy_last_date": "2026-10-30",
+   "proxy_move_since_nav": 0.0312
+  },
+  {
+   "fund": "BCARERMF",
+   "weight": 0.0295,
+   "nav_date": "2026-10-27",
+   "proxy_symbol": "IXJ",
+   "proxy_last_date": "2026-10-30",
+   "proxy_move_since_nav": 0.0312
+  },
+  {
+   "fund": "K-USA-A(D)",
+   "weight": 0.0282,
+   "nav_date": "2026-10-28",
+   "proxy_symbol": "^GSPC",
+   "proxy_last_date": "2026-10-30",
+   "proxy_move_since_nav": -0.0212
+  },
+  {
+   "fund": "UOBSG-N",
+   "weight": 0.0193,
+   "nav_date": "2026-10-28",
+   "proxy_symbol": "GC=F",
+   "proxy_last_date": "2026-10-30",
+   "proxy_move_since_nav": -0.0377
+  }
+ ],
+ "method": {
+  "primary": "central banks, regulators and exchanges, company investor pages and fund houses",
+  "press": [
+   "Bloomberg",
+   "CNBC",
+   "Nikkei Asia",
+   "Axios"
+  ],
+  "regional": [
+   "Korea Herald",
+   "Korea Times",
+   "KED Global",
+   "Korea JoongAng Daily",
+   "Bangkok Post",
+   "The Nation",
+   "VnExpress",
+   "Vietnam News",
+   "The Investor",
+   "Vietnam Investment Review",
+   "SCMP",
+   "Caixin",
+   "CoinDesk",
+   "The Block",
+   "STAT",
+   "Fierce Pharma",
+   "Fierce Biotech"
+  ],
+  "blocked": [
+   "Reuters",
+   "AP",
+   "Yonhap",
+   "AFP",
+   "the FT",
+   "WSJ",
+   "Barron's",
+   "MarketWatch",
+   "The Economist",
+   "BBC",
+   "NYT",
+   "The Guardian"
+  ]
+ }
+}
