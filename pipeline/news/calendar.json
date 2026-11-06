@@ -67,6 +67,18 @@
    }
   },
   {
+   "date": "2026-12-04",
+   "time_bkt": "20:30",
+   "title": "US November jobs report",
+   "detail": "Fri 4 Dec, 08:30 ET",
+   "group": "United States",
+   "kind": "data",
+   "source": {
+    "name": "Bureau of Labor Statistics",
+    "url": "https://www.bls.gov/news.release/empsit.nr0.htm"
+   }
+  },
+  {
    "date": "2026-12-10",
    "time_bkt": "02:00",
    "title": "Fed decision and new projections",
