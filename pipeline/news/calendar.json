@@ -55,6 +55,20 @@
    }
   },
   {
+   "date": "2026-11-18",
+   "time_bkt": "",
+   "title": "Closed US House briefing on Nvidia CEO inquiry",
+   "detail": "Requested by three committee chairs",
+   "holdings": [
+    "NVDA"
+   ],
+   "kind": "other",
+   "source": {
+    "name": "Korea Herald",
+    "url": "https://www.koreaherald.com/article/10930899"
+   }
+  },
+  {
    "date": "2026-11-27",
    "time_bkt": "",
    "title": "Samsung pays its ₩30 trillion dividend",
