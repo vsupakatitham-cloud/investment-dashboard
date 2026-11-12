@@ -1,0 +1,823 @@
+{
+ "schema": 1,
+ "status": "live",
+ "edition_date": "2026-11-13",
+ "generated_at": "2026-11-13T05:47+07:00",
+ "window": {
+  "from": "2026-11-12T06:00+07:00",
+  "to": "2026-11-13T05:45+07:00"
+ },
+ "portfolio_as_of": "2026-11-13",
+ "read_minutes": 4,
+ "stats": {
+  "stories": 4,
+  "short_items": 3,
+  "outlets": 4,
+  "outlet_names": [
+   "CoinDesk",
+   "Korea Herald",
+   "SEC EDGAR",
+   "The Block"
+  ],
+  "primary_checked": 3
+ },
+ "markets": {
+  "tiles": [
+   {
+    "label": "SET",
+    "value": "1,499.06",
+    "change": "▼ 0.20%",
+    "dir": "neg",
+    "asof_date": "2026-11-12",
+    "window": "close",
+    "exposure_label": "Your Thailand",
+    "exposure_pct": 24.0
+   },
+   {
+    "label": "S&P 500",
+    "value": "7,592.40",
+    "change": "▼ 0.35%",
+    "dir": "neg",
+    "asof_date": "2026-11-12",
+    "window": "close",
+    "exposure_label": "Your US large cap",
+    "exposure_pct": 16.7
+   },
+   {
+    "label": "KOSPI",
+    "value": "5,342.73",
+    "change": "▼ 0.61%",
+    "dir": "neg",
+    "asof_date": "2026-11-12",
+    "window": "close",
+    "exposure_label": "Your Korea",
+    "exposure_pct": 16.0
+   },
+   {
+    "label": "USD/THB",
+    "value": "33.90",
+    "change": "▲ 0.50%",
+    "dir": "neutral",
+    "asof_date": "2026-11-12",
+    "window": "close",
+    "exposure_label": "Your USD-priced holdings",
+    "exposure_pct": 13.5
+   },
+   {
+    "label": "Nasdaq",
+    "value": "25,366.09",
+    "change": "▼ 0.39%",
+    "dir": "neg",
+    "asof_date": "2026-11-12",
+    "window": "close",
+    "exposure_label": "Your US stocks",
+    "exposure_pct": 9.0
+   },
+   {
+    "label": "VN-Index",
+    "value": "1,734.75",
+    "change": "▼ 0.70%",
+    "dir": "neg",
+    "asof_date": "2026-11-12",
+    "window": "close",
+    "exposure_label": "Your Vietnam",
+    "exposure_pct": 6.2
+   },
+   {
+    "label": "Bitcoin",
+    "value": "$71,330",
+    "change": "▼ 3.51%",
+    "dir": "neg",
+    "asof_date": "2026-11-12",
+    "window": "24h",
+    "exposure_label": "Your crypto",
+    "exposure_pct": 5.5
+   },
+   {
+    "label": "China A50",
+    "value": "12,981.41",
+    "change": "▼ 0.36%",
+    "dir": "neg",
+    "asof_date": "2026-11-12",
+    "window": "close",
+    "exposure_label": "Your China",
+    "exposure_pct": 3.5
+   },
+   {
+    "label": "Gold",
+    "value": "$3,882",
+    "change": "▼ 2.97%",
+    "dir": "neg",
+    "asof_date": "2026-11-12",
+    "window": "24h",
+    "exposure_label": "Your gold",
+    "exposure_pct": 1.9
+   },
+   {
+    "label": "US 10-year",
+    "value": "5.10%",
+    "change": "▲ 10 bp",
+    "dir": "neutral",
+    "asof_date": "2026-11-12",
+    "window": "close",
+    "exposure_label": "Rates",
+    "exposure_pct": null
+   }
+  ],
+  "early": [
+   {
+    "label": "S&P 500 futures",
+    "change": "▼ 0.25%",
+    "dir": "neg"
+   },
+   {
+    "label": "Nasdaq-100 futures",
+    "change": "▼ 0.25%",
+    "dir": "neg"
+   }
+  ],
+  "fetched_at": "2026-11-13T05:45+07:00"
+ },
+ "top3": [
+  {
+   "lead": "Nvidia's chief executive resigned, and the shares dropped sharply.",
+   "text": "The board accepted Jensen Huang's exit on 12 Nov. CFO Colette Kress is interim CEO. Reports say the stock fell more than 10% early, then pared losses. It touches your AI funds and your S&P 500 feeder.",
+   "dir": "neg",
+   "exposure_pct": 15.3,
+   "exposure_label": "Tech & AI"
+  },
+  {
+   "lead": "US rate-hike bets grew, and the 10-year Treasury yield passed 5%.",
+   "text": "Markets price a 94% chance of a quarter-point Fed hike on 9 Dec. The 10-year yield rose 10 bp to 5.10%. US stocks ended lower and bitcoin and gold fell.",
+   "dir": "neg",
+   "exposure_pct": 16.7,
+   "exposure_label": "United States"
+  },
+  {
+   "lead": "Seoul shares fell 0.61% as Nvidia's leadership risk weighed on chip stocks.",
+   "text": "Samsung Electronics rose, but SK hynix fell. Your Korea fund is priced at its 10 Nov NAV, so it does not yet show the moves since.",
+   "dir": "neg",
+   "exposure_pct": 16.0,
+   "exposure_label": "Korea"
+  }
+ ],
+ "also": [
+  "VN-Index fell 0.70% to 1,734.75",
+  "SET ended 0.20% lower; USD/THB up 0.50% to 33.90",
+  "Nvidia reports quarterly results on 17 Nov, as planned"
+ ],
+ "stories": [
+  {
+   "id": "nvidia-ceo-resigns",
+   "group": "Tech & AI",
+   "headline": "Nvidia's CEO steps down immediately; CFO Kress takes over as interim chief",
+   "when": "Thu 12 Nov · US session",
+   "what": "Nvidia told the SEC that Jensen Huang resigned as president, chief executive and director, effective immediately. CFO Colette Kress is interim CEO while the board searches for a successor, and she keeps her finance role. Harvey Jones became board chair. Press reports link the exit to alleged affairs. Nvidia shares fell more than 10% in premarket trading, and one market wrap had them about 5% lower after a partial recovery. Nvidia says its quarterly results still come on 17 Nov.",
+   "why": "Nvidia sits at the centre of the AI chip trade, so leadership risk spreads to chip makers, the AI and semiconductor funds you hold, and the large-cap index funds where it is a big weight. Your direct NVDA position is small. The next checkpoints are the 17 Nov results and any news on a permanent CEO.",
+   "dir": "neg",
+   "impact": 3,
+   "exposure_pct": 15.6,
+   "holdings": [
+    {
+     "name": "ES-US500RMF",
+     "weight": 14.0
+    },
+    {
+     "name": "ASP-AIEQ",
+     "weight": 0.6
+    },
+    {
+     "name": "SCBSEMI(A)",
+     "weight": 0.5
+    },
+    {
+     "name": "K-GTECHRMF",
+     "weight": 0.4
+    },
+    {
+     "name": "NVDA",
+     "weight": 0.2
+    }
+   ],
+   "verify": "primary",
+   "verify_note": "Leadership change checked in the 8-K; share moves from press",
+   "sources": [
+    {
+     "name": "SEC (Nvidia 8-K)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm",
+     "tier": "primary",
+     "primary": true,
+     "paywall": false
+    },
+    {
+     "name": "Korea Herald",
+     "url": "https://www.koreaherald.com/article/10935644",
+     "tier": "regional",
+     "primary": false,
+     "paywall": false
+    },
+    {
+     "name": "CoinDesk",
+     "url": "https://www.coindesk.com/tech/2026/11/12/live-news-strategy-kicked-out-of-msci-indexes-as-nvidia-slump-rattles-markets",
+     "tier": "regional",
+     "primary": false,
+     "paywall": false
+    }
+   ],
+   "related": [],
+   "find": [
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/site-search/?query=Nvidia+Huang+resigns+CEO+Kress"
+    },
+    {
+     "name": "FT",
+     "url": "https://www.ft.com/search?q=Nvidia+Huang+resigns+CEO+Kress"
+    }
+   ],
+   "set_links": []
+  },
+  {
+   "id": "fed-hike-bets-yields",
+   "group": "United States",
+   "headline": "Traders now expect a December Fed hike as the 10-year yield tops 5%",
+   "when": "Thu 12 Nov · US session",
+   "what": "Markets price a 94% chance of a 25 bp Fed hike at the 9 Dec meeting, according to CoinDesk. Governor Waller leans to 25 bp and would consider 50 bp if October inflation stays firm. Cleveland Fed's Hammack prefers smaller, steadier hikes. The 10-year yield closed up 10 bp at 5.10%. The S&P 500 fell 0.35% and the Nasdaq 0.39%.",
+   "why": "Higher yields make future profits worth less, which weighs most on large technology shares that dominate your S&P 500 feeder and US fund. A stronger dollar can also lift your THB-priced US funds when converted. The 4 Dec jobs report and the 9 Dec Fed decision are the next tests.",
+   "dir": "neg",
+   "impact": 3,
+   "exposure_pct": 21.9,
+   "holdings": [
+    {
+     "name": "ES-US500RMF",
+     "weight": 14.0
+    },
+    {
+     "name": "AAPL",
+     "weight": 3.9
+    },
+    {
+     "name": "K-USA-A(D)",
+     "weight": 2.7
+    },
+    {
+     "name": "META",
+     "weight": 1.3
+    }
+   ],
+   "verify": "single",
+   "verify_note": "Hike odds and Fed comments from one live blog",
+   "sources": [
+    {
+     "name": "CoinDesk",
+     "url": "https://www.coindesk.com/tech/2026/11/12/live-news-strategy-kicked-out-of-msci-indexes-as-nvidia-slump-rattles-markets",
+     "tier": "regional",
+     "primary": false,
+     "paywall": false
+    }
+   ],
+   "related": [],
+   "find": [
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/site-search/?query=Fed+December+rate+hike+odds+Treasury+yields"
+    },
+    {
+     "name": "FT",
+     "url": "https://www.ft.com/search?q=Fed+December+rate+hike+odds+Treasury+yields"
+    }
+   ],
+   "set_links": []
+  },
+  {
+   "id": "kospi-nvidia-risk",
+   "group": "Korea",
+   "headline": "Seoul stocks snap a two-day rally as chip names slip on Nvidia worries",
+   "when": "Thu 12 Nov · KRX close",
+   "what": "The KOSPI closed 0.61% lower at 5,342.73 after rising 4.39% on Tuesday and 2.6% on Wednesday. Losers outnumbered winners 595 to 268. Samsung Electronics gained 0.97% to 208,000 won, while SK hynix fell 1.8% to 1.25 million won. Foreign investors bought a net 370.4 billion won of shares. Internet group Naver fell 6.43%.",
+   "why": "SCBKEQTG, your biggest Korea holding, is priced at its 10 Nov NAV this morning. The KOSPI is up about 2.6% since then, so the fund's own numbers lag. The dashboard refreshes again at 11:30, when newer NAVs usually arrive. Korean chip makers supply memory to Nvidia, so its turmoil matters here.",
+   "dir": "neg",
+   "impact": 2,
+   "exposure_pct": 16.0,
+   "holdings": [
+    {
+     "name": "SCBKEQTG",
+     "weight": 13.9
+    },
+    {
+     "name": "EWY",
+     "weight": 2.1
+    }
+   ],
+   "verify": "single",
+   "verify_note": "Single outlet; KOSPI close matches market data",
+   "sources": [
+    {
+     "name": "Korea Herald",
+     "url": "https://www.koreaherald.com/article/10935465",
+     "tier": "regional",
+     "primary": false,
+     "paywall": false
+    }
+   ],
+   "related": [],
+   "find": [
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/site-search/?query=KOSPI+Samsung+SK+hynix+Nvidia"
+    },
+    {
+     "name": "FT",
+     "url": "https://www.ft.com/search?q=KOSPI+Samsung+SK+hynix+Nvidia"
+    }
+   ],
+   "set_links": []
+  },
+  {
+   "id": "crypto-three-month-low",
+   "group": "Crypto",
+   "headline": "Bitcoin sinks to a three-month low as rates rise and an index drops Strategy",
+   "when": "Thu 12 Nov",
+   "what": "Bitcoin fell about 3.5% to roughly $71,300, its weakest since August. Ether is near $2,000. US spot bitcoin funds lost about $300 million on Wednesday. MSCI will remove Strategy, the largest corporate bitcoin holder, from its global indexes after the close on 30 Nov, which could force funds that track those indexes to sell. Separately, the US Justice Department won court approval to seize or restrain more than $1.2 billion stolen in the Binance hack.",
+   "why": "Crypto is 5.5% of your portfolio, so a fall of this size is visible. Rising rates and a firmer dollar are the main pressure. The Binance news is mildly positive for BNB holders because it points to recovery of stolen funds and Binance says it has covered the losses.",
+   "dir": "neg",
+   "impact": 2,
+   "exposure_pct": 5.1,
+   "holdings": [
+    {
+     "name": "BTC",
+     "weight": 2.7
+    },
+    {
+     "name": "BNB",
+     "weight": 1.2
+    },
+    {
+     "name": "ETH",
+     "weight": 0.8
+    },
+    {
+     "name": "COIN",
+     "weight": 0.4
+    }
+   ],
+   "verify": "multi",
+   "verify_note": "Price and flows from CoinDesk; Binance seizure from The Block",
+   "sources": [
+    {
+     "name": "CoinDesk",
+     "url": "https://www.coindesk.com/tech/2026/11/12/live-news-strategy-kicked-out-of-msci-indexes-as-nvidia-slump-rattles-markets",
+     "tier": "regional",
+     "primary": false,
+     "paywall": false
+    },
+    {
+     "name": "The Block",
+     "url": "https://www.theblock.co/news/business/2026-11-12-doj-seize-1-2-billion-binance-hack-north-korea-facestealer-439065",
+     "tier": "regional",
+     "primary": false,
+     "paywall": false
+    }
+   ],
+   "related": [],
+   "find": [
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/site-search/?query=bitcoin+three-month+low+Strategy+MSCI"
+    },
+    {
+     "name": "FT",
+     "url": "https://www.ft.com/search?q=bitcoin+three-month+low+Strategy+MSCI"
+    }
+   ],
+   "set_links": []
+  }
+ ],
+ "briefly": [
+  {
+   "headline": "Gold slides almost 3%, and your gold fund is priced days behind",
+   "text": "Gold fell 2.97% to about $3,882 an ounce as yields and the dollar rose. UOBSG-N is priced at its 10 Nov NAV this morning; gold is down about 3.7% since then, so the fund's numbers do not yet show it. The 11:30 refresh may bring a newer NAV.",
+   "exposure_pct": 1.9,
+   "exposure_label": "Gold & metals",
+   "verify": "single",
+   "verify_note": "Single outlet; price from market data",
+   "sources": [
+    {
+     "name": "CoinDesk",
+     "url": "https://www.coindesk.com/tech/2026/11/12/live-news-strategy-kicked-out-of-msci-indexes-as-nvidia-slump-rattles-markets",
+     "tier": "regional",
+     "primary": false,
+     "paywall": false
+    }
+   ],
+   "set_links": []
+  },
+  {
+   "headline": "Applied Materials posts record quarter and guides higher",
+   "text": "Revenue for the quarter to 25 Oct was $10.41 billion, up 53%, with non-GAAP EPS of $4.16. The company guided next quarter revenue to $11.10 billion, give or take $0.5 billion. Equipment demand is a good sign for chip-related funds.",
+   "exposure_pct": 0.2,
+   "exposure_label": "United States",
+   "verify": "primary",
+   "verify_note": "Checked in the company's results release filed with the SEC",
+   "sources": [
+    {
+     "name": "SEC (Applied Materials 8-K, Ex. 99.1)",
+     "url": "https://www.sec.gov/Archives/edgar/data/0000006951/000162828026073360/exhibit991q42026earningsre.htm",
+     "tier": "primary",
+     "primary": true,
+     "paywall": false
+    }
+   ],
+   "set_links": []
+  },
+  {
+   "headline": "Meta sells €9.0 billion of euro bonds",
+   "text": "Meta filed that it completed a six-part euro bond sale totalling €9.0 billion, with maturities from 2031 to 2065 and coupons from 4.3% to 6.4%. It shows heavy borrowing to fund spending, at higher rates.",
+   "exposure_pct": 1.3,
+   "exposure_label": "United States",
+   "verify": "primary",
+   "verify_note": "Checked in Meta's 8-K",
+   "sources": [
+    {
+     "name": "SEC (Meta 8-K)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526458525/d177728d8k.htm",
+     "tier": "primary",
+     "primary": true,
+     "paywall": false
+    }
+   ],
+   "set_links": []
+  }
+ ],
+ "upcoming": [
+  {
+   "dow": "Tue",
+   "day": "17",
+   "mon": "Nov",
+   "date": "2026-11-17",
+   "date_label": null,
+   "time_bkt": "",
+   "title": "Nvidia third-quarter results",
+   "detail": "Company says date is unchanged",
+   "exposure_label": "NVDA 0.2%",
+   "tab": null,
+   "source": {
+    "name": "Korea Herald",
+    "url": "https://www.koreaherald.com/article/10935644",
+    "tier": "regional",
+    "primary": false,
+    "paywall": false
+   }
+  },
+  {
+   "dow": "Wed",
+   "day": "18",
+   "mon": "Nov",
+   "date": "2026-11-18",
+   "date_label": null,
+   "time_bkt": "",
+   "title": "Closed US House briefing on Nvidia CEO inquiry",
+   "detail": "Requested by three committee chairs",
+   "exposure_label": "NVDA 0.2%",
+   "tab": null,
+   "source": {
+    "name": "Korea Herald",
+    "url": "https://www.koreaherald.com/article/10930899",
+    "tier": "regional",
+    "primary": false,
+    "paywall": false
+   }
+  },
+  {
+   "dow": "Fri",
+   "day": "27",
+   "mon": "Nov",
+   "date": "2026-11-27",
+   "date_label": null,
+   "time_bkt": "",
+   "title": "Samsung pays its ₩30 trillion dividend",
+   "detail": "₩4,601 a share",
+   "exposure_label": "Korea 16.0%",
+   "tab": null,
+   "source": {
+    "name": "Korea Herald",
+    "url": "https://www.koreaherald.com/article/10918617",
+    "tier": "regional",
+    "primary": false,
+    "paywall": false
+   }
+  },
+  {
+   "dow": "Fri",
+   "day": "4",
+   "mon": "Dec",
+   "date": "2026-12-04",
+   "date_label": null,
+   "time_bkt": "20:30",
+   "title": "US November jobs report",
+   "detail": "Fri 4 Dec, 08:30 ET",
+   "exposure_label": "United States 25.3%",
+   "tab": null,
+   "source": {
+    "name": "Bureau of Labor Statistics",
+    "url": "https://www.bls.gov/news.release/empsit.nr0.htm",
+    "tier": "primary",
+    "primary": false,
+    "paywall": false
+   }
+  },
+  {
+   "dow": "Thu",
+   "day": "10",
+   "mon": "Dec",
+   "date": "2026-12-10",
+   "date_label": null,
+   "time_bkt": "02:00",
+   "title": "Fed decision and new projections",
+   "detail": "Wed 9 Dec, 14:00 ET",
+   "exposure_label": "United States 25.3%",
+   "tab": null,
+   "source": {
+    "name": "Federal Reserve",
+    "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "tier": "primary",
+    "primary": false,
+    "paywall": false
+   }
+  },
+  {
+   "dow": "Thu",
+   "day": "31",
+   "mon": "Dec",
+   "date": "2026-12-31",
+   "date_label": "Late Dec",
+   "time_bkt": "",
+   "title": "Last chance for 2026 RMF and Thai ESG purchases",
+   "detail": "Cut-off dates vary by fund house",
+   "exposure_label": "See Tax & Lots",
+   "tab": "Tax & Lots",
+   "source": null
+  }
+ ],
+ "radar": [],
+ "quiet": [
+  {
+   "name": "K-GHRMF",
+   "weight": 5.2,
+   "set_url": null
+  },
+  {
+   "name": "K-VIETNAMRMF",
+   "weight": 4.7,
+   "set_url": null
+  },
+  {
+   "name": "BFLRMF",
+   "weight": 3.4,
+   "set_url": null
+  },
+  {
+   "name": "BCARERMF",
+   "weight": 3.2,
+   "set_url": null
+  },
+  {
+   "name": "K-CHX",
+   "weight": 2.7,
+   "set_url": null
+  },
+  {
+   "name": "GULF",
+   "weight": 2.6,
+   "set_url": "https://www.set.or.th/en/market/product/stock/quote/GULF/news"
+  },
+  {
+   "name": "UTSB-THAIESG",
+   "weight": 2.4,
+   "set_url": null
+  },
+  {
+   "name": "Janus Henderson Horizon Global Technology Leaders Fund A2 (SGD-H)",
+   "weight": 2.0,
+   "set_url": null
+  },
+  {
+   "name": "K-TNZ-ThaiESG",
+   "weight": 2.0,
+   "set_url": null
+  },
+  {
+   "name": "ASP-SME-A",
+   "weight": 1.7,
+   "set_url": null
+  },
+  {
+   "name": "SCBTAPX(25D)",
+   "weight": 1.6,
+   "set_url": null
+  },
+  {
+   "name": "BFRMF",
+   "weight": 1.5,
+   "set_url": null
+  },
+  {
+   "name": "TSLA",
+   "weight": 1.3,
+   "set_url": null
+  },
+  {
+   "name": "B-EQUITY",
+   "weight": 1.2,
+   "set_url": null
+  },
+  {
+   "name": "Janus Henderson Horizon Global Property Equities Fund A3q (SGD)",
+   "weight": 1.2,
+   "set_url": null
+  },
+  {
+   "name": "LionGlobal Vietnam Fund Class A (SGD)",
+   "weight": 1.1,
+   "set_url": null
+  },
+  {
+   "name": "KF-ASET50-L",
+   "weight": 1.0,
+   "set_url": null
+  },
+  {
+   "name": "SCBSET-SSFX",
+   "weight": 0.9,
+   "set_url": null
+  },
+  {
+   "name": "B-MIXED75",
+   "weight": 0.8,
+   "set_url": null
+  },
+  {
+   "name": "BlackRock Asian Growth Leaders Fund A2 (SGD-H) Acc",
+   "weight": 0.8,
+   "set_url": null
+  },
+  {
+   "name": "BERMF",
+   "weight": 0.7,
+   "set_url": null
+  },
+  {
+   "name": "REMX",
+   "weight": 0.7,
+   "set_url": null
+  },
+  {
+   "name": "ASP-THGEQ-T",
+   "weight": 0.5,
+   "set_url": null
+  }
+ ],
+ "quiet_small_count": 62,
+ "thai_stocks": [
+  {
+   "symbol": "GULF",
+   "weight": 2.62,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/GULF/news"
+  },
+  {
+   "symbol": "BANPU",
+   "weight": 0.45,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/BANPU/news"
+  },
+  {
+   "symbol": "OSP",
+   "weight": 0.39,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/OSP/news"
+  },
+  {
+   "symbol": "BBL",
+   "weight": 0.37,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/BBL/news"
+  },
+  {
+   "symbol": "SAWAD",
+   "weight": 0.37,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/SAWAD/news"
+  },
+  {
+   "symbol": "RJH",
+   "weight": 0.34,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/RJH/news"
+  },
+  {
+   "symbol": "NCAP",
+   "weight": 0.26,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/NCAP/news"
+  },
+  {
+   "symbol": "OR",
+   "weight": 0.22,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/OR/news"
+  },
+  {
+   "symbol": "NETBAY",
+   "weight": 0.2,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/NETBAY/news"
+  },
+  {
+   "symbol": "HUMAN",
+   "weight": 0.17,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/HUMAN/news"
+  },
+  {
+   "symbol": "TIDLOR",
+   "weight": 0.09,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/TIDLOR/news"
+  },
+  {
+   "symbol": "SAMART",
+   "weight": 0.09,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/SAMART/news"
+  },
+  {
+   "symbol": "BWG",
+   "weight": 0.07,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/BWG/news"
+  },
+  {
+   "symbol": "BLAND",
+   "weight": 0.04,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/BLAND/news"
+  },
+  {
+   "symbol": "GSTEEL",
+   "weight": 0.04,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/GSTEEL/news"
+  },
+  {
+   "symbol": "WORK",
+   "weight": 0.01,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/WORK/news"
+  }
+ ],
+ "nav_lags": [
+  {
+   "fund": "SCBKEQTG",
+   "weight": 0.1392,
+   "nav_date": "2026-11-10",
+   "proxy_symbol": "^KS11",
+   "proxy_last_date": "2026-11-11",
+   "proxy_move_since_nav": 0.026
+  },
+  {
+   "fund": "UOBSG-N",
+   "weight": 0.0193,
+   "nav_date": "2026-11-10",
+   "proxy_symbol": "GC=F",
+   "proxy_last_date": "2026-11-12",
+   "proxy_move_since_nav": -0.0368
+  }
+ ],
+ "method": {
+  "primary": "central banks, regulators and exchanges, company investor pages and fund houses",
+  "press": [
+   "Bloomberg",
+   "CNBC",
+   "Nikkei Asia",
+   "Axios"
+  ],
+  "regional": [
+   "Korea Herald",
+   "Korea Times",
+   "KED Global",
+   "Korea JoongAng Daily",
+   "Bangkok Post",
+   "The Nation",
+   "VnExpress",
+   "Vietnam News",
+   "The Investor",
+   "Vietnam Investment Review",
+   "SCMP",
+   "Caixin",
+   "CoinDesk",
+   "The Block",
+   "STAT",
+   "Fierce Pharma",
+   "Fierce Biotech"
+  ],
+  "blocked": [
+   "Reuters",
+   "AP",
+   "Yonhap",
+   "AFP",
+   "the FT",
+   "WSJ",
+   "Barron's",
+   "MarketWatch",
+   "The Economist",
+   "BBC",
+   "NYT",
+   "The Guardian"
+  ]
+ }
+}

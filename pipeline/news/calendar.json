@@ -55,6 +55,20 @@
    }
   },
   {
+   "date": "2026-11-17",
+   "time_bkt": "",
+   "title": "Nvidia third-quarter results",
+   "detail": "Company says date is unchanged",
+   "holdings": [
+    "NVDA"
+   ],
+   "kind": "earnings",
+   "source": {
+    "name": "Korea Herald",
+    "url": "https://www.koreaherald.com/article/10935644"
+   }
+  },
+  {
    "date": "2026-11-18",
    "time_bkt": "",
    "title": "Closed US House briefing on Nvidia CEO inquiry",
