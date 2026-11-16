@@ -83,6 +83,18 @@
    }
   },
   {
+   "date": "2026-11-19",
+   "time_bkt": "02:00",
+   "title": "FOMC minutes from the 27-28 Oct meeting",
+   "detail": "Wed 18 Nov, 14:00 ET",
+   "group": "United States",
+   "kind": "central-bank",
+   "source": {
+    "name": "CoinDesk",
+    "url": "https://www.coindesk.com/markets/2026/11/16/fomc-minutes-nvidia-earnings-russia-s-retail-crypto-rules-crypto-week-ahead"
+   }
+  },
+  {
    "date": "2026-11-27",
    "time_bkt": "",
    "title": "Samsung pays its ₩30 trillion dividend",
