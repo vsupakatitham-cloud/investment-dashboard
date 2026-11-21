@@ -1,25 +1,25 @@
 {
  "schema": 1,
  "status": "live",
- "edition_date": "2026-11-21",
- "generated_at": "2026-11-21T05:47+07:00",
+ "edition_date": "2026-11-22",
+ "generated_at": "2026-11-22T05:46+07:00",
  "window": {
-  "from": "2026-11-20T06:00+07:00",
-  "to": "2026-11-21T05:45+07:00"
+  "from": "2026-11-21T06:00+07:00",
+  "to": "2026-11-22T05:45+07:00"
  },
- "portfolio_as_of": "2026-11-21",
- "read_minutes": 4,
+ "portfolio_as_of": "2026-11-22",
+ "read_minutes": 2,
  "stats": {
   "stories": 4,
-  "short_items": 4,
+  "short_items": 1,
   "outlets": 4,
   "outlet_names": [
    "CoinDesk",
    "Korea Herald",
-   "Korea Times",
-   "SET"
+   "SEC EDGAR",
+   "VnExpress"
   ],
-  "primary_checked": 0
+  "primary_checked": 1
  },
  "markets": {
   "tiles": [
@@ -41,7 +41,7 @@
     "asof_date": "2026-11-20",
     "window": "close",
     "exposure_label": "Your US large cap",
-    "exposure_pct": 17.0
+    "exposure_pct": 16.9
    },
    {
     "label": "KOSPI",
@@ -51,7 +51,7 @@
     "asof_date": "2026-11-20",
     "window": "close",
     "exposure_label": "Your Korea",
-    "exposure_pct": 16.1
+    "exposure_pct": 16.0
    },
    {
     "label": "USD/THB",
@@ -61,7 +61,7 @@
     "asof_date": "2026-11-20",
     "window": "close",
     "exposure_label": "Your USD-priced holdings",
-    "exposure_pct": 12.6
+    "exposure_pct": 12.7
    },
    {
     "label": "Nasdaq",
@@ -71,7 +71,7 @@
     "asof_date": "2026-11-20",
     "window": "close",
     "exposure_label": "Your US stocks",
-    "exposure_pct": 8.5
+    "exposure_pct": 8.6
    },
    {
     "label": "VN-Index",
@@ -85,13 +85,13 @@
    },
    {
     "label": "Bitcoin",
-    "value": "$59,104",
-    "change": "▼ 4.52%",
-    "dir": "neg",
-    "asof_date": "2026-11-20",
+    "value": "$60,062",
+    "change": "▲ 2.14%",
+    "dir": "pos",
+    "asof_date": "2026-11-21",
     "window": "24h",
     "exposure_label": "Your crypto",
-    "exposure_pct": 4.7
+    "exposure_pct": 4.8
    },
    {
     "label": "China A50",
@@ -105,8 +105,8 @@
    },
    {
     "label": "Gold",
-    "value": "$3,539",
-    "change": "▼ 3.98%",
+    "value": "$3,515",
+    "change": "▼ 4.62%",
     "dir": "neg",
     "asof_date": "2026-11-20",
     "window": "24h",
@@ -127,68 +127,68 @@
   "early": [
    {
     "label": "S&P 500 futures",
-    "change": "▼ 3.20%",
+    "change": "▼ 3.64%",
     "dir": "neg"
    },
    {
     "label": "Nasdaq-100 futures",
-    "change": "▼ 4.92%",
+    "change": "▼ 5.54%",
     "dir": "neg"
    }
   ],
-  "fetched_at": "2026-11-21T05:45+07:00"
+  "fetched_at": "2026-11-22T05:45+07:00"
  },
  "top3": [
   {
-   "lead": "A sharp tech selloff hit Wall Street, with the S&P 500 down 3.7% at the close.",
-   "text": "Your two S&P 500 funds are still priced at their 18 Nov NAV this morning, so most of this fall is not in your numbers yet. The S&P 500 has fallen about 5.6% since then.",
+   "lead": "A sharp tech-led sell-off on Friday hit the US and Korea, your two biggest equity bets.",
+   "text": "The S&P 500 closed down 3.70% and the Nasdaq down 5.28% on Friday. Your S&P 500 feeder and US fund are priced at Thursday's NAV, so Friday's fall is not in those numbers yet.",
    "dir": "neg",
-   "exposure_pct": 23.2,
+   "exposure_pct": 16.9,
    "exposure_label": "United States"
   },
   {
-   "lead": "Korea's KOSPI fell 5.2% on Friday, led by Samsung and SK hynix.",
-   "text": "SCBKEQTG, your largest single holding at 14.3%, is priced at its 18 Nov NAV. Friday's fall is not in that price yet.",
+   "lead": "KOSPI fell 5.21% and is now about 30% below its early-October peak.",
+   "text": "Samsung and SK hynix led the drop on AI bubble worries. This morning your dashboard prices SCBKEQTG at its 19 Nov NAV, so most of Friday's fall is still to come through.",
    "dir": "neg",
-   "exposure_pct": 16.1,
+   "exposure_pct": 16.0,
    "exposure_label": "Korea"
   },
   {
-   "lead": "A Fed governor argued for more rate hikes, adding to the pressure on risk assets.",
-   "text": "The Fed's next decision is on 9 Dec. Bitcoin fell below $59,000 and gold dropped nearly 4% as markets moved toward cash.",
+   "lead": "Bitcoin touched a two-year low, then bounced back above $60,000.",
+   "text": "Rising real yields and heavy leveraged bets drove a liquidation wave. The bounce means your crypto is up on the 24-hour tile, but the trend is still weak.",
    "dir": "watch",
-   "exposure_pct": 4.2,
-   "exposure_label": "United States"
+   "exposure_pct": 3.1,
+   "exposure_label": "Crypto"
   }
  ],
  "also": [
-  "VN-Index finished almost flat, down 0.05%",
-  "USD/THB steady near 33.96",
-  "China A50 closed little changed, down 0.03%"
+  "Enphase to cut about 12% of staff (tiny holding)",
+  "Gold fell 4.62% to about $3,515 on Friday",
+  "Samsung dividend due Fri 27 Nov"
  ],
  "stories": [
   {
    "id": "us-tech-selloff",
    "group": "United States",
-   "headline": "Wall Street's tech rout deepens after Anthropic's debut fails to settle AI nerves",
+   "headline": "US stocks drop hard on Friday as AI worries and higher yields spread",
    "when": "Fri 20 Nov · US close",
-   "what": "US stocks fell sharply on Friday as technology shares were sold and money moved into defensive sectors such as healthcare and staples. The dashboard's closing quote shows the S&P 500 down 3.70% at 6,910 and the Nasdaq down 5.28%. Reports I read at earlier points in the day gave smaller falls: one had the S&P 500 down 1.2% and another had the Nasdaq down 3.8%. Chipmaker shares fell close to 6%. Anthropic, newly listed, slid on its first full day of trading.",
-   "why": "About 25% of your portfolio is in US stocks, mostly the two S&P 500 funds, which hold large tech names. ES-US500RMF and K-USA-A(D) are priced at their 18 Nov NAV this morning, and the S&P 500 has fallen about 5.6% since. The dashboard refreshes again at 11:30, when newer NAVs usually arrive. AAPL, META and TSLA are marked live and already show the move.",
+   "what": "The S&P 500 closed at 6,910.39, down 3.70%. The Nasdaq closed at 22,617.73, down 5.28%. Reports link the fall to doubts about AI valuations and higher real Treasury yields. A weekend report says a fresh share sale by Anthropic did not calm nerves. Anthropic's shares rose 17.1% on debut Thursday and fell 8.5% on Friday.",
+   "why": "About 17% of your portfolio is in US large caps, mostly through two funds priced at 19 Nov NAVs. Neither shows Friday's fall yet. The dashboard refreshes again at 11:30, when newer fund NAVs usually arrive.",
    "dir": "neg",
    "impact": 3,
    "exposure_pct": 23.2,
    "holdings": [
     {
      "name": "ES-US500RMF",
-     "weight": 14.2
+     "weight": 14.1
     },
     {
      "name": "AAPL",
-     "weight": 3.9
+     "weight": 4.0
     },
     {
      "name": "K-USA-A(D)",
-     "weight": 2.7
+     "weight": 2.8
     },
     {
      "name": "META",
@@ -199,85 +199,70 @@
      "weight": 1.2
     }
    ],
-   "verify": "differ",
-   "verify_note": "Outlets differ on index moves; closing quote used",
+   "verify": "multi",
+   "verify_note": "Index closes from tiles; causes from CoinDesk, Korea Herald",
    "sources": [
     {
-     "name": "Korea Times",
-     "url": "https://www.koreatimes.co.kr/world/20261121/nasdaq-falls-as-anthropic-fails-to-rekindle-ai-optimism",
+     "name": "CoinDesk",
+     "url": "https://www.coindesk.com/markets/2026/11/21/bitcoin-tanks-below-usd57-000-for-the-first-time-in-two-years-and-its-not-alone",
      "tier": "regional",
      "primary": false,
      "paywall": false
     },
     {
-     "name": "CoinDesk",
-     "url": "https://www.coindesk.com/markets/2026/11/20/bitcoin-plunges-below-usd59-000-as-rush-to-cash-puts-new-bear-market-lows-back-in-play",
+     "name": "Korea Herald",
+     "url": "https://www.koreaherald.com/article/10944733",
      "tier": "regional",
      "primary": false,
      "paywall": false
     }
    ],
-   "related": [
-    {
-     "label": "Rates",
-     "headline": "Treasury yields dropped as money left stocks",
-     "text": "The US 10-year yield fell about 10 to 14 basis points to roughly 4.9%, the biggest one-day drop in a month by one report. The 2-year yield fell more, even as markets still price a rate hike at the next Fed meeting.",
-     "sources": [
-      {
-       "name": "Korea Times",
-       "url": "https://www.koreatimes.co.kr/world/20261121/nasdaq-falls-as-anthropic-fails-to-rekindle-ai-optimism",
-       "tier": "regional",
-       "primary": false,
-       "paywall": false
-      }
-     ]
-    }
-   ],
+   "related": [],
    "find": [
     {
      "name": "Reuters",
-     "url": "https://www.reuters.com/site-search/?query=Wall+Street+selloff+Anthropic+Nasdaq"
+     "url": "https://www.reuters.com/site-search/?query=Wall+Street+sell-off+AI+Nasdaq"
     },
     {
      "name": "FT",
-     "url": "https://www.ft.com/search?q=Wall+Street+selloff+Anthropic+Nasdaq"
+     "url": "https://www.ft.com/search?q=Wall+Street+sell-off+AI+Nasdaq"
     }
    ],
    "set_links": []
   },
   {
-   "id": "kospi-plunge",
+   "id": "korea-chip-rout",
    "group": "Korea",
-   "headline": "Seoul stocks drop more than 5% as chipmakers lead the slide",
+   "headline": "Seoul's chip giants sink, pulling KOSPI down more than 5%",
    "when": "Fri 20 Nov · Seoul close",
-   "what": "The KOSPI fell 267.93 points, or 5.21%, to 4,869.96. Samsung Electronics lost 7.01% to 183,100 won and SK hynix lost 5.92% to 1,113,000 won. Foreign investors were net sellers of 1.13 trillion won, while individuals bought a net 1.59 trillion won. Program trading was paused for five minutes around noon. The won traded near 1,336 per dollar. Japan's benchmark also fell more than 5%.",
-   "why": "Korea is 16.1% of your portfolio, and SCBKEQTG alone is 14.3%. Samsung and SK hynix are heavy weights in Korean equity funds, so chip-led falls hit them hardest. SCBKEQTG is priced at its 18 Nov NAV this morning. Korea's market had risen about 1.4% by 19 Nov, but Friday's drop is not yet in the price. EWY trades in the US and will show the move as it goes.",
+   "what": "KOSPI closed at 4,869.96, down 5.21%, and fell below 5,000 at the open. Samsung Electronics lost 7.01% to 183,100 won and SK hynix lost 5.92%. One analyst warns of more losses. KB Securities still expects memory prices to rise next year. Foreign investors sold a net 25.98 trillion won of Korean shares in October.",
+   "why": "Korea is 16.0% of your portfolio, mainly SCBKEQTG at 14.2%. Samsung and SK hynix are large weights in Korean funds. SCBKEQTG is priced at its 19 Nov NAV, so the KOSPI fall since then is not in your numbers yet.",
    "dir": "neg",
    "impact": 3,
-   "exposure_pct": 16.1,
+   "exposure_pct": 16.0,
    "holdings": [
     {
      "name": "SCBKEQTG",
-     "weight": 14.3
+     "weight": 14.2
     },
     {
      "name": "EWY",
      "weight": 1.8
     }
    ],
-   "verify": "multi",
-   "verify_note": "Korea Herald figures; 5% fall matched by Korea Times",
+   "verify": "single",
+   "verify_note": "Korea Herald reporting; index close from dashboard tile",
    "sources": [
     {
      "name": "Korea Herald",
-     "url": "https://www.koreaherald.com/article/10944264",
+     "url": "https://www.koreaherald.com/article/10944729",
      "tier": "regional",
      "primary": false,
      "paywall": false
     },
     {
-     "name": "Korea Times",
-     "url": "https://www.koreatimes.co.kr/world/20261121/nasdaq-falls-as-anthropic-fails-to-rekindle-ai-optimism",
+     "name": "Korea Herald",
+     "url": "https://www.koreaherald.com/article/10944707",
      "tier": "regional",
      "primary": false,
      "paywall": false
@@ -287,49 +272,99 @@
    "find": [
     {
      "name": "Reuters",
-     "url": "https://www.reuters.com/site-search/?query=KOSPI+Samsung+SK+hynix+plunge"
+     "url": "https://www.reuters.com/site-search/?query=KOSPI+Samsung+SK+hynix+sell-off"
     },
     {
      "name": "FT",
-     "url": "https://www.ft.com/search?q=KOSPI+Samsung+SK+hynix+plunge"
+     "url": "https://www.ft.com/search?q=KOSPI+Samsung+SK+hynix+sell-off"
     }
    ],
    "set_links": []
   },
   {
-   "id": "fed-hike-case",
-   "group": "United States",
-   "headline": "Fed governor Cook says the policy rate is still too low to cool inflation",
-   "when": "Fri 20 Nov · US time",
-   "what": "Fed Governor Lisa Cook said the current policy rate of 3.75% to 4.00% is not high enough to bring inflation down. She noted the quarter-point hike in September has not done enough and that recent data show little sign of prices falling. She warned that waiting could mean larger hikes later. She described growth as strong and the job market as solid.",
-   "why": "A central bank leaning toward higher rates tends to pressure stock valuations, bitcoin and gold. This comes in the same session as the tech selloff. The next Fed decision is on 9 Dec, and the November jobs report on 4 Dec is the main data before it.",
+   "id": "bitcoin-two-year-low",
+   "group": "Crypto",
+   "headline": "Bitcoin hits a two-year low near $55,000, then recovers",
+   "when": "Fri 20 – Sat 21 Nov",
+   "what": "Bitcoin fell to $55,130, its weakest since September 2024, then rose more than 9% to trade above $60,000. About $1.8 billion of leveraged positions were wiped out in 24 hours, mostly bets on rising prices. Ether rose about 3% to near $1,680 over the same period. Analysts blame higher real yields and a more hawkish Fed outlook.",
+   "why": "Crypto is 4.8% of your portfolio, with bitcoin at 2.4%. Prices are quoted live, so the dip and bounce are already in your dashboard.",
    "dir": "watch",
    "impact": 2,
-   "exposure_pct": 21.2,
+   "exposure_pct": 4.1,
    "holdings": [
     {
-     "name": "ES-US500RMF",
-     "weight": 14.2
-    },
-    {
-     "name": "K-USA-A(D)",
-     "weight": 2.7
-    },
-    {
      "name": "BTC",
-     "weight": 2.3
+     "weight": 2.4
     },
+    {
+     "name": "BNB",
+     "weight": 1.0
+    },
+    {
+     "name": "ETH",
+     "weight": 0.7
+    }
+   ],
+   "verify": "single",
+   "verify_note": "CoinDesk figures; two CoinDesk reports agree",
+   "sources": [
+    {
+     "name": "CoinDesk",
+     "url": "https://www.coindesk.com/markets/2026/11/21/bitcoin-bounces-9-from-two-year-low-to-retake-usd60-000-as-traders-eye-monday-s-stock-open",
+     "tier": "regional",
+     "primary": false,
+     "paywall": false
+    },
+    {
+     "name": "CoinDesk",
+     "url": "https://www.coindesk.com/markets/2026/11/21/bitcoin-tanks-below-usd57-000-for-the-first-time-in-two-years-and-its-not-alone",
+     "tier": "regional",
+     "primary": false,
+     "paywall": false
+    }
+   ],
+   "related": [],
+   "find": [
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/site-search/?query=bitcoin+two-year+low+liquidations"
+    },
+    {
+     "name": "FT",
+     "url": "https://www.ft.com/search?q=bitcoin+two-year+low+liquidations"
+    }
+   ],
+   "set_links": []
+  },
+  {
+   "id": "gold-slide",
+   "group": "Gold & metals",
+   "headline": "Gold slides with other assets as real yields climb",
+   "when": "Fri 20 Nov",
+   "what": "Gold futures fell 4.62% to about $3,515 an ounce. CoinDesk says higher inflation-adjusted yields make gold and bitcoin less attractive, and that the fall spread to copper and Asian shares. A Vietnamese outlet reports local gold at its lowest since September last year.",
+   "why": "Your gold fund UOBSG-N is 1.9% of the portfolio and is priced at its 19 Nov NAV, so Friday's drop is not in it yet.",
+   "dir": "neg",
+   "impact": 1,
+   "exposure_pct": 1.9,
+   "holdings": [
     {
      "name": "UOBSG-N",
      "weight": 1.9
     }
    ],
-   "verify": "single",
-   "verify_note": "One outlet; no Fed text read this run.",
+   "verify": "multi",
+   "verify_note": "Price from dashboard tile; CoinDesk and VnExpress agree on direction",
    "sources": [
     {
-     "name": "Korea Times",
-     "url": "https://www.koreatimes.co.kr/world/20261121/feds-cook-says-rate-hikes-needed-to-lower-high-inflation",
+     "name": "CoinDesk",
+     "url": "https://www.coindesk.com/markets/2026/11/21/bitcoin-tanks-below-usd57-000-for-the-first-time-in-two-years-and-its-not-alone",
+     "tier": "regional",
+     "primary": false,
+     "paywall": false
+    },
+    {
+     "name": "VnExpress",
+     "url": "https://e.vnexpress.net/news/business/markets/gold-prices-tumble-to-15-month-bottom-5147372.html",
      "tier": "regional",
      "primary": false,
      "paywall": false
@@ -339,149 +374,30 @@
    "find": [
     {
      "name": "Reuters",
-     "url": "https://www.reuters.com/site-search/?query=Fed+Cook+rate+hikes+inflation"
+     "url": "https://www.reuters.com/site-search/?query=gold+price+falls+real+yields"
     },
     {
      "name": "FT",
-     "url": "https://www.ft.com/search?q=Fed+Cook+rate+hikes+inflation"
+     "url": "https://www.ft.com/search?q=gold+price+falls+real+yields"
     }
    ],
    "set_links": []
-  },
-  {
-   "id": "thai-set-slip",
-   "group": "Thailand",
-   "headline": "Thai stocks slide 1.3% in line with the regional sell-off",
-   "when": "Fri 20 Nov · Bangkok close",
-   "what": "The SET index closed at 1,453.28, down 19.36 points or 1.31%, after opening at 1,449.48. Trading value was about 61.7 billion baht. The baht was steady at about 33.96 per dollar.",
-   "why": "Thailand is 24.7% of your portfolio, but the fall was far smaller than in Korea or the US. Your Thai funds are priced at their 19 Nov NAV this morning, so Friday's SET fall is not yet in those prices. Among your Thai shares, BANPU is down about 2.2% on the day.",
-   "dir": "neg",
-   "impact": 2,
-   "exposure_pct": 11.2,
-   "holdings": [
-    {
-     "name": "BFLRMF",
-     "weight": 3.5
-    },
-    {
-     "name": "GULF",
-     "weight": 2.7
-    },
-    {
-     "name": "UTSB-THAIESG",
-     "weight": 2.5
-    },
-    {
-     "name": "K-TNZ-ThaiESG",
-     "weight": 2.0
-    },
-    {
-     "name": "BANPU",
-     "weight": 0.5
-    }
-   ],
-   "verify": "single",
-   "verify_note": "Index level from the SET site; no second outlet read.",
-   "sources": [
-    {
-     "name": "Stock Exchange of Thailand",
-     "url": "https://www.set.or.th/en/market/index/set/overview",
-     "tier": "primary",
-     "primary": false,
-     "paywall": false
-    }
-   ],
-   "related": [],
-   "find": [
-    {
-     "name": "Reuters",
-     "url": "https://www.reuters.com/site-search/?query=SET+index+Thai+stocks"
-    },
-    {
-     "name": "FT",
-     "url": "https://www.ft.com/search?q=SET+index+Thai+stocks"
-    }
-   ],
-   "set_links": [
-    {
-     "symbol": "GULF",
-     "url": "https://www.set.or.th/en/market/product/stock/quote/GULF/news"
-    },
-    {
-     "symbol": "BANPU",
-     "url": "https://www.set.or.th/en/market/product/stock/quote/BANPU/news"
-    }
-   ]
   }
  ],
  "briefly": [
   {
-   "headline": "Bitcoin slips under $59,000 to a four-month low",
-   "text": "Bitcoin fell below $59,000, near its summer low of $57,700, and the dashboard shows it down about 4.5% over 24 hours. Ether lost about 7%, and roughly $1.5 billion of leveraged crypto positions were closed out over 24 hours. Crypto is 4.7% of your portfolio.",
-   "exposure_pct": 4.0,
-   "exposure_label": "Crypto",
-   "verify": "single",
-   "verify_note": "Single outlet.",
+   "headline": "Enphase plans to cut about 12% of its workforce",
+   "text": "Enphase told the SEC it will cut about 320 jobs and book $25–28 million of restructuring charges, mostly in Q4. Its Q4 outlook is otherwise unchanged. ENPH is a very small holding.",
+   "exposure_pct": 0.0,
+   "exposure_label": "United States",
+   "verify": "primary",
+   "verify_note": "Checked against the 8-K filed 20 Nov",
    "sources": [
     {
-     "name": "CoinDesk",
-     "url": "https://www.coindesk.com/markets/2026/11/20/bitcoin-plunges-below-usd59-000-as-rush-to-cash-puts-new-bear-market-lows-back-in-play",
-     "tier": "regional",
-     "primary": false,
-     "paywall": false
-    }
-   ],
-   "set_links": []
-  },
-  {
-   "headline": "Gold falls to its lowest since September 2025",
-   "text": "Gold dropped toward $3,500 an ounce. The dashboard quote shows it down about 4% to $3,539. UOBSG-N is priced at its 18 Nov NAV this morning, and gold has fallen about 5.4% since.",
-   "exposure_pct": 1.9,
-   "exposure_label": "Gold & metals",
-   "verify": "single",
-   "verify_note": "Single outlet plus the dashboard quote.",
-   "sources": [
-    {
-     "name": "CoinDesk",
-     "url": "https://www.coindesk.com/markets/2026/11/20/bitcoin-plunges-below-usd59-000-as-rush-to-cash-puts-new-bear-market-lows-back-in-play",
-     "tier": "regional",
-     "primary": false,
-     "paywall": false
-    }
-   ],
-   "set_links": []
-  },
-  {
-   "headline": "SEC reported to be examining Nvidia's accounting",
-   "text": "Two people briefed on the matter said the SEC is looking at Nvidia's accounting practices. The focus and start date are unclear, and the SEC declined to comment. Nvidia did not immediately respond. The report adds to other legal questions at the company. NVDA is a very small holding.",
-   "exposure_pct": 0.2,
-   "exposure_label": "Tech & AI",
-   "verify": "single",
-   "verify_note": "Single outlet, anonymous sources; no SEC statement.",
-   "sources": [
-    {
-     "name": "Korea Times",
-     "url": "https://www.koreatimes.co.kr/world/20261121/nvidias-accounting-is-focus-of-us-sec-investigation-sources-say",
-     "tier": "regional",
-     "primary": false,
-     "paywall": false
-    }
-   ],
-   "set_links": []
-  },
-  {
-   "headline": "Healthcare held up better, but your funds are priced days behind",
-   "text": "Healthcare and consumer staples led gains among US sectors on Friday. K-GHRMF and BCARERMF are priced at 17 to 18 Nov NAVs this morning, and a US healthcare ETF has fallen about 2.3% to 4.1% since.",
-   "exposure_pct": 8.5,
-   "exposure_label": "Healthcare",
-   "verify": "single",
-   "verify_note": "Single outlet for the sector move.",
-   "sources": [
-    {
-     "name": "Korea Times",
-     "url": "https://www.koreatimes.co.kr/world/20261121/nasdaq-falls-as-anthropic-fails-to-rekindle-ai-optimism",
-     "tier": "regional",
-     "primary": false,
+     "name": "SEC filing (Enphase 8-K)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310126000112/enph-20261120.htm",
+     "tier": "primary",
+     "primary": true,
      "paywall": false
     }
    ],
@@ -498,7 +414,7 @@
    "time_bkt": "",
    "title": "Samsung pays its ₩30 trillion dividend",
    "detail": "₩4,601 a share",
-   "exposure_label": "Korea 16.1%",
+   "exposure_label": "Korea 16.0%",
    "tab": null,
    "source": {
     "name": "Korea Herald",
@@ -563,22 +479,15 @@
  "radar": [
   {
    "topic": "Anthropic IPO",
-   "text": "Anthropic's shares fell on their first full day of trading, back toward the $83 IPO price. Reports put the day's fall between 12.5% at its worst and more than 14%. The debut did not calm worries about AI spending.",
+   "text": "Anthropic priced at $83 a share, raising $81.34 billion. The stock rose 17.1% on Thursday and fell 8.5% on Friday to $88.91. Reports say OpenAI may follow.",
    "notes": [
     "AI Stocks — Anthropic IPO Scenarios (28 Oct 2026)",
     "Anthropic IPO vs SpaceX (28 Oct 2026)"
    ],
    "sources": [
     {
-     "name": "Korea Times",
-     "url": "https://www.koreatimes.co.kr/world/20261121/nasdaq-falls-as-anthropic-fails-to-rekindle-ai-optimism",
-     "tier": "regional",
-     "primary": false,
-     "paywall": false
-    },
-    {
-     "name": "CoinDesk",
-     "url": "https://www.coindesk.com/markets/2026/11/20/bitcoin-plunges-below-usd59-000-as-rush-to-cash-puts-new-bear-market-lows-back-in-play",
+     "name": "Korea Herald",
+     "url": "https://www.koreaherald.com/article/10944733",
      "tier": "regional",
      "primary": false,
      "paywall": false
@@ -588,13 +497,43 @@
  ],
  "quiet": [
   {
+   "name": "K-GHRMF",
+   "weight": 5.2,
+   "set_url": null
+  },
+  {
    "name": "K-VIETNAMRMF",
    "weight": 4.7,
    "set_url": null
   },
   {
+   "name": "BFLRMF",
+   "weight": 3.5,
+   "set_url": null
+  },
+  {
+   "name": "BCARERMF",
+   "weight": 3.2,
+   "set_url": null
+  },
+  {
    "name": "K-CHX",
+   "weight": 2.8,
+   "set_url": null
+  },
+  {
+   "name": "GULF",
    "weight": 2.7,
+   "set_url": "https://www.set.or.th/en/market/product/stock/quote/GULF/news"
+  },
+  {
+   "name": "UTSB-THAIESG",
+   "weight": 2.5,
+   "set_url": null
+  },
+  {
+   "name": "K-TNZ-ThaiESG",
+   "weight": 2.0,
    "set_url": null
   },
   {
@@ -682,12 +621,12 @@
  "thai_stocks": [
   {
    "symbol": "GULF",
-   "weight": 2.66,
+   "weight": 2.69,
    "url": "https://www.set.or.th/en/market/product/stock/quote/GULF/news"
   },
   {
    "symbol": "BANPU",
-   "weight": 0.45,
+   "weight": 0.46,
    "url": "https://www.set.or.th/en/market/product/stock/quote/BANPU/news"
   },
   {
@@ -697,7 +636,7 @@
   },
   {
    "symbol": "BBL",
-   "weight": 0.38,
+   "weight": 0.39,
    "url": "https://www.set.or.th/en/market/product/stock/quote/BBL/news"
   },
   {
@@ -712,7 +651,7 @@
   },
   {
    "symbol": "NCAP",
-   "weight": 0.24,
+   "weight": 0.25,
    "url": "https://www.set.or.th/en/market/product/stock/quote/NCAP/news"
   },
   {
@@ -764,51 +703,43 @@
  "nav_lags": [
   {
    "fund": "SCBKEQTG",
-   "weight": 0.1428,
-   "nav_date": "2026-11-18",
+   "weight": 0.1419,
+   "nav_date": "2026-11-19",
    "proxy_symbol": "^KS11",
-   "proxy_last_date": "2026-11-19",
-   "proxy_move_since_nav": 0.0139
+   "proxy_last_date": "2026-11-20",
+   "proxy_move_since_nav": -0.0521
   },
   {
    "fund": "ES-US500RMF",
-   "weight": 0.1423,
-   "nav_date": "2026-11-18",
+   "weight": 0.1409,
+   "nav_date": "2026-11-19",
    "proxy_symbol": "^GSPC",
    "proxy_last_date": "2026-11-20",
-   "proxy_move_since_nav": -0.0564
+   "proxy_move_since_nav": -0.037
   },
   {
-   "fund": "K-GHRMF",
-   "weight": 0.0533,
+   "fund": "BCARERMF",
+   "weight": 0.0317,
    "nav_date": "2026-11-18",
    "proxy_symbol": "IXJ",
    "proxy_last_date": "2026-11-20",
    "proxy_move_since_nav": -0.0232
   },
   {
-   "fund": "BCARERMF",
-   "weight": 0.032,
-   "nav_date": "2026-11-17",
-   "proxy_symbol": "IXJ",
-   "proxy_last_date": "2026-11-20",
-   "proxy_move_since_nav": -0.0409
-  },
-  {
    "fund": "K-USA-A(D)",
-   "weight": 0.0272,
-   "nav_date": "2026-11-18",
+   "weight": 0.0278,
+   "nav_date": "2026-11-19",
    "proxy_symbol": "^GSPC",
    "proxy_last_date": "2026-11-20",
-   "proxy_move_since_nav": -0.0564
+   "proxy_move_since_nav": -0.037
   },
   {
    "fund": "UOBSG-N",
-   "weight": 0.0189,
-   "nav_date": "2026-11-18",
+   "weight": 0.0187,
+   "nav_date": "2026-11-19",
    "proxy_symbol": "GC=F",
    "proxy_last_date": "2026-11-20",
-   "proxy_move_since_nav": -0.0542
+   "proxy_move_since_nav": -0.0462
   }
  ],
  "method": {
