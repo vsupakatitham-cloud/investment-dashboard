@@ -95,6 +95,21 @@
    }
   },
   {
+   "date": "2026-11-26",
+   "time_bkt": "",
+   "title": "Bank of Korea rate decision",
+   "detail": "Expected quarter-point rise to 3.25%",
+   "holdings": [
+    "SCBKEQTG",
+    "EWY"
+   ],
+   "kind": "central-bank",
+   "source": {
+    "name": "Korea Herald",
+    "url": "https://www.koreaherald.com/article/10945119"
+   }
+  },
+  {
    "date": "2026-11-27",
    "time_bkt": "",
    "title": "Samsung pays its ₩30 trillion dividend",
