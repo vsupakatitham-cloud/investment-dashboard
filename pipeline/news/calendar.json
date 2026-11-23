@@ -95,6 +95,19 @@
    }
   },
   {
+   "date": "2026-11-25",
+   "time_bkt": "",
+   "title": "US October PCE inflation report",
+   "detail": "Core PCE expected up 0.3% (RBC)",
+   "holdings": [],
+   "kind": "data",
+   "source": {
+    "name": "CoinDesk",
+    "url": "https://www.coindesk.com/markets/2026/11/23/market-rout-kills-50-basis-points-december-fed-rate-hike-bets"
+   },
+   "group": "United States"
+  },
+  {
    "date": "2026-11-26",
    "time_bkt": "",
    "title": "Bank of Korea rate decision",
