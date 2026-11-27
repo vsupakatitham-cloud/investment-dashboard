@@ -2311,13 +2311,13 @@
   },
   {
     "date": "2026-11-27",
-    "total_value": 23341610,
-    "total_invested": 22921238,
-    "total_pnl": 420371,
-    "pnl_pct": 0.0183,
-    "mf_value": 16413380,
-    "eq_value": 4524121,
-    "crypto_value": 1145817,
-    "fx_rate": 34.01
+    "total_value": 23344480,
+    "total_invested": 22915771,
+    "total_pnl": 428708,
+    "pnl_pct": 0.0187,
+    "mf_value": 16377486,
+    "eq_value": 4535841,
+    "crypto_value": 1160791,
+    "fx_rate": 33.96
   }
 ]
