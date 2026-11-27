@@ -1,24 +1,26 @@
 {
  "schema": 1,
  "status": "live",
- "edition_date": "2026-11-27",
- "generated_at": "2026-11-27T05:47+07:00",
+ "edition_date": "2026-11-28",
+ "generated_at": "2026-11-28T05:48+07:00",
  "window": {
-  "from": "2026-11-26T06:00+07:00",
-  "to": "2026-11-27T05:46+07:00"
+  "from": "2026-11-27T06:00+07:00",
+  "to": "2026-11-28T05:46+07:00"
  },
- "portfolio_as_of": "2026-11-27",
- "read_minutes": 2,
+ "portfolio_as_of": "2026-11-28",
+ "read_minutes": 4,
  "stats": {
-  "stories": 3,
-  "short_items": 1,
-  "outlets": 5,
+  "stories": 5,
+  "short_items": 2,
+  "outlets": 7,
   "outlet_names": [
+   "Bangkok Post",
+   "Bloomberg",
+   "CNBC",
    "CoinDesk",
    "Korea Herald",
-   "Nikkei Asia",
-   "SET",
-   "VnExpress"
+   "Korea Times",
+   "SCMP"
   ],
   "primary_checked": 0
  },
@@ -26,100 +28,100 @@
   "tiles": [
    {
     "label": "SET",
-    "value": "1,414.44",
-    "change": "▼ 0.98%",
-    "dir": "neg",
-    "asof_date": "2026-11-26",
+    "value": "1,440.29",
+    "change": "▲ 1.83%",
+    "dir": "pos",
+    "asof_date": "2026-11-27",
     "window": "close",
     "exposure_label": "Your Thailand",
-    "exposure_pct": 24.4
+    "exposure_pct": 24.3
    },
    {
     "label": "S&P 500",
-    "value": "7,182.78",
-    "change": "▼ 0.25%",
-    "dir": "neg",
-    "asof_date": "2026-11-25",
+    "value": "7,297.49",
+    "change": "▲ 1.60%",
+    "dir": "pos",
+    "asof_date": "2026-11-27",
     "window": "close",
     "exposure_label": "Your US large cap",
-    "exposure_pct": 16.9
+    "exposure_pct": 16.8
    },
    {
     "label": "KOSPI",
-    "value": "4,711.21",
-    "change": "▲ 0.29%",
+    "value": "4,915.68",
+    "change": "▲ 4.34%",
     "dir": "pos",
-    "asof_date": "2026-11-26",
+    "asof_date": "2026-11-27",
     "window": "close",
     "exposure_label": "Your Korea",
     "exposure_pct": 15.8
    },
    {
     "label": "USD/THB",
-    "value": "34.01",
-    "change": "▼ 0.03%",
+    "value": "33.89",
+    "change": "▼ 0.35%",
     "dir": "neutral",
-    "asof_date": "2026-11-26",
+    "asof_date": "2026-11-27",
     "window": "close",
     "exposure_label": "Your USD-priced holdings",
-    "exposure_pct": 13.4
+    "exposure_pct": 13.7
    },
    {
     "label": "Nasdaq",
-    "value": "23,585.80",
-    "change": "▼ 0.62%",
-    "dir": "neg",
-    "asof_date": "2026-11-25",
+    "value": "24,129.50",
+    "change": "▲ 2.31%",
+    "dir": "pos",
+    "asof_date": "2026-11-27",
     "window": "close",
     "exposure_label": "Your US stocks",
-    "exposure_pct": 9.1
+    "exposure_pct": 9.3
    },
    {
     "label": "VN-Index",
-    "value": "1,629.68",
-    "change": "▼ 3.42%",
-    "dir": "neg",
-    "asof_date": "2026-11-26",
+    "value": "1,653.90",
+    "change": "▲ 1.49%",
+    "dir": "pos",
+    "asof_date": "2026-11-27",
     "window": "close",
     "exposure_label": "Your Vietnam",
     "exposure_pct": 6.3
    },
    {
     "label": "Bitcoin",
-    "value": "$60,549",
-    "change": "▲ 0.28%",
-    "dir": "pos",
-    "asof_date": "2026-11-26",
+    "value": "$59,695",
+    "change": "▼ 1.32%",
+    "dir": "neg",
+    "asof_date": "2026-11-27",
     "window": "24h",
     "exposure_label": "Your crypto",
-    "exposure_pct": 4.9
+    "exposure_pct": 4.8
    },
    {
     "label": "China A50",
-    "value": "12,696.70",
-    "change": "▲ 0.58%",
+    "value": "13,180.80",
+    "change": "▲ 3.81%",
     "dir": "pos",
-    "asof_date": "2026-11-26",
+    "asof_date": "2026-11-27",
     "window": "close",
     "exposure_label": "Your China",
     "exposure_pct": 3.6
    },
    {
     "label": "Gold",
-    "value": "$3,593",
-    "change": "▲ 0.81%",
+    "value": "$3,668",
+    "change": "▲ 2.91%",
     "dir": "pos",
-    "asof_date": "2026-11-26",
+    "asof_date": "2026-11-27",
     "window": "24h",
     "exposure_label": "Your gold",
     "exposure_pct": 1.8
    },
    {
     "label": "US 10-year",
-    "value": "4.85%",
-    "change": "▼ 6 bp",
+    "value": "4.94%",
+    "change": "▲ 9 bp",
     "dir": "neutral",
-    "asof_date": "2026-11-25",
+    "asof_date": "2026-11-27",
     "window": "close",
     "exposure_label": "Rates",
     "exposure_pct": null
@@ -128,109 +130,54 @@
   "early": [
    {
     "label": "S&P 500 futures",
-    "change": "▲ 0.54%",
+    "change": "▲ 1.56%",
     "dir": "pos"
    },
    {
     "label": "Nasdaq-100 futures",
-    "change": "▲ 0.46%",
+    "change": "▲ 2.55%",
     "dir": "pos"
    }
   ],
-  "fetched_at": "2026-11-27T05:46+07:00"
+  "fetched_at": "2026-11-28T05:46+07:00"
  },
  "top3": [
   {
-   "lead": "Vietnam’s stock index fell 3.4% on a US tariff proposal.",
-   "text": "The VN-Index closed at 1,629.68, its worst day in four months, after the US proposed extra tariffs of up to 35% on Vietnamese goods. Vietnam says the rate could fall to 20% with a trade deal.",
-   "dir": "neg",
-   "exposure_pct": 6.3,
-   "exposure_label": "Vietnam"
-  },
-  {
-   "lead": "Korea raised its key rate to 3.25% and lifted growth forecasts.",
-   "text": "The KOSPI still closed up 0.29% at 4,711.21. SCBKEQTG is priced at its 24 Nov NAV, and the KOSPI is about 6% lower since then, so that fall is not yet in your numbers.",
-   "dir": "watch",
+   "lead": "Korean stocks jumped 4.3% on Friday as policy-support hopes lifted chip shares.",
+   "text": "KOSPI closed at 4,915.68. Samsung rose 4.55% and SK hynix 5.41%. Your Korea fund SCBKEQTG is still priced at its 24 Nov NAV, before this week's drop and Friday's bounce.",
+   "dir": "pos",
    "exposure_pct": 15.8,
    "exposure_label": "Korea"
   },
   {
-   "lead": "Bitcoin is near $60,000 after a record month of ETF outflows.",
-   "text": "US spot bitcoin funds have lost a net $5.39 billion in November, and markets expect Fed rate rises. Bitcoin is down about 22% this month.",
-   "dir": "neg",
-   "exposure_pct": 2.4,
-   "exposure_label": "Crypto"
+   "lead": "Wall Street ended a choppy week higher, with the Nasdaq up 2.3% on Friday.",
+   "text": "The S&P 500 added about 1.6%, though November is still heading for its worst month since 2008. The US 10-year yield closed near 4.94%. ES-US500RMF is priced as of 24 Nov, so Friday's gain is not in it yet.",
+   "dir": "pos",
+   "exposure_pct": 23.7,
+   "exposure_label": "United States"
+  },
+  {
+   "lead": "A Fed rate rise on 9 Dec is fully priced after hot inflation and strong growth.",
+   "text": "The Fed's preferred inflation gauge ran at 3.8% in October, and third-quarter growth was revised up to 4.3%. Traders also expect two more rises in 2027. The decision is the next big test for US and Asian markets.",
+   "dir": "watch",
+   "exposure_pct": 16.8,
+   "exposure_label": "United States"
   }
  ],
  "also": [
-  "SET index closed down 0.98% at 1,414.44",
-  "Samsung pays its ₩4,601-a-share dividend today",
-  "US jobs report due Fri 4 Dec"
+  "VN-Index closed up 1.49% at 1,653.90",
+  "Gold rose about 2.9% to near $3,668 an ounce",
+  "Baht firmed 0.35%, USD/THB at 33.89"
  ],
  "stories": [
   {
-   "id": "vietnam-tariff-selloff",
-   "group": "Vietnam",
-   "headline": "Vietnamese shares have their worst day in four months on a proposed US tariff",
-   "when": "Thu 26 Nov · close, Ho Chi Minh City",
-   "what": "The VN-Index fell nearly 58 points, or 3.4%, to 1,629.68. On Wednesday the US Trade Representative proposed extra tariffs of up to 35% on Vietnamese goods. It has not taken effect. Vingroup fell 6.3%. Vietnam’s trade ministry says it has offered its highest-ever commitments, and the rate could drop to 20% with a reciprocal trade agreement.",
-   "why": "Vietnam funds are about 6% of your portfolio. K-VIETNAMRMF is priced at 25 Nov, so Thursday’s fall is not in your dashboard yet. The outcome of the talks decides whether the proposal lands near 35% or 20%.",
-   "dir": "neg",
-   "impact": 2,
-   "exposure_pct": 6.3,
-   "holdings": [
-    {
-     "name": "K-VIETNAMRMF",
-     "weight": 4.7
-    },
-    {
-     "name": "LionGlobal Vietnam Fund Class A (SGD)",
-     "weight": 1.1
-    },
-    {
-     "name": "K-Vietnam",
-     "weight": 0.5
-    }
-   ],
-   "verify": "single",
-   "verify_note": "Single outlet (VnExpress)",
-   "sources": [
-    {
-     "name": "VnExpress International",
-     "url": "https://e.vnexpress.net/news/business/billionaires/vietnamese-billionaires-lose-nearly-3b-as-stocks-tumble-after-us-tariff-proposal-5149346.html",
-     "tier": "regional",
-     "primary": false,
-     "paywall": false
-    },
-    {
-     "name": "VnExpress International",
-     "url": "https://e.vnexpress.net/news/business/economy/vietnam-makes-unprecedented-commitments-in-us-trade-talks-ministry-5149359.html",
-     "tier": "regional",
-     "primary": false,
-     "paywall": false
-    }
-   ],
-   "related": [],
-   "find": [
-    {
-     "name": "Reuters",
-     "url": "https://www.reuters.com/site-search/?query=Vietnam+stocks+US+tariff+proposal"
-    },
-    {
-     "name": "FT",
-     "url": "https://www.ft.com/search?q=Vietnam+stocks+US+tariff+proposal"
-    }
-   ],
-   "set_links": []
-  },
-  {
-   "id": "bok-hike",
+   "id": "korea-rebound-hynix-buyback",
    "group": "Korea",
-   "headline": "Bank of Korea lifts its rate to 3.25% and raises growth forecasts",
-   "when": "Thu 26 Nov · Seoul",
-   "what": "The central bank raised its key rate from 3% to 3.25% in a 5-2 vote, resuming tightening after an October pause. It now expects growth of 3.9% in 2026 and 4.1% in 2027, helped by chip exports. The KOSPI closed up 0.29% at 4,711.21, after an intraday high of 4,817.77. SK hynix rose 2.23% and Samsung Electronics 0.35%.",
-   "why": "Korea is your third-largest exposure at about 16%. SCBKEQTG is priced at its 24 Nov NAV, and the KOSPI is about 6% lower since then. The dashboard refreshes again at 11:30, when newer NAVs usually arrive.",
-   "dir": "watch",
+   "headline": "Seoul stocks rally over 4% as SK hynix steps up share buybacks",
+   "when": "Fri 27 Nov · close in Seoul",
+   "what": "KOSPI rose 204 points, or 4.34%, to 4,915.68. Gainers beat losers 781 to 109. Samsung Electronics gained 4.55% to 179,100 won and SK hynix 5.41% to 1.11 million won. Foreign investors bought a net 1.13 trillion won. The won firmed to about 1,338 per dollar. Authorities plan a meeting next week on enlarging the 10 trillion won stabilisation fund. SK hynix doubled its daily buyback orders to about 700,000 shares, saying its stock is undervalued. The shares are still about 63% below their June high.",
+   "why": "SCBKEQTG and EWY are mostly Samsung and SK hynix exposure, so a chip-led rebound matters most for them. The rally rests on hopes of support, and an analyst quoted said gains may stay limited until new money arrives. Your SCBKEQTG NAV is dated 24 Nov; the market fell about 5.9% by 26 Nov and then rose 4.3% on Friday.",
+   "dir": "pos",
    "impact": 3,
    "exposure_pct": 15.8,
    "holdings": [
@@ -240,22 +187,22 @@
     },
     {
      "name": "EWY",
-     "weight": 1.9
+     "weight": 2.0
     }
    ],
    "verify": "single",
-   "verify_note": "Single outlet (Korea Herald); BOK release not read",
+   "verify_note": "Korea Herald only; no Korean regulator filing opened",
    "sources": [
     {
      "name": "Korea Herald",
-     "url": "https://www.koreaherald.com/article/10950549",
+     "url": "https://www.koreaherald.com/article/10952169",
      "tier": "regional",
      "primary": false,
      "paywall": false
     },
     {
-     "name": "Korea Herald",
-     "url": "https://www.koreaherald.com/article/10950746",
+     "name": "Korea Herald (SK hynix)",
+     "url": "https://www.koreaherald.com/article/10952285",
      "tier": "regional",
      "primary": false,
      "paywall": false
@@ -263,16 +210,16 @@
    ],
    "related": [
     {
-     "label": "Chip competition",
-     "headline": "Nvidia and Kioxia work on AI server memory",
-     "text": "Nikkei Asia reports Japan’s Kioxia is testing racks pairing flash storage with Nvidia GPUs, a market now led by South Korean suppliers. Only the opening of the article was readable, so details are unknown.",
+     "label": "Also this morning",
+     "headline": "New rivals for high-bandwidth memory",
+     "text": "Huawei is developing its own memory chips, and Kioxia is working with Nvidia on ways to lean less on high-end memory. Korea Herald says both challenge Samsung and SK hynix's lead.",
      "sources": [
       {
-       "name": "Nikkei Asia",
-       "url": "https://asia.nikkei.com/business/tech/semiconductors/nvidia-kioxia-team-on-ai-server-memory-as-alternative-to-south-korean-chips",
-       "tier": "major",
+       "name": "Korea Herald",
+       "url": "https://www.koreaherald.com/article/10952102",
+       "tier": "regional",
        "primary": false,
-       "paywall": true
+       "paywall": false
       }
      ]
     }
@@ -280,25 +227,185 @@
    "find": [
     {
      "name": "Reuters",
-     "url": "https://www.reuters.com/site-search/?query=Bank+of+Korea+raises+rate+3.25%25"
+     "url": "https://www.reuters.com/site-search/?query=KOSPI+SK+hynix+buyback"
     },
     {
      "name": "FT",
-     "url": "https://www.ft.com/search?q=Bank+of+Korea+raises+rate+3.25%25"
+     "url": "https://www.ft.com/search?q=KOSPI+SK+hynix+buyback"
     }
    ],
    "set_links": []
   },
   {
-   "id": "bitcoin-etf-outflows",
-   "group": "Crypto",
-   "headline": "Bitcoin ETFs post their biggest monthly outflow as rate-rise bets build",
-   "when": "Thu 26 Nov",
-   "what": "CoinDesk, citing SoSoValue, says US spot bitcoin funds have lost a net $5.39 billion in November, above the prior record of $4.51 billion in June. Ether funds lost $1.30 billion. The article says the Fed is expected to raise rates in December and again next year. Bitcoin has fallen about 22% this month to roughly $60,000.",
-   "why": "Crypto is about 5% of your portfolio, mostly bitcoin. Heavy fund selling and higher-rate expectations are the two pressures the article names.",
-   "dir": "neg",
+   "id": "wall-street-ai-rebound",
+   "group": "United States",
+   "headline": "US stocks rise as battered AI shares recover in a shortened session",
+   "when": "Fri 27 Nov · US close",
+   "what": "The Dow gained 1.19% to 50,780.64, the S&P 500 1.61% to about 7,298 and the Nasdaq 2.31% to 24,129.50. All three rose on the week, but the S&P 500 and Nasdaq are on track for their worst November since 2008. Chipmakers and large platform companies including Meta rebounded, and Tesla surged. The 10-year Treasury yield closed near 4.94%, up 9 basis points.",
+   "why": "About a quarter of your portfolio is in US funds and stocks. ES-US500RMF and K-USA-A(D) are priced as of 24 and 25 Nov, so the S&P 500 has since gained roughly 1.3% to 1.6% that those NAVs do not show. Higher yields are the main risk to this rebound.",
+   "dir": "pos",
    "impact": 2,
-   "exposure_pct": 3.1,
+   "exposure_pct": 23.7,
+   "holdings": [
+    {
+     "name": "ES-US500RMF",
+     "weight": 14.2
+    },
+    {
+     "name": "AAPL",
+     "weight": 4.2
+    },
+    {
+     "name": "K-USA-A(D)",
+     "weight": 2.6
+    },
+    {
+     "name": "META",
+     "weight": 1.4
+    },
+    {
+     "name": "TSLA",
+     "weight": 1.4
+    }
+   ],
+   "verify": "single",
+   "verify_note": "Korea Times; index levels match the dashboard tiles",
+   "sources": [
+    {
+     "name": "Korea Times",
+     "url": "https://www.koreatimes.co.kr/world/20261128/wall-street-ends-higher-as-battered-ai-stocks-gain-in-volatile-week",
+     "tier": "regional",
+     "primary": false,
+     "paywall": false
+    }
+   ],
+   "related": [],
+   "find": [
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/site-search/?query=Wall+Street+close+AI+stocks"
+    },
+    {
+     "name": "FT",
+     "url": "https://www.ft.com/search?q=Wall+Street+close+AI+stocks"
+    }
+   ],
+   "set_links": []
+  },
+  {
+   "id": "fed-hike-december",
+   "group": "United States",
+   "headline": "Inflation data keep a December Fed rate rise fully priced",
+   "when": "Wed 25 Nov",
+   "what": "The Fed's preferred inflation gauge rose at an annual 3.8% in October, in line with forecasts. The core version was 3.3%, 0.1 point above forecast. Third-quarter growth was revised to 4.3% at an annual rate. Markets fully price a quarter-point rise at the 8-9 Dec meeting and still expect two more in 2027; odds of a third fell to about one in three.",
+   "why": "Rate rises raise the discount on US shares, which are most of your largest holdings. The decision on 9 Dec (night of 9-10 Dec in Bangkok) is the next catalyst for ES-US500RMF and K-USA-A(D).",
+   "dir": "watch",
+   "impact": 2,
+   "exposure_pct": 16.8,
+   "holdings": [
+    {
+     "name": "ES-US500RMF",
+     "weight": 14.2
+    },
+    {
+     "name": "K-USA-A(D)",
+     "weight": 2.6
+    }
+   ],
+   "verify": "single",
+   "verify_note": "CNBC only; BEA release not opened",
+   "sources": [
+    {
+     "name": "CNBC",
+     "url": "https://www.cnbc.com/2026/11/25/pce-inflation-report-october-2026.html",
+     "tier": "major",
+     "primary": false,
+     "paywall": false
+    }
+   ],
+   "related": [],
+   "find": [
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/site-search/?query=Fed+December+rate+hike+PCE"
+    },
+    {
+     "name": "FT",
+     "url": "https://www.ft.com/search?q=Fed+December+rate+hike+PCE"
+    }
+   ],
+   "set_links": []
+  },
+  {
+   "id": "thai-stocks-exports",
+   "group": "Thailand",
+   "headline": "Thai stocks climb as October exports jump at the fastest pace in five years",
+   "when": "Fri 27 Nov · SET close",
+   "what": "The SET index rose 1.83% to 1,440.29 and the baht firmed 0.35% to 33.89 per dollar. October exports grew 27.5% from a year earlier, the quickest in more than five years. Bloomberg's headline adds that imports grew even faster, pushing the trade deficit to a record.",
+   "why": "Thailand is your second-largest market, about 24%. Many Thai funds, such as BFLRMF and SCBTAPX(25D), are priced as of 26 Nov, so Friday's SET gain is not in this morning's numbers. The record trade gap is a counterweight to the export story.",
+   "dir": "pos",
+   "impact": 2,
+   "exposure_pct": 7.6,
+   "holdings": [
+    {
+     "name": "BFLRMF",
+     "weight": 3.5
+    },
+    {
+     "name": "GULF",
+     "weight": 2.5
+    },
+    {
+     "name": "SCBTAPX(25D)",
+     "weight": 1.6
+    }
+   ],
+   "verify": "multi",
+   "verify_note": "Summaries only; full articles blocked (paywall, 403)",
+   "sources": [
+    {
+     "name": "Bangkok Post",
+     "url": "https://www.bangkokpost.com/business/general/3362514/thailands-exports-increase-at-fastest-rate-in-5-years",
+     "tier": "regional",
+     "primary": false,
+     "paywall": false
+    },
+    {
+     "name": "Bloomberg",
+     "url": "https://www.bloomberg.com/news/articles/2026-11-27/thai-exports-surge-as-imports-drive-trade-deficit-to-record-high",
+     "tier": "major",
+     "primary": false,
+     "paywall": true
+    }
+   ],
+   "related": [],
+   "find": [
+    {
+     "name": "Reuters",
+     "url": "https://www.reuters.com/site-search/?query=Thailand+exports+October+SET"
+    },
+    {
+     "name": "FT",
+     "url": "https://www.ft.com/search?q=Thailand+exports+October+SET"
+    }
+   ],
+   "set_links": [
+    {
+     "symbol": "GULF",
+     "url": "https://www.set.or.th/en/market/product/stock/quote/GULF/news"
+    }
+   ]
+  },
+  {
+   "id": "bitcoin-rebound",
+   "group": "Crypto",
+   "headline": "Bitcoin steadies near $60,000 after a rough November",
+   "when": "Fri 27 Nov",
+   "what": "CoinDesk says bitcoin rose about 2% to above $61,000 on Friday as Nasdaq futures extended a rebound. Its own ticker showed about $59,700, so its figures do not fully agree. Ether was near $1,657. The Nasdaq fell 8% in November, its worst month since December 2022. The dashboard shows bitcoin at $59,695, down 1.3% over 24 hours.",
+   "why": "Crypto is about 4.8% of your portfolio, mostly BTC. It has moved with the Nasdaq and with rate-rise fears, so the Fed decision on 9 Dec matters here too.",
+   "dir": "neutral",
+   "impact": 1,
+   "exposure_pct": 3.0,
    "holdings": [
     {
      "name": "BTC",
@@ -310,11 +417,11 @@
     }
    ],
    "verify": "single",
-   "verify_note": "Single outlet; Fed view not checked against Fed documents",
+   "verify_note": "CoinDesk only; its own price figures differ",
    "sources": [
     {
      "name": "CoinDesk",
-     "url": "https://www.coindesk.com/daybook-us/2026/11/26/bitcoin-etfs-are-bleeding-cash-and-the-fed-is-unlikely-to-help",
+     "url": "https://www.coindesk.com/markets/2026/11/27/bitcoin-tops-usd61-000-as-nasdaq-futures-extend-wednesday-s-rebound",
      "tier": "regional",
      "primary": false,
      "paywall": false
@@ -324,11 +431,11 @@
    "find": [
     {
      "name": "Reuters",
-     "url": "https://www.reuters.com/site-search/?query=bitcoin+ETF+outflows+November"
+     "url": "https://www.reuters.com/site-search/?query=bitcoin+Nasdaq+futures"
     },
     {
      "name": "FT",
-     "url": "https://www.ft.com/search?q=bitcoin+ETF+outflows+November"
+     "url": "https://www.ft.com/search?q=bitcoin+Nasdaq+futures"
     }
    ],
    "set_links": []
@@ -336,17 +443,35 @@
  ],
  "briefly": [
   {
-   "headline": "Thai shares fall as the SET closes 0.98% lower",
-   "text": "The SET closed at 1,414.44 on Thursday. I could not confirm the cause from a readable source, since the Bangkok Post tariff story sits behind a paid gateway.",
-   "exposure_pct": 24.4,
-   "exposure_label": "Thailand",
+   "headline": "China stocks surge on talk of more state support",
+   "text": "SCMP reports the CSI 300 jumped 4.2% and the Star 50 about 12% on Friday as the State Council weighs more measures to support the market. The CSI 300 is still down about 12% this year.",
+   "exposure_pct": 3.2,
+   "exposure_label": "China",
    "verify": "single",
-   "verify_note": "Index level from dashboard market data; cause not verified",
+   "verify_note": "SCMP search summary only; article page returned 403",
    "sources": [
     {
-     "name": "SET",
-     "url": "https://www.set.or.th/en/home",
-     "tier": "primary",
+     "name": "SCMP",
+     "url": "https://www.scmp.com/business/china-business/article/3376011/chinas-state-council-says-it-considering-more-measures-bolster-flagging-stocks",
+     "tier": "regional",
+     "primary": false,
+     "paywall": false
+    }
+   ],
+   "set_links": []
+  },
+  {
+   "headline": "Nvidia shipment report unsettles Thai AI supply",
+   "text": "An authorised Nvidia distributor in Thailand dismissed worries about AI server supply after media reports that Nvidia halted shipments to four Southeast Asian countries. The reports themselves are not confirmed here.",
+   "exposure_pct": 0.2,
+   "exposure_label": "Thailand",
+   "verify": "single",
+   "verify_note": "Bangkok Post summary only",
+   "sources": [
+    {
+     "name": "Bangkok Post",
+     "url": "https://www.bangkokpost.com/business/general/3362529/distributors-shrug-off-nvidia-chip-ban",
+     "tier": "regional",
      "primary": false,
      "paywall": false
     }
@@ -356,25 +481,6 @@
  ],
  "upcoming": [
   {
-   "dow": "Today",
-   "day": "27",
-   "mon": "Nov",
-   "date": "2026-11-27",
-   "date_label": null,
-   "time_bkt": "",
-   "title": "Samsung pays its ₩30 trillion dividend",
-   "detail": "₩4,601 a share",
-   "exposure_label": "Korea 15.8%",
-   "tab": null,
-   "source": {
-    "name": "Korea Herald",
-    "url": "https://www.koreaherald.com/article/10918617",
-    "tier": "regional",
-    "primary": false,
-    "paywall": false
-   }
-  },
-  {
    "dow": "Fri",
    "day": "4",
    "mon": "Dec",
@@ -383,7 +489,7 @@
    "time_bkt": "20:30",
    "title": "US November jobs report",
    "detail": "Fri 4 Dec, 08:30 ET",
-   "exposure_label": "United States 25.6%",
+   "exposure_label": "United States 25.7%",
    "tab": null,
    "source": {
     "name": "Bureau of Labor Statistics",
@@ -402,7 +508,7 @@
    "time_bkt": "02:00",
    "title": "Fed decision and new projections",
    "detail": "Wed 9 Dec, 14:00 ET",
-   "exposure_label": "United States 25.6%",
+   "exposure_label": "United States 25.7%",
    "tab": null,
    "source": {
     "name": "Federal Reserve",
@@ -426,36 +532,56 @@
    "source": null
   }
  ],
- "radar": [],
- "quiet": [
+ "radar": [
   {
-   "name": "ES-US500RMF",
-   "weight": 14.2,
-   "set_url": null
-  },
+   "topic": "Anthropic IPO",
+   "text": "Anthropic shares finished their first week after a record debut above the $83 offer price. CoinDesk's premarket note had them up 8% at $89. The Korea Times says they briefly traded below the offer price this week.",
+   "notes": [
+    "AI Stocks — Anthropic IPO Scenarios (28 Oct 2026)",
+    "Anthropic IPO vs SpaceX (28 Oct 2026)"
+   ],
+   "sources": [
+    {
+     "name": "Bloomberg",
+     "url": "https://www.bloomberg.com/news/articles/2026-11-27/anthropic-shares-jump-after-volatile-first-week-since-record-ipo",
+     "tier": "major",
+     "primary": false,
+     "paywall": true
+    },
+    {
+     "name": "CoinDesk",
+     "url": "https://www.coindesk.com/markets/2026/11/27/bitcoin-tops-usd61-000-as-nasdaq-futures-extend-wednesday-s-rebound",
+     "tier": "regional",
+     "primary": false,
+     "paywall": false
+    }
+   ]
+  }
+ ],
+ "quiet": [
   {
    "name": "K-GHRMF",
    "weight": 5.4,
    "set_url": null
   },
   {
-   "name": "AAPL",
-   "weight": 4.1,
+   "name": "K-VIETNAMRMF",
+   "weight": 4.7,
    "set_url": null
   },
   {
    "name": "BCARERMF",
-   "weight": 3.2,
+   "weight": 3.3,
    "set_url": null
   },
   {
-   "name": "K-CHX",
-   "weight": 2.8,
+   "name": "UTSB-THAIESG",
+   "weight": 2.5,
    "set_url": null
   },
   {
-   "name": "K-USA-A(D)",
-   "weight": 2.7,
+   "name": "K-TNZ-ThaiESG",
+   "weight": 2.0,
    "set_url": null
   },
   {
@@ -469,13 +595,18 @@
    "set_url": null
   },
   {
-   "name": "META",
-   "weight": 1.3,
+   "name": "ASP-SME-A",
+   "weight": 1.6,
    "set_url": null
   },
   {
-   "name": "TSLA",
-   "weight": 1.3,
+   "name": "BFRMF",
+   "weight": 1.6,
+   "set_url": null
+  },
+  {
+   "name": "B-EQUITY",
+   "weight": 1.2,
    "set_url": null
   },
   {
@@ -484,8 +615,23 @@
    "set_url": null
   },
   {
+   "name": "LionGlobal Vietnam Fund Class A (SGD)",
+   "weight": 1.1,
+   "set_url": null
+  },
+  {
    "name": "BNB",
    "weight": 1.0,
+   "set_url": null
+  },
+  {
+   "name": "KF-ASET50-L",
+   "weight": 1.0,
+   "set_url": null
+  },
+  {
+   "name": "SCBSET-SSFX",
+   "weight": 0.9,
    "set_url": null
   },
   {
@@ -494,31 +640,36 @@
    "set_url": null
   },
   {
+   "name": "B-MIXED75",
+   "weight": 0.8,
+   "set_url": null
+  },
+  {
+   "name": "BERMF",
+   "weight": 0.7,
+   "set_url": null
+  },
+  {
    "name": "REMX",
-   "weight": 0.6,
+   "weight": 0.7,
    "set_url": null
   },
   {
    "name": "ASP-AIEQ",
    "weight": 0.5,
    "set_url": null
-  },
-  {
-   "name": "ASP-JHC",
-   "weight": 0.5,
-   "set_url": null
   }
  ],
- "quiet_small_count": 62,
+ "quiet_small_count": 63,
  "thai_stocks": [
   {
    "symbol": "GULF",
-   "weight": 2.49,
+   "weight": 2.54,
    "url": "https://www.set.or.th/en/market/product/stock/quote/GULF/news"
   },
   {
    "symbol": "BANPU",
-   "weight": 0.45,
+   "weight": 0.46,
    "url": "https://www.set.or.th/en/market/product/stock/quote/BANPU/news"
   },
   {
@@ -538,12 +689,12 @@
   },
   {
    "symbol": "SAWAD",
-   "weight": 0.36,
+   "weight": 0.37,
    "url": "https://www.set.or.th/en/market/product/stock/quote/SAWAD/news"
   },
   {
    "symbol": "NCAP",
-   "weight": 0.24,
+   "weight": 0.25,
    "url": "https://www.set.or.th/en/market/product/stock/quote/NCAP/news"
   },
   {
@@ -558,18 +709,18 @@
   },
   {
    "symbol": "HUMAN",
-   "weight": 0.18,
+   "weight": 0.19,
    "url": "https://www.set.or.th/en/market/product/stock/quote/HUMAN/news"
-  },
-  {
-   "symbol": "TIDLOR",
-   "weight": 0.09,
-   "url": "https://www.set.or.th/en/market/product/stock/quote/TIDLOR/news"
   },
   {
    "symbol": "SAMART",
    "weight": 0.09,
    "url": "https://www.set.or.th/en/market/product/stock/quote/SAMART/news"
+  },
+  {
+   "symbol": "TIDLOR",
+   "weight": 0.09,
+   "url": "https://www.set.or.th/en/market/product/stock/quote/TIDLOR/news"
   },
   {
    "symbol": "BWG",
@@ -594,20 +745,36 @@
  ],
  "nav_lags": [
   {
-   "fund": "SCBKEQTG",
-   "weight": 0.1382,
+   "fund": "ES-US500RMF",
+   "weight": 0.1418,
    "nav_date": "2026-11-24",
-   "proxy_symbol": "^KS11",
-   "proxy_last_date": "2026-11-25",
-   "proxy_move_since_nav": -0.0616
+   "proxy_symbol": "^GSPC",
+   "proxy_last_date": "2026-11-27",
+   "proxy_move_since_nav": 0.0134
   },
   {
-   "fund": "BCARERMF",
-   "weight": 0.0316,
-   "nav_date": "2026-11-23",
-   "proxy_symbol": "IXJ",
-   "proxy_last_date": "2026-11-25",
-   "proxy_move_since_nav": 0.0269
+   "fund": "SCBKEQTG",
+   "weight": 0.1379,
+   "nav_date": "2026-11-24",
+   "proxy_symbol": "^KS11",
+   "proxy_last_date": "2026-11-26",
+   "proxy_move_since_nav": -0.0589
+  },
+  {
+   "fund": "K-USA-A(D)",
+   "weight": 0.026,
+   "nav_date": "2026-11-25",
+   "proxy_symbol": "^GSPC",
+   "proxy_last_date": "2026-11-27",
+   "proxy_move_since_nav": 0.016
+  },
+  {
+   "fund": "UOBSG-N",
+   "weight": 0.0183,
+   "nav_date": "2026-11-24",
+   "proxy_symbol": "GC=F",
+   "proxy_last_date": "2026-11-27",
+   "proxy_move_since_nav": 0.0299
   }
  ],
  "method": {
